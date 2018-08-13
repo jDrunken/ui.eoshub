@@ -1,0 +1,53 @@
+nav {
+	background:#000;
+
+	button,a {
+		@include ir();
+
+		display:block;
+
+		width:60px;
+		height:60px;
+
+		background-repeat:no-repeat;
+		background-position:center center;
+		background-size:22px 22px;
+
+		&:hover,
+		&.viewing {
+			background-color:#282828;
+		}
+	}
+
+	button.dashboard.toggle {
+		&.expand {
+			background-color:#282828;
+			background-image:url('../image/icon-menu-toggle.svg');
+		}
+	}
+
+
+	// bg image
+	button.dashboard.toggle {
+	}
+
+	a.transfer {
+		background-image:url('../image/icon-transaction.svg');
+	}
+
+	a.ram_market {
+		background-image:url('../image/icon-server.svg');
+	}
+
+	a.vote {
+		background-image:url('../image/icon-vote-circle.svg');
+	}
+
+	a.proxy_vote {
+		background-image:url('../image/icon-vote-eoshub.svg');
+	}
+
+	a.dapps {
+		background-image:url('../image/icon-application.svg');
+	}
+}

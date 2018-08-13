@@ -1,0 +1,44 @@
+html,body {
+	height:100%;
+}
+
+div#elm-target {
+	height:inherit;
+}
+
+body {
+	color:#999;
+	background-color:#161616;
+}
+
+// just only one element in SPA
+header {
+
+}
+
+nav {
+	position:fixed;
+	width:60px;
+	height:inherit;
+}
+
+footer {
+	position:fixed;
+	width:60px;
+	left:0;
+	bottom:0;
+}
+
+aside {
+	position:relative;
+	box-sizing:border-box;
+	height:inherit;
+	min-width:240px;
+	width:17%;
+	max-width:300px;
+
+	left:60px;
+}
+
+main {
+}
