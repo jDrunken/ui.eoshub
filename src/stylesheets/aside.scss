@@ -6,8 +6,6 @@ aside {
 	font-size:rem(14);
 	color:#999999;
 
-	box-sizing:border-box;
-
 	h2 {
 		color:#fff;
 		font-size:rem(20);
@@ -31,6 +29,7 @@ aside {
 		justify-content:space-between;
 		align-items:stretch;
 		height:48px;
+		width:100%;
 
 		button {
 			flex: 0 0 49%;

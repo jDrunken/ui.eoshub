@@ -1,9 +1,23 @@
+$header_height:64px;
+$lnb_width:60px;
+$browser_min_width:1250px;
+$browser_min_height:580px;
+
+// --------------------------------------------------------------------------------
+
 html,body {
 	height:100%;
 }
 
+body {
+	// overflow-y:hidden;
+}
+
 div#elm-target {
 	height:inherit;
+
+	min-width:1280px;
+	// min-height:$browser_min_height;
 }
 
 body {
@@ -11,20 +25,31 @@ body {
 	background-color:#161616;
 }
 
-// just only one element in SPA
-header {
 
+// --------------------------------------------------------------------------------
+// layout
+// just only one element in SPA
+// --------------------------------------------------------------------------------
+
+header {
+	position:fixed;
+	top:0;
+	left:0;
+	right:0;
+	height:$header_height;
 }
 
 nav {
 	position:fixed;
-	width:60px;
+	width:$lnb_width;
 	height:inherit;
+	top:$header_height;
+	left:0;
 }
 
 footer {
 	position:fixed;
-	width:60px;
+	width:$lnb_width;
 	left:0;
 	bottom:0;
 }
@@ -33,12 +58,52 @@ aside {
 	position:relative;
 	box-sizing:border-box;
 	height:inherit;
-	min-width:240px;
-	width:17%;
-	max-width:300px;
-
-	left:60px;
 }
 
 main {
+	height:inherit;
+	// namespace
+}
+
+
+// --------------------------------------------------------------------------------
+// width,height layout
+// --------------------------------------------------------------------------------
+
+div#elm-target {
+	padding:$header_height 0 0 $lnb_width;
+	box-sizing:border-box;
+
+	display:flex;
+
+	aside {
+		// float:left;
+		min-width:240px;
+		max-width:300px;
+		width:20%;
+		min-height:550px;
+	}
+
+	main {
+		flex:1;
+		// float:left;
+		// non-fixed width
+	}
+
+	&:after {
+		content:'';
+		display:block;
+		clear:both;
+	}
+}
+
+
+
+// --------------------------------------------------------------------------------
+// minimum layout browser
+// --------------------------------------------------------------------------------
+@media screen and (max-width: $browser_min_width) {
+	nav,footer {
+		position:absolute;
+	}
 }
