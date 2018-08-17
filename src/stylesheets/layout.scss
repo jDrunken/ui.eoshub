@@ -1,6 +1,6 @@
 $header_height:64px;
 $lnb_width:60px;
-$browser_min_width:1250px;
+$browser_min_width:1260px;
 $browser_min_height:580px;
 
 // --------------------------------------------------------------------------------
@@ -15,9 +15,10 @@ body {
 
 div#elm-target {
 	height:inherit;
+	box-sizing:border-box;
 
-	min-width:1280px;
-	// min-height:$browser_min_height;
+	min-width:$browser_min_width;
+	min-height:$browser_min_height;
 }
 
 body {
@@ -37,6 +38,7 @@ header {
 	left:0;
 	right:0;
 	height:$header_height;
+	z-index:60;
 }
 
 nav {
@@ -45,6 +47,7 @@ nav {
 	height:inherit;
 	top:$header_height;
 	left:0;
+	z-index:50;
 }
 
 footer {
@@ -52,50 +55,75 @@ footer {
 	width:$lnb_width;
 	left:0;
 	bottom:0;
-}
-
-aside {
-	position:relative;
-	box-sizing:border-box;
-	height:inherit;
-}
-
-main {
-	height:inherit;
-	// namespace
+	z-index:50;
 }
 
 
 // --------------------------------------------------------------------------------
-// width,height layout
+// content > aside(status section) + main
 // --------------------------------------------------------------------------------
-
-div#elm-target {
-	padding:$header_height 0 0 $lnb_width;
+section.content {
+	height:inherit;
 	box-sizing:border-box;
 
-	display:flex;
+	// display:flex;
+	// align-items:stretch;
 
-	aside {
-		// float:left;
-		min-width:240px;
-		max-width:300px;
-		width:20%;
-		min-height:550px;
-	}
+	padding:$header_height 0;
+	padding-left:$lnb_width;
 
 	main {
-		flex:1;
-		// float:left;
-		// non-fixed width
+		// flex:1;
+		transition:transform 0.4s;
+
+		height:inherit;
+		box-sizing:border-box;
+
+		@include media ('>1920px') {
+			padding:36px;
+			width:1560px;
+			transform:translateX(150px);
+		}
+		@include media ('>1280px','<=1920px') {
+			padding:1.5140625vw 0;
+			width:75.625vw;
+			transform:translateX(calc(18.75vw / 2));
+		}
+		@include media ('<=1280px') {
+			padding:21px;
+			width:968px;
+			transform:translateX(120px);
+		}
+
+		margin:0 auto;
 	}
 
-	&:after {
-		content:'';
-		display:block;
-		clear:both;
+
+	aside {
+		position:relative;
+		box-sizing:border-box;
+		height:inherit;
+
+		position:fixed;
+		left:$lnb_width;
+		top:$header_height;
+		bottom:0;
+		// max-width:300px;
+
+		@include media ('>1920px') {
+			width:300px;
+		}
+		@include media ('>1280px','<=1920px') {
+			width:18.75vw;
+		}
+		@include media ('<=1280px') {
+			width:240px;
+		}
+
 	}
+
 }
+
 
 
 
@@ -103,7 +131,29 @@ div#elm-target {
 // minimum layout browser
 // --------------------------------------------------------------------------------
 @media screen and (max-width: $browser_min_width) {
-	nav,footer {
+	nav,
+	footer,
+	section.content aside {
 		position:absolute;
 	}
+}
+
+
+
+
+
+// --------------------------------------------------------------------------------
+// fluid layout
+// --------------------------------------------------------------------------------
+
+aside {
+	transition:transform 0.4s;
+
+	&.shrink {
+		transform:translateX(-100%);
+	}
+}
+
+aside.shrink + main {
+	transform:translateX(0);
 }

@@ -4,7 +4,6 @@
 main {
 	// namespace
 	box-sizing:border-box;
-	padding:27px;
 }
 
 
@@ -20,6 +19,27 @@ main {
 	.menu_area h2 {
 		@include screen_reader();
 	}
+
+	.menu_area {
+		.container {
+			display:grid;
+			grid-template-columns: 50% 25% 25%;
+			// grid-template-columns: minmax(410px,800px) minmax(246px,320px) minmax(246px,320px);
+			grid-template-rows: minmax(160px,240px) minmax(160px,240px);
+
+			> div,
+			> a {
+				margin:6px;
+				display:block;
+			}
+
+			div.greeting {
+				grid-row-start:1;
+				grid-row-end:3;
+			}
+		}
+	}
+
 	.container {
 		.greeting,
 		.card {

@@ -1,34 +1,97 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="20" viewBox="0 0 20 20">
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="18px" height="16px" viewBox="0 0 18 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.1 (57501) - http://www.bohemiancoding.com/sketch -->
+    <title>expand</title>
+    <desc>Created with Sketch.</desc>
     <defs>
-        <path id="a" d="M0 .666h18v1H0z"/>
-        <path id="c" d="M0 .447h9v1H0z"/>
-        <path id="e" d="M0 .228h18v1H0z"/>
-        <path id="g" d="M0 .008h14.7V1H0z"/>
+        <polygon id="path-1" points="0 0.666 18 0.666 18 1.666 0 1.666"></polygon>
+        <polygon id="path-3" points="0 0.447 9 0.447 9 1.447 0 1.447"></polygon>
+        <polygon id="path-5" points="0 0.228 18 0.228 18 1.228 0 1.228"></polygon>
+        <polygon id="path-7" points="0 0.008 14.7 0.008 14.7 1 0 1"></polygon>
+        <polygon id="path-9" points="0 0.666 18 0.666 18 1.666 0 1.666"></polygon>
+        <polygon id="path-11" points="0 0.447 9 0.447 9 1.447 0 1.447"></polygon>
+        <polygon id="path-13" points="0 0.228 18 0.228 18 1.228 0 1.228"></polygon>
+        <polygon id="path-15" points="0 0.008 14.7 0.008 14.7 1 0 1"></polygon>
+		<style>
+			g { display: none }
+			g:target g,
+			g:target { display: inline }
+		</style>
     </defs>
-    <g fill="none" fill-rule="evenodd">
-        <g transform="matrix(-1 0 0 1 19 1.334)">
-            <mask id="b" fill="#fff">
-                <use xlink:href="#a"/>
-            </mask>
-            <path fill="#FFF" d="M17.505 1.658H.494a.497.497 0 0 1 0-.992h17.01a.496.496 0 0 1 0 .992" mask="url(#b)"/>
-        </g>
-        <g transform="matrix(-1 0 0 1 19 6.334)">
-            <mask id="d" fill="#fff">
-                <use xlink:href="#c"/>
-            </mask>
-            <path fill="#FFF" d="M8.505 1.439H.495a.497.497 0 0 1 0-.992h8.01a.496.496 0 0 1 0 .992" mask="url(#d)"/>
-        </g>
-        <g transform="matrix(-1 0 0 1 19 11.334)">
-            <mask id="f" fill="#fff">
-                <use xlink:href="#e"/>
-            </mask>
-            <path fill="#FFF" d="M17.505 1.22H.494a.497.497 0 0 1 0-.992h17.01a.496.496 0 0 1 0 .992" mask="url(#f)"/>
-        </g>
-        <g transform="matrix(-1 0 0 1 19 16.334)">
-            <mask id="h" fill="#fff">
-                <use xlink:href="#g"/>
-            </mask>
-            <path fill="#FFF" d="M14.205 1H.495a.497.497 0 0 1 0-.992h13.71a.496.496 0 0 1 0 .992" mask="url(#h)"/>
-        </g>
-    </g>
+	<g id="shrink" transform="translate(9.000000, 8.000000) scale(-1, 1) translate(-9.000000, -8.000000) translate(0.000000, -1.000000)">
+		<g id="Group" transform="translate(9.000000, 1.334000) scale(-1, 1) translate(-9.000000, -1.334000) translate(0.000000, 0.334000)">
+			<g id="Clipped">
+				<mask id="mask-2" fill="white">
+					<use xlink:href="#path-1"></use>
+				</mask>
+				<g id="a"></g>
+				<path d="M17.505,1.658 L0.494,1.658 C0.23227721,1.64137221 0.0285119025,1.42425046 0.0285119025,1.162 C0.0285119025,0.899749543 0.23227721,0.682627788 0.494,0.666 L17.504,0.666 C17.7779332,0.666 18,0.888066764 18,1.162 C18,1.43593324 17.7779332,1.658 17.504,1.658" id="Shape" fill="#FFFFFF" fill-rule="nonzero" mask="url(#mask-2)"></path>
+			</g>
+		</g>
+		<g id="Group" transform="translate(13.500000, 6.334000) scale(-1, 1) translate(-13.500000, -6.334000) translate(9.000000, 5.334000)">
+			<g id="Clipped">
+				<mask id="mask-4" fill="white">
+					<use xlink:href="#path-3"></use>
+				</mask>
+				<g id="c"></g>
+				<path d="M8.505,1.439 L0.495,1.439 C0.23327721,1.42237221 0.0295119025,1.20525046 0.0295119025,0.943 C0.0295119025,0.680749543 0.23327721,0.463627788 0.495,0.447 L8.505,0.447 C8.77893324,0.447 9.001,0.669066764 9.001,0.943 C9.001,1.21693324 8.77893324,1.439 8.505,1.439" id="Shape" fill="#FFFFFF" fill-rule="nonzero" mask="url(#mask-4)"></path>
+			</g>
+		</g>
+		<g id="Group" transform="translate(9.000000, 11.334000) scale(-1, 1) translate(-9.000000, -11.334000) translate(0.000000, 10.334000)">
+			<g id="Clipped">
+				<mask id="mask-6" fill="white">
+					<use xlink:href="#path-5"></use>
+				</mask>
+				<g id="e"></g>
+				<path d="M17.505,1.22 L0.494,1.22 C0.23227721,1.20337221 0.0285119025,0.986250457 0.0285119025,0.724 C0.0285119025,0.461749543 0.23227721,0.244627788 0.494,0.228 L17.504,0.228 C17.7779332,0.228000004 18,0.450066767 18,0.724 C18,0.997933233 17.7779332,1.22 17.504,1.22" id="Shape" fill="#FFFFFF" fill-rule="nonzero" mask="url(#mask-6)"></path>
+			</g>
+		</g>
+		<g id="Group" transform="translate(10.500000, 16.334000) scale(-1, 1) translate(-10.500000, -16.334000) translate(3.000000, 15.334000)">
+			<g id="Clipped">
+				<mask id="mask-8" fill="white">
+					<use xlink:href="#path-7"></use>
+				</mask>
+				<g id="g"></g>
+				<path d="M14.205,1 L0.495,1 C0.23327721,0.983372212 0.0295119025,0.766250457 0.0295119025,0.504 C0.0295119025,0.241749543 0.23327721,0.0246277884 0.495,0.008 L14.205,0.008 C14.4789332,0.00800000408 14.701,0.230066767 14.701,0.504 C14.701,0.777933233 14.4789332,0.999999996 14.205,1" id="Shape" fill="#FFFFFF" fill-rule="nonzero" mask="url(#mask-8)"></path>
+			</g>
+		</g>
+	</g>
+	<g id="expand" transform="translate(0.000000, -1.000000)">
+		<g id="Group" transform="translate(9.000000, 1.334000) scale(-1, 1) translate(-9.000000, -1.334000) translate(0.000000, 0.334000)">
+			<g id="Clipped">
+				<mask id="mask-10" fill="white">
+					<use xlink:href="#path-9"></use>
+				</mask>
+				<g id="a"></g>
+				<path d="M17.505,1.658 L0.494,1.658 C0.23227721,1.64137221 0.0285119025,1.42425046 0.0285119025,1.162 C0.0285119025,0.899749543 0.23227721,0.682627788 0.494,0.666 L17.504,0.666 C17.7779332,0.666 18,0.888066764 18,1.162 C18,1.43593324 17.7779332,1.658 17.504,1.658" id="Shape" fill="#FFFFFF" fill-rule="nonzero" mask="url(#mask-10)"></path>
+			</g>
+		</g>
+		<g id="Group" transform="translate(13.500000, 6.334000) scale(-1, 1) translate(-13.500000, -6.334000) translate(9.000000, 5.334000)">
+			<g id="Clipped">
+				<mask id="mask-12" fill="white">
+					<use xlink:href="#path-11"></use>
+				</mask>
+				<g id="c"></g>
+				<path d="M8.505,1.439 L0.495,1.439 C0.23327721,1.42237221 0.0295119025,1.20525046 0.0295119025,0.943 C0.0295119025,0.680749543 0.23327721,0.463627788 0.495,0.447 L8.505,0.447 C8.77893324,0.447 9.001,0.669066764 9.001,0.943 C9.001,1.21693324 8.77893324,1.439 8.505,1.439" id="Shape" fill="#FFFFFF" fill-rule="nonzero" mask="url(#mask-12)"></path>
+			</g>
+		</g>
+		<g id="Group" transform="translate(9.000000, 11.334000) scale(-1, 1) translate(-9.000000, -11.334000) translate(0.000000, 10.334000)">
+			<g id="Clipped">
+				<mask id="mask-14" fill="white">
+					<use xlink:href="#path-13"></use>
+				</mask>
+				<g id="e"></g>
+				<path d="M17.505,1.22 L0.494,1.22 C0.23227721,1.20337221 0.0285119025,0.986250457 0.0285119025,0.724 C0.0285119025,0.461749543 0.23227721,0.244627788 0.494,0.228 L17.504,0.228 C17.7779332,0.228000004 18,0.450066767 18,0.724 C18,0.997933233 17.7779332,1.22 17.504,1.22" id="Shape" fill="#FFFFFF" fill-rule="nonzero" mask="url(#mask-14)"></path>
+			</g>
+		</g>
+		<g id="Group" transform="translate(10.500000, 16.334000) scale(-1, 1) translate(-10.500000, -16.334000) translate(3.000000, 15.334000)">
+			<g id="Clipped">
+				<mask id="mask-16" fill="white">
+					<use xlink:href="#path-15"></use>
+				</mask>
+				<g id="g"></g>
+				<path d="M14.205,1 L0.495,1 C0.23327721,0.983372212 0.0295119025,0.766250457 0.0295119025,0.504 C0.0295119025,0.241749543 0.23327721,0.0246277884 0.495,0.008 L14.205,0.008 C14.4789332,0.00800000408 14.701,0.230066767 14.701,0.504 C14.701,0.777933233 14.4789332,0.999999996 14.205,1" id="Shape" fill="#FFFFFF" fill-rule="nonzero" mask="url(#mask-16)"></path>
+			</g>
+		</g>
+	</g>
 </svg>

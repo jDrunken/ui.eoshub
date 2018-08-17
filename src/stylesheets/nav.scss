@@ -4,6 +4,7 @@ nav {
 	button,a {
 		@include ir();
 
+		outline:0;
 		display:block;
 
 		width:60px;
@@ -17,18 +18,22 @@ nav {
 		&.viewing {
 			background-color:#282828;
 		}
-	}
 
-	button.dashboard.toggle {
-		&.expand {
-			background-color:#282828;
-			background-image:url('../image/icon-menu-toggle.svg');
+		&:active {
+			background-size:20px 20px;
 		}
 	}
 
-
 	// bg image
 	button.dashboard.toggle {
+		background-color:#282828;
+		background-image:url('../image/icon-menu-toggle.svg#expand');
+
+		&.shrink {
+			background-color:transparent;
+			background-image:url('../image/icon-menu-toggle.svg#shrink');
+		}
+
 	}
 
 	a.transfer {
