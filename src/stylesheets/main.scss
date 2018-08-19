@@ -16,10 +16,6 @@ main {
 // main :: index view
 // --------------------------------------------------------------------------------
 main {
-	.menu_area h2 {
-		@include screen_reader();
-	}
-
 	.menu_area {
 		.container {
 			display:grid;
@@ -40,11 +36,123 @@ main {
 		}
 	}
 
-	.container {
-		.greeting,
-		.card {
-			background-color:#282828;
+	.dapps {
+		margin-top:40px;
+	}
+}
+
+
+
+
+
+// --------------------------------------------------------------------------------
+// details :: menus
+// --------------------------------------------------------------------------------
+main .menu_area h2 {
+	@include screen_reader();
+}
+
+main .menu_area .container {
+	.greeting,
+	.card {
+		background-color:#282828;
+		box-sizing:border-box;
+
+		h3 {
+			color:#fff;
+		}
+
+		p {
+			font-size:rem(14);
+			margin:0;
 		}
 	}
 
+	.greeting {
+		padding:48px;
+		h3 {
+			font-size: rem(24);
+			line-height: 1.25;
+		}
+
+		p {
+			margin-top:8px;
+		}
+	}
+
+	.card {
+		padding:32px;
+
+		h3 {
+			font-size:rem(20);
+			line-height:1.7;
+		}
+
+	}
+}
+
+
+// --------------------------------------------------------------------------------
+// details :: dapps
+// --------------------------------------------------------------------------------
+main .dapps {
+	h2 {
+		font-size: rem(20);
+		color: #ffffff;
+		padding-left:32px;
+
+		+ p {
+			font-size:rem(14);
+		}
+	}
+
+	.rolling.banner {
+		display:flex;
+		align-items:center;
+		justify-content:center;
+		height: 120px;
+		border-radius: 4px;
+		background-image: linear-gradient(97deg, #d735df, #4239fc);
+		color:#fff;
+
+		margin-top:24px;
+	}
+
+	.container {
+		margin-top:12px;
+		display:flex;
+
+		a {
+			flex:1;
+			display:flex;
+			justify-content:center;
+			flex-direction:column;
+			height:120px;
+			border-radius:4px;
+			background-color:#232323;
+			box-sizing:border-box;
+			margin:0 6px;
+			padding:32px;
+
+			&:first-child {
+				margin-left:0;
+			}
+
+			&:last-child {
+				margin-right:0;
+			}
+
+			h3 {
+				font-size:rem(16);
+				color:#fff;
+			}
+
+			p {
+				font-size:rem(14);
+				margin:0;
+				color:#999;
+			}
+		}
+
+	}
 }
