@@ -1,0 +1,47 @@
+<!-- @@master = ../template/master-join.html -->
+
+
+<!-- @@block = main -->
+<main class="join">
+	<article data-step="validate-email">
+		<h2>새로운 계정을 만들기 위해<br />
+			이메일을 인증하세요!</h2>
+		<p>받으신 메일의 링크를 클릭해주세요.</p>
+
+		<form action="">
+			<!-- valid / invalid 프로퍼티로 밸리데이션 여부를 체크합니다 -->
+			<input type="email" placeholder="example@email.com" required />
+			<span class="validate">이메일을 확인해주세요!</span>
+		</form>
+
+		<form action="">
+			<!-- valid / invalid 프로퍼티로 밸리데이션 여부를 체크합니다 -->
+			<input type="email" placeholder="example@email.com" required valid />
+			<span class="validate">이메일을 확인해주세요!</span>
+		</form>
+
+		<form action="">
+			<!-- valid / invalid 프로퍼티로 밸리데이션 여부를 체크합니다 -->
+			<input type="email" placeholder="example@email.com" required invalid />
+			<span class="validate">이미 존재하는 이메일입니다.</span>
+		</form>
+		<div class="btn_area">
+			<!-- blocking에는 disabled proerty를 더해주세요.-->
+			<button type="button" class="send_email ok button">링크 보내기</button>
+		</div>
+
+		<p class="exist_account">
+			이미 이오스 계정이 있으신가요?
+			<a href="index-view.html">로그인하기</a>
+		</p>
+	</article>
+
+	<!-- 데모용 스크립트입니다. -->
+	<script>
+	document.querySelector('button.send_email.button').addEventListener('click',function(){
+		this.removeAttribute('disabled');
+		location.pathname="join-process-step-2-ok-auth.html";
+	});
+	</script>
+</main>
+<!-- @@close -->

@@ -15,14 +15,23 @@ main {
 // --------------------------------------------------------------------------------
 // main :: index view
 // --------------------------------------------------------------------------------
-main {
+main.index {
 	.menu_area {
 		margin:-6px;
 		.container {
 			display:grid;
-			grid-template-columns: 50% 25% 25%;
-			// grid-template-columns: minmax(410px,800px) minmax(246px,320px) minmax(246px,320px);
-			grid-template-rows: minmax(160px,240px) minmax(160px,240px);
+			grid-template-columns: 1fr repeat(2,332px);
+			grid-template-rows: repeat(2,252px);
+
+			@include media ('>1280px','<=1920px') {
+				grid-template-columns: 1fr repeat(2,19.21875vw);
+				grid-template-rows: repeat(2,13.4375vw);
+			}
+
+			@include media ('<=1280px') {
+				grid-template-columns: 422px 1fr 1fr;
+				grid-template-rows: repeat(2,172px);
+			}
 
 			> div,
 			> a {
@@ -34,12 +43,35 @@ main {
 				grid-row-start:1;
 				grid-row-end:3;
 			}
+
+			a {
+				display:flex;
+				flex-direction:column;
+				justify-content:flex-end;
+
+				background-position:32px 32px;
+				background-repeat:no-repeat;
+				background-size:22px 22px;
+			}
+
+			a.transfer {
+				background-image:url('../image/icon-transaction.svg');
+			}
+
+			a.ram_market {
+				background-image:url('../image/icon-server.svg');
+			}
+
+			a.vote {
+				background-image:url('../image/icon-vote-circle.svg');
+			}
+
+			a.proxy_vote {
+				background-image:url('../image/icon-vote-eoshub.svg');
+			}
 		}
 	}
 
-	.dapps {
-		margin-top:40px;
-	}
 }
 
 
@@ -47,13 +79,13 @@ main {
 
 
 // --------------------------------------------------------------------------------
-// details :: menus
+// details :: index > menus
 // --------------------------------------------------------------------------------
-main .menu_area h2 {
+main.index .menu_area h2 {
 	@include screen_reader();
 }
 
-main .menu_area .container {
+main.index .menu_area .container {
 	.greeting,
 	.card {
 		background-color:#282828;
@@ -71,6 +103,19 @@ main .menu_area .container {
 
 	.greeting {
 		padding:48px;
+		background-image:url('../image/bi-hubby-cutted.svg');
+		background-position:right bottom;
+		background-repeat:no-repeat;
+		background-size:333px 300px;
+
+		@include media ('>1280px','<=1920px') {
+			background-size:16.84375vw auto;
+		}
+		@include media ('<=1280px') {
+			background-size:209px 184px;
+		}
+
+
 		h3 {
 			font-size: rem(24);
 			line-height: 1.25;
@@ -94,13 +139,17 @@ main .menu_area .container {
 
 
 // --------------------------------------------------------------------------------
-// details :: dapps
+// details :: index > dapps
 // --------------------------------------------------------------------------------
-main .dapps {
+main.index .dapps {
+	margin-top:40px;
+
 	h2 {
 		font-size: rem(20);
 		color: $white;
 		padding-left:32px;
+		background:url('../image/icon-application.svg') left center no-repeat;
+		background-size:22px 22px;
 
 		+ p {
 			font-size:rem(14);
@@ -111,7 +160,7 @@ main .dapps {
 		display:flex;
 		align-items:center;
 		justify-content:center;
-		height: 120px;
+		height:240px;
 		border-radius: 4px;
 		background-image: linear-gradient(97deg, #d735df, #4239fc);
 		color:$white;
@@ -120,6 +169,7 @@ main .dapps {
 	}
 
 	.container {
+		display:none;	// !!!!!! 임시임
 		margin-top:12px;
 		display:flex;
 
@@ -155,5 +205,134 @@ main .dapps {
 			}
 		}
 
+	}
+}
+
+
+
+
+
+
+
+
+// --------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------
+
+
+
+
+
+// --------------------------------------------------------------------------------
+// main :: join process
+// --------------------------------------------------------------------------------
+
+main.join { /* namespace */ }
+
+// common asset
+main.join {
+
+	h2 + p {
+		font-size:$small;
+	}
+
+	input[type='email'] {
+		outline: 0;
+		padding: 14px 0 14px 31px;
+
+		border: 0;
+		border-bottom: 1px solid #e8e8e8;
+		width: 100%;
+		box-sizing: border-box;
+
+		background:url('../image/icon-mail.svg') left center no-repeat;
+	}
+
+	button.ok.button {
+		width:100%;
+		outline:0;
+		display:inline-block;
+
+		line-height:50px;
+		height: 52px;
+
+		border-radius: 2px;
+		background-image: $pink_gradient;
+		color:$white;
+
+		font-size:$small;
+
+		&:disabled {
+			background-image:none;
+			background-color: #282828;
+		}
+	}
+	article[data-step="validate-email"],
+	article[data-step="validate-email-ok"] {
+		width:400px;
+
+		div.btn_area {
+			margin-top:32px;
+		}
+	}
+}
+
+
+
+
+main.join {
+
+	article[data-step="validate-email"] {
+
+		form {
+			span.validate {
+				font-size:$small;
+				height:20px;
+				background-size: 20px;
+				padding-left: 28px;
+				margin-top:12px;
+				display:block;
+
+				visibility:hidden;
+			}
+
+			input[valid] + span.validate {
+				visibility:visible;
+				color: #79c720;
+				background: url(../image/icon-check-circle.svg) left center no-repeat;
+			}
+
+			input[invalid] + span.validate {
+				visibility:visible;
+				color: #ff6b64;
+				background: url(../image/icon-x-circle.svg) left center no-repeat;
+			}
+		}
+
+
+		p.exist_account {
+			text-align:center;
+			font-size:$small;
+
+			a {
+				color:$white;
+				margin-left:0.6em;
+				text-decoration:underline;
+
+				&:visited {
+					color:$purple;
+				}
+			}
+		}
+	}
+
+	article[data-step="validate-email-ok"] {
+		height:calc(100vh - #{$header_height});
+		text-align:center;
+
+		padding-top:61px + 32px;
+		background:url('../image/shape.svg#white') top center no-repeat;
+		background-size:61px 67px;
 	}
 }

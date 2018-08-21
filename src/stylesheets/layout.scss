@@ -14,7 +14,7 @@ body {
 }
 
 div#elm-target {
-	height:inherit;
+	height:100vh;
 	box-sizing:border-box;
 
 	min-width:$browser_min_width;
@@ -68,10 +68,14 @@ section.content {
 	display:flex;
 	justify-content:center;
 
-	padding:$header_height 0;
-	padding-left:$lnb_width;
+	padding-top:$header_height;
 
-	main {
+	// gnb가 있는 경우에만 필요함
+	nav ~ & {
+		padding-left:$lnb_width;
+	}
+
+	main.index {
 		height:inherit;
 		box-sizing:border-box;
 		max-width:1560px;
@@ -88,7 +92,6 @@ section.content {
 		}
 		@include media ('<=1280px') {
 			padding:27px;
-			width:980px;
 			margin-left:240px;
 		}
 
@@ -122,10 +125,10 @@ aside {
 	}
 }
 
-main {
+main.index {
 	transition:margin 0.4s;
 }
 
-aside.shrink + main {
+aside.shrink + main.index {
 	margin-left:0;
 }

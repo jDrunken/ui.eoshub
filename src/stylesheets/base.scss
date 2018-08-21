@@ -133,7 +133,6 @@ table {
 
 
 
-
 // link
 a {
 	color:inherit;
@@ -145,14 +144,26 @@ a:link {
 }
 
 
+
+// --------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------
+
+
 // input
 input[type="text"] {
 	color:inherit;
 	border-color:transparent;
 }
 
+
+input[type="email"]::placeholder {
+	color:$gray;
+}
+
 // button
 button {
 	color:inherit;
 	border-color:transparent;
+
 }
