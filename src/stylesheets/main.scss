@@ -237,7 +237,8 @@ main.join {
 		font-size:$small;
 	}
 
-	input[type='email'] {
+	input[type='email'],
+	input[type='text'] {
 		outline: 0;
 		padding: 14px 0 14px 31px;
 
@@ -245,36 +246,135 @@ main.join {
 		border-bottom: 1px solid #e8e8e8;
 		width: 100%;
 		box-sizing: border-box;
+	}
 
+	input[type='email'] {
 		background:url('../image/icon-mail.svg') left center no-repeat;
 	}
 
-	button.ok.button {
-		width:100%;
-		outline:0;
-		display:inline-block;
+	input[type='text'] {
+		background:url('../image/icon-id-default.svg') left center no-repeat;
+	}
 
-		line-height:50px;
-		height: 52px;
+	div.btn_area {
+		margin-top:32px;
+		display:flex;
 
-		border-radius: 2px;
-		background-image: $pink_gradient;
-		color:$white;
+		button.button {
+			flex:1;
+			outline:0;
+			display:inline-block;
 
-		font-size:$small;
+			line-height:50px;
+			height: 52px;
 
-		&:disabled {
-			background-image:none;
-			background-color: #282828;
+			border-radius: 2px;
+
+			font-size:$small;
+
+			&.ok {
+				background-image: $pink_gradient;
+				color:$white;
+			}
+
+			&.copy {
+				border:1px solid $white;
+			}
+
+			&:disabled {
+				background-image:none;
+				background-color: #282828;
+			}
+
+			&:last-child {
+				margin-left:8px;
+			}
 		}
 	}
-	article[data-step="validate-email"],
-	article[data-step="validate-email-ok"] {
-		width:400px;
 
-		div.btn_area {
-			margin-top:32px;
+	article {
+		box-sizing:border-box;
+	}
+
+
+	article[data-step="validate-email"],
+	article[data-step="validate-email-ok"],
+	article[data-step="copy-key-pair"] {
+		width:400px;
+	}
+
+	article[data-step="validate-email"],
+	article[data-step="make-account"],
+	article[data-step="copy-key-pair"] {
+		padding-top:127px;
+	}
+
+	form {
+		span.validate {
+			font-size:$small;
+			height:20px;
+			background-size: 20px;
+			padding-left: 28px;
+			margin-top:12px;
+			display:block;
+
+			visibility:hidden;
 		}
+
+		input[valid] + span.validate {
+			visibility:visible;
+			color: #79c720;
+			background: url(../image/icon-check-circle.svg) left center no-repeat;
+		}
+
+		input[invalid] + span.validate {
+			visibility:visible;
+			color: #ff6b64;
+			background: url(../image/icon-x-circle.svg) left center no-repeat;
+		}
+	}
+
+	span[data-progress] {
+		display:flex;
+		align-items:center;
+		justify-content:space-between;
+		font-size:$xx-large;
+		font-weight: 100;
+		font-style: normal;
+		font-stretch: normal;
+		line-height: 1.19;
+		letter-spacing: normal;
+		color: #ffffff;
+		margin-bottom:24px;
+
+		&:after {
+			content:'';
+			display:inline-block;
+			width:46px;
+			height:10px;
+		}
+
+		&[data-progress="01"]:after {
+			background:
+			radial-gradient(circle at 5px, #ff5252 0, #aa00ff 5px, transparent 5px),
+			radial-gradient(circle at center, #666 5px, transparent 5px),
+			radial-gradient(circle at 40px, #666 5px, transparent 5px);
+		}
+
+		&[data-progress="02"]:after {
+			background:
+			radial-gradient(circle at 5px, #ff5252 0, #aa00ff 5px, transparent 5px),
+			radial-gradient(circle at center, #ff5252 0, #aa00ff 5px, transparent 5px),
+			radial-gradient(circle at 40px, #666 5px, transparent 5px);
+		}
+
+		&[data-progress="03"]:after {
+			background:
+			radial-gradient(circle at 5px, #ff5252 0, #aa00ff 5px, transparent 5px),
+			radial-gradient(circle at center, #ff5252 0, #aa00ff 5px, transparent 5px),
+			radial-gradient(circle at 40px, #ff5252 0, #aa00ff 5px, transparent 5px);
+		}
+
 	}
 }
 
@@ -282,9 +382,7 @@ main.join {
 
 
 main.join {
-
 	article[data-step="validate-email"] {
-
 		form {
 			span.validate {
 				font-size:$small;
@@ -331,8 +429,63 @@ main.join {
 		height:calc(100vh - #{$header_height});
 		text-align:center;
 
-		padding-top:61px + 32px;
-		background:url('../image/shape.svg#white') top center no-repeat;
+		padding-top:67px + 32px;
+		background:url('../image/bi-hubby.svg#white') center calc(50% - 67px - 32px) no-repeat;
 		background-size:61px 67px;
+
+		display:flex;
+		flex-direction:column;
+		justify-content:center;
+
+	}
+
+	article[data-step*="make-account"] {
+		form {
+			margin-top:104px;
+		}
+	}
+
+	article[data-step="copy-key-pair"] {
+		dl.keybox {
+			margin:40px 0 0;
+
+			display:grid;
+			grid-template-columns:20% auto;
+
+			dt,dd  {
+				box-sizing:border-box;
+				padding:0 16px;
+				line-height:62px;
+				font-size:$small;
+				margin-top:1px;
+			}
+
+			dt {
+				background:#232323;
+				color:$white;
+			}
+
+			dd {
+				background-color:#282828;
+				color:#999;
+				overflow-x:hidden;
+				text-overflow:ellipsis;
+			}
+		}
+
+		textarea.hidden_copy_field {
+			border: 0;
+			clip: rect(1px, 1px, 1px, 1px);
+			clip-path: inset(50%);
+			height: 1px;
+			margin: -1px;
+			overflow: hidden;
+			padding: 0;
+			position: absolute !important;
+			width: 1px;
+			word-wrap: normal !important;
+		}
 	}
 }
+
+
