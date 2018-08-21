@@ -1,7 +1,48 @@
-<!-- @@master = ../template/master-join.html -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
 
 
-<!-- @@block = main -->
+<meta charset="UTF-8">
+
+<title>EOShub</title>
+
+<meta charset="utf-8">
+
+<meta name="description" content="">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta property="og:title" content="eoshub">
+<meta property="og:description" content="eoshub">			
+<meta property="og:image" content="https://eoshub.io/">
+<meta property="og:url" content="https://eoshub.io/">
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?">
+
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+</head>
+<body>
+
+<div id="elm-target">
+	
+<header>
+	<h1>eoshub</h1>
+	<div class="language">
+		<button type="button" class="selected">한글</button>
+		<button type="button">EN</button>
+		<button type="button">中国</button>
+	</div>
+	<form action="./">
+		<input type="text" placeholder="계정명, 공개 키 검색하기" />
+		<button type="button">검색</button>
+	</form>
+</header>
+
+
+	<section class="content">
+
 <main class="join">
 	<article data-step="validate-email">
 		<h2>새로운 계정을 만들기 위해<br />
@@ -9,24 +50,24 @@
 		<p>받으신 메일의 링크를 클릭해주세요.</p>
 
 		<form action="">
-			<!-- valid / invalid 프로퍼티로 밸리데이션 여부를 체크합니다 -->
+			
 			<input type="email" placeholder="example@email.com" required />
 			<span class="validate">이메일을 확인해주세요!</span>
 		</form>
 
 		<form action="">
-			<!-- valid / invalid 프로퍼티로 밸리데이션 여부를 체크합니다 -->
+			
 			<input type="email" placeholder="example@email.com" required valid />
 			<span class="validate">이메일을 확인해주세요!</span>
 		</form>
 
 		<form action="">
-			<!-- valid / invalid 프로퍼티로 밸리데이션 여부를 체크합니다 -->
+			
 			<input type="email" placeholder="example@email.com" required invalid />
 			<span class="validate">이미 존재하는 이메일입니다.</span>
 		</form>
 		<div class="btn_area">
-			<!-- blocking에는 disabled proerty를 더해주세요.-->
+			
 			<button type="button" class="send_email ok button">링크 보내기</button>
 		</div>
 
@@ -36,7 +77,7 @@
 		</p>
 	</article>
 
-	<!-- 데모용 스크립트입니다. -->
+	
 	<script>
 	document.querySelector('button.send_email.button').addEventListener('click',function(){
 		this.removeAttribute('disabled');
@@ -44,4 +85,8 @@
 	});
 	</script>
 </main>
-<!-- @@close -->
+
+	</section>
+</div>
+</body>
+</html>
