@@ -134,6 +134,8 @@ input, textarea, table, th, td, fieldset, button {
   font-size: inherit;
 }
 
+input[type='checkbox'] + label,
+input[type='radio'] + label,
 input[type="submit"],
 button {
   cursor: pointer;
@@ -179,6 +181,7 @@ input[type='checkbox'] {
   position: absolute !important;
   width: 1px;
   word-wrap: normal !important;
+  visibility: hidden;
 }
 
 input[type='checkbox']:focus {
@@ -199,21 +202,31 @@ input[type='checkbox']:focus {
 }
 
 input[type='checkbox'] + label {
-  padding-left: 1.5rem;
-  position: relative;
+  transition: color 0.4s;
 }
 
-input[type='checkbox'] + label:before, input[type='checkbox'] + label:after {
+input[type='checkbox'] + label:before {
   content: '';
-  left: 0;
-  top: calc((20px - 1em) / 2);
-  position: absolute;
+  vertical-align: calc((1em - 20px) / 2);
   display: inline-block;
   font-size: inherit;
   width: 1rem;
   height: 1rem;
-  background: #600;
   line-height: inherit;
+  border-radius: 2px;
+  margin-right: 0.6em;
+  border: 1px solid #5d5d5d;
+  transition: background 0.4s;
+}
+
+input[type='checkbox'] + label:hover,
+input[type='checkbox']:checked + label {
+  color: #ffffff;
+}
+
+input[type='checkbox']:checked + label:before {
+  border-color: transparent;
+  background: url("../image/check.svg") center center no-repeat #aa00ff;
 }
 
 button {
@@ -366,12 +379,18 @@ header {
 }
 
 header h1 {
-  text-indent: -999em;
-  overflow: hidden;
   width: 95px;
   height: 20px;
   background: url("../image/logo-eoshub.svg#white") center center no-repeat transparent;
   background-size: contain;
+}
+
+header h1 a {
+  display: inline-block;
+  width: inherit;
+  height: inherit;
+  text-indent: -999em;
+  overflow: hidden;
 }
 
 header div.language {
@@ -1004,7 +1023,8 @@ main.join div.btn_area {
   display: flex;
 }
 
-main.join button[type="button"].button {
+main.join button[type="button"].button,
+main.join a.button {
   flex: 1;
   outline: 0;
   display: inline-block;
@@ -1014,26 +1034,37 @@ main.join button[type="button"].button {
   font-size: 0.875rem;
 }
 
-main.join button[type="button"].button.purple {
+main.join button[type="button"].button.purple,
+main.join a.button.purple {
   background: #aa00ff;
   color: #ffffff;
 }
 
-main.join button[type="button"].button.pink {
-  background-image: linear-gradient(97deg, #ff5252, #aa00ff);
+main.join button[type="button"].button.pink,
+main.join a.button.pink {
+  background-image: linear-gradient(111deg, #ff606b, #ff1f90);
   color: #ffffff;
 }
 
-main.join button[type="button"].button.mono {
-  border: 1px solid #999;
-}
-
-main.join button[type="button"].button:disabled {
+main.join button[type="button"].button.gray,
+main.join a.button.gray {
   background-image: none;
   background-color: #282828;
 }
 
-main.join button[type="button"].button:last-child {
+main.join button[type="button"].button.mono,
+main.join a.button.mono {
+  border: 1px solid #999;
+}
+
+main.join button[type="button"].button:disabled,
+main.join a.button:disabled {
+  background-image: none;
+  background-color: #282828;
+}
+
+main.join button[type="button"].button:last-child,
+main.join a.button:last-child {
   margin-left: 8px;
 }
 
@@ -1044,15 +1075,17 @@ main.join article {
 main.join article[data-step="validate-email"],
 main.join article[data-step="validate-email-ok"],
 main.join article[data-step="copy-key-pair"],
-main.join article[data-step="payment-info"] {
+main.join article[data-step="payment-info"],
+main.join article[data-step="done"] {
   width: 400px;
 }
 
 main.join article[data-step="validate-email"],
 main.join article[data-step="make-account"],
 main.join article[data-step="copy-key-pair"],
-main.join article[data-step="payment-info"] {
-  padding-top: 127px;
+main.join article[data-step="payment-info"],
+main.join article[data-step="done"] {
+  padding-top: 19vh;
 }
 
 main.join form span.validate {
@@ -1097,6 +1130,7 @@ main.join dl dt:nth-of-type(1), main.join dl dd:nth-of-type(1) {
 
 main.join dl dt {
   background: #232323;
+  text-align: center;
   color: #ffffff;
 }
 
@@ -1253,6 +1287,11 @@ main.join article[data-step="payment-info"] p.amount strong {
 main.join article[data-step="payment-info"] dl.invoice {
   grid-template-columns: 30% auto;
   text-align: center;
+}
+
+main.join article[data-step="done"] {
+  background: url("../image/bi-hubby.svg#pink") right calc(50% - 67px) no-repeat;
+  background-size: 61px 67px;
 }
 
 /*# sourceMappingURL=style.css.map */
