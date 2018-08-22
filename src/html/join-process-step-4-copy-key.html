@@ -17,8 +17,8 @@
 		</dl>
 
 		<div class="btn_area">
-			<button type="button" id="copy" class="button middle copy blue_white">한번에 복사하기</button>
-			<button type="button" class="ok button" disabled>다음</button>
+			<button type="button" id="copy" class="button mono">한번에 복사하기</button>
+			<button type="button" class="pink button" disabled>다음</button>
 		</div>
 
 		<textarea id="key" wai-aria="hidden" class="hidden_copy_field">PublicKey:sdfsdfsdf
@@ -41,12 +41,12 @@
 			var target = document.getElementById('key');
 			target.select();
 			document.execCommand("copy");
-			document.querySelector('button.ok.button').removeAttribute('disabled');
+			document.querySelector('button.pink.button').removeAttribute('disabled');
 		});
 		</script>
 
 		<script>
-		document.querySelector('button.ok.button').addEventListener('click',function () {
+		document.querySelector('button.pink.button').addEventListener('click',function () {
 			location.pathname="join-process-step-5-payment-info.html";
 		});
 		</script>

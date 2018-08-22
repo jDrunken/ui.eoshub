@@ -185,7 +185,7 @@ aside {
 
 					&:after {
 						content:'EOS';
-						font-size:$x_small;
+						font-size:$x-small;
 						display:inline-block;
 						margin-left:0.4em;
 						vertical-align:text-bottom;
@@ -194,7 +194,7 @@ aside {
 
 				&.status,
 				&.remaining.time {
-					font-size:$x_small;
+					font-size:$x-small;
 					top:$y + 2px;
 					right:$x;
 				}

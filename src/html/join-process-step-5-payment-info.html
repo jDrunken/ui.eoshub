@@ -3,58 +3,43 @@
 
 <!-- @@block = main -->
 <main class="join">
-	<article data-step="join-process-step-5-payment-info">
+	<article data-step="payment-info">
 		<span class="progress" data-progress="03">03</span>
 		<h2>결제정보</h2>
 		<p>이오스 계정을 생성하기 위해서는 일정량의 네트워크 자원을 구매해야 합니다.
-		이오스허브는 수수료 없이 해당 자원을 구매 대행합니다.</p>
+			이오스허브는 수수료 없이 해당 자원을 구매 대행합니다.</p>
 
 		<dl class="invoice">
 			<dt>CPU</dt>
-			<dd>0.5</dd>
+			<dd>0.5 EOS</dd>
 
 			<dt>NET</dt>
-			<dd>0.5</dd>
+			<dd>0.5 EOS</dd>
 
 			<dt>RAM</dt>
-			<dd>1</dd>
+			<dd>1 EOS</dd>
 		</dl>
 
-		<div class="btn_area">
-			<button type="button" id="copy" class="button middle copy blue_white">한번에 복사하기</button>
-			<button type="button" class="ok button" disabled>다음</button>
+		<div class="select_payment_type area">
+			<button type="button" class="mono button">가상계좌</button>
+			<button type="button" class="purple button">신용카드</button>
+			<p class="amount">
+				총 결제금액 <strong>11,320</strong> 원
+			</p>
 		</div>
 
-		<textarea id="key" wai-aria="hidden" class="hidden_copy_field">PublicKey:sdfsdfsdf
-		PrivateKey:wefwefwefwef</textarea>
-
-		<!-- 데모용 스크립트입니다. -->
-
+		<div class="confirm area">
+			<form action="">
+				<input type="checkbox" id="agreeContract">
+				<label for="agreeContract">EOS Consitution에 동의합니다.</label>
+			</form>
+			<button type="button" class="pink button">결제하기</button>
+		</div>
 		<script>
-		function myFunction() {
-			/* Get the text field */
-			var copyText = document.getElementById("myInput");
-			/* Select the text field */
-			copyText.select();
-			/* Copy the text inside the text field */
-			document.execCommand("copy");
-			/* Alert the copied text */
-			alert("Copied the text: " + copyText.value);
-		}
-		document.getElementById('copy').addEventListener('click',function (){
-			var target = document.getElementById('key');
-			target.select();
-			document.execCommand("copy");
-			document.querySelector('button.ok.button').removeAttribute('disabled');
-		});
-		</script>
-
-		<script>
-		document.querySelector('button.ok.button').addEventListener('click',function () {
-			location.pathname="join-process-step-5-payment-info.html";
+		document.querySelector('button.pink.button').addEventListener('click',function () {
+			location.pathname="join-process-step-6-done.html";
 		});
 		</script>
 	</article>
-</article>
 </main>
 <!-- @@close -->

@@ -104,6 +104,8 @@ input,textarea,table,th,td,fieldset,button {
 
 
 // base ux feedback (GUI - mouse)
+input[type='checkbox']+label,
+input[type='radio']+label,
 input[type="submit"],
 button {
     cursor:pointer;
@@ -161,9 +163,50 @@ input[type="email"]::placeholder {
 	color:$gray;
 }
 
+input[type='checkbox'] {
+	@include screen_reader();
+	visibility:hidden;
+
+	+ label {
+
+		transition:color 0.4s;
+		&:before {
+			content:'';
+			vertical-align:calc((1em - 20px) / 2);
+			display:inline-block;
+			font-size:inherit;
+			width:1rem;
+			height:1rem;
+			line-height:inherit;
+			border-radius:2px;
+			margin-right:0.6em;
+
+			border:1px solid $dark-gray;
+			transition:background 0.4s;
+		}
+
+		// uncheck
+		&:before {
+			// background-color:$gray;
+		}
+
+	}
+
+	+ label:hover,
+	&:checked + label {
+		color:$white;
+	}
+
+	&:checked {
+		& + label:before {
+			border-color:transparent;
+			background:url('../image/check.svg') center center no-repeat $purple;
+		}
+	}
+}
+
 // button
 button {
 	color:inherit;
 	border-color:transparent;
-
 }
