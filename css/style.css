@@ -290,6 +290,7 @@ nav {
   height: inherit;
   top: 64px;
   left: 0;
+  bottom: 0;
   z-index: 50;
 }
 
@@ -492,6 +493,10 @@ nav button.dashboard.toggle:hover {
   background-color: #282828;
 }
 
+nav a.resource {
+  background-image: url("../image/icon-resource.svg");
+}
+
 nav a.transfer {
   background-image: url("../image/icon-transaction.svg");
 }
@@ -501,10 +506,6 @@ nav a.ram_market {
 }
 
 nav a.vote {
-  background-image: url("../image/icon-vote-circle.svg");
-}
-
-nav a.proxy_vote {
   background-image: url("../image/icon-vote-eoshub.svg");
 }
 
@@ -881,6 +882,10 @@ main.index .menu_area .container a {
   background-size: 22px 22px;
 }
 
+main.index .menu_area .container a.resource {
+  background-image: url("../image/icon-resource.svg");
+}
+
 main.index .menu_area .container a.transfer {
   background-image: url("../image/icon-transaction.svg");
 }
@@ -890,10 +895,6 @@ main.index .menu_area .container a.ram_market {
 }
 
 main.index .menu_area .container a.vote {
-  background-image: url("../image/icon-vote-circle.svg");
-}
-
-main.index .menu_area .container a.proxy_vote {
   background-image: url("../image/icon-vote-eoshub.svg");
 }
 
