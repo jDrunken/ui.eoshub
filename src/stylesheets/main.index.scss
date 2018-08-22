@@ -54,6 +54,10 @@ main.index {
 				background-size:22px 22px;
 			}
 
+			a.resource {
+				background-image:url('../image/icon-resource.svg');
+			}
+
 			a.transfer {
 				background-image:url('../image/icon-transaction.svg');
 			}
@@ -63,10 +67,6 @@ main.index {
 			}
 
 			a.vote {
-				background-image:url('../image/icon-vote-circle.svg');
-			}
-
-			a.proxy_vote {
 				background-image:url('../image/icon-vote-eoshub.svg');
 			}
 		}
