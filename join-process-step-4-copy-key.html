@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+
+
+<meta charset="UTF-8">
+
+<title>EOShub</title>
+
+<meta charset="utf-8">
+
+<meta name="description" content="">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta property="og:title" content="eoshub">
+<meta property="og:description" content="eoshub">			
+<meta property="og:image" content="https://eoshub.io/">
+<meta property="og:url" content="https://eoshub.io/">
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?">
+
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+</head>
+<body>
+
+<div id="elm-target">
+	
+<header>
+	<h1>eoshub</h1>
+	<div class="language">
+		<button type="button" class="selected">한글</button>
+		<button type="button">EN</button>
+		<button type="button">中国</button>
+	</div>
+	<form action="./">
+		<input type="text" placeholder="계정명, 공개 키 검색하기" />
+		<button type="button">검색</button>
+	</form>
+</header>
+
+
+	<section class="content">
+
+<main class="join">
+	<article data-step="copy-key-pair">
+		<span class="progress" data-progress="02">02</span>
+		<h2>키 쌍을 꼭 안전한 곳에 복사해두세요!</h2>
+		<p>계정을 증명할 중요한 정보니 복사하여 안전하게 보관하세요!</p>
+
+		<dl class="keybox">
+			<dt>공개 키</dt>
+			<dd>werwerewrwrwerwerwerwerwerewrwrwerwerwerwerwerewrwrwerwerwerwwwwerwerewrwrwerwerwerw</dd>
+
+			<dt>개인 키</dt>
+			<dd>werwerewrwrwerwerwerw</dd>
+		</dl>
+
+		<div class="btn_area">
+			<button type="button" id="copy" class="button mono">한번에 복사하기</button>
+			<button type="button" class="pink button" disabled>다음</button>
+		</div>
+
+		<textarea id="key" wai-aria="hidden" class="hidden_copy_field">PublicKey:sdfsdfsdf
+		PrivateKey:wefwefwefwef</textarea>
+
+		
+
+		<script>
+		function myFunction() {
+			/* Get the text field */
+			var copyText = document.getElementById("myInput");
+			/* Select the text field */
+			copyText.select();
+			/* Copy the text inside the text field */
+			document.execCommand("copy");
+			/* Alert the copied text */
+			alert("Copied the text: " + copyText.value);
+		}
+		document.getElementById('copy').addEventListener('click',function (){
+			var target = document.getElementById('key');
+			target.select();
+			document.execCommand("copy");
+			document.querySelector('button.ok.button').removeAttribute('disabled');
+		});
+		</script>
+
+		<script>
+		document.querySelector('button.ok.button').addEventListener('click',function () {
+			location.pathname="join-process-step-5-payment-info.html";
+		});
+		</script>
+	</article>
+</article>
+</main>
+
+	</section>
+</div>
+</body>
+</html>

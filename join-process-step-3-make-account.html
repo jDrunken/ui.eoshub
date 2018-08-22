@@ -44,46 +44,35 @@
 	<section class="content">
 
 <main class="join">
-	<article data-step="validate-email">
-		<h2>새로운 계정을 만들기 위해<br />
-			이메일을 인증하세요!</h2>
-		<p>받으신 메일의 링크를 클릭해주세요.</p>
+	<article data-step="make-account">
+		<span class="progress" data-progress="01">01</span>
+		<h2>원하는 계정의 이름을 입력해주세요!</h2>
+		<p>계정명은 1~5 사이의 숫자와 영어 소문자의 조합으로 12글자만 가능합니다.</p>
 
-		<form action="">
-			
-			<input type="email" placeholder="example@email.com" required />
-			<span class="validate">이메일을 확인해주세요!</span>
+		<form>
+			<input type="text" class="account_name" placeholder="ex) eoshuby12345" required="">
 		</form>
 
-		<form action="">
-			
-			<input type="email" placeholder="example@email.com" required valid />
-			<span class="validate">이메일을 확인해주세요!</span>
+		<form>
+			<input type="text" class="account_name" placeholder="ex) eoshuby12345" required="" invalid="">
+			<span class="validate">이미 존재하는 계정입니다.</span>
 		</form>
 
-		<form action="">
-			
-			<input type="email" placeholder="example@email.com" required invalid />
-			<span class="validate">이미 존재하는 이메일입니다.</span>
+		<form>
+			<input type="text" class="account_name" placeholder="ex) eoshuby12345" required="" valid="">
+			<span class="validate">가능한 ID에요</span>
 		</form>
 		<div class="btn_area">
-			
-			<button type="button" class="send_email pink button">링크 보내기</button>
+			<button type="button" class="pink button">다음</button>
 		</div>
-
-		<p class="exist_account">
-			이미 이오스 계정이 있으신가요?
-			<a href="index-view.html">로그인하기</a>
-		</p>
+		
+		<script>
+		document.querySelector('button.ok.button').addEventListener('click',function(){
+			this.removeAttribute('disabled');
+			location.pathname="join-process-step-4-copy-key.html";
+		});
+		</script>
 	</article>
-
-	
-	<script>
-	document.querySelector('button.send_email.button').addEventListener('click',function(){
-		this.removeAttribute('disabled');
-		location.pathname="join-process-step-2-ok-auth.html";
-	});
-	</script>
 </main>
 
 	</section>

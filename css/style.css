@@ -168,6 +168,54 @@ input[type="email"]::placeholder {
   color: #999;
 }
 
+input[type='checkbox'] {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  width: 1px;
+  word-wrap: normal !important;
+}
+
+input[type='checkbox']:focus {
+  background-color: #eee;
+  clip: auto !important;
+  clip-path: none;
+  color: #444;
+  display: block;
+  font-size: 1em;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000;
+}
+
+input[type='checkbox'] + label {
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+input[type='checkbox'] + label:before, input[type='checkbox'] + label:after {
+  content: '';
+  left: 0;
+  top: calc((20px - 1em) / 2);
+  position: absolute;
+  display: inline-block;
+  font-size: inherit;
+  width: 1rem;
+  height: 1rem;
+  background: #600;
+  line-height: inherit;
+}
+
 button {
   color: inherit;
   border-color: transparent;
@@ -929,44 +977,167 @@ main.join {
 }
 
 main.join h2 + p {
+  line-height: 1.6;
   font-size: 0.875rem;
 }
 
-main.join input[type='email'] {
+main.join input[type='email'],
+main.join input[type='text'] {
   outline: 0;
   padding: 14px 0 14px 31px;
   border: 0;
   border-bottom: 1px solid #e8e8e8;
   width: 100%;
   box-sizing: border-box;
+}
+
+main.join input[type='email'] {
   background: url("../image/icon-mail.svg") left center no-repeat;
 }
 
-main.join button.ok.button {
-  width: 100%;
+main.join input[type='text'] {
+  background: url("../image/icon-id-default.svg") left center no-repeat;
+}
+
+main.join div.btn_area {
+  margin-top: 32px;
+  display: flex;
+}
+
+main.join button[type="button"].button {
+  flex: 1;
   outline: 0;
   display: inline-block;
   line-height: 50px;
   height: 52px;
   border-radius: 2px;
-  background-image: linear-gradient(97deg, #ff5252, #aa00ff);
-  color: #ffffff;
   font-size: 0.875rem;
 }
 
-main.join button.ok.button:disabled {
+main.join button[type="button"].button.purple {
+  background: #aa00ff;
+  color: #ffffff;
+}
+
+main.join button[type="button"].button.pink {
+  background-image: linear-gradient(97deg, #ff5252, #aa00ff);
+  color: #ffffff;
+}
+
+main.join button[type="button"].button.mono {
+  border: 1px solid #999;
+}
+
+main.join button[type="button"].button:disabled {
   background-image: none;
   background-color: #282828;
 }
 
+main.join button[type="button"].button:last-child {
+  margin-left: 8px;
+}
+
+main.join article {
+  box-sizing: border-box;
+}
+
 main.join article[data-step="validate-email"],
-main.join article[data-step="validate-email-ok"] {
+main.join article[data-step="validate-email-ok"],
+main.join article[data-step="copy-key-pair"],
+main.join article[data-step="payment-info"] {
   width: 400px;
 }
 
-main.join article[data-step="validate-email"] div.btn_area,
-main.join article[data-step="validate-email-ok"] div.btn_area {
-  margin-top: 32px;
+main.join article[data-step="validate-email"],
+main.join article[data-step="make-account"],
+main.join article[data-step="copy-key-pair"],
+main.join article[data-step="payment-info"] {
+  padding-top: 127px;
+}
+
+main.join form span.validate {
+  font-size: 0.875rem;
+  height: 20px;
+  background-size: 20px;
+  padding-left: 28px;
+  margin-top: 12px;
+  display: block;
+  visibility: hidden;
+}
+
+main.join form input[valid] + span.validate {
+  visibility: visible;
+  color: #79c720;
+  background: url(../image/icon-check-circle.svg) left center no-repeat;
+}
+
+main.join form input[invalid] + span.validate {
+  visibility: visible;
+  color: #ff6b64;
+  background: url(../image/icon-x-circle.svg) left center no-repeat;
+}
+
+main.join dl {
+  margin: 40px 0 0;
+  display: grid;
+  grid-template-columns: 20% auto;
+}
+
+main.join dl dt, main.join dl dd {
+  box-sizing: border-box;
+  padding: 0 16px;
+  line-height: 62px;
+  font-size: 0.875rem;
+  border-top: 1px solid #5d5d5d;
+}
+
+main.join dl dt:nth-of-type(1), main.join dl dd:nth-of-type(1) {
+  border-top-width: 0;
+}
+
+main.join dl dt {
+  background: #232323;
+  color: #ffffff;
+}
+
+main.join dl dd {
+  background-color: #282828;
+  color: #999;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+}
+
+main.join span[data-progress] {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 2rem;
+  font-weight: 100;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.19;
+  letter-spacing: normal;
+  color: #ffffff;
+  margin-bottom: 24px;
+}
+
+main.join span[data-progress]:after {
+  content: '';
+  display: inline-block;
+  width: 46px;
+  height: 10px;
+}
+
+main.join span[data-progress][data-progress="01"]:after {
+  background: radial-gradient(circle at 5px, #ff5252 0, #aa00ff 5px, transparent 5px), radial-gradient(circle at center, #666 5px, transparent 5px), radial-gradient(circle at 40px, #666 5px, transparent 5px);
+}
+
+main.join span[data-progress][data-progress="02"]:after {
+  background: radial-gradient(circle at 5px, #ff5252 0, #aa00ff 5px, transparent 5px), radial-gradient(circle at center, #ff5252 0, #aa00ff 5px, transparent 5px), radial-gradient(circle at 40px, #666 5px, transparent 5px);
+}
+
+main.join span[data-progress][data-progress="03"]:after {
+  background: radial-gradient(circle at 5px, #ff5252 0, #aa00ff 5px, transparent 5px), radial-gradient(circle at center, #ff5252 0, #aa00ff 5px, transparent 5px), radial-gradient(circle at 40px, #ff5252 0, #aa00ff 5px, transparent 5px);
 }
 
 main.join article[data-step="validate-email"] form span.validate {
@@ -1009,9 +1180,79 @@ main.join article[data-step="validate-email"] p.exist_account a:visited {
 main.join article[data-step="validate-email-ok"] {
   height: calc(100vh - 64px);
   text-align: center;
-  padding-top: 93px;
-  background: url("../image/shape.svg#white") top center no-repeat;
+  padding-top: 99px;
+  background: url("../image/bi-hubby.svg#white") center calc(50% - 67px - 32px) no-repeat;
   background-size: 61px 67px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+main.join article[data-step*="make-account"] form {
+  margin-top: 104px;
+}
+
+main.join article[data-step="copy-key-pair"] textarea.hidden_copy_field {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  width: 1px;
+  word-wrap: normal !important;
+}
+
+main.join article[data-step="payment-info"] .select_payment_type.area {
+  margin-top: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #5d5d5d;
+  display: flex;
+  align-items: center;
+}
+
+main.join article[data-step="payment-info"] .select_payment_type.area button.button {
+  height: 36px;
+  line-height: 34px;
+  max-width: 96px;
+  padding: 0;
+  margin-right: 0.6em;
+}
+
+main.join article[data-step="payment-info"] .confirm.area {
+  margin-top: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+main.join article[data-step="payment-info"] .confirm.area form label {
+  font-size: 0.875rem;
+}
+
+main.join article[data-step="payment-info"] .confirm.area button.button {
+  max-width: 136px;
+}
+
+main.join article[data-step="payment-info"] p.amount {
+  flex: 1;
+  text-align: right;
+  margin: 0;
+  font-size: 0.8125rem;
+}
+
+main.join article[data-step="payment-info"] p.amount strong {
+  font-size: 1.5rem;
+  color: #ffffff;
+  font-weight: 100;
+  margin: 0 0.2em;
+}
+
+main.join article[data-step="payment-info"] dl.invoice {
+  grid-template-columns: 30% auto;
+  text-align: center;
 }
 
 /*# sourceMappingURL=style.css.map */
