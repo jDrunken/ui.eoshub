@@ -448,6 +448,16 @@ nav {
   background: #000;
 }
 
+nav ul, nav li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+nav li {
+  position: relative;
+}
+
 nav button, nav a {
   text-indent: -999em;
   overflow: hidden;
@@ -500,6 +510,47 @@ nav a.proxy_vote {
 
 nav a.dapps {
   background-image: url("../image/icon-application.svg");
+}
+
+nav span.tooltip {
+  position: absolute;
+  top: -999em;
+  left: -999em;
+}
+
+nav button:hover + span.tooltip,
+nav a:hover + span.tooltip {
+  height: 30px;
+  top: 50%;
+  margin-top: -15px;
+  left: 100%;
+  white-space: nowrap;
+  font-size: 0.875rem;
+  background: #000;
+  line-height: calc(30px - 2px * 2);
+  border-radius: 5px;
+  border: 2px solid #5d5d5d;
+  padding: 0 15px;
+}
+
+nav button:hover + span.tooltip:before,
+nav a:hover + span.tooltip:before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: 50%;
+  margin-top: -5px;
+  left: -7px;
+  transform: rotate(-45deg);
+  border-left-width: 2px;
+  border-top-width: 2px;
+  border-right-width: 0;
+  border-bottom-width: 0;
+  border-style: solid;
+  border-color: #5d5d5d;
+  background: #000;
 }
 
 footer {
@@ -927,6 +978,7 @@ main.index .menu_area .container .card h3 {
 }
 
 main.index .dapps {
+  position: relative;
   margin-top: 40px;
 }
 
@@ -989,6 +1041,19 @@ main.index .dapps .container a p {
   font-size: 0.875rem;
   margin: 0;
   color: #999;
+}
+
+main.index a.view.more {
+  font-size: 0.875rem;
+  text-align: right;
+  color: #999;
+  position: absolute;
+  right: 0;
+  top: 34px;
+}
+
+main.index a.view.more:before {
+  content: '+ ';
 }
 
 main.join {
