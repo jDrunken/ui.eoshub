@@ -103,6 +103,10 @@ h2 {
   color: #ffffff;
 }
 
+h2 + p {
+  font-size: 0.875rem;
+}
+
 h3 {
   font-weight: 100;
   color: #ffffff;
@@ -161,7 +165,8 @@ a:link {
   text-decoration: none;
 }
 
-input[type="text"] {
+input[type="text"],
+input[type="email"] {
   color: inherit;
   border-color: transparent;
 }
@@ -259,6 +264,37 @@ input[type='submit']:first-letter {
   text-transform: uppercase;
 }
 
+button[type="button"].button,
+a.button {
+  flex: 1;
+  outline: 0;
+  display: inline-block;
+  line-height: 50px;
+  height: 52px;
+  border-radius: 2px;
+  font-size: 0.875rem;
+}
+
+button[type="button"].button.ok,
+a.button.ok {
+  background-image: linear-gradient(111deg, #ff606b, #ff1f90);
+  color: #ffffff;
+}
+
+button[type="button"].button.undo,
+a.button.undo {
+  border: 1px solid #999;
+}
+
+button[type="button"].button:disabled,
+a.button:disabled {
+  color: #5d5d5d;
+  border-color: #5d5d5d;
+  background: transparent;
+  border: 1px solid #5d5d5d;
+  cursor: not-allowed;
+}
+
 html, body {
   height: 100%;
 }
@@ -313,7 +349,8 @@ nav ~ section.content {
   padding-left: 60px;
 }
 
-section.content main.index {
+section.content main.index,
+section.content main.transfer {
   height: inherit;
   box-sizing: border-box;
   max-width: 1560px;
@@ -323,27 +360,29 @@ section.content main.index {
 }
 
 @media (min-width: 1601px) {
-  section.content main.index {
+  section.content main.index,
+  section.content main.transfer {
     margin-left: calc(300px);
   }
 }
 
 @media (min-width: 1281px) and (max-width: 1600px) {
-  section.content main.index {
+  section.content main.index,
+  section.content main.transfer {
     padding: 2.425vw;
     margin-left: calc(18.75vw);
   }
 }
 
 @media (max-width: 1280px) {
-  section.content main.index {
+  section.content main.index,
+  section.content main.transfer {
     padding: 27px;
     margin-left: 240px;
   }
 }
 
 section.content aside {
-  position: relative;
   box-sizing: border-box;
   position: fixed;
   left: 60px;
@@ -368,6 +407,93 @@ main.index {
 
 aside.shrink + main.index {
   margin-left: 0;
+}
+
+.notification.panel {
+  position: fixed;
+  right: 42px;
+  top: calc(64px + 42px);
+  z-index: -1;
+}
+
+@media (min-width: 1281px) and (max-width: 1600px) {
+  .notification.panel {
+    top: calc(64px + 2.425vw);
+    right: 2.425vw;
+  }
+}
+
+@media (max-width: 1280px) {
+  .notification.panel {
+    top: calc(64px + 17px);
+    right: 27px;
+  }
+}
+
+.notification.panel div {
+  width: 406px;
+  height: 96px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.16);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  padding-left: 40px;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.notification.panel div p {
+  margin: 0;
+  color: #fff;
+}
+
+.notification.panel div a {
+  font-size: 0.8125rem;
+  color: #fff;
+}
+
+.notification.panel div button.close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  text-indent: -999em;
+  overflow: hidden;
+  background: url("../image/icon-close-white-transparent.svg") center center no-repeat;
+  width: 20px;
+  height: 20px;
+  outline: 0;
+  transition: transform 0.1s;
+}
+
+.notification.panel div button.close:hover {
+  transform: scale(1.1);
+}
+
+.notification.panel .view.success {
+  background: url("../image/bi-hubby.svg#white") 285px 36px no-repeat #79c720;
+  background-size: 81px auto;
+}
+
+.notification.panel .view.fail {
+  background: url("../image/bi-hubby.svg#white#alert") 285px 36px no-repeat #ff6b64;
+  background-size: 91px auto;
+}
+
+.notification.panel div {
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  opacity: 0;
+  transform: translateY(-100%);
+}
+
+.notification.panel.viewing {
+  z-index: 1;
+}
+
+.notification.panel.viewing div {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 header {
@@ -729,7 +855,6 @@ aside button.back {
 }
 
 aside .wallet.status {
-  margin: 44px -30px 0;
   padding: 0;
   color: #fff;
   background-color: #232323;
@@ -820,6 +945,11 @@ aside.log.off {
   justify-content: center;
 }
 
+aside.log.in {
+  padding-left: 0;
+  padding-right: 0;
+}
+
 aside.log.in h2 {
   text-align: center;
   font-size: 1rem;
@@ -832,6 +962,10 @@ aside.log.in h2 span.description {
   color: #999;
   font-size: 0.875em;
   font-weight: 100;
+}
+
+aside.log.in .wallet.status {
+  margin: 44px 0;
 }
 
 main {
@@ -1094,51 +1228,6 @@ main.join div.btn_area {
   display: flex;
 }
 
-main.join button[type="button"].button,
-main.join a.button {
-  flex: 1;
-  outline: 0;
-  display: inline-block;
-  line-height: 50px;
-  height: 52px;
-  border-radius: 2px;
-  font-size: 0.875rem;
-}
-
-main.join button[type="button"].button.purple,
-main.join a.button.purple {
-  background: #aa00ff;
-  color: #ffffff;
-}
-
-main.join button[type="button"].button.pink,
-main.join a.button.pink {
-  background-image: linear-gradient(111deg, #ff606b, #ff1f90);
-  color: #ffffff;
-}
-
-main.join button[type="button"].button.gray,
-main.join a.button.gray {
-  background-image: none;
-  background-color: #282828;
-}
-
-main.join button[type="button"].button.mono,
-main.join a.button.mono {
-  border: 1px solid #999;
-}
-
-main.join button[type="button"].button:disabled,
-main.join a.button:disabled {
-  background-image: none;
-  background-color: #282828;
-}
-
-main.join button[type="button"].button:last-child,
-main.join a.button:last-child {
-  margin-left: 8px;
-}
-
 main.join article {
   box-sizing: border-box;
 }
@@ -1310,6 +1399,10 @@ main.join article[data-step="copy-key-pair"] textarea.hidden_copy_field {
   word-wrap: normal !important;
 }
 
+main.join article[data-step="copy-key-pair"] .btn_area button:last-child {
+  margin-left: 8px;
+}
+
 main.join article[data-step="payment-info"] .select_payment_type.area {
   margin-top: 16px;
   padding-bottom: 16px;
@@ -1363,6 +1456,120 @@ main.join article[data-step="payment-info"] dl.invoice {
 main.join article[data-step="done"] {
   background: url("../image/bi-hubby.svg#pink") right calc(50% - 67px) no-repeat;
   background-size: 61px 67px;
+}
+
+main.transfer .container {
+  margin-top: 40px;
+  padding: 32px;
+  background-color: #282828;
+}
+
+main.transfer .container ul, main.transfer .container li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+main.transfer .container form li {
+  margin-top: 4px;
+  background: #161616;
+  padding: 32px;
+}
+
+main.transfer .container form li:first-child {
+  margin-top: initial;
+}
+
+main.transfer .container form input[type="text"],
+main.transfer .container form input[type="number"] {
+  border: 0;
+  width: 100%;
+  height: 28px;
+  font-size: 28px;
+  font-weight: 100;
+  color: #ffffff;
+  transition: border-color 0.4s;
+}
+
+main.transfer .container form input[type="text"]:focus,
+main.transfer .container form input[type="number"]:focus {
+  border-color: #ffffff;
+  outline: 0;
+}
+
+main.transfer .container form input[type="text"]:focus::placeholder,
+main.transfer .container form input[type="number"]:focus::placeholder {
+  transition: color 0.4s;
+  color: #aaa;
+}
+
+main.transfer .container form input[type="text"] + span.description,
+main.transfer .container form input[type="number"] + span.description {
+  margin-top: 12px;
+  display: block;
+  font-size: 0.8125rem;
+  line-height: 1.54;
+  color: #999;
+}
+
+main.transfer .container form input[type="text"]:invalid + span.validate,
+main.transfer .container form input[type="number"]:invalid + span.validate {
+  color: #ff6b64;
+}
+
+main.transfer .container form input[type="text"]:valid + span.validate,
+main.transfer .container form input[type="number"]:valid + span.validate {
+  color: #79c720;
+}
+
+main.transfer .container form input[type="text"]:placeholder-shown + span.description,
+main.transfer .container form input[type="number"]:placeholder-shown + span.description {
+  color: inherit;
+}
+
+main.transfer .container form input[type="text"]::-webkit-inner-spin-button, main.transfer .container form input[type="text"]::-webkit-outer-spin-button,
+main.transfer .container form input[type="number"]::-webkit-inner-spin-button,
+main.transfer .container form input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+main.transfer .btn_area {
+  margin-top: 16px;
+  text-align: right;
+}
+
+main.transfer .btn_area button.button {
+  margin-left: 4px;
+  min-width: 136px;
+}
+
+main.transfer .wallet.status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 0 32px 0;
+}
+
+main.transfer .wallet.status p {
+  font-size: 0.875rem;
+  color: #999;
+  margin: 0;
+}
+
+main.transfer .wallet.status p em {
+  margin-top: 12px;
+  display: block;
+  font-size: 1.75rem;
+  font-weight: 300;
+  color: #ffffff;
+}
+
+main.transfer .wallet.status a {
+  text-decoration: underline;
+  color: #ffffff;
+  font-size: 0.875rem;
+  font-weight: 100;
 }
 
 /*# sourceMappingURL=style.css.map */
