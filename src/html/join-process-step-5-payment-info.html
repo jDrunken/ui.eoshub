@@ -21,8 +21,8 @@
 		</dl>
 
 		<div class="select_payment_type area">
-			<button type="button" class="mono button">가상계좌</button>
-			<button type="button" class="purple button">신용카드</button>
+			<button type="button" class="undo button">가상계좌</button>
+			<button type="button" class="ok button">신용카드</button>
 			<p class="amount">
 				총 결제금액 <strong>11,320</strong> 원
 			</p>
@@ -33,10 +33,10 @@
 				<input type="checkbox" id="agreeContract">
 				<label for="agreeContract">EOS Consitution에 동의합니다.</label>
 			</form>
-			<button type="button" class="pink button">결제하기</button>
+			<button type="button" class="ok button">결제하기</button>
 		</div>
 		<script>
-		document.querySelector('button.pink.button').addEventListener('click',function () {
+		document.querySelector('button.ok.button').addEventListener('click',function () {
 			location.pathname="join-process-step-6-done.html";
 		});
 		</script>

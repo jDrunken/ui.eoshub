@@ -76,7 +76,8 @@ section.content {
 		padding-left:$lnb_width;
 	}
 
-	main.index {
+	main.index,
+	main.transfer {
 		height:inherit;
 		box-sizing:border-box;
 		max-width:1560px;
@@ -99,7 +100,6 @@ section.content {
 	}
 
 	aside {
-		position:relative;
 		box-sizing:border-box;
 
 		position:fixed;
@@ -133,3 +133,98 @@ main.index {
 aside.shrink + main.index {
 	margin-left:0;
 }
+
+
+
+
+
+
+// --------------------------------------------------------------------------------
+// independent interface
+// --------------------------------------------------------------------------------
+
+.notification.panel {
+    position:fixed;
+    right:42px;
+	top:calc(#{$header_height} + 42px);
+
+		@include media ('>1280px','<=1600px') {
+			top:calc(#{$header_height} + 2.425vw);
+			right: 2.425vw;
+		}
+		@include media ('<=1280px') {
+			top:calc(#{$header_height} + 17px);
+			right: 27px;
+		}
+
+
+    // response
+    div {
+        width:406px;
+        height:96px;
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.16);
+        box-sizing:border-box;
+        display:flex;
+        flex-direction:column;
+        padding-left:40px;
+        justify-content:center;
+        position:absolute;
+		top:0;
+		right:0;
+
+        p {
+            margin:0;
+            color:#fff;
+        }
+
+        a {
+            font-size:rem(13);
+            color:#fff;
+        }
+
+        button.close {
+            position:absolute;
+            right:10px;
+            top:10px;
+			@include ir();
+            background:url('../image/icon-close-white-transparent.svg') center center no-repeat;
+            width:20px;
+            height:20px;
+
+            outline:0;
+            transition:transform 0.1s;
+
+            &:hover {
+                transform:scale(1.1);
+            }
+        }
+    }
+
+    .view.success {
+        background:url('../image/bi-hubby.svg#white') 285px 36px no-repeat #79c720;
+        background-size:81px auto;
+    }
+
+    .view.fail {
+        background:url('../image/bi-hubby.svg#white#alert') 285px 36px no-repeat #ff6b64;
+        background-size:91px auto;
+    }
+
+    // interaction
+    z-index:-1;
+
+    div {
+        transition:transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+        opacity:0;
+        transform:translateY(-100%);
+    }
+
+    &.viewing {
+        z-index:1;
+        div {
+            opacity:1;
+            transform:translateY(0);
+        }
+    }
+}
+
