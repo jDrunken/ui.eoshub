@@ -244,6 +244,47 @@ select {
   -moz-appearance: none;
 }
 
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+}
+
+table th:first-letter,
+table td:first-letter {
+  text-transform: uppercase;
+}
+
+table caption {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  width: 1px;
+  word-wrap: normal !important;
+}
+
+table caption:focus {
+  background-color: #eee;
+  clip: auto !important;
+  clip-path: none;
+  color: #444;
+  display: block;
+  font-size: 1em;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000;
+}
+
 button[type='button'],
 a.button,
 input[type='submit'] {
@@ -2077,7 +2118,7 @@ main.search .transaction.history select {
   display: inline-block;
   background: url(../image/icon-dropdown.svg) calc(100% - 16px) calc(50%) no-repeat #161616;
   background-size: 20px 20px;
-  border-color: #fff;
+  border: 0;
   border-radius: 2px;
   width: 160px;
   padding: 0 14px;
@@ -2085,6 +2126,133 @@ main.search .transaction.history select {
 
 main.search .transaction.history select option:disabled {
   display: none;
+}
+
+main.search .transaction.history table {
+  margin-top: 12px;
+  background-color: #161616;
+}
+
+main.search .transaction.history table thead {
+  border-bottom: 1px solid #282828;
+}
+
+main.search .transaction.history table th, main.search .transaction.history table td {
+  padding: 16px 12px;
+}
+
+main.search .transaction.history table th {
+  font-size: 0.875rem;
+  color: #ffffff;
+  font-weight: 100;
+  text-align: left;
+}
+
+main.search .transaction.history table th:first-child {
+  text-align: center;
+}
+
+main.search .transaction.history table td {
+  font-size: 0.8125rem;
+}
+
+main.search .transaction.history table td em {
+  color: #ff1f90;
+}
+
+main.search .transaction.history table td:first-child {
+  text-align: center;
+}
+
+main.search .transaction.history table tbody tr {
+  border-top: 1px solid #0e0e0e;
+}
+
+main.search .transaction.history table td.info {
+  width: 51.276102088%;
+  position: relative;
+}
+
+main.search .transaction.history table td.info span.memo.popup {
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  overflow: hidden;
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  margin-top: calc(-20px / 2);
+}
+
+main.search .transaction.history table td.info span.memo.popup button {
+  text-indent: -999em;
+  overflow: hidden;
+  background: url("../image/icon-close-plus.svg");
+  height: 20px;
+  width: 20px;
+  transition: transform 0.1s;
+}
+
+main.search .transaction.history table td.info span.memo.popup strong,
+main.search .transaction.history table td.info span.memo.popup span.description {
+  display: none;
+}
+
+main.search .transaction.history table td.info span.memo.popup.viewing {
+  opacity: 1;
+  display: block;
+  background-color: #282828;
+  box-shadow: 4px 4px 12px 0 rgba(0, 0, 0, 0.5);
+  width: 200px;
+  min-height: 182px;
+  z-index: 10;
+  padding: 16px;
+  box-sizing: border-box;
+  margin-top: -30px;
+  margin-right: -20px;
+}
+
+main.search .transaction.history table td.info span.memo.popup.viewing strong,
+main.search .transaction.history table td.info span.memo.popup.viewing span.description {
+  display: block;
+  overflow: initial;
+}
+
+main.search .transaction.history table td.info span.memo.popup.viewing strong {
+  display: block;
+  background: url("../image/icon-memo.svg") left center no-repeat transparent;
+  padding-left: 24px;
+  font-size: 0.875rem;
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+
+main.search .transaction.history table td.info span.memo.popup.viewing button {
+  right: 20px;
+  top: 20px;
+  position: absolute;
+  transform: rotate(45deg);
+}
+
+main.search .transaction.history table td.info span.memo.popup.viewing span.description {
+  line-height: 1.5;
+}
+
+main.search div.btn_area {
+  margin-top: 16px;
+  text-align: center;
+}
+
+main.search div.btn_area button.view_more {
+  padding: 0 40px;
+  height: 52px;
+  border-radius: 2px;
+  background-color: #161616;
+  min-width: 152px;
+}
+
+main.search div.btn_area button.view_more:before {
+  content: '+ ';
 }
 
 /*# sourceMappingURL=style.css.map */
