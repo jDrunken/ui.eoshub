@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+
+
+<meta charset="UTF-8">
+
+<title>EOShub</title>
+
+<meta charset="utf-8">
+
+<meta name="description" content="">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta property="og:title" content="eoshub">
+<meta property="og:description" content="eoshub">			
+<meta property="og:image" content="https://eoshub.io/">
+<meta property="og:url" content="https://eoshub.io/">
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?">
+
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+</head>
+<body>
+
+<div id="elm-target">
+	<div>
+		
+<header>
+	<h1><a href="index-view.html">eoshub</a></h1>
+	<div class="language">
+		<button type="button" class="selected">한글</button>
+		<button type="button">EN</button>
+		<button type="button">中国</button>
+	</div>
+	<form action="search.html">
+		<input type="text" placeholder="계정명, 공개 키 검색하기" />
+		<button type="submit">검색</button>
+	</form>
+</header>
+
+
+		
+<nav>
+	<ul>
+		<li>
+			<button type="button" class="toggle dashboard" id="openAside">대쉬보드 열기/닫기</button>
+			<span class="tooltip" aria-hidden="hidden">대쉬보드 열기 닫기</span>
+		</li>
+		<li>
+			<a href="resource.html" rel="nofollow" class="resource">리소스 관리</a>
+			<span class="tooltip" aria-hidden="hidden">리소스 관리</span>
+		</li>
+		<li>
+			<a href="transfer.html" rel="nofollow" class="transfer">전송하기</a>
+			<span class="tooltip" aria-hidden="hidden">전송하기</span>
+		</li>
+		<li>
+			<a href="go-ram-market.html" rel="nofollow" class="ram_market">Ram market</a>
+			<span class="tooltip" aria-hidden="hidden">Ram Market</span>
+		</li>
+		<li>
+			<a href="go-vote.html" rel="nofollow" class="vote">BP 투표하기</a>
+			<span class="tooltip" aria-hidden="hidden">투표하기</span>
+		</li>
+		<li>
+			<a href="go-dapp.html" rel="nofollow" class="dapps">dapps</a>
+			<span class="tooltip" aria-hidden="hidden">Dapps</span>
+		</li>
+	</ul>
+</nav>
+<script>
+(function () {
+	document.addEventListener('DOMContentLoaded',function () {
+		var handler = document.getElementById('openAside');
+		var target = document.querySelector('aside');
+
+		handler.addEventListener('click',function (){
+			this.classList.toggle('shrink');
+			target.classList.toggle('shrink');
+		});
+	});
+})();
+</script>
+
+
+		<section class="content">
+
+
+
+
+
+<aside class="log in">
+
+	<h2>eosyskoreabp
+		<span class="description">@owner</span>
+	</h2>
+
+	<ul class="wallet status">
+		<li>
+			<span class="title">total</span>
+			<span class="amount">24.536.341</span>
+		</li>
+		<li>
+			<span class="title">stake</span>
+			<span class="amount">32.3812</span>
+			<span class="status available">트랜잭션 가능</span>
+			<span class="status unavailable">트랜잭션 불가능</span>
+		</li>
+		<li>
+			<span class="title">refunding</span>
+			<span class="amount">0</span>
+			<span class="remaining time">72.3 hours</span>
+		</li>
+	</ul>
+
+	<button type="button" class="resource management">리소스 관리</button>
+</aside>
+
+
+
+<main class="search">
+	<h2>계정 검색</h2>
+	<p>검색하신 계정에 대한 정보입니다.</p>
+
+	<div class="container">
+		<section class="summary">
+			<h3>계정 요약</h3>
+			<dl>
+				<dt>계정이름</dt>
+				<dd>blockportalqweqweqweqwe</dd>
+
+				<dt>Total</dt>
+				<dd>123123123.1234 EOS</dd>
+			</dl>
+		</section>
+		<section class="account status">
+			<h3>계정 정보</h3>
+			<div class="wrapper">
+				<div>
+					Unstaked
+					<strong title="123 EOS">123 EOS</strong>
+				</div>
+
+				<div>
+					refunding
+					<strong title="30 EOS">30 EOS</strong>
+				</div>
+
+				<div>
+					staked
+					<strong title="289392837924.892 EOS">289392837924.892 EOS</strong>
+				</div>
+			</div>
+		</section>
+		<section class="resource">
+			<h3>리소스</h3>
+			<div class="wrapper">
+				<div>
+					<h4>CPU<br />
+					12.12456 EOS</h4>
+					<p>사용가능한 용량이<br />
+						53%남았어요.<br />
+					2sec/3sec</p>
+					<div class="status" data-status="good"></div>
+				</div>
+				<div>
+					<h4>NET<br />
+					12.12456 EOS</h4>
+					<p>사용가능한 용량이<br />
+						53%남았어요.<br />
+					2kb/3kb</p>
+					<div class="status" data-status="good"></div>
+				</div>
+				<div>
+					<h4>RAM<br />
+					12.12456 EOS</h4>
+					<p>사용가능한 용량이<br />
+						53%남았어요.<br />
+					2kb/3kb</p>
+					<div class="status" data-status="good"></div>
+				</div>
+			</div>
+		</section>
+		<section class="transaction history">
+			<h3>트랜잭션</h3>
+
+			<select id="" name="">
+				<option value="">All</option>
+				<option value="">빌려주기</option>
+				<option value="">전송하기</option>
+			</select>
+
+			<table>
+				<thead>
+					<tr>
+						<th scope="col">type</th>
+						<th scope="col">time</th>
+						<th scope="col">info</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>recieved</td>
+						<td>8:06:36 AM, Apr 6, 2018</td>
+						<td class="info">eosyscommuni -&amp; eosyslievink 0.1 EOS
+							<span class="memo popup">
+								<span>
+									<strong role="title">메모</strong>
+									<span class="description">
+										앱을 설치하신 후에는 위젯 등을 사용하시기 전에 앱을 먼저 실행하여 동기화를 완료하신 후 사용하여 주시기 바랍니다. 기억해야 할 것들이 점점 많아지는 세상에서 살아남으세요.
+									</span>
+									<button type="button" class="icon view button">열기/닫기</button>
+								</span>
+							</span>
+						</td>
+					</tr>
+					<tr>
+						<td>recieved</td>
+						<td>8:06:36 AM, Apr 6, 2018</td>
+						<td class="info">eosyscommuni -&amp; eosyslievink 0.1 EOS</td>
+					</tr>
+					<tr>
+						<td>recieved</td>
+						<td>8:06:36 AM, Apr 6, 2018</td>
+						<td class="info">eosyscommuni -&amp; eosyslievink 0.1 EOS</td>
+					</tr>
+					<tr>
+						<td>recieved</td>
+						<td>8:06:36 AM, Apr 6, 2018</td>
+						<td class="info">eosyscommuni -&amp; eosyslievink 0.1 EOS</td>
+					</tr>
+					<tr>
+						<td>recieved</td>
+						<td>8:06:36 AM, Apr 6, 2018</td>
+						<td class="info">eosyscommuni -&amp; eosyslievink 0.1 EOS</td>
+					</tr>
+					<tr>
+						<td>recieved</td>
+						<td>8:06:36 AM, Apr 6, 2018</td>
+						<td class="info">eosyscommuni -&amp; eosyslievink 0.1 EOEOEOEOE Oq la la SSSSSEOS
+							<span class="memo popup">
+								<span>
+									<strong role="title">메모</strong>
+									<span class="description">
+										앱을 설치하신 후에는 위젯 등을 사용하시기 전에 앱을 먼저 실행하여 동기화를 완료하신 후 사용하여 주시기 바랍니다. 기억해야 할 것들이 점점 많아지는 세상에서 살아남으세요.
+									</span>
+									<button type="button" class="icon view button">열기/닫기</button>
+								</span>
+							</span>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+
+
+			<script>
+				(function () {
+					var handler = document.querySelectorAll('span.memo.popup button.view');
+					var opened_handler = '';
+					for(var i=0; i < handler.length; i++) {
+						handler[i].addEventListener('click',function () {
+
+
+							if (!!opened_handler) {
+								opened_handler.parentNode.parentNode.classList.remove('viewing');
+							}
+
+							if (opened_handler !== this) {
+								this.parentNode.parentNode.classList.add('viewing');
+								opened_handler = this;
+							} else {
+								this.parentNode.parentNode.classList.remove('viewing');
+								opened_handler = '';
+							}
+
+						});
+					}
+				})();
+			</script>
+
+			<div class="btn_area">
+				<button type="button" class="bg_icon add blue_white load button">더 보기</button>
+			</div>
+		</section>
+	</div>
+</main>
+
+		</section>
+
+		
+<footer>
+	<div class="sns area">
+		
+		<a href="#" class="sns medium button">Go to facebook</a>
+		<a href="#" class="sns twitter button">Go to Twitter</a>
+		<a href="#" class="sns telegram button">Go to Telegram</a>
+	</div>
+</footer>
+
+	</div>
+</div>
+</body>
+</html>

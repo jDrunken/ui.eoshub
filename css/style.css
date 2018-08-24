@@ -350,7 +350,8 @@ nav ~ section.content {
 }
 
 section.content main.index,
-section.content main.transfer {
+section.content main.transfer,
+section.content main.search {
   height: inherit;
   box-sizing: border-box;
   padding: 42px;
@@ -358,14 +359,16 @@ section.content main.transfer {
 
 @media (min-width: 1601px) {
   section.content main.index,
-  section.content main.transfer {
+  section.content main.transfer,
+  section.content main.search {
     margin-left: calc(300px);
   }
 }
 
 @media (min-width: 1281px) and (max-width: 1600px) {
   section.content main.index,
-  section.content main.transfer {
+  section.content main.transfer,
+  section.content main.search {
     padding: 2.425vw;
     margin-left: calc(18.75vw);
   }
@@ -373,7 +376,8 @@ section.content main.transfer {
 
 @media (max-width: 1280px) {
   section.content main.index,
-  section.content main.transfer {
+  section.content main.transfer,
+  section.content main.search {
     padding: 27px;
     margin-left: 240px;
   }
@@ -385,7 +389,8 @@ section.content main.index {
   min-width: 965px;
 }
 
-section.content main.transfer {
+section.content main.transfer,
+section.content main.search {
   width: 965px;
 }
 
@@ -409,7 +414,8 @@ aside.shrink {
 }
 
 main.index,
-main.transfer {
+main.transfer,
+main.search {
   transition: margin 0.4s;
 }
 
@@ -418,7 +424,8 @@ section.modal.popup {
 }
 
 aside.shrink + main.index,
-aside.shrink + main.transfer {
+aside.shrink + main.transfer,
+aside.shrink + main.search {
   margin-left: 0;
 }
 
@@ -1708,12 +1715,16 @@ main.transfer .container form input[type="number"] + span.description {
 }
 
 main.transfer .container form input[type="text"]:invalid + span.validate,
-main.transfer .container form input[type="number"]:invalid + span.validate {
+main.transfer .container form input[type="text"] + span.false.validate.description,
+main.transfer .container form input[type="number"]:invalid + span.validate,
+main.transfer .container form input[type="number"] + span.false.validate.description {
   color: #ff6b64;
 }
 
 main.transfer .container form input[type="text"]:valid + span.validate,
-main.transfer .container form input[type="number"]:valid + span.validate {
+main.transfer .container form input[type="text"] + span.true.validate.description,
+main.transfer .container form input[type="number"]:valid + span.validate,
+main.transfer .container form input[type="number"] + span.true.validate.description {
   color: #79c720;
 }
 
@@ -1765,6 +1776,183 @@ main.transfer .wallet.status a {
   color: #ffffff;
   font-size: 0.875rem;
   font-weight: 100;
+}
+
+main.search {
+  /* namespace */
+}
+
+main.search .container {
+  background: #282828;
+  padding: 40px 0;
+}
+
+main.search .summary {
+  box-sizing: border-box;
+  padding: 0 32px;
+}
+
+main.search .summary h3 {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  width: 1px;
+  word-wrap: normal !important;
+}
+
+main.search .summary h3:focus {
+  background-color: #eee;
+  clip: auto !important;
+  clip-path: none;
+  color: #444;
+  display: block;
+  font-size: 1em;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000;
+}
+
+main.search .summary dl {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: repeat(2, 20px);
+}
+
+main.search .summary dl dt:nth-of-type(2) {
+  grid-row-start: 1;
+  grid-row-end: 2;
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+
+main.search .summary dl dt, main.search .summary dl dd {
+  margin-right: 27px;
+}
+
+main.search .summary dl dt {
+  color: #999;
+  font-size: 0.875rem;
+}
+
+main.search .summary dl dd {
+  color: #ffffff;
+  font-size: 1.25rem;
+}
+
+main.search .account.status .wrapper,
+main.search .resource .wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 8px;
+}
+
+main.search .account.status .wrapper > div,
+main.search .resource .wrapper > div {
+  background-color: #161616;
+  font-size: 0.875rem;
+  padding: 24px 32px;
+}
+
+main.search .account.status .wrapper > div:first-child,
+main.search .resource .wrapper > div:first-child {
+  margin-left: 0;
+}
+
+main.search .account.status {
+  margin-top: 40px;
+  padding: 0 32px;
+  padding-top: 40px;
+  border-top: 1px solid #5d5d5d;
+}
+
+main.search .account.status h3 {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  width: 1px;
+  word-wrap: normal !important;
+}
+
+main.search .account.status h3:focus {
+  background-color: #eee;
+  clip: auto !important;
+  clip-path: none;
+  color: #444;
+  display: block;
+  font-size: 1em;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000;
+}
+
+main.search .account.status .wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 8px;
+}
+
+main.search .account.status .wrapper > div {
+  font-size: 0.875rem;
+  color: #999;
+}
+
+main.search .account.status .wrapper > div:first-letter {
+  text-transform: uppercase;
+}
+
+main.search .account.status .wrapper > div strong {
+  margin-top: 5px;
+  display: block;
+  color: #ffffff;
+  font-weight: 300;
+  font-size: 1.25rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 210px;
+}
+
+main.search .resource {
+  margin-top: 32px;
+  padding: 0 32px;
+  padding-top: 40px;
+}
+
+main.search .resource .wrapper {
+  margin-top: 22px;
+}
+
+main.search .resource .wrapper > div h4 {
+  font-size: 0.875rem;
+  color: #ffffff;
+  line-height: 1.6;
+}
+
+main.search .resource .wrapper > div p {
+  font-size: 0.875rem;
+  color: #999;
+  line-height: 1.6;
+  margin: 1.5em 0 0 0;
 }
 
 /*# sourceMappingURL=style.css.map */

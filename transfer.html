@@ -35,9 +35,9 @@
 		<button type="button">EN</button>
 		<button type="button">中国</button>
 	</div>
-	<form action="./">
+	<form action="search.html">
 		<input type="text" placeholder="계정명, 공개 키 검색하기" />
-		<button type="button">검색</button>
+		<button type="submit">검색</button>
 	</form>
 </header>
 
@@ -54,7 +54,7 @@
 			<span class="tooltip" aria-hidden="hidden">리소스 관리</span>
 		</li>
 		<li>
-			<a href="transfer-default.html" rel="nofollow" class="transfer">전송하기</a>
+			<a href="transfer.html" rel="nofollow" class="transfer">전송하기</a>
 			<span class="tooltip" aria-hidden="hidden">전송하기</span>
 		</li>
 		<li>
@@ -131,7 +131,6 @@
 			<script>
 			(function () {
 				document.getElementById('openPopup').addEventListener('click',function(e) {
-
 					document.getElementById('popup').classList.add('viewing');
 				});
 			})();
@@ -199,8 +198,9 @@
 		target.classList.remove('viewing');
 	});
 
-	document.getElementById('test').addEventListener('click',function () {
-		document.getElementById('test2').removeAttribute('disabled');
+	document.getElementById('test').addEventListener('focus',function () {
+		document.querySelectorAll('div.btn_area button')[0].removeAttribute('disabled');
+		document.querySelectorAll('div.btn_area button')[1].removeAttribute('disabled');
 	});
 })();
 </script>
