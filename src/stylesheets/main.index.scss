@@ -44,7 +44,7 @@ main.index {
 				grid-row-end:3;
 			}
 
-			a {
+			> a {
 				display:flex;
 				flex-direction:column;
 				justify-content:flex-end;
@@ -52,6 +52,16 @@ main.index {
 				background-position:32px 32px;
 				background-repeat:no-repeat;
 				background-size:22px 22px;
+
+				border-radius: 4px;
+
+				position:relative;
+				transition:box-shadow 0.4s;
+
+				&:hover {
+					box-shadow: 0 28px 40px 0 #000000;
+					z-index:10;
+				}
 			}
 
 			a.resource {

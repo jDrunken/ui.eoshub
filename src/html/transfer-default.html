@@ -15,7 +15,6 @@
 			<script>
 			(function () {
 				document.getElementById('openPopup').addEventListener('click',function(e) {
-
 					document.getElementById('popup').classList.add('viewing');
 				});
 			})();
@@ -29,11 +28,11 @@
 					<span class="validate description">계정이름 예시:eoshubby</span>
 				</li>
 				<li>
-					<input type="number" placeholder="전송하실 수량을 입력하세요." pattern="\d+(\.\d{1,4})?" step="0.0001" min="0.0001" required>
+					<input type="number" id="test"  placeholder="전송하실 수량을 입력하세요." pattern="\d+(\.\d{1,4})?" step="0.0001" min="0.0001" required>
 					<span class="validate description">전송가능한 수량만큼 전송가능합니다.</span>
 				</li>
 				<li>
-					<input type="text" id="test" placeholder="메모할 내용입력">
+					<input type="text" placeholder="메모할 내용입력">
 					<span class="description">필수입력은 아니에요.</span>
 				</li>
 			</ul>
@@ -83,8 +82,9 @@
 		target.classList.remove('viewing');
 	});
 
-	document.getElementById('test').addEventListener('click',function () {
-		document.getElementById('test2').removeAttribute('disabled');
+	document.getElementById('test').addEventListener('focus',function () {
+		document.querySelectorAll('div.btn_area button')[0].removeAttribute('disabled');
+		document.querySelectorAll('div.btn_area button')[1].removeAttribute('disabled');
 	});
 })();
 </script>
