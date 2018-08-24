@@ -1194,13 +1194,21 @@ main.index .menu_area .container div.greeting {
   grid-row-end: 3;
 }
 
-main.index .menu_area .container a {
+main.index .menu_area .container > a {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   background-position: 32px 32px;
   background-repeat: no-repeat;
   background-size: 22px 22px;
+  border-radius: 4px;
+  position: relative;
+  transition: box-shadow 0.4s;
+}
+
+main.index .menu_area .container > a:hover {
+  box-shadow: 0 28px 40px 0 #000000;
+  z-index: 10;
 }
 
 main.index .menu_area .container a.resource {
