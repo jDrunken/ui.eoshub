@@ -1,0 +1,191 @@
+
+<!-- @@master = ../template/master.html -->
+
+<!-- @@block = aside -->
+<!-- @@include = ../template/aside-log-in.html -->
+<!-- @@close -->
+
+<!-- @@block = main -->
+<main class="search">
+	<h2>계정 검색</h2>
+	<p>검색하신 계정에 대한 정보입니다.</p>
+
+	<div class="container">
+		<section class="summary">
+			<h3>계정 요약</h3>
+			<dl>
+				<dt>계정이름</dt>
+				<dd>blockportalqweqweqweqwe</dd>
+
+				<dt>Total</dt>
+				<dd>123123123.1234 EOS</dd>
+			</dl>
+		</section>
+		<section class="account status">
+			<h3>계정 정보</h3>
+			<div class="wrapper">
+				<div>
+					Unstaked
+					<strong title="123 EOS">123 EOS</strong>
+				</div>
+
+				<div>
+					refunding
+					<strong title="30 EOS">30 EOS</strong>
+				</div>
+
+				<div>
+					staked
+					<strong title="289392837924.892 EOS">289392837924.892 EOS</strong>
+				</div>
+			</div>
+		</section>
+		<section class="resource">
+			<h3>리소스</h3>
+			<div class="wrapper">
+				<div>
+					<h4>CPU<br />
+					12.12456 EOS</h4>
+					<p>사용가능한 용량이<br />
+						53%남았어요.<br />
+					2sec/3sec</p>
+					<div class="status">
+						<!-- find / good / bad / hell -->
+						<span class="good" style="height:70%"></span>
+						70
+					</div>
+				</div>
+				<div>
+					<h4>NET<br />
+					12.12456 EOS</h4>
+					<p>사용가능한 용량이<br />
+						53%남았어요.<br />
+					2kb/3kb</p>
+					<div class="status">
+						<!-- find / good / bad / hell -->
+						<span class="hell" style="height:10%"></span>
+						10
+					</div>
+				</div>
+				<div>
+					<h4>RAM<br />
+					12.12456 EOS</h4>
+					<p>사용가능한 용량이<br />
+						53%남았어요.<br />
+					2kb/3kb</p>
+					<div class="status">
+						<!-- find / good / bad / hell -->
+						<span class="bad" style="height:30%"></span>
+						30
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="transaction history">
+			<h3>트랜잭션</h3>
+
+			<select id="" name="">
+				<option value="-1" selected disabled>트랜잭션 타입</option>
+				<option value="">All</option>
+				<option value="">빌려주기</option>
+				<option value="">전송하기</option>
+			</select>
+
+			<table>
+				<caption>트랜잭션 타입 :: All</caption>
+				<thead>
+					<tr>
+						<th scope="col">번호</th>
+						<th scope="col">타입</th>
+						<th scope="col">시간</th>
+						<th scope="col">정보</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>1</td>
+						<td>sent</td>
+						<td>8:06:36 AM, Apr 6, 2018</td>
+						<td class="info">
+							<em>eosyscommuni</em> undelegated from the account eosyscommuni 11762303.6702 EOSfor NET, and 11762303.6702 EOS for CPU
+							<span class="memo popup">
+								<span>
+									<strong role="title">메모</strong>
+									<span class="description">
+										앱을 설치하신 후에는 위젯 등을 사용하시기 전에 앱을 먼저 실행하여 동기화를 완료하신 후 사용하여 주시기 바랍니다. 기억해야 할 것들이 점점 많아지는 세상에서 살아남으세요.
+									</span>
+									<button type="button" class="icon view button">열기/닫기</button>
+								</span>
+							</span>
+						</td>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td>sent</td>
+						<td>8:06:36 AM, Apr 6, 2018</td>
+						<td class="info">
+							<em>eosyscommuni</em> undelegated from the account eosyscommuni 11762303.6702 EOSfor NET, and 11762303.6702 EOS for CPU
+							<span class="memo popup">
+								<span>
+									<strong role="title">메모</strong>
+									<span class="description">
+										앱을 설치하신 후에는 위젯 등을 사용하시기 전에 앱을 먼저 실행하여 동기화를 완료하신 후 사용하여 주시기 바랍니다. 기억해야 할 것들이 점점 많아지는 세상에서 살아남으세요.
+									</span>
+									<button type="button" class="icon view button">열기/닫기</button>
+								</span>
+							</span>
+						</td>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td>sent</td>
+						<td>8:06:36 AM, Apr 6, 2018</td>
+						<td class="info">
+							<em>eosyscommuni</em> undelegated from the account eosyscommuni 11762303.6702 EOSfor NET, and 11762303.6702 EOS for CPU
+							<span class="memo popup">
+								<span>
+									<strong role="title">메모</strong>
+									<span class="description">
+										앱을 설치하신 후에는 위젯 등을 사용하시기 전에 앱을 먼저 실행하여 동기화를 완료하신 후 사용하여 주시기 바랍니다. 기억해야 할 것들이 점점 많아지는 세상에서 살아남으세요.
+									</span>
+									<button type="button" class="icon view button">열기/닫기</button>
+								</span>
+							</span>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+
+
+			<script>
+				(function () {
+					var handler = document.querySelectorAll('span.memo.popup button.view');
+					var opened_handler = '';
+					for(var i=0; i < handler.length; i++) {
+						handler[i].addEventListener('click',function () {
+
+
+							if (!!opened_handler) {
+								opened_handler.parentNode.parentNode.classList.remove('viewing');
+							}
+
+							if (opened_handler !== this) {
+								this.parentNode.parentNode.classList.add('viewing');
+								opened_handler = this;
+							} else {
+								this.parentNode.parentNode.classList.remove('viewing');
+								opened_handler = '';
+							}
+
+						});
+					}
+				})();
+			</script>
+
+			<div class="btn_area">
+				<button type="button" class="bg_icon add blue_white load button">더 보기</button>
+			</div>
+		</section>
+	</div>
+</main>
+<!-- @@close -->

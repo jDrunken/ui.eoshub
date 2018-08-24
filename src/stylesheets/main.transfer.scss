@@ -58,11 +58,13 @@ main.transfer {
 					color: $gray;
 				}
 
-				&:invalid + span.validate {
+				&:invalid + span.validate,
+				& + span.false.validate.description {
 					color:$red;
 				}
 
-				&:valid + span.validate {
+				&:valid + span.validate,
+				& + span.true.validate.description {
 					color:$green;
 				}
 
