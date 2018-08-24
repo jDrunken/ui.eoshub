@@ -98,6 +98,29 @@
 		<span class="description">@owner</span>
 	</h2>
 
+	<div class="config panel">
+		<button type="button" class="icon gear button" wai-aria="hidden">option</button>
+		<div class="menu_list">
+			<a href="#">지갑 변경하기</a>
+			<a href="#">내 계정보기</a>
+			<a href="#">로그아웃</a>
+		</div>
+	</div>
+	<script>
+		(function () {
+			var handler = document.querySelector('div.config.panel button.gear'),
+				target = document.querySelector('div.config.panel');
+
+			handler.addEventListener('click',function () {
+				target.classList.toggle('expand');
+			});
+
+			target.addEventListener('mouseleave',function () {
+				target.classList.remove('expand');
+			});
+		})();
+	</script>
+
 	<ul class="wallet status">
 		<li>
 			<span class="title">total</span>

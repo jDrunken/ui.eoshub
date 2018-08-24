@@ -133,7 +133,7 @@ em {
   font-weight: 500;
 }
 
-input, textarea, table, th, td, fieldset, button {
+input, textarea, table, th, td, fieldset, button, select {
   background-color: inherit;
   font-size: inherit;
 }
@@ -237,6 +237,11 @@ input[type='checkbox']:checked + label:before {
 button {
   color: inherit;
   border-color: transparent;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
 }
 
 button[type='button'],
@@ -1162,6 +1167,54 @@ aside.log.in .wallet.status {
   margin: 44px 0;
 }
 
+aside.log.in div.config.panel {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 16px;
+  right: 16px;
+}
+
+aside.log.in div.config.panel button.gear {
+  text-indent: -999em;
+  overflow: hidden;
+  width: 20px;
+  height: 20px;
+  background: url("../image/icon-setting.svg") center center no-repeat;
+  background-size: cover;
+}
+
+aside.log.in div.config.panel div.menu_list {
+  display: none;
+  position: absolute;
+  z-index: 99;
+  top: 10px;
+  left: 13px;
+  border: 1px solid #5d5d5d;
+  border-top: 0;
+}
+
+aside.log.in div.config.panel div.menu_list a {
+  border-top: 1px solid #5d5d5d;
+  display: block;
+  background-color: #161616;
+  width: 135px;
+  height: 40px;
+  line-height: 38px;
+  text-align: center;
+  color: #999;
+  font-size: 0.875rem;
+}
+
+aside.log.in div.config.panel div.menu_list a:hover {
+  background-color: #282828;
+  color: #ffffff;
+}
+
+aside.log.in div.config.panel.expand div.menu_list {
+  display: block;
+}
+
 main {
   box-sizing: border-box;
 }
@@ -1942,6 +1995,10 @@ main.search .resource .wrapper {
   margin-top: 22px;
 }
 
+main.search .resource .wrapper > div {
+  position: relative;
+}
+
 main.search .resource .wrapper > div h4 {
   font-size: 0.875rem;
   color: #ffffff;
@@ -1953,6 +2010,81 @@ main.search .resource .wrapper > div p {
   color: #999;
   line-height: 1.6;
   margin: 1.5em 0 0 0;
+}
+
+main.search .resource .wrapper > div .status {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 32px;
+  width: 73px;
+  height: 73px;
+  border-radius: 100%;
+  background-color: #282828;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  font-weight: 100;
+  color: #ffffff;
+  overflow: hidden;
+}
+
+main.search .resource .wrapper > div .status:after {
+  content: '%';
+  font-size: 1rem;
+  margin-left: 0.2em;
+}
+
+main.search .resource .wrapper > div .status span {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+}
+
+main.search .resource .wrapper > div .status span.fine {
+  background-color: #536dfe;
+}
+
+main.search .resource .wrapper > div .status span.good {
+  background-color: #79c720;
+}
+
+main.search .resource .wrapper > div .status span.bad {
+  background-color: #f5cb23;
+}
+
+main.search .resource .wrapper > div .status span.hell {
+  background-color: #ff6b64;
+}
+
+main.search .transaction.history {
+  padding: 0 32px;
+  margin-top: 72px;
+}
+
+main.search .transaction.history h3 {
+  margin-bottom: 22px;
+}
+
+main.search .transaction.history select {
+  color: #ffffff;
+  font-size: 0.875rem;
+  height: 42px;
+  display: inline-block;
+  background: url(../image/icon-dropdown.svg) calc(100% - 16px) calc(50%) no-repeat #161616;
+  background-size: 20px 20px;
+  border-color: #fff;
+  border-radius: 2px;
+  width: 160px;
+  padding: 0 14px;
+}
+
+main.search .transaction.history select option:disabled {
+  display: none;
 }
 
 /*# sourceMappingURL=style.css.map */
