@@ -353,9 +353,6 @@ section.content main.index,
 section.content main.transfer {
   height: inherit;
   box-sizing: border-box;
-  max-width: 1560px;
-  width: 80.425vw;
-  min-width: 965px;
   padding: 42px;
 }
 
@@ -382,6 +379,16 @@ section.content main.transfer {
   }
 }
 
+section.content main.index {
+  max-width: 1560px;
+  width: 80.425vw;
+  min-width: 965px;
+}
+
+section.content main.transfer {
+  width: 965px;
+}
+
 section.content aside {
   box-sizing: border-box;
   position: fixed;
@@ -401,12 +408,22 @@ aside.shrink {
   transform: translateX(-100%);
 }
 
-main.index {
+main.index,
+main.transfer {
   transition: margin 0.4s;
 }
 
-aside.shrink + main.index {
+section.modal.popup {
+  transition: left 0.4s;
+}
+
+aside.shrink + main.index,
+aside.shrink + main.transfer {
   margin-left: 0;
+}
+
+aside.shrink ~ .modal.popup {
+  left: 0;
 }
 
 .notification.panel {
@@ -494,6 +511,176 @@ aside.shrink + main.index {
 .notification.panel.viewing div {
   opacity: 1;
   transform: translateY(0);
+}
+
+.modal.popup {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.64);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+@media (min-width: 1601px) {
+  .modal.popup {
+    left: calc(300px + 60px);
+  }
+}
+
+@media (min-width: 1281px) and (max-width: 1600px) {
+  .modal.popup {
+    left: calc(18.75vw + 60px);
+  }
+}
+
+@media (max-width: 1280px) {
+  .modal.popup {
+    left: calc(240px + 60px);
+  }
+}
+
+.modal.popup .wrapper {
+  background-color: #282828;
+  position: absolute;
+  top: calc(64px + 61px + 100px);
+  left: 50%;
+  min-width: 386px;
+  width: 30.15625%;
+  max-width: 500px;
+  border-radius: 4px;
+  padding: 32px 0;
+  box-sizing: border-box;
+}
+
+.modal.popup .wrapper h2 {
+  margin-left: 32px;
+}
+
+.modal.popup .wrapper form {
+  margin-left: 32px;
+  margin-right: 32px;
+}
+
+.modal.popup form {
+  margin-top: 32px;
+  margin-bottom: 24px;
+  border-radius: 4px;
+  background: #161616;
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+}
+
+.modal.popup form input, .modal.popup form button {
+  height: 20px;
+}
+
+.modal.popup form input {
+  flex: 1;
+  font-size: inherit;
+  background: url("../image/icon-search.svg") left center no-repeat;
+  padding-left: 32px;
+  outline: 0;
+  color: #fff;
+}
+
+.modal.popup form button {
+  color: #ffffff;
+  font-size: 0.875rem;
+}
+
+.modal.popup .result.list {
+  height: 350px;
+  overflow-x: hidden;
+  overflow: auto;
+}
+
+.modal.popup .result.list button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background-color: #161616;
+  margin-top: 4px;
+  padding: 20px;
+  text-align: initial;
+  font-size: 0.875rem;
+  outline: 0;
+}
+
+.modal.popup .result.list button img {
+  background-color: #999;
+  border-radius: 100%;
+  width: 100%;
+  max-width: 32px;
+  max-height: 32px;
+}
+
+.modal.popup .result.list button span {
+  margin-left: 12px;
+}
+
+.modal.popup .result.list button strong {
+  font-size: 1rem;
+  color: #ffffff;
+  display: block;
+}
+
+.modal.popup .result.list button:first-child {
+  margin-top: 0;
+}
+
+.modal.popup button.close {
+  position: absolute;
+  top: 32px;
+  right: 32px;
+  width: 18px;
+  height: 18px;
+  text-indent: -999em;
+  overflow: hidden;
+  background: url("../image/icon-close-popup.svg") center center no-repeat transparent;
+  background-size: contain;
+  outline: 0;
+  transition: transform 0.2s;
+}
+
+.modal.popup button.close:hover {
+  transform: scale(1.2);
+}
+
+.modal.popup .result.list {
+  margin-left: 32px;
+  margin-right: calc(32px - 5px - 11px);
+  padding-right: 11px;
+}
+
+.modal.popup .result.list::-webkit-scrollbar {
+  width: 5px;
+}
+
+.modal.popup .result.list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.modal.popup .result.list::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background: #666;
+}
+
+.modal.popup .wrapper {
+  transition: transform 0.4s;
+  transform: translate(-50%, -10%);
+}
+
+.modal.popup.viewing {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal.popup.viewing .wrapper {
+  transform: translate(-50%, 0);
 }
 
 header {
