@@ -212,6 +212,7 @@ main.search {
 		}
 
 		table {
+			margin-top:12px;
 			background-color:$xx-dark-gray;
 
 			thead {
@@ -255,25 +256,93 @@ main.search {
 				position:relative;
 
 				span.memo.popup {
-					// display:inline-block;
-					// height:20px;
-					// width:20px;
-					// overflow:hidden;
-					// position:absolute;
-					// top:50%;
-					// transform:translateY(-50%);
-					// right:12px;
+					$padding:20px;
+					$position:#{$padding + $padding / 2};
 
+					display:inline-block;
+					height:20px;
+					width:20px;
+					overflow:hidden;
+					position:absolute;
+					top:50%;
+					right:12px;
+					margin-top:calc(-#{$padding} / 2);
 
 					button {
+						@include ir();
 						background:url('../image/icon-close-plus.svg');
 						height:20px;
 						width:20px;
+						transition:transform 0.1s;
+					}
+					strong,
+
+					span.description {
+						display:none;
 					}
 
+					// opened popup
+					&.viewing {
+						opacity:1;
+						display:block;
+						background-color: #282828;
+						box-shadow: 4px 4px 12px 0 rgba(0, 0, 0, 0.5);
+						width:200px;
+						min-height:182px;
+						z-index:10;
+
+						padding:16px;
+
+						box-sizing:border-box;
+
+						margin-top:-$position;
+						margin-right:-$padding;
+
+						strong,
+						span.description {
+							display:block;
+							overflow:initial;
+						}
+
+						strong {
+							display:block;
+							background:url('../image/icon-memo.svg') left center no-repeat transparent;
+							padding-left:24px;
+							font-size: $small;
+							color: $white;
+							margin-bottom:16px;
+						}
+
+						button {
+							right:20px;
+							top:20px;
+							position:absolute;
+							transform:rotate(45deg);
+						}
+
+						span.description {
+							line-height:1.5;
+						}
+					}
 				}
 			}
+		}
+	}
 
+	div.btn_area {
+		margin-top:16px;
+		text-align:center;
+
+		button.view_more {
+			padding:0 40px;
+			height: 52px;
+			border-radius: 2px;
+			background-color: #161616;
+			min-width:152px;
+
+			&:before {
+				content:'+ ';
+			}
 		}
 	}
 }
