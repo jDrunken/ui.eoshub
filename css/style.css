@@ -2255,6 +2255,10 @@ main.search div.btn_area button.view_more:before {
   content: '+ ';
 }
 
+main.search.public_key .container {
+  margin-top: 40px;
+}
+
 main.search.public_key .summary dd {
   margin-top: 8px;
   color: #ffffff;
