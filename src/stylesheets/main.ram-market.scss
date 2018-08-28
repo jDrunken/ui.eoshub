@@ -1,0 +1,102 @@
+main.ram_market { /* namespace */ }
+
+main.ram_market {
+
+	.container {
+		margin-top:40px;
+	}
+
+	h3 {
+		font-size: $normal;
+		color: #ffffff;
+
+		& + p {
+			margin:8px 0 0 0;
+			font-size:$small;
+		}
+	}
+
+	.dashboard {
+		display:flex;
+		min-height:545px;
+
+		// layout
+		.ram.status {
+			background-color:$xx-dark-gray;
+
+			padding:32px;
+			box-sizing:border-box;
+
+			flex:1;
+
+			display:grid;
+			grid-template-columns:repeat(2,50%);
+			grid-template-rows:86px;
+
+			.wrapper {
+				margin-left:8px;
+				padding:24px;
+				background-color:$xxx-dark-gray;
+
+				&:first-child {
+					margin:0;
+				}
+			}
+
+			.graph {
+				margin-top:8px;
+				background-color:$xxx-dark-gray;
+				grid-column-start:1;
+				grid-column-end:4;
+			}
+		}
+
+		.my.status {
+			margin-left:8px;
+			width:354px;
+			background-color:$xx-dark-gray;
+			box-sizing:border-box;
+			padding:35px;
+
+			h3 span {
+				display:block;
+				margin-top:8px;
+			}
+		}
+	}
+
+	.history.list {
+		margin-top:8px;
+		background-color:$xx-dark-gray;
+		padding:32px;
+
+		// set width
+		tr > *:nth-of-type(1) { width:11%; }
+		tr > *:nth-of-type(2) {}
+		tr > *:nth-of-type(3) {}
+		tr > *:nth-of-type(4) {width:22%;}
+		tr > *:nth-of-type(5) { width:27%; }
+
+		table {
+			table-layout:fixed;
+			td:last-child {
+				overflow:hidden;
+				text-overflow:ellipsis;
+				white-space:nowrap;
+			}
+		}
+
+		tr.log {
+			&.buy td:first-child {
+				color:$green;
+			}
+			&.sell td:first-child {
+				color:$red;
+			}
+		}
+		.btn_area {
+			margin-top:16px;
+			text-align:center;
+		}
+	}
+}

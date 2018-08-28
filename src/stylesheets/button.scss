@@ -63,6 +63,19 @@ a.button {
 		border:1px solid $dark-gray;
 		cursor:not-allowed;
 	}
+
+	// 더 보기
+	&.view_more {
+		padding:0 40px;
+		height: 52px;
+		border-radius: 2px;
+		background-color: #161616;
+		min-width:152px;
+
+		&:before {
+			content:'+ ';
+		}
+	}
 }
 
 

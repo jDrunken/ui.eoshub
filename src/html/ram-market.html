@@ -9,12 +9,67 @@
 	<h2>램마켓</h2>
 	<p>이오스 자원인 램을 구매할 수 있습니다. 램은 타 계정에 구매가능합니다.</p>
 	<div class="container">
-
 		<section class="dashboard">
-		</section>
+			<div class="ram status">
+				<div class="wrapper">
+					<h3>이오스 램 가격</h3>
+					<p>0.1579.3210 EOS/kb</p>
+				</div>
+				<div class="wrapper">
+					<h3>램 점유율</h3>
+					<p>46.44/66.36GB (69.97%)</p>
+				</div>
+				<div class="graph">
 
-		<section class="my status">
+				</div>
+			</div>
+			<div class="my status">
+				<div class="wrapper">
+					<h3>
+						나의 램
+						<span>2.230 EOS</span>
+					</h3>
+					<p>사용가능한 용량이 53% 남았어요</p>
+					<div class="status">
+						<!-- find / good / bad / hell -->
+						<span class="hell" style="height:10%"></span>
+						10%
+					</div>
+				</div>
 
+				<div class="sell_buy wrapper">
+					<dl>
+						<dt>
+							<button type="button" class="tab button">구매하기</button>
+						</dt>
+						<dd>
+							<form>
+								<select id="" name="">
+									<option value="" selected>EOS</option>
+									<option value="" selected>MB</option>
+									<option value="" selected>KB</option>
+									<option value="" selected>Bytes</option>
+								</select>
+
+								<div>
+									<input type="number">
+									<button>10%</button>
+									<button>50%</button>
+									<button>70%</button>
+									<button>최대</button>
+								</div>
+
+								<div class="btn_area">
+									<button>판매하기</button>
+								</div>
+							</form>
+						</dd>
+
+						<dt></dt>
+						<dd></dd>
+					</dl>
+				</div>
+			</div>
 		</section>
 
 		<section class="history list">
@@ -30,17 +85,24 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<td class="log sell">구매</td>
+					<tr class="log buy">
+						<td>구매</td>
 						<td>11762303.2482 EOS</td>
 						<td>eoshubkoreabpking</td>
 						<td>2012. 12. 12 오후 12:12:12</td>
-						<td>b880e30102aae4254b880e30102aae4254b880e30102aae4254b880e30102aae425402aae42544</td>
+						<td title="b880e30102aae4254b880e30102aae4254b880e30102aae4254b880e30102aae425402aae42544">b880e30102aae4254b880e30102aae4254b880e30102aae4254b880e30102aae425402aae42544</td>
+					</tr>
+					<tr class="log sell">
+						<td>판매</td>
+						<td>11762303.2482 EOS</td>
+						<td>eoshubkoreabpking</td>
+						<td>2012. 12. 12 오후 12:12:12</td>
+						<td title="b880e30102aae4254b880e30102aae4254b880e30102aae4254b880e30102aae425402aae42544">b880e30102aae4254b880e30102aae4254b880e30102aae4254b880e30102aae425402aae42544</td>
 					</tr>
 				</tbody>
 			</table>
 			<div class="btn_area">
-				<button type="button" class="button">더 보기</button>
+				<button type="button" class="view_more button">더 보기</button>
 			</div>
 		</section>
 	</div>
