@@ -146,17 +146,6 @@ button {
   cursor: pointer;
 }
 
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-  width: 100%;
-}
-
-table th:first-letter,
-table td:first-letter {
-  text-transform: uppercase;
-}
-
 a {
   color: inherit;
   cursor: pointer;
@@ -251,8 +240,7 @@ table {
   width: 100%;
 }
 
-table th:first-letter,
-table td:first-letter {
+table th:first-letter {
   text-transform: uppercase;
 }
 
@@ -406,7 +394,8 @@ nav ~ section.content {
 
 section.content main.index,
 section.content main.transfer,
-section.content main.search {
+section.content main.search,
+section.content main.ram_market {
   height: inherit;
   box-sizing: border-box;
   padding: 42px;
@@ -415,7 +404,8 @@ section.content main.search {
 @media (min-width: 1601px) {
   section.content main.index,
   section.content main.transfer,
-  section.content main.search {
+  section.content main.search,
+  section.content main.ram_market {
     margin-left: calc(300px);
   }
 }
@@ -423,7 +413,8 @@ section.content main.search {
 @media (min-width: 1281px) and (max-width: 1600px) {
   section.content main.index,
   section.content main.transfer,
-  section.content main.search {
+  section.content main.search,
+  section.content main.ram_market {
     padding: 2.425vw;
     margin-left: calc(18.75vw);
   }
@@ -432,7 +423,8 @@ section.content main.search {
 @media (max-width: 1280px) {
   section.content main.index,
   section.content main.transfer,
-  section.content main.search {
+  section.content main.search,
+  section.content main.ram_market {
     padding: 27px;
     margin-left: 240px;
   }
@@ -470,7 +462,8 @@ aside.shrink {
 
 main.index,
 main.transfer,
-main.search {
+main.search,
+main.ram_market {
   transition: margin 0.4s;
 }
 
@@ -480,7 +473,8 @@ section.modal.popup {
 
 aside.shrink + main.index,
 aside.shrink + main.transfer,
-aside.shrink + main.search {
+aside.shrink + main.search,
+aside.shrink + main.ram_market {
   margin-left: 0;
 }
 
@@ -605,7 +599,7 @@ aside.shrink ~ .modal.popup {
 }
 
 .modal.popup .wrapper {
-  background-color: #282828;
+  background-color: #403e41;
   position: absolute;
   top: calc(64px + 61px + 100px);
   left: 50%;
@@ -630,7 +624,7 @@ aside.shrink ~ .modal.popup {
   margin-top: 32px;
   margin-bottom: 24px;
   border-radius: 4px;
-  background: #161616;
+  background: #282828;
   display: flex;
   align-items: center;
   padding: 12px 16px;
@@ -664,7 +658,7 @@ aside.shrink ~ .modal.popup {
   width: 100%;
   display: flex;
   align-items: center;
-  background-color: #161616;
+  background-color: #282828;
   margin-top: 4px;
   padding: 20px;
   text-align: initial;
@@ -821,7 +815,7 @@ header form button:hover, header form button:active {
 }
 
 nav {
-  background: #000;
+  background: #0e0e0e;
 }
 
 nav ul, nav li {
@@ -841,17 +835,27 @@ nav button, nav a {
   display: block;
   width: 60px;
   height: 60px;
+  box-sizing: border-box;
   background-repeat: no-repeat;
   background-position: center center;
   background-size: 22px 22px;
 }
 
-nav button:hover, nav button.viewing, nav a:hover, nav a.viewing {
+nav button:hover, nav a:hover {
   background-color: #282828;
 }
 
 nav button:active, nav a:active {
   background-size: 20px 20px;
+}
+
+nav a.viewing {
+  border-left: 4px solid #ff1f90;
+  background-color: #161616;
+}
+
+nav a.viewing:hover {
+  background-color: #282828;
 }
 
 nav button.dashboard.toggle {
@@ -935,7 +939,7 @@ nav a:hover + span.tooltip:before {
 }
 
 footer {
-  background: #000;
+  background: #0e0e0e;
   text-align: center;
   padding-bottom: 8px;
 }
@@ -1106,7 +1110,7 @@ aside button.back {
 aside .wallet.status {
   padding: 0;
   color: #fff;
-  background-color: #232323;
+  background-color: #282828;
 }
 
 aside .wallet.status li {
@@ -1117,7 +1121,7 @@ aside .wallet.status li {
 }
 
 aside .wallet.status li:first-child {
-  background-image: linear-gradient(113deg, #ff5252, #aa00ff);
+  background-color: #403e41;
 }
 
 aside .wallet.status li span {
@@ -1175,7 +1179,7 @@ aside .wallet.status li span.status.unavailable:before {
 
 aside button.resource.management {
   position: absolute;
-  background: #000;
+  background: #0e0e0e;
   height: 52px;
   line-height: 52px;
   color: #fff;
@@ -1247,7 +1251,7 @@ aside.log.in div.config.panel div.menu_list {
 aside.log.in div.config.panel div.menu_list a {
   border-top: 1px solid #5d5d5d;
   display: block;
-  background-color: #161616;
+  background-color: #282828;
   width: 135px;
   height: 40px;
   line-height: 38px;
@@ -1257,7 +1261,7 @@ aside.log.in div.config.panel div.menu_list a {
 }
 
 aside.log.in div.config.panel div.menu_list a:hover {
-  background-color: #282828;
+  background-color: #403e41;
   color: #ffffff;
 }
 
@@ -1600,7 +1604,7 @@ main.join dl dt {
 }
 
 main.join dl dd {
-  background-color: #282828;
+  background-color: #403e41;
   color: #999;
   overflow-x: hidden;
   text-overflow: ellipsis;
@@ -2076,7 +2080,7 @@ main.search .resource .wrapper > div .status {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.25rem;
+  font-size: 0.875rem;
   font-weight: 100;
   color: #ffffff;
   overflow: hidden;
@@ -2176,6 +2180,8 @@ main.search .transaction.history table tbody tr {
 main.search .transaction.history table td.info {
   width: 51.276102088%;
   position: relative;
+  word-break: break-all;
+  padding-right: 40px;
 }
 
 main.search .transaction.history table td.info span.memo.popup {
