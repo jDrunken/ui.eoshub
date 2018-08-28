@@ -21,8 +21,8 @@
 		</dl>
 
 		<div class="select_payment_type area">
-			<button type="button" class="undo button">가상계좌</button>
-			<button type="button" class="ok button">신용카드</button>
+			<button type="button" class="choice button">가상계좌</button>
+			<button type="button" class="choice button">신용카드</button>
 			<p class="amount">
 				총 결제금액 <strong>11,320</strong> 원
 			</p>
@@ -38,6 +38,14 @@
 		<script>
 		document.querySelector('button.ok.button').addEventListener('click',function () {
 			location.pathname="join-process-step-6-done.html";
+		});
+
+		document.querySelectorAll('button.choice.button')[0].addEventListener('click',function () {
+			this.classList.toggle('ing');
+		});
+
+		document.querySelectorAll('button.choice.button')[1].addEventListener('click',function () {
+			this.classList.toggle('ing');
 		});
 		</script>
 	</article>
