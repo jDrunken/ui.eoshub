@@ -59,6 +59,12 @@ sub, sup {
   font-family: inherit;
 }
 
+i {
+  font-style: normal;
+  font-size: inherit;
+  font-family: inherit;
+}
+
 .skip_nav {
   position: absolute;
   z-index: 9999;
@@ -165,6 +171,11 @@ input[type="email"]::placeholder {
   color: #999;
 }
 
+input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 input[type='checkbox'] {
   border: 0;
   clip: rect(1px, 1px, 1px, 1px);
@@ -227,11 +238,30 @@ input[type='checkbox']:checked + label:before {
 button {
   color: inherit;
   border-color: transparent;
+  outline: 0;
 }
 
 select {
+  outline: 0;
   -webkit-appearance: none;
   -moz-appearance: none;
+}
+
+select {
+  color: #ffffff;
+  font-size: 0.875rem;
+  height: 42px;
+  display: inline-block;
+  background: url(../image/icon-dropdown.svg) calc(100% - 16px) calc(50%) no-repeat #161616;
+  background-size: 20px 20px;
+  border: 0;
+  border-radius: 2px;
+  width: 160px;
+  padding: 0 14px;
+}
+
+select option:disabled {
+  display: none;
 }
 
 table {
@@ -274,6 +304,47 @@ table caption:focus {
   z-index: 100000;
 }
 
+table {
+  border-collapse: collapse;
+  background-color: #161616;
+}
+
+table thead {
+  border-bottom: 1px solid #282828;
+}
+
+table th, table td {
+  padding: 16px 12px;
+}
+
+table th {
+  font-size: 0.875rem;
+  color: #ffffff;
+  font-weight: 100;
+  text-align: left;
+}
+
+table th:first-child {
+  text-align: center;
+}
+
+table td {
+  font-size: 0.8125rem;
+  word-break: break-all;
+}
+
+table td em {
+  color: #ff1f90;
+}
+
+table td:first-child {
+  text-align: center;
+}
+
+table tbody tr {
+  border-top: 1px solid #0e0e0e;
+}
+
 button[type='button'],
 a.button,
 input[type='submit'] {
@@ -301,13 +372,20 @@ input[type='submit']:first-letter {
 
 button[type="button"].button,
 a.button {
-  flex: 1;
   outline: 0;
   display: inline-block;
-  line-height: 50px;
-  height: 52px;
   border-radius: 2px;
   font-size: 0.875rem;
+  transition: background-color 0.3s, color 0.3s, background-image 0.3s;
+}
+
+button[type="button"].button.ok, button[type="button"].button.undo, button[type="button"].button.choice, button[type="button"].button.tab,
+a.button.ok,
+a.button.undo,
+a.button.choice,
+a.button.tab {
+  line-height: 50px;
+  height: 52px;
 }
 
 button[type="button"].button.ok,
@@ -326,7 +404,7 @@ button[type="button"].button.choice.ing,
 a.button.choice.ing {
   color: #ffffff;
   border-color: transparent;
-  background-color: #ff1f90;
+  background-color: #403e41;
 }
 
 button[type="button"].button:disabled,
@@ -336,6 +414,20 @@ a.button:disabled {
   background: transparent;
   border: 1px solid #5d5d5d;
   cursor: not-allowed;
+}
+
+button[type="button"].button.view_more,
+a.button.view_more {
+  padding: 0 40px;
+  height: 52px;
+  border-radius: 2px;
+  background-color: #161616;
+  min-width: 152px;
+}
+
+button[type="button"].button.view_more:before,
+a.button.view_more:before {
+  content: '+ ';
 }
 
 html, body {
@@ -437,7 +529,8 @@ section.content main.index {
 }
 
 section.content main.transfer,
-section.content main.search {
+section.content main.search,
+section.content main.ram_market {
   width: 965px;
 }
 
@@ -598,6 +691,28 @@ aside.shrink ~ .modal.popup {
   }
 }
 
+.modal.popup span.validate.description {
+  font-size: 0.875rem;
+  line-height: 20px;
+  height: 20px;
+  background-size: 20px;
+  padding-left: 28px;
+  display: block;
+  visibility: hidden;
+}
+
+.modal.popup span.validate.description.true {
+  visibility: visible;
+  color: #ff6b64;
+  background: url("../image/icon-x-circle.svg") left center no-repeat;
+}
+
+.modal.popup span.validate.description.false {
+  visibility: visible;
+  color: #79c720;
+  background: url("../image/icon-check-circle.svg") left center no-repeat;
+}
+
 .modal.popup .wrapper {
   background-color: #403e41;
   position: absolute;
@@ -612,6 +727,10 @@ aside.shrink ~ .modal.popup {
 }
 
 .modal.popup .wrapper h2 {
+  margin-left: 32px;
+}
+
+.modal.popup .wrapper h2 + p {
   margin-left: 32px;
 }
 
@@ -637,10 +756,21 @@ aside.shrink ~ .modal.popup {
 .modal.popup form input {
   flex: 1;
   font-size: inherit;
-  background: url("../image/icon-search.svg") left center no-repeat;
   padding-left: 32px;
   outline: 0;
   color: #fff;
+  background-color: transparent;
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-size: 20px;
+}
+
+.modal.popup form input.search_token {
+  background-image: url("../image/icon-search.svg");
+}
+
+.modal.popup form input.user {
+  background-image: url("../image/icon-id-default.svg");
 }
 
 .modal.popup form button {
@@ -737,6 +867,25 @@ aside.shrink ~ .modal.popup {
 
 .modal.popup.viewing .wrapper {
   transform: translate(-50%, 0);
+}
+
+.modal.popup.buy_ram form {
+  margin-bottom: 0;
+  border-radius: 0;
+  border-bottom: 1px solid #ffffff;
+}
+
+.modal.popup.buy_ram form + .container {
+  margin-top: 12px;
+  margin-left: 32px;
+}
+
+.modal.popup.buy_ram .btn_area {
+  margin: 43px 32px 0;
+}
+
+.modal.popup.buy_ram .btn_area button {
+  width: 100%;
 }
 
 header {
@@ -1537,6 +1686,10 @@ main.join div.btn_area {
   display: flex;
 }
 
+main.join div.btn_area button {
+  flex: 1;
+}
+
 main.join article {
   box-sizing: border-box;
 }
@@ -1840,13 +1993,6 @@ main.transfer .container form input[type="number"]:placeholder-shown + span.desc
   color: inherit;
 }
 
-main.transfer .container form input[type="text"]::-webkit-inner-spin-button, main.transfer .container form input[type="text"]::-webkit-outer-spin-button,
-main.transfer .container form input[type="number"]::-webkit-inner-spin-button,
-main.transfer .container form input[type="number"]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
 main.transfer .btn_area {
   margin-top: 16px;
   text-align: right;
@@ -2084,6 +2230,7 @@ main.search .resource .wrapper > div .status {
   font-weight: 100;
   color: #ffffff;
   overflow: hidden;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.6);
 }
 
 main.search .resource .wrapper > div .status span {
@@ -2120,67 +2267,13 @@ main.search .transaction.history h3 {
   margin-bottom: 22px;
 }
 
-main.search .transaction.history select {
-  color: #ffffff;
-  font-size: 0.875rem;
-  height: 42px;
-  display: inline-block;
-  background: url(../image/icon-dropdown.svg) calc(100% - 16px) calc(50%) no-repeat #161616;
-  background-size: 20px 20px;
-  border: 0;
-  border-radius: 2px;
-  width: 160px;
-  padding: 0 14px;
-}
-
-main.search .transaction.history select option:disabled {
-  display: none;
-}
-
 main.search .transaction.history table {
   margin-top: 12px;
-  background-color: #161616;
-}
-
-main.search .transaction.history table thead {
-  border-bottom: 1px solid #282828;
-}
-
-main.search .transaction.history table th, main.search .transaction.history table td {
-  padding: 16px 12px;
-}
-
-main.search .transaction.history table th {
-  font-size: 0.875rem;
-  color: #ffffff;
-  font-weight: 100;
-  text-align: left;
-}
-
-main.search .transaction.history table th:first-child {
-  text-align: center;
-}
-
-main.search .transaction.history table td {
-  font-size: 0.8125rem;
-}
-
-main.search .transaction.history table td em {
-  color: #ff1f90;
-}
-
-main.search .transaction.history table td:first-child {
-  text-align: center;
-}
-
-main.search .transaction.history table tbody tr {
-  border-top: 1px solid #0e0e0e;
 }
 
 main.search .transaction.history table td.info {
   width: 51.276102088%;
   position: relative;
-  word-break: break-all;
   padding-right: 40px;
 }
 
@@ -2254,18 +2347,6 @@ main.search div.btn_area {
   text-align: center;
 }
 
-main.search div.btn_area button.view_more {
-  padding: 0 40px;
-  height: 52px;
-  border-radius: 2px;
-  background-color: #161616;
-  min-width: 152px;
-}
-
-main.search div.btn_area button.view_more:before {
-  content: '+ ';
-}
-
 main.search.public_key .container {
   margin-top: 40px;
 }
@@ -2312,6 +2393,337 @@ main.search.public_key div.keybox > div button {
   transform: translateY(-50%);
   right: 0;
   background: url("../image/icon-close-plus.svg") center center no-repeat;
+}
+
+main.ram_market {
+  /* namespace */
+}
+
+main.ram_market > .container {
+  margin-top: 40px;
+}
+
+main.ram_market h3 {
+  font-size: 1rem;
+  color: #ffffff;
+}
+
+main.ram_market h3 + p {
+  margin: 8px 0 0 0;
+  font-size: 0.875rem;
+}
+
+main.ram_market .dashboard {
+  display: flex;
+  min-height: 545px;
+  align-items: justify;
+}
+
+main.ram_market .dashboard .ram.status {
+  background-color: #282828;
+  padding: 32px;
+  box-sizing: border-box;
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  grid-template-rows: 86px;
+}
+
+main.ram_market .dashboard .ram.status .wrapper {
+  margin-left: 8px;
+  padding: 24px;
+  background-color: #161616;
+}
+
+main.ram_market .dashboard .ram.status .wrapper:first-child {
+  margin: 0;
+}
+
+main.ram_market .dashboard .ram.status .graph {
+  margin-top: 8px;
+  background-color: #161616;
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+
+main.ram_market .dashboard .my.status {
+  margin-left: 8px;
+  width: 354px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+}
+
+main.ram_market .dashboard .my.status .summary {
+  background-color: #282828;
+  padding: 35px 32px;
+  box-sizing: border-box;
+  height: 138px;
+  position: relative;
+}
+
+main.ram_market .dashboard .my.status .summary h3 span {
+  display: block;
+  margin-top: 8px;
+  font-size: 0.875rem;
+}
+
+main.ram_market .dashboard .my.status .summary .status {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 32px;
+  width: 73px;
+  height: 73px;
+  border-radius: 100%;
+  background-color: #0e0e0e;
+  box-shadow: 0 4px 7px rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.875rem;
+  font-weight: 100;
+  color: #ffffff;
+  overflow: hidden;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.6);
+}
+
+main.ram_market .dashboard .my.status .summary .status span {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+}
+
+main.ram_market .dashboard .my.status .summary .status span.fine {
+  background-color: #536dfe;
+}
+
+main.ram_market .dashboard .my.status .summary .status span.good {
+  background-color: #79c720;
+}
+
+main.ram_market .dashboard .my.status .summary .status span.bad {
+  background-color: #f5cb23;
+}
+
+main.ram_market .dashboard .my.status .summary .status span.hell {
+  background-color: #ff6b64;
+}
+
+main.ram_market .dashboard .my.status .sell_buy {
+  flex: 1;
+  background-color: #0e0e0e;
+  margin-top: 8px;
+  display: flex;
+  flex-flow: column;
+}
+
+main.ram_market .dashboard .my.status .sell_buy:before {
+  content: '';
+  display: block;
+  order: 2;
+  flex: 1;
+}
+
+main.ram_market .dashboard .my.status .sell_buy .tab,
+main.ram_market .dashboard .my.status .sell_buy .unit {
+  order: 1;
+}
+
+main.ram_market .dashboard .my.status .sell_buy .input.panel,
+main.ram_market .dashboard .my.status .sell_buy .btn_area,
+main.ram_market .dashboard .my.status .sell_buy .target {
+  order: 3;
+}
+
+main.ram_market .dashboard .my.status .sell_buy div.tab {
+  box-sizing: border-box;
+  display: flex;
+}
+
+main.ram_market .dashboard .my.status .sell_buy div.tab button {
+  flex: 1 0 50%;
+  height: 52px;
+  background-color: #282828;
+  box-sizing: border-box;
+  height: inherit;
+  text-align: center;
+  border-radius: 0;
+}
+
+main.ram_market .dashboard .my.status .sell_buy div.tab button.ing {
+  border-top: 2px solid #ff1f90;
+  background-color: transparent;
+}
+
+main.ram_market .dashboard .my.status .sell_buy div.target {
+  margin: 0 32px 12px;
+  font-size: 0.875rem;
+}
+
+main.ram_market .dashboard .my.status .sell_buy div.target button.close.button {
+  text-indent: -999em;
+  overflow: hidden;
+  width: 18px;
+  height: 18px;
+  background: url("../image/icon-close-red.svg") center center no-repeat;
+}
+
+main.ram_market .dashboard .my.status .sell_buy div.unit {
+  margin: 0 32px;
+  margin-top: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+main.ram_market .dashboard .my.status .sell_buy div.unit div.select.period {
+  flex: 1;
+  border-radius: 2px;
+  border: 1px solid #403e41;
+  color: #999;
+  background-color: transparent;
+  display: flex;
+  height: 40px;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 16px;
+  color: #ffffff;
+  font-size: 0.875rem;
+}
+
+main.ram_market .dashboard .my.status .sell_buy div.unit div.select.period button.button {
+  width: 24px;
+  height: 24px;
+  text-indent: -999em;
+  overflow: hidden;
+  background: #600;
+  margin-left: 4px;
+}
+
+main.ram_market .dashboard .my.status .sell_buy div.unit div.select.period i {
+  flex: 1;
+}
+
+main.ram_market .dashboard .my.status .sell_buy div.unit a {
+  display: inline-block;
+  margin-left: 70px;
+  font-size: 0.875rem;
+  text-decoration: underline;
+}
+
+main.ram_market .dashboard .my.status .sell_buy div.unit a[hidden] {
+  display: none;
+}
+
+main.ram_market .dashboard .my.status .sell_buy form.input.panel {
+  margin: 0 32px;
+  position: relative;
+}
+
+main.ram_market .dashboard .my.status .sell_buy form.input.panel input[type="number"] {
+  margin-bottom: 12px;
+  outline: 0;
+  color: #ffffff;
+}
+
+main.ram_market .dashboard .my.status .sell_buy form.input.panel button {
+  font-size: 0.875rem;
+  height: 28px;
+  border: 1px solid #403e41;
+  border-radius: 2px;
+  margin-left: 4px;
+  color: #5d5d5d;
+}
+
+main.ram_market .dashboard .my.status .sell_buy form.input.panel button:nth-of-type(1) {
+  margin-left: 0;
+}
+
+main.ram_market .dashboard .my.status .sell_buy form.input.panel button.clicked {
+  color: #ffffff;
+  background-color: #403e41;
+  border-color: #403e41;
+}
+
+main.ram_market .dashboard .my.status .sell_buy form.input.panel > div {
+  display: flex;
+}
+
+main.ram_market .dashboard .my.status .sell_buy form.input.panel > div:last-child {
+  padding-top: 8px;
+  border-top: 1px solid #403e41;
+}
+
+main.ram_market .dashboard .my.status .sell_buy form.input.panel > div button {
+  flex: 1;
+}
+
+main.ram_market .dashboard .my.status .sell_buy form.input.panel > div input[type="number"] {
+  flex: 1;
+  padding-right: 0.6em;
+  box-sizing: border-box;
+  border: 0;
+}
+
+main.ram_market .dashboard .my.status .sell_buy form.input.panel > div input[type="number"] + span.unit {
+  text-transform: uppercase;
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 100;
+}
+
+main.ram_market .dashboard .my.status .sell_buy div.btn_area {
+  margin: 32px;
+}
+
+main.ram_market .dashboard .my.status .sell_buy div.btn_area button {
+  width: 100%;
+}
+
+main.ram_market .history.list {
+  margin-top: 8px;
+  background-color: #282828;
+  padding: 32px;
+}
+
+main.ram_market .history.list tr > *:nth-of-type(1) {
+  width: 11%;
+}
+
+main.ram_market .history.list tr > *:nth-of-type(4) {
+  width: 22%;
+}
+
+main.ram_market .history.list tr > *:nth-of-type(5) {
+  width: 27%;
+}
+
+main.ram_market .history.list table {
+  table-layout: fixed;
+}
+
+main.ram_market .history.list table td:last-child {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+main.ram_market .history.list tr.log.buy td:first-child {
+  color: #79c720;
+}
+
+main.ram_market .history.list tr.log.sell td:first-child {
+  color: #ff6b64;
+}
+
+main.ram_market .history.list .btn_area {
+  margin-top: 16px;
+  text-align: center;
 }
 
 /*# sourceMappingURL=style.css.map */

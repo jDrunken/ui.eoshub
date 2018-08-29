@@ -59,7 +59,7 @@
 			<span class="tooltip" aria-hidden="hidden">전송하기</span>
 		</li>
 		<li>
-			<a href="go-ram-market.html" rel="nofollow" class="ram_market">Ram market</a>
+			<a href="ram-market.html" rel="nofollow" class="ram_market">Ram market</a>
 			<span class="tooltip" aria-hidden="hidden">Ram Market</span>
 		</li>
 		<li>
@@ -149,13 +149,221 @@
 	<h2>램마켓</h2>
 	<p>이오스 자원인 램을 구매할 수 있습니다. 램은 타 계정에 구매가능합니다.</p>
 	<div class="container">
-
 		<section class="dashboard">
-		</section>
+			<div class="ram status">
+				<div class="wrapper">
+					<h3>이오스 램 가격</h3>
+					<p>0.1579.3210 EOS/kb</p>
+				</div>
+				<div class="wrapper">
+					<h3>램 점유율</h3>
+					<p>46.44/66.36GB (69.97%)</p>
+				</div>
+				<div class="graph">
 
-		<section class="my status">
+				</div>
+			</div>
+			<div class="my status">
+				<div class="summary">
+					<h3>
+						나의 램
+						<span>2.230 EOS</span>
+					</h3>
+					<p>사용가능한 용량이 53% 남았어요</p>
+					<div class="status">
+						
+						<span class="hell" style="height:10%"></span>
+						10%
+					</div>
+				</div>
 
+				<div class="sell_buy">
+					<div class="tab">
+						<button type="button" class="buy ing tab button">구매하기</button>
+						<button type="button" class="sell tab button">판매하기</button>
+					</div>
+					<div class="unit">
+						<div class="select period">
+							<i data-value="0">EOS</i>
+							<button type="button" class="prev button">이전 단위 고르기</button>
+							<button type="button" class="next button">다음 단위 고르기</button>
+						</div>
+						<a href="#" id="openPopup">타계정 구매</a>
+					</div>
+
+					<div class="target">
+						eosbpkorea 에게
+						<button type="button" class="close button" title="타 계정의 구매를 하지 않습니다.">타 계정의 구매를 하지 않습니다</button>
+					</div>
+					<form class="input panel">
+						<div>
+							<input type="number" placeholder="구매하실 수량을 입력하세요" pattern="\d+(\.\d{1,4})?" step="0.0001" min="0.0001" max="1000000000">
+							<span class="unit">EOS</span>
+						</div>
+						<div>
+							<button type="button">10%</button>
+							<button type="button">50%</button>
+							<button type="button">70%</button>
+							<button type="button">최대</button>
+						</div>
+					</form>
+					<div class="btn_area">
+						<button type="button" class="ok button" disabled>구매하기</button>
+					</div>
+				</div>
+			</div>
 		</section>
+		
+		<script>
+		// 단위 바꿔줌
+		(function () {
+			var button = {
+				prev : document.querySelector('.select.period button.prev'),
+				next : document.querySelector('.select.period button.next')
+			};
+
+			var data = document.querySelector('.select.period i').dataset;
+			var target = [
+				document.querySelector('.select.period i'),
+				document.querySelector('.input.panel span.unit')
+			];
+
+			var unit = [
+				{
+					short : 'EOS',
+					full : 'EOS'
+				},
+				{
+					short: 'MB',
+					full : 'Mega Bytes'
+				},
+				{
+					short : 'KB',
+					full : 'Kilo Bytes'
+				},
+				{
+					short : 'BYTES',
+					full : 'Bytes'
+				}
+			]
+
+			button.prev.addEventListener('click',function () {
+				data.value = parseInt(data.value) === 0 ?  3 : parseInt(data.value) - 1;
+				target[0].innerText = unit[data.value].full;
+				target[1].innerText = unit[data.value].short;
+			});
+
+			button.next.addEventListener('click',function () {
+				data.value = parseInt(data.value) === 3 ?  0 : parseInt(data.value) + 1;
+				target[0].innerText = unit[data.value].full;
+				target[1].innerText = unit[data.value].short;
+			});
+		})();
+
+		// 수량 조절 버튼 클릭
+		(function () {
+			var button = document.querySelectorAll('.input.panel button');
+			var clicked;
+
+			for (var i=0; i<button.length; i++) {
+				button[i].addEventListener('click', function () {
+					if (!!clicked) {
+						clicked.classList.remove('clicked');
+					}
+					this.classList.add('clicked');
+					clicked = this;
+				});
+			}
+		})();
+
+		// 클릭시 수량 정해줌
+		(function () {
+			var button = document.querySelectorAll('.input.panel button');
+			var input = document.querySelector('.input.panel input');
+			var submit = document.querySelector('.sell_buy .btn_area button');
+			var max = parseInt(1000);
+
+			button[0].addEventListener('click', function () {
+				input.value = max*0.1;
+				input.focus();
+			});
+			button[1].addEventListener('click', function () {
+				input.value = max*0.5;
+				input.focus();
+			});
+			button[2].addEventListener('click', function () {
+				input.value = max*0.7;
+				input.focus();
+			});
+			button[3].addEventListener('click', function () {
+				input.value = max*1;
+				input.focus();
+			});
+		})();
+
+		// 판매/구매하기 submit 버튼 활성화
+		(function () {
+			var submit = document.querySelector('.sell_buy .btn_area button');
+			var input = document.querySelector('.input.panel input');
+
+			input.addEventListener('focus',function () {
+				console.log(this.vaule);
+				if(this.value > 0) {
+					submit.removeAttribute('disabled');
+				}
+			});
+
+			input.addEventListener('keyup',function () {
+				!this.value > 0 ?  submit.setAttribute('disabled','') : submit.removeAttribute('disabled')
+			});
+		})();
+
+		// 탭의 버튼 클릭시 인터랙션 구현함
+		(function () {
+			var button = {
+				sell : document.querySelector('.sell_buy .tab button.sell'),
+				buy : document.querySelector('.sell_buy .tab button.buy')
+			};
+
+			var changeTarget = {
+				submit : document.querySelector('.sell_buy .btn_area button'),
+				a : document.querySelector('div.unit a')
+			};
+
+			var reset = {
+				submit : document.querySelector('.sell_buy .btn_area button'),
+				input : document.querySelector('.input.panel input'),
+				unit : [
+					document.querySelector('.select.period i'),
+					document.querySelector('.input.panel span.unit')
+				]
+			}
+
+			button.buy.addEventListener('click',function () {
+				this.classList.add('ing');
+				button.sell.classList.remove('ing');
+				changeTarget.submit.innerText = '구매하기';
+				console.log(changeTarget.a);
+				changeTarget.a.removeAttribute('hidden');
+				reset.submit.setAttribute('disabled','');
+				reset.input.value = '';
+				reset.unit[0].innerText = 'EOS';
+				reset.unit[1].innerText = 'EOS';
+			});
+
+			button.sell.addEventListener('click',function () {
+				this.classList.add('ing');
+				button.buy.classList.remove('ing');
+				changeTarget.submit.innerText = '판매하기';
+				console.log(changeTarget.a);
+				changeTarget.a.setAttribute('hidden','');
+				reset.submit.setAttribute('disabled','');
+				reset.input.value = '';
+				reset.unit[0].innerText = 'EOS';
+				reset.unit[1].innerText = 'EOS';
+			});
+		})();
+		</script>
 
 		<section class="history list">
 			<table>
@@ -170,21 +378,77 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<td class="log sell">구매</td>
+					<tr class="log buy">
+						<td>구매</td>
 						<td>11762303.2482 EOS</td>
 						<td>eoshubkoreabpking</td>
 						<td>2012. 12. 12 오후 12:12:12</td>
-						<td>b880e30102aae4254b880e30102aae4254b880e30102aae4254b880e30102aae425402aae42544</td>
+						<td title="b880e30102aae4254b880e30102aae4254b880e30102aae4254b880e30102aae425402aae42544">b880e30102aae4254b880e30102aae4254b880e30102aae4254b880e30102aae425402aae42544</td>
+					</tr>
+					<tr class="log sell">
+						<td>판매</td>
+						<td>11762303.2482 EOS</td>
+						<td>eoshubkoreabpking</td>
+						<td>2012. 12. 12 오후 12:12:12</td>
+						<td title="b880e30102aae4254b880e30102aae4254b880e30102aae4254b880e30102aae425402aae42544">b880e30102aae4254b880e30102aae4254b880e30102aae4254b880e30102aae425402aae42544</td>
 					</tr>
 				</tbody>
 			</table>
 			<div class="btn_area">
-				<button type="button" class="button">더 보기</button>
+				<button type="button" class="view_more button">더 보기</button>
 			</div>
 		</section>
 	</div>
 </main>
+<section id="popup" class="buy_ram modal popup" aria-live="true" role="alert">
+	<div class="wrapper">
+		<h2>타계정 구매</h2>
+		<p>램을 구매해 줄 타계정을 입력하세요.</p>
+
+		<form action="">
+			<input id="" type="text" name="" class="user" placeholder="ex) eosbpkorea">
+		</form>
+
+		<div class="container">
+			<span class="true validate description">존재하지 않는 계정입니다.</span>
+			<span class="false validate description">존재하지 않는 계정입니다.</span>
+		</div>
+
+		<div class="btn_area">
+			<button type="button" class="ok button" disabled>확인</button>
+		</div>
+		<button id="closePopup" type="button" class="close button">닫기</button>
+	</div>
+	<script>
+	// popup 닫기
+	(function () {
+		document.getElementById('closePopup').addEventListener('click',function () {
+			document.getElementById('popup').classList.remove('viewing');
+		});
+		document.querySelector('.modal.popup .btn_area button').addEventListener('click',function () {
+			document.getElementById('popup').classList.remove('viewing');
+		});
+	})();
+
+	// popup 열기
+	(function () {
+		document.getElementById('openPopup').addEventListener('click',function(e) {
+			document.getElementById('popup').classList.add('viewing');
+		});
+	})();
+
+	// popup 안에 값이 입력되면 disabed 뜯
+	(function () {
+		document.querySelector('.modal.popup form input').addEventListener('keyup',function () {
+			if (this.value.length > 0) {
+				document.querySelector('.modal.popup .btn_area button').removeAttribute('disabled');
+			} else {
+				document.querySelector('.modal.popup .btn_area button').setAttribute('disabled','');
+			}
+		});
+	})();
+	</script>
+</section>
 
 
 
