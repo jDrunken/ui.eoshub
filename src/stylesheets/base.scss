@@ -17,6 +17,12 @@ sub,sup {
     font-family:inherit;
 }
 
+i {
+	font-style:normal;
+	font-size:inherit;
+	font-family:inherit;
+}
+
 // for screen reader
 .skip_nav {
     position: absolute;
@@ -155,6 +161,15 @@ input[type="email"]::placeholder {
 	color:$gray;
 }
 
+
+input[type="number"] {
+	&::-webkit-inner-spin-button,
+	&::-webkit-outer-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
+	}
+}
+
 input[type='checkbox'] {
 	@include screen_reader();
 	visibility:hidden;
@@ -201,6 +216,7 @@ input[type='checkbox'] {
 button {
 	color:inherit;
 	border-color:transparent;
+	outline:0;
 }
 
 
@@ -208,6 +224,7 @@ button {
 // select
 // --------------------------------------------------------------------------------
 select {
+	outline:0;
 	-webkit-appearance: none;
 	-moz-appearance: none;
 }
