@@ -214,16 +214,25 @@ main.ram_market {
 						justify-content:space-between;
 
 						padding-left:16px;
+						padding-right:8px;
 						color:$white;
 						font-size:$small;
 
 						button.button {
-							width:24px;
-							height:24px;
+							width:16px;
+							height:16px;
 
 							@include ir();
-							background:#600;
-							margin-left:4px;
+							background-size:9px 14px;
+							margin-left:8px;
+
+							&.prev {
+								background:url('../image/icon-arrow.svg#left') center center no-repeat;
+							}
+
+							&.next {
+								background:url('../image/icon-arrow.svg#right') center center no-repeat;
+							}
 						}
 
 						i {
