@@ -2863,6 +2863,12 @@ main.vote section.bp.list tr.buy.korea {
   background-color: #0e0e0e;
 }
 
+main.vote section.bp.list thead th {
+  position: sticky;
+  top: 64px;
+  z-index: 10;
+}
+
 main.vote section.bp.list thead th:nth-of-type(2) {
   text-indent: -999em;
   overflow: hidden;
