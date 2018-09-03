@@ -79,7 +79,8 @@ section.content {
 	main.index,
 	main.transfer,
 	main.search,
-	main.ram_market {
+	main.ram_market,
+	main.vote {
 		height:inherit;
 		box-sizing:border-box;
 		padding:42px;
@@ -105,7 +106,8 @@ section.content {
 
 	main.transfer,
 	main.search,
-	main.ram_market	{
+	main.ram_market,
+	main.vote {
 		width:965px;
 	}
 
@@ -139,7 +141,8 @@ aside {
 main.index,
 main.transfer,
 main.search,
-main.ram_market {
+main.ram_market,
+main.vote {
 	transition:margin 0.4s;
 }
 
@@ -151,7 +154,8 @@ aside.shrink {
 	+ main.index,
 	+ main.transfer,
 	+ main.search,
-	+ main.ram_market {
+	+ main.ram_market,
+	+ main.vote {
 		margin-left:0;
 	}
 
@@ -502,6 +506,43 @@ aside.shrink {
 		margin:43px 32px 0;
 		button {
 			width:100%;
+		}
+	}
+}
+
+
+
+
+
+// --------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------
+
+
+
+
+// tab view
+div.tab {
+
+	// basement
+	box-sizing:border-box;
+	display:flex;
+
+	button {
+		flex:1 0 50%;
+		height:52px;
+		background-color:$xx-dark-gray;
+		box-sizing:border-box;
+
+		padding:0 40px;
+
+		height:inherit;
+		text-align:center;
+		border-radius:0;
+
+		&.ing {
+			border-top:2px solid $pink;
+			background-color:$xxxx-dark-gray;
 		}
 	}
 }

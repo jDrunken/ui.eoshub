@@ -1,0 +1,154 @@
+<!-- @@master = ../template/master.html -->
+
+<!-- @@block = aside -->
+<!-- @@include = ../template/aside-log-in.html -->
+<!-- @@close -->
+
+<!-- @@block = main -->
+<main class="vote">
+	<h2>투표하기</h2>
+	<p>건강한 이오스 생태계를 위해 투표해주세요.</p>
+
+	<div class="tab">
+		<button type="button" class="vote ing tab button">투표하기</button>
+		<button type="button" class="proxy_vote tab button">대리투표</button>
+	</div>
+	<div class="container">
+		<section class="vote summary">
+			<h3>총 투표율</h3>
+			<p>36.7304%</p>
+			<dl>
+				<dt>투표된 EOS</dt>
+				<dd>378,289,459.8382 EOS (37.4233%)</dd>
+
+				<dt>전체 EOS 수량</dt>
+				<dd>1,010,840,557.0558 EOS</dd>
+			</dl>
+			<p>vote for eosyskoreabp</p>
+		</section>
+
+		<section class="bp list">
+			<table>
+				<caption>BP list</caption>
+				<thead>
+					<tr>
+						<th scope="col">순위</th>
+						<th scope="col">
+							<span>변동된 순위</span>
+						</th>
+						<th scope="col" class="search">
+							<form>
+								<input type="text" placeholder="BP 후보 검색">
+								<button type="submit">검색</button>
+							</form>
+						</th>
+						<th scope="col">득표</th>
+						<th scope="col">
+							<span class="count">0/30</span>
+							<button type="button" class="vote ok button" disabled>투표</button>
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+
+					<!-- eoskoreabp vote promotion -->
+					<tr class="buy korea">
+						<td>21</td>
+						<td>
+							<span>-</span>
+						</td>
+						<td>
+							<span class="bp bi">
+								<img src="" alt="">
+							</span>
+							<strong>eos-1</strong>
+							korea
+						</td>
+						<td>
+							2.16%
+							<span>(64,173,932.6431 EOS)</span>
+						</td>
+						<td>
+							<input type="checkbox" id="eos-1"/>
+							<label for="eos-1" title="eos-1에 투표하시려면 체크하세요!">eosyskoreabp에 투표하시려면 체크하세요!</label>
+						</td>
+					</tr>
+
+					<tr>
+						<td>21</td>
+						<td>
+							<span class="up">21</span>
+						</td>
+						<td>
+							<span class="bp bi">
+								<img src="" alt="">
+							</span>
+							<strong>eos-2</strong>
+							korea
+						</td>
+						<td>
+							<strong>2.16%</strong>
+							<span>(64,173,932.6431 EOS)</span>
+						</td>
+						<td>
+							<input type="checkbox" id="eos-2"/>
+							<label for="eos-2">eosyskoreabp에 투표하시려면 체크하세요!</label>
+						</td>
+					</tr>
+
+					<tr>
+						<td>1</td>
+						<td>
+							<span class="down">12</span>
+						</td>
+						<td>
+							<span class="bp bi">
+								<img src="" alt="">
+							</span>
+							<strong>eos-3</strong>
+							korea
+						</td>
+						<td>
+							2.16%
+							<span>(64,173,932.6431 EOS)</span>
+						</td>
+						<td>
+							<input type="checkbox" id="eos-3"/>
+							<label for="eos-3">eosyskoreabp에 투표하시려면 체크하세요!</label>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<script>
+			// checkbox checked/unchecked 되어있을때 버튼 활성화
+			(function () {
+				var isCheck = 0;
+				var checkbox = document.querySelectorAll('table input[type="checkbox"]');
+				var button = document.querySelector('button.ok.button');
+				var howMany = document.querySelector('span.count');
+				for (var i=0; i<checkbox.length; i++) {
+					(function (i) {
+						checkbox[i].addEventListener('change',function () {
+							// 체크박스 검사
+							for (var j=0; j<checkbox.length; j++) {
+								if (checkbox[j].checked === true) {
+									button.removeAttribute('disabled');
+									break;
+								} else {
+									button.setAttribute('disabled','');
+								}
+							}
+
+							this.checked === true ? isCheck += 1 : isCheck -= 1;
+
+							howMany.innerText = isCheck + '/30';
+						});
+					})(i);
+				}
+			})();
+			</script>
+		</div>
+	</div>
+</main>
+<!-- @@close -->
+
