@@ -191,7 +191,7 @@
 						<a href="#" id="openPopup">타계정 구매</a>
 					</div>
 
-					<div class="target">
+					<div class="target" hidden>
 						eosbpkorea 에게
 						<button type="button" class="close button" title="타 계정의 구매를 하지 않습니다.">타 계정의 구매를 하지 않습니다</button>
 					</div>
@@ -336,7 +336,8 @@
 				unit : [
 					document.querySelector('.select.period i'),
 					document.querySelector('.input.panel span.unit')
-				]
+				],
+				rcv : document.querySelector('div.target')
 			}
 
 			button.buy.addEventListener('click',function () {
@@ -349,6 +350,7 @@
 				reset.input.value = '';
 				reset.unit[0].innerText = 'EOS';
 				reset.unit[1].innerText = 'EOS';
+				reset.rcv.setAttribute('hidden','');
 			});
 
 			button.sell.addEventListener('click',function () {
@@ -361,8 +363,18 @@
 				reset.input.value = '';
 				reset.unit[0].innerText = 'EOS';
 				reset.unit[1].innerText = 'EOS';
+				reset.rcv.setAttribute('hidden','');
 			});
 		})();
+
+		// 대리구매 삭제하기
+		(function () {
+			var button = document.querySelector('div.target button');
+			button.addEventListener('click',function () {
+				this.parentNode.setAttribute('hidden','');
+			});
+		})();
+
 		</script>
 
 		<section class="history list">
@@ -425,8 +437,11 @@
 		document.getElementById('closePopup').addEventListener('click',function () {
 			document.getElementById('popup').classList.remove('viewing');
 		});
+		// 팝업안의 ok버튼을 클릭하면
 		document.querySelector('.modal.popup .btn_area button').addEventListener('click',function () {
 			document.getElementById('popup').classList.remove('viewing');
+			// 대리구매를 보여줌
+			document.querySelector('div.target').removeAttribute('hidden');
 		});
 	})();
 
@@ -437,7 +452,7 @@
 		});
 	})();
 
-	// popup 안에 값이 입력되면 disabed 뜯
+	// popup 안에 값이 입력되면 disabed 뜯어내기
 	(function () {
 		document.querySelector('.modal.popup form input').addEventListener('keyup',function () {
 			if (this.value.length > 0) {

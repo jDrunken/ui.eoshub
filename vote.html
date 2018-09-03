@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+
+
+<meta charset="UTF-8">
+
+<title>EOShub</title>
+
+<meta charset="utf-8">
+
+<meta name="description" content="">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta property="og:title" content="eoshub">
+<meta property="og:description" content="eoshub">			
+<meta property="og:image" content="https://eoshub.io/">
+<meta property="og:url" content="https://eoshub.io/">
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?">
+
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+</head>
+<body>
+
+<div id="elm-target">
+	<div>
+		
+<header>
+	<h1><a href="index-view.html">eoshub</a></h1>
+	<div class="language">
+		<button type="button" class="selected">한글</button>
+		<button type="button">EN</button>
+		<button type="button">中国</button>
+	</div>
+	<form action="search.html">
+		<input type="text" placeholder="계정명, 공개 키 검색하기" />
+		<button type="submit">검색</button>
+	</form>
+</header>
+
+
+		
+<nav>
+	<ul>
+		<li>
+			<button type="button" class="toggle dashboard" id="openAside">대쉬보드 열기/닫기</button>
+			<span class="tooltip" aria-hidden="hidden">대쉬보드 열기 닫기</span>
+		</li>
+		<li>
+			<a href="resource.html" rel="nofollow" class="resource">리소스 관리</a>
+			<span class="tooltip" aria-hidden="hidden">리소스 관리</span>
+		</li>
+		<li>
+			
+			<a href="transfer.html" rel="nofollow" class="transfer viewing">전송하기</a>
+			<span class="tooltip" aria-hidden="hidden">전송하기</span>
+		</li>
+		<li>
+			<a href="ram-market.html" rel="nofollow" class="ram_market">Ram market</a>
+			<span class="tooltip" aria-hidden="hidden">Ram Market</span>
+		</li>
+		<li>
+			<a href="go-vote.html" rel="nofollow" class="vote">BP 투표하기</a>
+			<span class="tooltip" aria-hidden="hidden">투표하기</span>
+		</li>
+		<li>
+			<a href="go-dapp.html" rel="nofollow" class="dapps">dapps</a>
+			<span class="tooltip" aria-hidden="hidden">Dapps</span>
+		</li>
+	</ul>
+</nav>
+<script>
+(function () {
+	document.addEventListener('DOMContentLoaded',function () {
+		var handler = document.getElementById('openAside');
+		var target = document.querySelector('aside');
+
+		handler.addEventListener('click',function (){
+			this.classList.toggle('shrink');
+			target.classList.toggle('shrink');
+		});
+	});
+})();
+</script>
+
+
+		<section class="content">
+
+
+
+
+
+<aside class="log in">
+
+	<h2>eosyskoreabp
+		<span class="description">@owner</span>
+	</h2>
+
+	<div class="config panel">
+		<button type="button" class="icon gear button" wai-aria="hidden">option</button>
+		<div class="menu_list">
+			<a href="#">지갑 변경하기</a>
+			<a href="#">내 계정보기</a>
+			<a href="#">로그아웃</a>
+		</div>
+	</div>
+	<script>
+		(function () {
+			var handler = document.querySelector('div.config.panel button.gear'),
+				target = document.querySelector('div.config.panel');
+
+			handler.addEventListener('click',function () {
+				target.classList.toggle('expand');
+			});
+
+			target.addEventListener('mouseleave',function () {
+				target.classList.remove('expand');
+			});
+		})();
+	</script>
+
+	<ul class="wallet status">
+		<li>
+			<span class="title">total</span>
+			<span class="amount">24.536.341</span>
+		</li>
+		<li>
+			<span class="title">stake</span>
+			<span class="amount">32.3812</span>
+			<span class="status available">트랜잭션 가능</span>
+			<span class="status unavailable">트랜잭션 불가능</span>
+		</li>
+		<li>
+			<span class="title">refunding</span>
+			<span class="amount">0</span>
+			<span class="remaining time">72.3 hours</span>
+		</li>
+	</ul>
+
+	<button type="button" class="resource management">리소스 관리</button>
+</aside>
+
+
+
+<main class="vote">
+	<h2>투표하기</h2>
+	<p>건강한 이오스 생태계를 위해 투표해주세요.</p>
+
+	<div class="tab">
+		<button type="button" class="vote ing tab button">투표하기</button>
+		<button type="button" class="proxy_vote tab button">대리투표</button>
+	</div>
+	<div class="container">
+		<section class="vote summary">
+			<h3>총 투표율</h3>
+			<p>36.7304%</p>
+			<dl>
+				<dt>투표된 EOS</dt>
+				<dd>378,289,459.8382 EOS (37.4233%)</dd>
+
+				<dt>전체 EOS 수량</dt>
+				<dd>1,010,840,557.0558 EOS</dd>
+			</dl>
+			<p>vote for eosyskoreabp</p>
+		</section>
+
+		<section class="bp list">
+			<table>
+				<caption>BP list</caption>
+				<thead>
+					<tr>
+						<th scope="col">순위</th>
+						<th scope="col">
+							<span>변동된 순위</span>
+						</th>
+						<th scope="col" class="search">
+							<form>
+								<input type="text" placeholder="BP 후보 검색">
+								<button type="submit">검색</button>
+							</form>
+						</th>
+						<th scope="col">득표</th>
+						<th scope="col">
+							<span class="count">0/30</span>
+							<button type="button" class="vote ok button" disabled>투표</button>
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+
+					
+					<tr class="buy korea">
+						<td>21</td>
+						<td>
+							<span>-</span>
+						</td>
+						<td>
+							<span class="bp bi">
+								<img src="" alt="">
+							</span>
+							<strong>eos-1</strong>
+							korea
+						</td>
+						<td>
+							2.16%
+							<span>(64,173,932.6431 EOS)</span>
+						</td>
+						<td>
+							<input type="checkbox" id="eos-1"/>
+							<label for="eos-1" title="eos-1에 투표하시려면 체크하세요!">eosyskoreabp에 투표하시려면 체크하세요!</label>
+						</td>
+					</tr>
+
+					<tr>
+						<td>21</td>
+						<td>
+							<span class="up">21</span>
+						</td>
+						<td>
+							<span class="bp bi">
+								<img src="" alt="">
+							</span>
+							<strong>eos-2</strong>
+							korea
+						</td>
+						<td>
+							<strong>2.16%</strong>
+							<span>(64,173,932.6431 EOS)</span>
+						</td>
+						<td>
+							<input type="checkbox" id="eos-2"/>
+							<label for="eos-2">eosyskoreabp에 투표하시려면 체크하세요!</label>
+						</td>
+					</tr>
+
+					<tr>
+						<td>1</td>
+						<td>
+							<span class="down">12</span>
+						</td>
+						<td>
+							<span class="bp bi">
+								<img src="" alt="">
+							</span>
+							<strong>eos-3</strong>
+							korea
+						</td>
+						<td>
+							2.16%
+							<span>(64,173,932.6431 EOS)</span>
+						</td>
+						<td>
+							<input type="checkbox" id="eos-3"/>
+							<label for="eos-3">eosyskoreabp에 투표하시려면 체크하세요!</label>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<script>
+			// checkbox checked/unchecked 되어있을때 버튼 활성화
+			(function () {
+				var isCheck = 0;
+				var checkbox = document.querySelectorAll('table input[type="checkbox"]');
+				var button = document.querySelector('button.ok.button');
+				var howMany = document.querySelector('span.count');
+				for (var i=0; i<checkbox.length; i++) {
+					(function (i) {
+						checkbox[i].addEventListener('change',function () {
+							// 체크박스 검사
+							for (var j=0; j<checkbox.length; j++) {
+								if (checkbox[j].checked === true) {
+									button.removeAttribute('disabled');
+									break;
+								} else {
+									button.setAttribute('disabled','');
+								}
+							}
+
+							this.checked === true ? isCheck += 1 : isCheck -= 1;
+
+							howMany.innerText = isCheck + '/30';
+						});
+					})(i);
+				}
+			})();
+			</script>
+		</div>
+	</div>
+</main>
+
+		</section>
+
+		
+<footer>
+	<div class="sns area">
+		
+		<a href="#" class="sns medium button">Go to facebook</a>
+		<a href="#" class="sns twitter button">Go to Twitter</a>
+		<a href="#" class="sns telegram button">Go to Telegram</a>
+	</div>
+</footer>
+
+	</div>
+</div>
+</body>
+</html>
