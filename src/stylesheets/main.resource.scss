@@ -130,13 +130,18 @@ main.resource_management {
 				margin-top:8px;
 			}
 
-			a {
+			a,p:last-child {
 				font-size:$small;
 				position:absolute;
 				top:0;
 				right:0;
 				color:$white;
 				text-decoration:underline;
+			}
+
+			p:last-child {
+				text-decoration:none;
+				color:$gray;
 			}
 		}
 	}
@@ -145,7 +150,7 @@ main.resource_management {
 		display:flex;
 		flex-direction:column;
 
-		form.input.panel {
+		form {
 			margin-top:49px;
 			flex:1;
 			position:relative;
@@ -223,17 +228,88 @@ main.resource_management {
 				}
 			}
 
-			.btn_area {
-				position:absolute;
-				right:0;
-				bottom:0;
+		}
+		.btn_area {
+			position:absolute;
+			right:32px;
+			bottom:32px;
 
-				button {
-					width: 136px;
-					height: 52px;
-					border-radius: 2px;
-					border: solid 1px #5d5d5d;
+			button {
+				width: 136px;
+				height: 52px;
+				border-radius: 2px;
+				border: solid 1px #5d5d5d;
+			}
+		}
+	}
+}
+
+
+// case type
+main.resource_management {
+	.unstake.container {
+		.input.group {
+			width:236px * 2 + 36px;
+			display:flex;
+
+			form {
+				display:block;
+
+				&:first-child {
+					margin-right:35px;
 				}
+
+				> div {
+					position:relative;
+					margin-bottom:12px;
+				}
+
+				input,
+				span {
+					font-size:$small;
+				}
+
+				input {
+					padding-top:16px;
+					padding-bottom:16px;
+					border:0;
+					border-bottom:1px solid $dark-gray;
+
+					&[data-validate='true'] {
+						border-color:$green;
+					}
+
+					&[data-validate='false'],
+					&:invalid {
+						border-color:$red;
+					}
+				}
+
+				span {
+					position:absolute;
+					top:50%;
+					right:0;
+					transform:translateY(-50%);
+				}
+
+				.button.bunch {
+					display:flex;
+					margin:0;
+
+					button {
+						flex:1;
+					}
+				}
+			}
+		}
+
+		p.validate.description {
+			&.false {
+				color:$red;
+			}
+
+			&.true {
+				color:$green;
 			}
 		}
 	}

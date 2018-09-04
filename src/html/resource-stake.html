@@ -1,0 +1,196 @@
+<!-- @@master = ../template/master.html -->
+
+<!-- @@block = aside -->
+<!-- @@include = ../template/aside-log-in.html -->
+<!-- @@close -->
+
+<!-- @@block = main -->
+<main class="resource_management">
+	<div class="tab">
+		<a href="resource-stake.html" class="ing">스테이크</a>
+		<a href="resource-unstake.html">언스테이크</a>
+		<a href="resource-rental.html">임대해주기</a>
+		<a href="resource-rental-cancel.html">임대취소하기</a>
+	</div>
+	<div class="stake container">
+		<div class="my resource">
+			<div>
+				<h3>CPU 총량
+					<strong>18 EOS</strong>
+				</h3>
+
+				<p>내가 스테이크한 토큰 : 8 EOS</p>
+				<p>임대받은 토큰 : 4 EOS</p>
+				<div class="graph status">
+					<span class="hell" style="height:10%"></span>
+					10%
+				</div>
+			</div>
+			<div>
+				<h3>NET 총량
+					<strong>18 EOS</strong>
+				</h3>
+
+				<p>내가 스테이크한 토큰 : 8 EOS</p>
+				<p>임대받은 토큰 : 4 EOS</p>
+				<div class="graph status">
+					<span class="hell" style="height:10%"></span>
+					10%
+				</div>
+			</div>
+		</div>
+
+		<section>
+			<div class="wallet status">
+				<h3>스테이크 가능한 토큰</h3>
+				<p>100 EOS</p>
+				<a href="#setDirect" id="setDirect">직접설정</a>
+			</div>
+
+			<div class="panel group">
+				<form>
+					<div>
+						<input type="number" placeholder="수량을 입력하세요" pattern="\d+(\.\d{1,4})?" step="0.0001" min="0.0001" max="1000000000" autofocus>
+						<span class="validate description">보유한 수량만큼 스테이크 할 수 있습니다.</span>
+					</div>
+					<div class="button bunch">
+						<button type="button">10%</button>
+						<button type="button">50%</button>
+						<button type="button">70%</button>
+						<button type="button">최대</button>
+					</div>
+				</form>
+			</div>
+			<div class="btn_area">
+				<button type="button" class="ok button" disabled>확인</button>
+			</div>
+		</section>
+		<script>
+		// 수량 조절 버튼 클릭
+		(function () {
+			var button = document.querySelectorAll('div.button.bunch button');
+			var clicked;
+
+			for (var i=0; i<button.length; i++) {
+				button[i].addEventListener('click', function () {
+					if (!!clicked) {
+						clicked.classList.remove('clicked');
+					}
+					this.classList.add('clicked');
+					clicked = this;
+				});
+			}
+		})();
+
+		// 클릭시 수량 정해줌
+		(function () {
+			var button = document.querySelectorAll('div.button.bunch button');
+			var input = document.querySelector('input[type="number"]');
+			var submit = document.querySelector('.panel.group .btn_area button');
+			var max = parseInt(1000);
+
+			button[0].addEventListener('click', function () {
+				input.value = max*0.1
+				input.focus();
+			});
+			button[1].addEventListener('click', function () {
+				input.value = max*0.5;
+				input.focus();
+			});
+			button[2].addEventListener('click', function () {
+				input.value = max*0.7;
+				input.focus();
+			});
+			button[3].addEventListener('click', function () {
+				input.value = max*1;
+				input.focus();
+			});
+		})();
+
+		// 확인 (submit) 버튼 활성화
+		(function () {
+			var submit = document.querySelector('.btn_area button');
+			var input = document.querySelector('.input.panel input');
+
+			input.addEventListener('focus',function () {
+				console.log(this.vaule);
+				if(this.value > 0) {
+					submit.removeAttribute('disabled');
+				}
+			});
+
+			input.addEventListener('keyup',function () {
+				!this.value > 0 ?  submit.setAttribute('disabled','') : submit.removeAttribute('disabled')
+			});
+		})();
+		</script>
+	</div>
+</main>
+<section id="popup" class="set_division_manual modal popup" aria-live="true" role="alert">
+	<div class="wrapper">
+		<h2>토큰 스테이크 수량 직접 설정</h2>
+		<div class="token status">
+			<h3>스테이크할 토큰
+				<strong>10 EOS</strong>
+			</h3>
+			<button type="button" class="set auto button">자동 분배</button>
+		</div>
+		<div class="form container">
+			<h3>CPU</h3>
+			<p>Staked : 18 EOS</p>
+			<form action="" class="true validate">
+				<input id="" type="text" name="" class="user" placeholder="스테이크할 수량을 설정하세요" data-validate="false">
+				<span>EOS</span>
+			</form>
+		</div>
+
+		<div class="form container">
+			<h3>NET</h3>
+			<p>Staked : 18 EOS</p>
+			<form action="">
+				<input id="" type="text" name="" class="user" placeholder="스테이크할 수량을 설정하세요" data-validate="true">
+				<span>EOS</span>
+			</form>
+		</div>
+
+		<p class="validate description">7:3 비율로 스테이킹 하는 것이 가장 좋습니다.</p>
+		<div class="btn_area">
+			<button type="button" class="undo button">취소</button>
+			<button type="button" class="ok button" disabled>확인</button>
+		</div>
+	</div>
+</section>
+
+<script>
+// popup 닫기
+(function () {
+	document.querySelector('button.undo').addEventListener('click',function () {
+		document.getElementById('popup').classList.remove('viewing');
+	});
+	// 팝업안의 ok버튼을 클릭하면
+	document.querySelector('.modal.popup .btn_area button').addEventListener('click',function () {
+		document.getElementById('popup').classList.remove('viewing');
+		// 대리구매를 보여줌
+		document.querySelector('div.target').removeAttribute('hidden');
+	});
+})();
+
+// popup 열기
+(function () {
+	document.getElementById('setDirect').addEventListener('click',function(e) {
+		document.getElementById('popup').classList.add('viewing');
+	});
+})();
+
+// popup 안에 값이 입력되면 disabed 뜯어내기
+(function () {
+	document.querySelector('.modal.popup form input').addEventListener('keyup',function () {
+		if (this.value.length > 0) {
+			document.querySelector('.modal.popup .btn_area button.ok').removeAttribute('disabled');
+		} else {
+			document.querySelector('.modal.popup .btn_area button,ok').setAttribute('disabled','');
+		}
+	});
+})();
+</script>
+<!-- @@close -->

@@ -492,6 +492,7 @@ aside.shrink {
 	}
 
 }
+
 // type case
 .modal.popup.buy_ram {
 	form {
@@ -513,6 +514,141 @@ aside.shrink {
 	}
 }
 
+.modal.popup.set_division_manual {
+	.wrapper {
+		background-color:$xx-dark-gray;
+		padding:0 0 32px 0;
+	}
+
+	h2 {
+		@include screen_reader();
+	}
+
+	.token.status {
+		padding:32px;
+		background-color:$xxx-dark-gray;
+		position:relative;
+
+		h3 {
+			font-size:$small;
+			strong {
+				display:block;
+				margin-top:8px;
+				font-weight:100;
+				font-size:$xx-large;
+			}
+		}
+
+		button.auto.set {
+			position:absolute;
+			right:32px;
+			top:32px;
+
+			padding-right:26px;
+
+			&:after {
+				content:'';
+				displayL:block;
+				width:22px;
+				height:22px;
+
+				position:absolute;
+				top:50%;
+				right:0;
+				margin-top:-11px;
+				background:url('../image/icon-refresh.svg') right center no-repeat;
+
+				transition:transform 1s, color 1s;
+			}
+
+			&:hover {
+				color:$white;
+				&:after {
+					transform:rotate(180deg);
+				}
+			}
+		}
+	}
+
+	.form.container {
+		padding:32px 32px 0;
+
+		h3,p {
+			font-size:$small;
+			margin:0;
+		}
+
+		p {
+			margin:4px 0 8px;
+		}
+
+		form {
+			margin:0;
+			padding:0;
+			display:block;
+			position:relative;
+
+			input {
+				background-color:#232323;
+				border:0;
+				border-bottom:1px solid $dark-gray;
+				line-height:48px;
+				height:48px;
+				background:none;
+				padding:0 8px;
+				box-sizing:border-box;
+				width:100%;
+
+				&[data-validate='true'] {
+					border-color:$green;
+				}
+
+				&[data-validate='false'],
+				&:invalid {
+					border-color:$red;
+				}
+			}
+
+			span {
+				margin-right:8px;
+				font-size:$small;
+
+				position:absolute;
+				top:50%;
+				right:0;
+
+				transform:translateY(-50%);
+
+			}
+		}
+	}
+
+	p.validate.description {
+		text-align:center;
+		font-size:$small;
+		margin:32px 0;
+
+		&.false {
+			color:$red;
+		}
+
+		&.true {
+			color:$green;
+		}
+	}
+
+	.btn_area {
+		margin:0 32px;
+		display:flex;
+
+		button {
+			flex:1;
+			&:last-child {
+				margin-left:8px;
+			}
+		}
+	}
+}
 
 
 
