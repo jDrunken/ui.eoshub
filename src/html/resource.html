@@ -8,58 +8,107 @@
 <main class="resource_management">
 	<h2>리소스 관리</h2>
 	<p>EOS 네트워크를 활용하기 위한 리소스 관리페이지입니다.</p>
+	<div class="tab">
+		<a href="#stake" class="ing">스테이크</a>
+		<a href="#stake">언스테이크</a>
+		<a href="#rental">임대해주기</a>
+		<a href="#cancel">임대취소하기</a>
+	</div>
 	<div class="container">
-		<div class="tab">
-			<a href="#stake">스테이크</a>
-			<a href="#stake">언스테이크</a>
-			<a href="#rental">임대해주기</a>
-			<a href="#cancel">임대취소하기</a>
-		</div>
-		<section>
-			<div class="summary">
-				<h3>트랜잭션 가능</h3>
-				<div>
-					<span>CPU</span>
-					<strong title="123 EOS">123 EOS</strong>
-				</div>
-				<div>
-					<span>NET</span>
-					<strong title="30 EOS">30 EOS</strong>
+		<div class="my resource">
+			<div>
+				<h3>CPU 총량
+					<strong>18 EOS</strong>
+				</h3>
+
+				<p>내가 스테이크한 토큰 : 8 EOS</p>
+				<p>임대받은 토큰 : 4 EOS</p>
+				<div class="graph status">
+					<span class="hell" style="height:10%"></span>
+					10%
 				</div>
 			</div>
 			<div>
+				<h3>NET 총량
+					<strong>18 EOS</strong>
+				</h3>
+
+				<p>내가 스테이크한 토큰 : 8 EOS</p>
+				<p>임대받은 토큰 : 4 EOS</p>
+				<div class="graph status">
+					<span class="hell" style="height:10%"></span>
+					10%
+				</div>
+			</div>
+		</div>
+
+		<section>
+			<div class="wallet status">
 				<h3>스테이크 가능한 토큰</h3>
 				<p>100 EOS</p>
+				<a href="#">직접설정</a>
 			</div>
 
-			<form class="input panel">
-				<div>
-					<input type="number" placeholder="수량을 입력하세요" pattern="\d+(\.\d{1,4})?" step="0.0001" min="0.0001" max="1000000000">
-					<span class="validate description">보유햔 수량을 여기에 입력해주세요.</span>
-				</div>
-				<div>
-					<button type="button">10%</button>
-					<button type="button">50%</button>
-					<button type="button">70%</button>
-					<button type="button">최대</button>
-				</div>
-			</form>
-			<form class="input panel">
-				<div>
-					<input type="number" placeholder="수량을 입력하세요" pattern="\d+(\.\d{1,4})?" step="0.0001" min="0.0001" max="1000000000">
-					<span class="validate description">보유햔 수량을 여기에 입력해주세요.</span>
-				</div>
-				<div>
-					<button type="button">10%</button>
-					<button type="button">50%</button>
-					<button type="button">70%</button>
-					<button type="button">최대</button>
-				</div>
-			</form>
-			<div class="btn_area">
-				<button type="button" class="ok button" disabled>구매하기</button>
+			<div class="panel group">
+				<form class="input panel">
+					<div>
+						<input type="number" placeholder="수량을 입력하세요" pattern="\d+(\.\d{1,4})?" step="0.0001" min="0.0001" max="1000000000" autofocus>
+						<span class="validate description">보유한 수량만큼 스테이크 할 수 있습니다.</span>
+					</div>
+					<div class="button bunch">
+						<button type="button">10%</button>
+						<button type="button">50%</button>
+						<button type="button">70%</button>
+						<button type="button">최대</button>
+					</div>
+					<div class="btn_area">
+						<button type="button" class="ok button" disabled>확인</button>
+					</div>
+				</form>
 			</div>
 		</section>
+		<script>
+		// 수량 조절 버튼 클릭
+		(function () {
+			var button = document.querySelectorAll('div.button.bunch button');
+			var clicked;
+
+			for (var i=0; i<button.length; i++) {
+				button[i].addEventListener('click', function () {
+					if (!!clicked) {
+						clicked.classList.remove('clicked');
+					}
+					this.classList.add('clicked');
+					clicked = this;
+				});
+			}
+		})();
+
+		// 클릭시 수량 정해줌
+		(function () {
+			var button = document.querySelectorAll('div.button.bunch button');
+			var input = document.querySelector('input[type="number"]');
+			var submit = document.querySelector('.panel.group .btn_area button');
+			var max = parseInt(1000);
+
+			button[0].addEventListener('click', function () {
+				input.value = max*0.1 + 'EOS'
+				input.focus();
+			});
+			button[1].addEventListener('click', function () {
+				input.value = max*0.5 + 'EOS';
+				input.focus();
+			});
+			button[2].addEventListener('click', function () {
+				input.value = max*0.7 + 'EOS';
+				input.focus();
+			});
+			button[3].addEventListener('click', function () {
+				input.value = max*1 + 'EOS';
+				input.focus();
+			});
+		})();
+		</script>
 	</div>
 </main>
 <!-- @@close -->

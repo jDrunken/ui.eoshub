@@ -80,7 +80,8 @@ section.content {
 	main.transfer,
 	main.search,
 	main.ram_market,
-	main.vote {
+	main.vote,
+	main.resource_management {
 		height:inherit;
 		box-sizing:border-box;
 		padding:42px;
@@ -107,7 +108,8 @@ section.content {
 	main.transfer,
 	main.search,
 	main.ram_market,
-	main.vote {
+	main.vote,
+	main.resource_management {
 		width:965px;
 	}
 
@@ -142,7 +144,8 @@ main.index,
 main.transfer,
 main.search,
 main.ram_market,
-main.vote {
+main.vote,
+main.resource_management {
 	transition:margin 0.4s;
 }
 
@@ -528,15 +531,16 @@ div.tab {
 	box-sizing:border-box;
 	display:flex;
 
+	a,
 	button {
 		flex:1 0 50%;
 		height:52px;
+		line-height:52px;
 		background-color:$xx-dark-gray;
 		box-sizing:border-box;
 
 		padding:0 40px;
 
-		height:inherit;
 		text-align:center;
 		border-radius:0;
 
