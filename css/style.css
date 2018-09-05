@@ -110,7 +110,7 @@ h2 {
 }
 
 h2 + p {
-  margin-top: 12px;
+  margin-top: 10px;
   font-size: 0.875rem;
 }
 
@@ -1103,7 +1103,7 @@ div.tab button {
   line-height: 52px;
   background-color: #282828;
   box-sizing: border-box;
-  padding: 0 40px;
+  padding: 0 35px;
   text-align: center;
   border-radius: 0;
 }
@@ -2942,17 +2942,18 @@ main.ram_market .history.list .btn_area {
 }
 
 main.resource_management h3 {
+  color: #fff;
   color: inherit;
+  font-size: 0.875rem;
 }
 
-main.resource_management h3,
-main.resource_management h3 + p {
+main.resource_management h3 ~ p {
   font-size: 0.875rem;
-  margin: 8px 0 0 0;
+  margin: 5px 0 0 0;
 }
 
 main.resource_management div.tab {
-  margin-top: 40px;
+  margin-top: 38px;
   display: block;
   font-size: 0;
 }
@@ -2962,6 +2963,10 @@ main.resource_management div.tab a {
   display: inline-block;
   flex-basis: auto;
   border-width: 1px;
+  min-width: 124px;
+  padding: 0;
+  height: 50px;
+  line-height: 50px;
 }
 
 main.resource_management .container {
@@ -2983,7 +2988,7 @@ main.resource_management .description.validate.true {
 }
 
 main.resource_management input + span.description {
-  margin-top: 12px;
+  margin-top: 5px;
   display: block;
   font-size: 0.8125rem;
   line-height: 1.54;
@@ -3009,6 +3014,8 @@ main.resource_management div.input.field input[type="number"]:focus {
 }
 
 main.resource_management div.input.field label {
+  position: absolute;
+  top: -1em;
   font-size: 0.8125rem;
   color: #ffffff;
 }
@@ -3048,7 +3055,7 @@ main.resource_management div.input.field input[type="text"],
 main.resource_management div.input.field input[type="number"] {
   font-size: 0.875rem;
   border-bottom: 1px solid #5d5d5d;
-  padding: 14px 0;
+  padding: 18px 0;
   margin-bottom: 12px;
 }
 
@@ -3080,7 +3087,6 @@ main.resource_management div.input.field input[type="number"][data-validate="fal
 
 main.resource_management div.input.field input[type="text"].size.large,
 main.resource_management div.input.field input[type="number"].size.large {
-  margin-top: 8px;
   width: 100%;
   font-size: 1.75rem;
   font-weight: 100;
@@ -3111,7 +3117,7 @@ main.resource_management div.input.field input[type="number"].size.large:placeho
 }
 
 main.resource_management div.input.field input.size.large + span.description ~ button {
-  margin-top: 49px;
+  margin-top: 46px;
 }
 
 main.resource_management div.my.resource {
@@ -3124,7 +3130,7 @@ main.resource_management div.my.resource > div {
   border-radius: 2px;
   background-color: #0e0e0e;
   box-sizing: border-box;
-  padding: 28px 32px;
+  padding: 28px;
   position: relative;
 }
 
@@ -3136,12 +3142,12 @@ main.resource_management div.my.resource > div h3 strong {
   display: block;
   font-size: 1.25rem;
   font-weight: 100;
-  margin-top: 7px;
+  color: #ffffff;
+  margin-top: 4px;
 }
 
 main.resource_management div.my.resource > div p:nth-of-type(1) {
-  margin-top: 20px;
-  margin-bottom: 4px;
+  margin-top: 14px;
   color: #fff;
 }
 
@@ -3201,7 +3207,7 @@ main.resource_management section .wallet.status {
 }
 
 main.resource_management section .wallet.status p {
-  margin-top: 8px;
+  margin: 4px 0 0 0;
 }
 
 main.resource_management section .wallet.status a, main.resource_management section .wallet.status p:last-child {
@@ -3214,6 +3220,7 @@ main.resource_management section .wallet.status a, main.resource_management sect
 }
 
 main.resource_management section .wallet.status p:last-child {
+  margin-top: 0;
   text-decoration: none;
   color: #999;
 }
@@ -3238,12 +3245,12 @@ main.resource_management section .btn_area button {
 
 main.resource_management
 .stake.container .input.field {
-  margin-top: 49px;
+  margin-top: 41px;
 }
 
 main.resource_management .unstake.container .field.group,
 main.resource_management .rental.container .field.group {
-  margin-top: 72px;
+  margin-top: 82px;
   width: 508px;
   display: flex;
 }
@@ -3282,7 +3289,7 @@ main.resource_management .rental.container .available.status a {
 }
 
 main.resource_management .rental.container section {
-  padding: 32px;
+  padding: 30px 32px;
 }
 
 main.vote div.tab {
