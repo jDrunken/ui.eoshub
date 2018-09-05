@@ -83,7 +83,7 @@ main.resource_management {
 
 		label {
 			position:absolute;
-			top:-1em;
+			top:calc(-1em - 4px);
 			font-size:$x-small;
 			color:$white;
 		}
@@ -179,7 +179,7 @@ main.resource_management {
 		}
 
 		input.size.large + span.description ~ button {
-			margin-top:46px;
+			margin-top:37px;
 		}
 
 	}
@@ -324,7 +324,7 @@ main.resource_management {
 main.resource_management
 	.stake.container {
 		.input.field {
-			margin-top:41px;
+			margin-top:45px;
 		}
 	}
 
