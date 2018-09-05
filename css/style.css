@@ -580,7 +580,8 @@ aside.shrink + main.index,
 aside.shrink + main.transfer,
 aside.shrink + main.search,
 aside.shrink + main.ram_market,
-aside.shrink + main.vote {
+aside.shrink + main.vote,
+aside.shrink + main.resource_management {
   margin-left: 0;
 }
 
