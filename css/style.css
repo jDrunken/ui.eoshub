@@ -3015,7 +3015,7 @@ main.resource_management div.input.field input[type="number"]:focus {
 
 main.resource_management div.input.field label {
   position: absolute;
-  top: -1em;
+  top: calc(-1em - 4px);
   font-size: 0.8125rem;
   color: #ffffff;
 }
@@ -3117,7 +3117,7 @@ main.resource_management div.input.field input[type="number"].size.large:placeho
 }
 
 main.resource_management div.input.field input.size.large + span.description ~ button {
-  margin-top: 46px;
+  margin-top: 37px;
 }
 
 main.resource_management div.my.resource {
@@ -3245,7 +3245,7 @@ main.resource_management section .btn_area button {
 
 main.resource_management
 .stake.container .input.field {
-  margin-top: 41px;
+  margin-top: 45px;
 }
 
 main.resource_management .unstake.container .field.group,
