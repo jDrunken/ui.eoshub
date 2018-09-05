@@ -6,6 +6,8 @@
 
 <!-- @@block = main -->
 <main class="resource_management">
+	<h2>리소스 관리</h2>
+	<p>EOS 네트워크를 활용하기 위한 리소스 관리 페이지입니다.</p>
 	<div class="tab">
 		<a href="resource-stake.html">스테이크</a>
 		<a href="resource-unstake.html" class="ing">언스테이크</a>
@@ -18,7 +20,6 @@
 				<h3>CPU 총량
 					<strong>18 EOS</strong>
 				</h3>
-
 				<p>내가 스테이크한 토큰 : 8 EOS</p>
 				<p>임대받은 토큰 : 4 EOS</p>
 				<div class="graph status">
@@ -44,36 +45,29 @@
 			<div class="wallet status">
 				<h3>언스테이크 가능한 토큰</h3>
 				<p>100 EOS</p>
-				<p class="validate true description">CPU는 최소 0.7 EOS, NET은 최소 0.3 EOS 이상 스테이킹 하세요.</p>
+				<!-- validate 값이 true일때는 true class를 false일때는 falsef를 부여해주세요. -->
+				<p class="validate description">CPU는 최소 0.7 EOS, NET은 최소 0.3 EOS 이상 스테이킹 하세요.</p>
 			</div>
 
-			<div class="input group">
-				<form>
-					<h3>CPU</h3>
-					<div>
-						<input type="number" placeholder="수량을 입력하세요" pattern="\d+(\.\d{1,4})?" step="0.0001" min="0.0001" max="1000000000" autofocus>
-						<span>EOS</span>
-					</div>
-					<div class="button bunch">
-						<button type="button">10%</button>
-						<button type="button">50%</button>
-						<button type="button">70%</button>
-						<button type="button">최대</button>
-					</div>
-				</form>
-				<form>
-					<h3>NET</h3>
-					<div>
-						<input type="number" placeholder="수량을 입력하세요" pattern="\d+(\.\d{1,4})?" step="0.0001" min="0.0001" max="1000000000" autofocus>
-						<span>EOS</span>
-					</div>
-					<div class="button bunch">
-						<button type="button">10%</button>
-						<button type="button">50%</button>
-						<button type="button">70%</button>
-						<button type="button">최대</button>
-					</div>
-				</form>
+			<div class="field group">
+				<div class="input field">
+					<label for="cpu">CPU</label>
+					<input type="number" id="cpu" placeholder="CPU 언스테이크 할 수량 입력" pattern="\d+(\.\d{1,4})?" step="0.0001" min="0.0001" max="1000000000">
+					<span class="unit">EOS</span>
+					<button type="button">10%</button>
+					<button type="button">50%</button>
+					<button type="button">70%</button>
+					<button type="button">최대</button>
+				</div>
+				<div class="input field">
+					<label for="net">NET</label>
+					<input id="net" type="number" placeholder="NET 언스테이크할 수량 입력" pattern="\d+(\.\d{1,4})?" step="0.0001" min="0.0001" max="1000000000" data-validate="false">
+					<span class="unit">EOS</span>
+					<button type="button">10%</button>
+					<button type="button">50%</button>
+					<button type="button">70%</button>
+					<button type="button">최대</button>
+				</div>
 			</div>
 			<div class="btn_area">
 				<button type="button" class="ok button" disabled>확인</button>
@@ -82,7 +76,7 @@
 		<script>
 		// 수량 조절 버튼 클릭
 		(function () {
-			var button = document.querySelectorAll('div.button.bunch button');
+			var button = document.querySelectorAll('.input button');
 			var clicked;
 
 			for (var i=0; i<button.length; i++) {
@@ -98,7 +92,7 @@
 
 		// 클릭시 수량 정해줌
 		(function () {
-			var button = document.querySelectorAll('div.button.bunch button');
+			var button = document.querySelectorAll('div.input button');
 			var input = document.querySelector('input[type="number"]');
 			var submit = document.querySelector('.panel.group .btn_area button');
 			var max = parseInt(1000);
@@ -124,10 +118,9 @@
 		// 확인 (submit) 버튼 활성화
 		(function () {
 			var submit = document.querySelector('.btn_area button');
-			var input = document.querySelector('.input.panel input');
+			var input = document.querySelector('.input.field input');
 
 			input.addEventListener('focus',function () {
-				console.log(this.vaule);
 				if(this.value > 0) {
 					submit.removeAttribute('disabled');
 				}
@@ -174,37 +167,4 @@
 		</div>
 	</div>
 </section>
-
-<script>
-// popup 닫기
-(function () {
-	document.querySelector('button.undo').addEventListener('click',function () {
-		document.getElementById('popup').classList.remove('viewing');
-	});
-	// 팝업안의 ok버튼을 클릭하면
-	document.querySelector('.modal.popup .btn_area button').addEventListener('click',function () {
-		document.getElementById('popup').classList.remove('viewing');
-		// 대리구매를 보여줌
-		document.querySelector('div.target').removeAttribute('hidden');
-	});
-})();
-
-// popup 열기
-(function () {
-	document.getElementById('setDirect').addEventListener('click',function(e) {
-		document.getElementById('popup').classList.add('viewing');
-	});
-})();
-
-// popup 안에 값이 입력되면 disabed 뜯어내기
-(function () {
-	document.querySelector('.modal.popup form input').addEventListener('keyup',function () {
-		if (this.value.length > 0) {
-			document.querySelector('.modal.popup .btn_area button.ok').removeAttribute('disabled');
-		} else {
-			document.querySelector('.modal.popup .btn_area button,ok').setAttribute('disabled','');
-		}
-	});
-})();
-</script>
 <!-- @@close -->
