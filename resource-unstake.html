@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+
+
+<meta charset="UTF-8">
+
+<title>EOShub</title>
+
+<meta charset="utf-8">
+
+<meta name="description" content="">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta property="og:title" content="eoshub">
+<meta property="og:description" content="eoshub">			
+<meta property="og:image" content="https://eoshub.io/">
+<meta property="og:url" content="https://eoshub.io/">
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?">
+
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+</head>
+<body>
+
+<div id="elm-target">
+	<div>
+		
+<header>
+	<h1><a href="index-view.html">eoshub</a></h1>
+	<div class="language">
+		<button type="button" class="selected">한글</button>
+		<button type="button">EN</button>
+		<button type="button">中国</button>
+	</div>
+	<form action="search.html">
+		<input type="text" placeholder="계정명, 공개 키 검색하기" />
+		<button type="submit">검색</button>
+	</form>
+</header>
+
+
+		
+<nav>
+	<ul>
+		<li>
+			<button type="button" class="toggle dashboard" id="openAside">대쉬보드 열기/닫기</button>
+			<span class="tooltip" aria-hidden="hidden">대쉬보드 열기 닫기</span>
+		</li>
+		<li>
+			<a href="resource-stake.html" rel="nofollow" class="resource">리소스 관리</a>
+			<span class="tooltip" aria-hidden="hidden">리소스 관리</span>
+		</li>
+		<li>
+			
+			<a href="transfer.html" rel="nofollow" class="transfer viewing">전송하기</a>
+			<span class="tooltip" aria-hidden="hidden">전송하기</span>
+		</li>
+		<li>
+			<a href="ram-market.html" rel="nofollow" class="ram_market">Ram market</a>
+			<span class="tooltip" aria-hidden="hidden">Ram Market</span>
+		</li>
+		<li>
+			<a href="vote.html" rel="nofollow" class="vote">BP 투표하기</a>
+			<span class="tooltip" aria-hidden="hidden">투표하기</span>
+		</li>
+		<li>
+			<a href="go-dapp.html" rel="nofollow" class="dapps">dapps</a>
+			<span class="tooltip" aria-hidden="hidden">Dapps</span>
+		</li>
+	</ul>
+</nav>
+<script>
+(function () {
+	document.addEventListener('DOMContentLoaded',function () {
+		var handler = document.getElementById('openAside');
+		var target = document.querySelector('aside');
+
+		handler.addEventListener('click',function (){
+			this.classList.toggle('shrink');
+			target.classList.toggle('shrink');
+		});
+	});
+})();
+</script>
+
+
+		<section class="content">
+
+
+
+
+
+<aside class="log in">
+
+	<h2>eosyskoreabp
+		<span class="description">@owner</span>
+	</h2>
+
+	<div class="config panel">
+		<button type="button" class="icon gear button" wai-aria="hidden">option</button>
+		<div class="menu_list">
+			<a href="#">지갑 변경하기</a>
+			<a href="#">내 계정보기</a>
+			<a href="#">로그아웃</a>
+		</div>
+	</div>
+	<script>
+		(function () {
+			var handler = document.querySelector('div.config.panel button.gear'),
+				target = document.querySelector('div.config.panel');
+
+			handler.addEventListener('click',function () {
+				target.classList.toggle('expand');
+			});
+
+			target.addEventListener('mouseleave',function () {
+				target.classList.remove('expand');
+			});
+		})();
+	</script>
+
+	<ul class="wallet status">
+		<li>
+			<span class="title">total</span>
+			<span class="amount">24.536.341</span>
+		</li>
+		<li>
+			<span class="title">stake</span>
+			<span class="amount">32.3812</span>
+			<span class="status available">트랜잭션 가능</span>
+			<span class="status unavailable">트랜잭션 불가능</span>
+		</li>
+		<li>
+			<span class="title">refunding</span>
+			<span class="amount">0</span>
+			<span class="remaining time">72.3 hours</span>
+		</li>
+	</ul>
+
+	<button type="button" class="resource management">리소스 관리</button>
+</aside>
+
+
+
+<main class="resource_management">
+	<h2>리소스 관리</h2>
+	<p>EOS 네트워크를 활용하기 위한 리소스 관리 페이지입니다.</p>
+	<div class="tab">
+		<a href="resource-stake.html">스테이크</a>
+		<a href="resource-unstake.html" class="ing">언스테이크</a>
+		<a href="resource-rental.html">임대해주기</a>
+		<a href="resource-rental-cancel.html">임대취소하기</a>
+	</div>
+	<div class="unstake container">
+		<div class="my resource">
+			<div>
+				<h3>CPU 총량
+					<strong>18 EOS</strong>
+				</h3>
+				<p>내가 스테이크한 토큰 : 8 EOS</p>
+				<p>임대받은 토큰 : 4 EOS</p>
+				<div class="graph status">
+					<span class="hell" style="height:10%"></span>
+					10%
+				</div>
+			</div>
+			<div>
+				<h3>NET 총량
+					<strong>18 EOS</strong>
+				</h3>
+
+				<p>내가 스테이크한 토큰 : 8 EOS</p>
+				<p>임대받은 토큰 : 4 EOS</p>
+				<div class="graph status">
+					<span class="hell" style="height:10%"></span>
+					10%
+				</div>
+			</div>
+		</div>
+
+		<section>
+			<div class="wallet status">
+				<h3>언스테이크 가능한 토큰</h3>
+				<p>100 EOS</p>
+				
+				<p class="validate description">CPU는 최소 0.7 EOS, NET은 최소 0.3 EOS 이상 스테이킹 하세요.</p>
+			</div>
+
+			<div class="field group">
+				<div class="input field">
+					<label for="cpu">CPU</label>
+					<input type="number" id="cpu" placeholder="CPU 언스테이크 할 수량 입력" pattern="\d+(\.\d{1,4})?" step="0.0001" min="0.0001" max="1000000000">
+					<span class="unit">EOS</span>
+					<button type="button">10%</button>
+					<button type="button">50%</button>
+					<button type="button">70%</button>
+					<button type="button">최대</button>
+				</div>
+				<div class="input field">
+					<label for="net">NET</label>
+					<input id="net" type="number" placeholder="NET 언스테이크할 수량 입력" pattern="\d+(\.\d{1,4})?" step="0.0001" min="0.0001" max="1000000000" data-validate="false">
+					<span class="unit">EOS</span>
+					<button type="button">10%</button>
+					<button type="button">50%</button>
+					<button type="button">70%</button>
+					<button type="button">최대</button>
+				</div>
+			</div>
+			<div class="btn_area">
+				<button type="button" class="ok button" disabled>확인</button>
+			</div>
+		</section>
+		<script>
+		// 수량 조절 버튼 클릭
+		(function () {
+			var button = document.querySelectorAll('.input button');
+			var clicked;
+
+			for (var i=0; i<button.length; i++) {
+				button[i].addEventListener('click', function () {
+					if (!!clicked) {
+						clicked.classList.remove('clicked');
+					}
+					this.classList.add('clicked');
+					clicked = this;
+				});
+			}
+		})();
+
+		// 클릭시 수량 정해줌
+		(function () {
+			var button = document.querySelectorAll('div.input button');
+			var input = document.querySelector('input[type="number"]');
+			var submit = document.querySelector('.panel.group .btn_area button');
+			var max = parseInt(1000);
+
+			button[0].addEventListener('click', function () {
+				input.value = max*0.1
+				input.focus();
+			});
+			button[1].addEventListener('click', function () {
+				input.value = max*0.5;
+				input.focus();
+			});
+			button[2].addEventListener('click', function () {
+				input.value = max*0.7;
+				input.focus();
+			});
+			button[3].addEventListener('click', function () {
+				input.value = max*1;
+				input.focus();
+			});
+		})();
+
+		// 확인 (submit) 버튼 활성화
+		(function () {
+			var submit = document.querySelector('.btn_area button');
+			var input = document.querySelector('.input.field input');
+
+			input.addEventListener('focus',function () {
+				if(this.value > 0) {
+					submit.removeAttribute('disabled');
+				}
+			});
+
+			input.addEventListener('keyup',function () {
+				!this.value > 0 ?  submit.setAttribute('disabled','') : submit.removeAttribute('disabled')
+			});
+		})();
+		</script>
+	</div>
+</main>
+<section id="popup" class="set_division_manual modal popup" aria-live="true" role="alert">
+	<div class="wrapper">
+		<h2>토큰 스테이크 수량 직접 설정</h2>
+		<div class="token status">
+			<h3>스테이크할 토큰
+				<strong>10 EOS</strong>
+			</h3>
+			<button type="button" class="set auto button">자동 분배</button>
+		</div>
+		<div class="form container">
+			<h3>CPU</h3>
+			<p>Staked : 18 EOS</p>
+			<form action="" class="true validate">
+				<input id="" type="text" name="" class="user" placeholder="스테이크할 수량을 설정하세요" data-validate="false">
+				<span>EOS</span>
+			</form>
+		</div>
+
+		<div class="form container">
+			<h3>NET</h3>
+			<p>Staked : 18 EOS</p>
+			<form action="">
+				<input id="" type="text" name="" class="user" placeholder="스테이크할 수량을 설정하세요" data-validate="true">
+				<span>EOS</span>
+			</form>
+		</div>
+
+		<p class="validate description">7:3 비율로 스테이킹 하는 것이 가장 좋습니다.</p>
+		<div class="btn_area">
+			<button type="button" class="undo button">취소</button>
+			<button type="button" class="ok button" disabled>확인</button>
+		</div>
+	</div>
+</section>
+
+		</section>
+
+		
+<footer>
+	<div class="sns area">
+		
+		<a href="#" class="sns medium button">Go to facebook</a>
+		<a href="#" class="sns twitter button">Go to Twitter</a>
+		<a href="#" class="sns telegram button">Go to Telegram</a>
+	</div>
+</footer>
+
+	</div>
+</div>
+</body>
+</html>

@@ -488,7 +488,8 @@ section.content main.index,
 section.content main.transfer,
 section.content main.search,
 section.content main.ram_market,
-section.content main.vote {
+section.content main.vote,
+section.content main.resource_management {
   height: inherit;
   box-sizing: border-box;
   padding: 42px;
@@ -499,7 +500,8 @@ section.content main.vote {
   section.content main.transfer,
   section.content main.search,
   section.content main.ram_market,
-  section.content main.vote {
+  section.content main.vote,
+  section.content main.resource_management {
     margin-left: calc(300px);
   }
 }
@@ -509,7 +511,8 @@ section.content main.vote {
   section.content main.transfer,
   section.content main.search,
   section.content main.ram_market,
-  section.content main.vote {
+  section.content main.vote,
+  section.content main.resource_management {
     padding: 2.425vw;
     margin-left: calc(18.75vw);
   }
@@ -520,7 +523,8 @@ section.content main.vote {
   section.content main.transfer,
   section.content main.search,
   section.content main.ram_market,
-  section.content main.vote {
+  section.content main.vote,
+  section.content main.resource_management {
     padding: 27px;
     margin-left: 240px;
   }
@@ -535,7 +539,8 @@ section.content main.index {
 section.content main.transfer,
 section.content main.search,
 section.content main.ram_market,
-section.content main.vote {
+section.content main.vote,
+section.content main.resource_management {
   width: 965px;
 }
 
@@ -562,7 +567,8 @@ main.index,
 main.transfer,
 main.search,
 main.ram_market,
-main.vote {
+main.vote,
+main.resource_management {
   transition: margin 0.4s;
 }
 
@@ -791,7 +797,7 @@ aside.shrink ~ .modal.popup {
   overflow: auto;
 }
 
-.modal.popup .result.list button {
+.tokenlist .modal.popup .result.list button {
   width: 100%;
   display: flex;
   align-items: center;
@@ -803,7 +809,7 @@ aside.shrink ~ .modal.popup {
   outline: 0;
 }
 
-.modal.popup .result.list button img {
+.tokenlist .modal.popup .result.list button img {
   background-color: #999;
   border-radius: 100%;
   width: 100%;
@@ -811,17 +817,17 @@ aside.shrink ~ .modal.popup {
   max-height: 32px;
 }
 
-.modal.popup .result.list button span {
+.tokenlist .modal.popup .result.list button span {
   margin-left: 12px;
 }
 
-.modal.popup .result.list button strong {
+.tokenlist .modal.popup .result.list button strong {
   font-size: 1rem;
   color: #ffffff;
   display: block;
 }
 
-.modal.popup .result.list button:first-child {
+.tokenlist .modal.popup .result.list button:first-child {
   margin-top: 0;
 }
 
@@ -876,6 +882,40 @@ aside.shrink ~ .modal.popup {
   transform: translate(-50%, 0);
 }
 
+.modal.popup.rental_account .result.list ul, .modal.popup.rental_account .result.list li, .modal.popup.rental_account .result.list p {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.modal.popup.rental_account .result.list li {
+  font-size: 0.8125rem;
+  background-color: #282828;
+  padding: 16px;
+  position: relative;
+  margin-top: 8px;
+}
+
+.modal.popup.rental_account .result.list li h3 {
+  margin-bottom: 8px;
+}
+
+.modal.popup.rental_account .result.list li p {
+  line-height: 1.5;
+}
+
+.modal.popup.rental_account .result.list li button {
+  color: #ff6b64;
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.modal.popup.rental_account .result.list li:first-child {
+  margin-top: 0;
+}
+
 .modal.popup.buy_ram form {
   margin-bottom: 0;
   border-radius: 0;
@@ -895,22 +935,180 @@ aside.shrink ~ .modal.popup {
   width: 100%;
 }
 
+.modal.popup.set_division_manual .wrapper {
+  background-color: #282828;
+  padding: 0 0 32px 0;
+}
+
+.modal.popup.set_division_manual h2 {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  width: 1px;
+  word-wrap: normal !important;
+}
+
+.modal.popup.set_division_manual h2:focus {
+  background-color: #eee;
+  clip: auto !important;
+  clip-path: none;
+  color: #444;
+  display: block;
+  font-size: 1em;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000;
+}
+
+.modal.popup.set_division_manual .token.status {
+  padding: 32px;
+  background-color: #161616;
+  position: relative;
+}
+
+.modal.popup.set_division_manual .token.status h3 {
+  font-size: 0.875rem;
+}
+
+.modal.popup.set_division_manual .token.status h3 strong {
+  display: block;
+  margin-top: 8px;
+  font-weight: 100;
+  font-size: 1.75rem;
+}
+
+.modal.popup.set_division_manual .token.status button.auto.set {
+  position: absolute;
+  right: 32px;
+  top: 32px;
+  padding-right: 26px;
+}
+
+.modal.popup.set_division_manual .token.status button.auto.set:after {
+  content: '';
+  displayL: block;
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  margin-top: -11px;
+  background: url("../image/icon-refresh.svg") right center no-repeat;
+  transition: transform 1s, color 1s;
+}
+
+.modal.popup.set_division_manual .token.status button.auto.set:hover {
+  color: #ffffff;
+}
+
+.modal.popup.set_division_manual .token.status button.auto.set:hover:after {
+  transform: rotate(180deg);
+}
+
+.modal.popup.set_division_manual .form.container {
+  padding: 32px 32px 0;
+}
+
+.modal.popup.set_division_manual .form.container h3, .modal.popup.set_division_manual .form.container p {
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.modal.popup.set_division_manual .form.container p {
+  margin: 4px 0 8px;
+}
+
+.modal.popup.set_division_manual .form.container form {
+  margin: 0;
+  padding: 0;
+  display: block;
+  position: relative;
+}
+
+.modal.popup.set_division_manual .form.container form input {
+  background-color: #232323;
+  border: 0;
+  border-bottom: 1px solid #5d5d5d;
+  line-height: 48px;
+  height: 48px;
+  background: none;
+  padding: 0 8px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.modal.popup.set_division_manual .form.container form input[data-validate='true'] {
+  border-color: #79c720;
+}
+
+.modal.popup.set_division_manual .form.container form input[data-validate='false'], .modal.popup.set_division_manual .form.container form input:invalid {
+  border-color: #ff6b64;
+}
+
+.modal.popup.set_division_manual .form.container form span {
+  margin-right: 8px;
+  font-size: 0.875rem;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}
+
+.modal.popup.set_division_manual p.validate.description {
+  text-align: center;
+  font-size: 0.875rem;
+  margin: 32px 0;
+}
+
+.modal.popup.set_division_manual p.validate.description.false {
+  color: #ff6b64;
+}
+
+.modal.popup.set_division_manual p.validate.description.true {
+  color: #79c720;
+}
+
+.modal.popup.set_division_manual .btn_area {
+  margin: 0 32px;
+  display: flex;
+}
+
+.modal.popup.set_division_manual .btn_area button {
+  flex: 1;
+}
+
+.modal.popup.set_division_manual .btn_area button:last-child {
+  margin-left: 8px;
+}
+
 div.tab {
   box-sizing: border-box;
   display: flex;
 }
 
+div.tab a,
 div.tab button {
   flex: 1 0 50%;
   height: 52px;
+  line-height: 52px;
   background-color: #282828;
   box-sizing: border-box;
   padding: 0 40px;
-  height: inherit;
   text-align: center;
   border-radius: 0;
 }
 
+div.tab a.ing,
 div.tab button.ing {
   border-top: 2px solid #ff1f90;
   background-color: #0e0e0e;
@@ -1287,7 +1485,7 @@ aside button.back {
 aside .wallet.status {
   padding: 0;
   color: #fff;
-  background-color: #282828;
+  background-color: #232323;
 }
 
 aside .wallet.status li {
@@ -2741,6 +2939,350 @@ main.ram_market .history.list tr.log.sell td:first-child {
 main.ram_market .history.list .btn_area {
   margin-top: 16px;
   text-align: center;
+}
+
+main.resource_management h3 {
+  color: inherit;
+}
+
+main.resource_management h3,
+main.resource_management h3 + p {
+  font-size: 0.875rem;
+  margin: 8px 0 0 0;
+}
+
+main.resource_management div.tab {
+  margin-top: 40px;
+  display: block;
+  font-size: 0;
+}
+
+main.resource_management div.tab a {
+  font-size: 0.875rem;
+  display: inline-block;
+  flex-basis: auto;
+  border-width: 1px;
+}
+
+main.resource_management .container {
+  background: #282828;
+  padding: 32px 0;
+  margin-top: 1px;
+}
+
+main.resource_management .description {
+  font-size: 0.8125rem;
+}
+
+main.resource_management .description.validate.false {
+  color: #ff6b64;
+}
+
+main.resource_management .description.validate.true {
+  color: #79c720;
+}
+
+main.resource_management input + span.description {
+  margin-top: 12px;
+  display: block;
+  font-size: 0.8125rem;
+  line-height: 1.54;
+  color: #999;
+}
+
+main.resource_management div.input.field {
+  min-width: 236px;
+  position: relative;
+  font-size: 0;
+}
+
+main.resource_management div.input.field input[type="text"],
+main.resource_management div.input.field input[type="number"] {
+  color: #ffffff;
+  width: 100%;
+  border: 0;
+}
+
+main.resource_management div.input.field input[type="text"]:focus,
+main.resource_management div.input.field input[type="number"]:focus {
+  outline: 0;
+}
+
+main.resource_management div.input.field label {
+  font-size: 0.8125rem;
+  color: #ffffff;
+}
+
+main.resource_management div.input.field span.unit {
+  font-size: 0.875rem;
+  position: absolute;
+  right: 0;
+  top: 30px;
+  color: #5d5d5d;
+}
+
+main.resource_management div.input.field button[type="button"] {
+  flex: 1;
+  padding: 0 12px;
+  min-width: 56px;
+  font-size: 0.875rem;
+  height: 28px;
+  border: 1px solid #403e41;
+  border-radius: 2px;
+  margin-left: 4px;
+  color: #5d5d5d;
+  box-sizing: border-box;
+}
+
+main.resource_management div.input.field button[type="button"]:nth-of-type(1) {
+  margin-left: 0;
+}
+
+main.resource_management div.input.field button[type="button"].clicked {
+  color: #ffffff;
+  background-color: #403e41;
+  border-color: #403e41;
+}
+
+main.resource_management div.input.field input[type="text"],
+main.resource_management div.input.field input[type="number"] {
+  font-size: 0.875rem;
+  border-bottom: 1px solid #5d5d5d;
+  padding: 14px 0;
+  margin-bottom: 12px;
+}
+
+main.resource_management div.input.field input[type="text"]:valid,
+main.resource_management div.input.field input[type="number"]:valid {
+  border-color: #79c720;
+}
+
+main.resource_management div.input.field input[type="text"][data-validate="false"], main.resource_management div.input.field input[type="text"]:invalid,
+main.resource_management div.input.field input[type="number"][data-validate="false"],
+main.resource_management div.input.field input[type="number"]:invalid {
+  border-color: #ff6b64;
+}
+
+main.resource_management div.input.field input[type="text"]:placeholder-shown:valid,
+main.resource_management div.input.field input[type="number"]:placeholder-shown:valid {
+  border-color: #999;
+}
+
+main.resource_management div.input.field input[type="text"][data-validate="true"],
+main.resource_management div.input.field input[type="number"][data-validate="true"] {
+  border-color: #79c720 !important;
+}
+
+main.resource_management div.input.field input[type="text"][data-validate="false"],
+main.resource_management div.input.field input[type="number"][data-validate="false"] {
+  border-color: #ff6b64 !important;
+}
+
+main.resource_management div.input.field input[type="text"].size.large,
+main.resource_management div.input.field input[type="number"].size.large {
+  margin-top: 8px;
+  width: 100%;
+  font-size: 1.75rem;
+  font-weight: 100;
+  border-bottom: 0;
+  padding: 0;
+  margin-bottom: 0;
+}
+
+main.resource_management div.input.field input[type="text"].size.large:focus::placeholder,
+main.resource_management div.input.field input[type="number"].size.large:focus::placeholder {
+  transition: color 0.4s;
+  color: #aaa;
+}
+
+main.resource_management div.input.field input[type="text"].size.large:invalid + span.validate,
+main.resource_management div.input.field input[type="number"].size.large:invalid + span.validate {
+  color: #ff6b64;
+}
+
+main.resource_management div.input.field input[type="text"].size.large:valid + span.validate,
+main.resource_management div.input.field input[type="number"].size.large:valid + span.validate {
+  color: #79c720;
+}
+
+main.resource_management div.input.field input[type="text"].size.large:placeholder-shown + span.description,
+main.resource_management div.input.field input[type="number"].size.large:placeholder-shown + span.description {
+  color: inherit;
+}
+
+main.resource_management div.input.field input.size.large + span.description ~ button {
+  margin-top: 49px;
+}
+
+main.resource_management div.my.resource {
+  margin: 0 32px;
+  display: flex;
+}
+
+main.resource_management div.my.resource > div {
+  flex: 1;
+  border-radius: 2px;
+  background-color: #0e0e0e;
+  box-sizing: border-box;
+  padding: 28px 32px;
+  position: relative;
+}
+
+main.resource_management div.my.resource > div:first-child {
+  margin-right: 8px;
+}
+
+main.resource_management div.my.resource > div h3 strong {
+  display: block;
+  font-size: 1.25rem;
+  font-weight: 100;
+  margin-top: 7px;
+}
+
+main.resource_management div.my.resource > div p:nth-of-type(1) {
+  margin-top: 20px;
+  margin-bottom: 4px;
+  color: #fff;
+}
+
+main.resource_management div.my.resource > div .status {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 32px;
+  width: 73px;
+  height: 73px;
+  border-radius: 100%;
+  background-color: #282828;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.875rem;
+  font-weight: 100;
+  color: #ffffff;
+  overflow: hidden;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.6);
+}
+
+main.resource_management div.my.resource > div .status span {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+}
+
+main.resource_management div.my.resource > div .status span.fine {
+  background-color: #536dfe;
+}
+
+main.resource_management div.my.resource > div .status span.good {
+  background-color: #79c720;
+}
+
+main.resource_management div.my.resource > div .status span.bad {
+  background-color: #f5cb23;
+}
+
+main.resource_management div.my.resource > div .status span.hell {
+  background-color: #ff6b64;
+}
+
+main.resource_management section {
+  margin: 8px 32px;
+  padding: 32px;
+  background-color: #0e0e0e;
+  position: relative;
+}
+
+main.resource_management section .wallet.status {
+  position: relative;
+}
+
+main.resource_management section .wallet.status p {
+  margin-top: 8px;
+}
+
+main.resource_management section .wallet.status a, main.resource_management section .wallet.status p:last-child {
+  font-size: 0.875rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+main.resource_management section .wallet.status p:last-child {
+  text-decoration: none;
+  color: #999;
+}
+
+main.resource_management section {
+  display: flex;
+  flex-direction: column;
+}
+
+main.resource_management section .btn_area {
+  position: absolute;
+  right: 32px;
+  bottom: 32px;
+}
+
+main.resource_management section .btn_area button {
+  width: 136px;
+  height: 52px;
+  border-radius: 2px;
+  border: solid 1px #5d5d5d;
+}
+
+main.resource_management
+.stake.container .input.field {
+  margin-top: 49px;
+}
+
+main.resource_management .unstake.container .field.group,
+main.resource_management .rental.container .field.group {
+  margin-top: 72px;
+  width: 508px;
+  display: flex;
+}
+
+main.resource_management .unstake.container .field.group > .input.field:last-child,
+main.resource_management .rental.container .field.group > .input.field:last-child {
+  margin-left: 35px;
+}
+
+main.resource_management .rental.container .available.status {
+  margin: 0 32px 32px;
+  position: relative;
+}
+
+main.resource_management .rental.container .available.status h3 {
+  color: #999;
+  font-size: 0.875rem;
+}
+
+main.resource_management .rental.container .available.status h3 strong {
+  display: block;
+  font-size: 1.75rem;
+  color: #ffffff;
+  font-weight: 100;
+  margin-top: 4px;
+}
+
+main.resource_management .rental.container .available.status a {
+  position: absolute;
+  top: 2px;
+  right: 0;
+  text-decoration: underline;
+  font-size: 0.875rem;
+  color: #ffffff;
+  font-weight: 100;
+}
+
+main.resource_management .rental.container section {
+  padding: 32px;
 }
 
 main.vote div.tab {
