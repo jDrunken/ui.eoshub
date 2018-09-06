@@ -120,6 +120,8 @@ section.content {
 		left:$lnb_width;
 		top:$header_height;
 		bottom:0;
+		z-index:10;
+
 		max-width:300px;
 		min-width:240px;
 		width:18.75vw;
