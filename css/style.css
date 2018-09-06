@@ -309,7 +309,7 @@ table {
   background-color: #161616;
 }
 
-table thead {
+table thead tr {
   border-bottom: 1px solid #282828;
 }
 
@@ -416,7 +416,8 @@ a.button:disabled {
   cursor: not-allowed;
 }
 
-button[type="button"].button.view_more,
+button[type="button"].button.select, button[type="button"].button.view_more,
+a.button.select,
 a.button.view_more {
   padding: 0 40px;
   height: 52px;
@@ -425,7 +426,8 @@ a.button.view_more {
   min-width: 152px;
 }
 
-button[type="button"].button.view_more:before,
+button[type="button"].button.select:before, button[type="button"].button.view_more:before,
+a.button.select:before,
 a.button.view_more:before {
   content: '+ ';
 }
@@ -2495,7 +2497,7 @@ main.search .resource .wrapper > div .status span.hell {
 }
 
 main.search .resource .wrapper > div .status span:before, main.search .resource .wrapper > div .status span:after {
-  opacity: 0.3;
+  opacity: 0.2;
   content: '';
   display: block;
   position: absolute;
@@ -3590,9 +3592,121 @@ main.create.account .container {
 
 main.create.account .summary.account {
   padding: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  border-bottom: 1px solid #403e41;
+}
+
+main.create.account .summary.account h3 {
+  font-size: 0.875rem;
+  color: #999;
+}
+
+main.create.account .summary.account h3 strong {
+  color: #fff;
+  font-size: 1.25rem;
+  display: block;
+  font-weight: 100;
+}
+
+main.create.account form {
+  padding: 32px 32px 16px;
+}
+
+main.create.account form ul, main.create.account form li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+main.create.account form li {
+  margin-top: 4px;
+  background: #161616;
+  padding: 32px;
+}
+
+main.create.account form li:first-child {
+  margin-top: initial;
+}
+
+main.create.account form input[type="text"],
+main.create.account form input[type="number"] {
+  border: 0;
+  width: 100%;
+  height: 28px;
+  font-size: 28px;
+  font-weight: 100;
+  color: #ffffff;
+  transition: border-color 0.4s;
+}
+
+main.create.account form input[type="text"]:focus,
+main.create.account form input[type="number"]:focus {
+  border-color: #ffffff;
+  outline: 0;
+}
+
+main.create.account form input[type="text"]:focus::placeholder,
+main.create.account form input[type="number"]:focus::placeholder {
+  transition: color 0.4s;
+  color: #aaa;
+}
+
+main.create.account form input[type="text"] + span.description,
+main.create.account form input[type="number"] + span.description {
+  margin-top: 12px;
+  display: block;
+  font-size: 0.8125rem;
+  line-height: 1.54;
+  color: #999;
+}
+
+main.create.account form input[type="text"]:invalid + span.validate,
+main.create.account form input[type="text"] + span.false.validate.description,
+main.create.account form input[type="number"]:invalid + span.validate,
+main.create.account form input[type="number"] + span.false.validate.description {
+  color: #ff6b64;
+}
+
+main.create.account form input[type="text"]:valid + span.validate,
+main.create.account form input[type="text"] + span.true.validate.description,
+main.create.account form input[type="number"]:valid + span.validate,
+main.create.account form input[type="number"] + span.true.validate.description {
+  color: #79c720;
+}
+
+main.create.account form input[type="text"]:placeholder-shown + span.description,
+main.create.account form input[type="number"]:placeholder-shown + span.description {
+  color: inherit;
+}
+
+main.create.account .btn_area {
+  padding: 0 32px;
+  text-align: right;
+}
+
+main.create.account .btn_area button {
+  margin-left: 4px;
+  width: 157px;
+}
+
+main.create.account .account.list {
+  margin-top: 32px;
+  padding: 32px;
+}
+
+main.create.account .account.list h3 {
+  padding-bottom: 24px;
+}
+
+main.create.account .account.list th,
+main.create.account .account.list td {
+  text-align: left;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+main.create.account .account.list > div.btn_area {
+  text-align: center;
+  padding: 32px 32px 0;
 }
 
 /*# sourceMappingURL=style.css.map */
