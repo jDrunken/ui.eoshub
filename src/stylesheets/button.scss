@@ -72,6 +72,8 @@ a.button {
 	}
 
 	// 더 보기
+	//
+	&.select,
 	&.view_more {
 		padding:0 40px;
 		height: 52px;

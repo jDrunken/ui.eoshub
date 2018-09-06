@@ -81,7 +81,8 @@ section.content {
 	main.search,
 	main.ram_market,
 	main.vote,
-	main.resource_management {
+	main.resource_management,
+	main.create.account {
 		height:inherit;
 		box-sizing:border-box;
 		padding:42px;
@@ -109,7 +110,8 @@ section.content {
 	main.search,
 	main.ram_market,
 	main.vote,
-	main.resource_management {
+	main.resource_management,
+	main.create.account {
 		width:965px;
 	}
 
@@ -147,7 +149,8 @@ main.transfer,
 main.search,
 main.ram_market,
 main.vote,
-main.resource_management {
+main.resource_management ,
+main.create.account {
 	transition:margin 0.4s;
 }
 
@@ -161,7 +164,8 @@ aside.shrink {
 	+ main.search,
 	+ main.ram_market,
 	+ main.vote,
-	+ main.resource_management {
+	+ main.resource_management ,
+	+ main.create.account {
 		margin-left:0;
 	}
 

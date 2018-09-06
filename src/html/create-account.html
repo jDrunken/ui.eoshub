@@ -1,0 +1,112 @@
+<!-- @@master = ../template/master.html -->
+
+<!-- @@block = aside -->
+<!-- @@include = ../template/aside-log-in.html -->
+<!-- @@close -->
+
+<!-- @@block = main -->
+<main class="create account">
+	<h2>계정생성</h2>
+	<p>검색하신 계정에 대한 정보입니다.</p>
+	<div class="container">
+
+		<div class="account summary">
+			<h3>내 계정
+				<strong>blockone</strong>
+			</h3>
+		</div>
+
+		<form action="">
+			<ul>
+				<li>
+					<input type="text" placeholder="새로 만들 계정의 이름을 입력하세요." autofocus required pattern="[\w\d]+">
+					<span class="validate description">계정이름 예시:eoshubby</span>
+				</li>
+				<li>
+					<input type="text" placeholder="오너 키를 설정하세요." pattern="[\w\d]+" step="0.0001" min="0.0001" required>
+					<span class="validate description"></span>
+				</li>
+				<li>
+					<input type="text" placeholder="액티브 키를 설정하세요." pattern="[\w\d]+" step="0.0001" min="0.0001" required>
+					<span class="validate description"></span>
+				</li>
+			</ul>
+		</form>
+		<div class="btn_area align right">
+			<button type="button" class="undo button" disabled>취소</button>
+			<button type="button" class="ok button" disabled>확인</button>
+		</div>
+
+		<div class="account list">
+			<h3>생성한 계정목록</h3>
+			<table>
+				<thead>
+					<tr>
+						<th scope="col">계정</th>
+						<th scope="col">키정보</th>
+						<th scope="col">시간</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>eosyskoreabp</td>
+						<td>
+							owner : EOS55bzfeUCMvJuDZM4hxZbApSMsrdavAR18VuodiyYN5ARVVJBLy<br />
+							active : EOS55bzfeUCMvJuDZM4hxZbApSMsrdavAR18VuodiyYN5ARVVJBLy
+						</td>
+						<td>8:06:36 AM, Apr 6, 2018</td>
+					</tr>
+
+					<tr>
+						<td>eosyskoreabp</td>
+						<td>
+							owner : EOS55bzfeUCMvJuDZM4hxZbApSMsrdavAR18VuodiyYN5ARVVJBLy<br />
+							active : EOS55bzfeUCMvJuDZM4hxZbApSMsrdavAR18VuodiyYN5ARVVJBLy
+						</td>
+						<td>8:06:36 AM, Apr 6, 2018</td>
+					</tr>
+
+					<tr>
+						<td>eosyskoreabp</td>
+						<td>
+							owner : EOS55bzfeUCMvJuDZM4hxZbApSMsrdavAR18VuodiyYN5ARVVJBLy<br />
+							active : EOS55bzfeUCMvJuDZM4hxZbApSMsrdavAR18VuodiyYN5ARVVJBLy
+						</td>
+						<td>8:06:36 AM, Apr 6, 2018</td>
+					</tr>
+
+					<tr>
+						<td>eosyskoreabp</td>
+						<td>
+							owner : EOS55bzfeUCMvJuDZM4hxZbApSMsrdavAR18VuodiyYN5ARVVJBLy<br />
+							active : EOS55bzfeUCMvJuDZM4hxZbApSMsrdavAR18VuodiyYN5ARVVJBLy
+						</td>
+						<td>8:06:36 AM, Apr 6, 2018</td>
+					</tr>
+
+					<tr>
+						<td>eosyskoreabp</td>
+						<td>
+							owner : EOS55bzfeUCMvJuDZM4hxZbApSMsrdavAR18VuodiyYN5ARVVJBLy<br />
+							active : EOS55bzfeUCMvJuDZM4hxZbApSMsrdavAR18VuodiyYN5ARVVJBLy
+						</td>
+						<td>8:06:36 AM, Apr 6, 2018</td>
+					</tr>
+
+					<tr>
+						<td>eosyskoreabp</td>
+						<td>
+							owner : EOS55bzfeUCMvJuDZM4hxZbApSMsrdavAR18VuodiyYN5ARVVJBLy<br />
+							active : EOS55bzfeUCMvJuDZM4hxZbApSMsrdavAR18VuodiyYN5ARVVJBLy
+						</td>
+						<td>8:06:36 AM, Apr 6, 2018</td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="btn_area">
+				<button type="button" class="view_more button">더 보기</button>
+			</div>
+		</div>
+	</div>
+</main>
+<!-- @@close -->

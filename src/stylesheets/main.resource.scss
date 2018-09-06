@@ -243,12 +243,12 @@ main.resource_management {
 				text-shadow:0 1px 6px rgba(0,0,0,0.6);
 
 				span {
-					content:'';
 					position:absolute;
 					bottom:0;
 					left:0;
 					right:0;
 					z-index:-1;
+					overflow:hidden;
 
 					&.fine {
 						background-color:#536dfe;
