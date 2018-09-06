@@ -489,7 +489,8 @@ section.content main.transfer,
 section.content main.search,
 section.content main.ram_market,
 section.content main.vote,
-section.content main.resource_management {
+section.content main.resource_management,
+section.content main.create.account {
   height: inherit;
   box-sizing: border-box;
   padding: 42px;
@@ -501,7 +502,8 @@ section.content main.resource_management {
   section.content main.search,
   section.content main.ram_market,
   section.content main.vote,
-  section.content main.resource_management {
+  section.content main.resource_management,
+  section.content main.create.account {
     margin-left: calc(300px);
   }
 }
@@ -512,7 +514,8 @@ section.content main.resource_management {
   section.content main.search,
   section.content main.ram_market,
   section.content main.vote,
-  section.content main.resource_management {
+  section.content main.resource_management,
+  section.content main.create.account {
     padding: 2.425vw;
     margin-left: calc(18.75vw);
   }
@@ -524,7 +527,8 @@ section.content main.resource_management {
   section.content main.search,
   section.content main.ram_market,
   section.content main.vote,
-  section.content main.resource_management {
+  section.content main.resource_management,
+  section.content main.create.account {
     padding: 27px;
     margin-left: 240px;
   }
@@ -540,7 +544,8 @@ section.content main.transfer,
 section.content main.search,
 section.content main.ram_market,
 section.content main.vote,
-section.content main.resource_management {
+section.content main.resource_management,
+section.content main.create.account {
   width: 965px;
 }
 
@@ -550,6 +555,7 @@ section.content aside {
   left: 60px;
   top: 64px;
   bottom: 0;
+  z-index: 10;
   max-width: 300px;
   min-width: 240px;
   width: 18.75vw;
@@ -568,7 +574,8 @@ main.transfer,
 main.search,
 main.ram_market,
 main.vote,
-main.resource_management {
+main.resource_management,
+main.create.account {
   transition: margin 0.4s;
 }
 
@@ -581,7 +588,8 @@ aside.shrink + main.transfer,
 aside.shrink + main.search,
 aside.shrink + main.ram_market,
 aside.shrink + main.vote,
-aside.shrink + main.resource_management {
+aside.shrink + main.resource_management,
+aside.shrink + main.create.account {
   margin-left: 0;
 }
 
@@ -2467,6 +2475,7 @@ main.search .resource .wrapper > div .status span {
   left: 0;
   right: 0;
   z-index: -1;
+  overflow: hidden;
 }
 
 main.search .resource .wrapper > div .status span.fine {
@@ -2483,6 +2492,37 @@ main.search .resource .wrapper > div .status span.bad {
 
 main.search .resource .wrapper > div .status span.hell {
   background-color: #ff6b64;
+}
+
+main.search .resource .wrapper > div .status span:before, main.search .resource .wrapper > div .status span:after {
+  opacity: 0.3;
+  content: '';
+  display: block;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  top: 0;
+  background-image: radial-gradient(circle at 90% 70%, #ffffff 0, #ffffff 0px, transparent 1px), radial-gradient(circle at 25px 30px, #ffffff 0, #ffffff 1px, transparent 2px), radial-gradient(circle at 35px 10px, #ffffff 0, #ffffff 1px, transparent 3px), radial-gradient(circle at 5px 40px, #ffffff 0, #ffffff 2px, transparent 3px), radial-gradient(circle at 10px 20px, #ffffff 0, #ffffff 2px, transparent 4px);
+}
+
+main.search .resource .wrapper > div .status span:before {
+  left: 0;
+  animation: bubble 1s linear infinite;
+}
+
+main.search .resource .wrapper > div .status span:after {
+  right: 0;
+  animation: bubble 1s linear infinite;
+  animation-delay: 0.5s;
+}
+
+@keyframes bubble {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
 }
 
 main.search .transaction.history {
@@ -3172,12 +3212,12 @@ main.resource_management div.my.resource > div .status {
 }
 
 main.resource_management div.my.resource > div .status span {
-  content: '';
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
   z-index: -1;
+  overflow: hidden;
 }
 
 main.resource_management div.my.resource > div .status span.fine {
@@ -3542,6 +3582,17 @@ main.vote section.bp.list tbody td span.bp.bi {
   height: 48px;
   border-radius: 100%;
   background-color: #0e0e0e;
+}
+
+main.create.account .container {
+  background-color: #282828;
+}
+
+main.create.account .summary.account {
+  padding: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 /*# sourceMappingURL=style.css.map */
