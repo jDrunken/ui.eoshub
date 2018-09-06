@@ -3311,7 +3311,7 @@ main.vote .container {
 
 main.vote section.summary.vote {
   position: relative;
-  background: url("../image/bi-hubby-cutted.svg") calc(100% + 9px) calc(36px) no-repeat;
+  background: url("../image/bi-hubby-cutted.svg") calc(100% + 9px) calc(40px) no-repeat;
   background-size: 176px 136px;
   background-color: #161616;
   padding: 32px;
@@ -3424,7 +3424,11 @@ main.vote section.bp.list thead th:nth-of-type(2) {
   overflow: hidden;
 }
 
-main.vote section.bp.list thead th:nth-of-type(3) form {
+main.vote section.bp.list thead th.search {
+  z-index: 20;
+}
+
+main.vote section.bp.list thead th.search form {
   justify-content: space-between;
   align-items: center;
   display: flex;
@@ -3433,9 +3437,10 @@ main.vote section.bp.list thead th:nth-of-type(3) form {
   background-color: #282828;
   height: 32px;
   border-radius: 16px;
+  transition: transform 0.1s ease-in;
 }
 
-main.vote section.bp.list thead th:nth-of-type(3) form input {
+main.vote section.bp.list thead th.search form input {
   outline: 0;
   flex: 1;
 }
@@ -3447,6 +3452,10 @@ main.vote section.bp.list thead th.search form button[type='submit'] {
   height: 16px;
   background: url("../image/icon-search.svg") center center no-repeat;
   background-size: 16px;
+}
+
+main.vote section.bp.list thead th.search form:focus-within {
+  transform: scale(1.05);
 }
 
 main.vote section.bp.list thead th:last-child {
