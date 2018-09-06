@@ -16,7 +16,7 @@
 			</h3>
 		</div>
 
-		<form action="">
+		<form>
 			<ul>
 				<li>
 					<input type="text" placeholder="새로 만들 계정의 이름을 입력하세요." autofocus required pattern="[\w\d]+">
@@ -32,10 +32,43 @@
 				</li>
 			</ul>
 		</form>
+
 		<div class="btn_area align right">
 			<button type="button" class="undo button" disabled>취소</button>
 			<button type="button" class="ok button" disabled>확인</button>
 		</div>
+
+<script>
+// input box 세개에 값이 들어오면  취소/확인 버튼 동작함
+(function () {
+	var input = document.querySelectorAll('.container form input');
+	var button = document.querySelectorAll('.btn_area.align.right button')
+	input[0].addEventListener('keyup',function () {
+		if (!input[0].value || !input[1].value || !input[2].value) {
+			return;
+		}
+
+		button[0].removeAttribute('disabled');
+		button[1].removeAttribute('disabled');
+	});
+	input[1].addEventListener('keyup',function () {
+		if (!input[0].value || !input[1].value || !input[2].value) {
+			return;
+		}
+
+		button[0].removeAttribute('disabled');
+		button[1].removeAttribute('disabled');
+	});
+	input[2].addEventListener('keyup',function () {
+		if (!input[0].value || !input[1].value || !input[2].value) {
+			return;
+		}
+
+		button[0].removeAttribute('disabled');
+		button[1].removeAttribute('disabled');
+	});
+})();
+</script>
 
 		<div class="account list">
 			<h3>생성한 계정목록</h3>
@@ -109,4 +142,70 @@
 		</div>
 	</div>
 </main>
+<section id="popup" class="create_account modal popup viewing" aria-live="true" role="alert">
+	<div class="wrapper">
+		<h2>계정 생성</h2>
+		<p>현재 계정에서 보유한 토큰 수량중 아래에 명시된 수량만큼 새롭게 생성되는 계정으로 전송됩니다. </p>
+		<dl>
+			<dt>CPU</dt>
+			<dd>0.1 EOS</dd>
+
+			<dt>NET</dt>
+			<dd>0.1 EOS</dd>
+
+			<dt>RAM</dt>
+			<dd>4 KB (4096 bytes)</dd>
+		</dl>
+
+		<div class="btn_area choice">
+			<button type="button" class="undo button">임대해주기</button>
+			<button type="button" class="ok button">전송하기</button>
+		</div>
+		<div class="btn_area">
+			<button type="button" class="ok button" disabled>확인</button>
+		</div>
+	</div>
+</section>
+
+<script>
+
+// 확인버튼 클릭하면 팝업 올려줌
+(function () {
+	var button = document.querySelector('.btn_area.align.right button.ok.button');
+	var popup = document.getElementById('popup');
+	button.addEventListener('click',function () {
+		popup.classList.add('viewing');
+	});
+})()
+<!-- // popup 닫기                                                                                     -->
+<!-- (function () {                                                                                      -->
+<!--     document.querySelector('button.undo').addEventListener('click',function () {                    -->
+<!--         document.getElementById('popup').classList.remove('viewing');                               -->
+<!--     });                                                                                             -->
+<!--     // 팝업안의 ok버튼을 클릭하면                                                        -->
+<!--     document.querySelector('.modal.popup .btn_area button').addEventListener('click',function () {  -->
+<!--         document.getElementById('popup').classList.remove('viewing');                               -->
+<!--         // 대리구매를 보여줌                                                                -->
+<!--         document.querySelector('div.target').removeAttribute('hidden');                             -->
+<!--     });                                                                                             -->
+<!-- })();                                                                                               -->
+
+<!-- // popup 열기                                                                                     -->
+<!-- (function () {                                                                                      -->
+<!--     document.getElementById('setDirect').addEventListener('click',function(e) {                     -->
+<!--         document.getElementById('popup').classList.add('viewing');                                  -->
+<!--     });                                                                                             -->
+<!-- })();                                                                                               -->
+
+<!-- // popup 안에 값이 입력되면 disabed 뜯어내기                                            -->
+<!-- (function () {                                                                                      -->
+<!--     document.querySelector('.modal.popup form input').addEventListener('keyup',function () {        -->
+<!--         if (this.value.length > 0) {                                                                -->
+<!--             document.querySelector('.modal.popup .btn_area button.ok').removeAttribute('disabled'); -->
+<!--         } else {                                                                                    -->
+<!--             document.querySelector('.modal.popup .btn_area button,ok').setAttribute('disabled',''); -->
+<!--         }                                                                                           -->
+<!--     });                                                                                             -->
+<!-- })();                                                                                               -->
+</script>
 <!-- @@close -->

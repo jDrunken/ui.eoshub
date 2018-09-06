@@ -698,6 +698,61 @@ aside.shrink {
 }
 
 
+// 계정생성시 출력되는 팝업
+.modal.popup.create_account {
+
+	.wrapper {
+		background-color:$xx-dark-gray;
+	}
+
+	dl {
+		margin:24px 32px 8px;
+		display:grid;
+		grid-template-columns:110px 1fr;
+		grid-template-rows:repeat(3,65px);
+		text-align:center;
+
+		dt, dd {
+			display:flex;
+			justify-content:center;
+			align-items:center;
+			margin:1px;
+		}
+
+		dt {
+			font-size:$small;
+			vertical-align:middle;
+			background-color:$xxxx-dark-gray;
+		}
+
+		dd {
+			font-size:$x-small;
+			background-color:$xxx-dark-gray;
+		}
+	}
+
+	dl ~ .btn_area {
+		margin-left:32px;
+		margin-right:32px;
+	}
+
+	dl + .btn_area {
+		margin-top:16px;
+		margin-bottom:0px;
+		display:flex;
+		button {
+			height:36px;
+			line-height:36px;
+			flex:1;
+			&:first-child {
+				margin-right:8px;
+			}
+		}
+	}
+
+}
+
+
 
 
 // --------------------------------------------------------------------------------
