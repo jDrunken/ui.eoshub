@@ -24,7 +24,7 @@ main.vote {
 	section.summary.vote {
 		position:relative;
 
-		background:url('../image/bi-hubby-cutted.svg') calc(100% + 9px) calc(36px) no-repeat;
+		background:url('../image/bi-hubby-cutted.svg') calc(100% + 9px) calc(40px) no-repeat;
 		background-size:176px 136px;
 		background-color:$xxx-dark-gray;
 		padding:32px;
@@ -145,7 +145,8 @@ main.vote {
 				@include ir();
 			}
 
-			th:nth-of-type(3) {
+			th.search {
+				z-index:20;
 				form {
 					justify-content:space-between;
 					align-items:center;
@@ -160,16 +161,19 @@ main.vote {
 						outline:0;
 						flex:1;
 					}
-				}
-			}
 
-			th.search {
-				form button[type='submit'] {
-					@include ir();
-					width:16px;
-					height:16px;
-					background:url('../image/icon-search.svg') center center no-repeat;
-					background-size:16px;
+					button[type='submit'] {
+						@include ir();
+						width:16px;
+						height:16px;
+						background:url('../image/icon-search.svg') center center no-repeat;
+						background-size:16px;
+					}
+
+					transition:transform 0.1s ease-in;
+					&:focus-within {
+						transform:scale(1.05);
+					}
 				}
 			}
 
