@@ -1,9 +1,12 @@
-main.create.account {
+main.create.account,
+main.change.account.key {
 	// namespace
 }
 
-main.create.account {
+main.create.account,
+main.change.account.key {
 	.container {
+		margin-top:32px;
 		background-color:$xx-dark-gray;
 	}
 
@@ -19,6 +22,7 @@ main.create.account {
 				font-size:$large;
 				display:block;
 				font-weight:$light;
+				margin-top:8px;
 			}
 		}
 	}
@@ -118,4 +122,43 @@ main.create.account {
 		}
 	}
 
+	// notice, alert
+	div.notice.alert {
+		margin:32px;
+		padding:28px 32px;
+		background-color:$xxxx-dark-gray;
+
+		display:flex;
+		align-items:center;
+
+		color:$red;
+
+		h3 {
+			color:inherit;
+			font-size:$x-large;
+			white-space:nowrap;
+			padding-left:24px;
+
+			background:url('../image/icon-alert.svg') center left no-repeat transparent;
+		}
+
+		p {
+			font-size:$small;
+			padding-left:36px;
+			margin:0;
+			margin-left:36px;
+			border-left:1px solid $xx-dark-gray;
+		}
+
+	}
+
+}
+
+
+
+// type case
+main.change.account.key {
+	.btn_area {
+		padding-bottom:32px;
+	}
 }

@@ -82,7 +82,7 @@ section.content {
 	main.ram_market,
 	main.vote,
 	main.resource_management,
-	main.create.account {
+	main.account {
 		height:inherit;
 		box-sizing:border-box;
 		padding:42px;
@@ -111,7 +111,7 @@ section.content {
 	main.ram_market,
 	main.vote,
 	main.resource_management,
-	main.create.account {
+	main.account {
 		width:965px;
 	}
 
@@ -150,7 +150,7 @@ main.search,
 main.ram_market,
 main.vote,
 main.resource_management ,
-main.create.account {
+main.account {
 	transition:margin 0.4s;
 }
 
@@ -165,7 +165,7 @@ aside.shrink {
 	+ main.ram_market,
 	+ main.vote,
 	+ main.resource_management ,
-	+ main.create.account {
+	+ main.account {
 		margin-left:0;
 	}
 
@@ -705,6 +705,12 @@ aside.shrink {
 		background-color:$xx-dark-gray;
 	}
 
+	h2 + p {
+		margin-top:16px;
+		line-height:1.6;
+		max-width:20em;
+	}
+
 	dl {
 		margin:24px 32px 8px;
 		display:grid;
@@ -734,6 +740,11 @@ aside.shrink {
 	dl ~ .btn_area {
 		margin-left:32px;
 		margin-right:32px;
+
+		margin-top:24px;
+		button {
+			width:100%;
+		}
 	}
 
 	dl + .btn_area {
@@ -742,7 +753,7 @@ aside.shrink {
 		display:flex;
 		button {
 			height:36px;
-			line-height:36px;
+			line-height:34px;
 			flex:1;
 			&:first-child {
 				margin-right:8px;
