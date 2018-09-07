@@ -379,11 +379,13 @@ a.button {
   transition: background-color 0.3s, color 0.3s, background-image 0.3s;
 }
 
-button[type="button"].button.ok, button[type="button"].button.undo, button[type="button"].button.choice, button[type="button"].button.tab,
+button[type="button"].button.ok, button[type="button"].button.undo, button[type="button"].button.choice, button[type="button"].button.tab, button[type="button"].button.login, button[type="button"].button.go.main,
 a.button.ok,
 a.button.undo,
 a.button.choice,
-a.button.tab {
+a.button.tab,
+a.button.login,
+a.button.go.main {
   line-height: 50px;
   height: 52px;
 }
@@ -394,14 +396,16 @@ a.button.ok {
   color: #ffffff;
 }
 
-button[type="button"].button.undo, button[type="button"].button.choice,
+button[type="button"].button.undo, button[type="button"].button.choice, button[type="button"].button.login,
 a.button.undo,
-a.button.choice {
+a.button.choice,
+a.button.login {
   border: 1px solid #999;
 }
 
-button[type="button"].button.choice.ing,
-a.button.choice.ing {
+button[type="button"].button.choice.ing, button[type="button"].button.go.main,
+a.button.choice.ing,
+a.button.go.main {
   color: #ffffff;
   border-color: transparent;
   background-color: #403e41;
@@ -426,8 +430,7 @@ a.button.view_more {
   min-width: 152px;
 }
 
-button[type="button"].button.select:before, button[type="button"].button.view_more:before,
-a.button.select:before,
+button[type="button"].button.view_more:before,
 a.button.view_more:before {
   content: '+ ';
 }
@@ -492,7 +495,7 @@ section.content main.search,
 section.content main.ram_market,
 section.content main.vote,
 section.content main.resource_management,
-section.content main.create.account {
+section.content main.account {
   height: inherit;
   box-sizing: border-box;
   padding: 42px;
@@ -505,7 +508,7 @@ section.content main.create.account {
   section.content main.ram_market,
   section.content main.vote,
   section.content main.resource_management,
-  section.content main.create.account {
+  section.content main.account {
     margin-left: calc(300px);
   }
 }
@@ -517,7 +520,7 @@ section.content main.create.account {
   section.content main.ram_market,
   section.content main.vote,
   section.content main.resource_management,
-  section.content main.create.account {
+  section.content main.account {
     padding: 2.425vw;
     margin-left: calc(18.75vw);
   }
@@ -530,7 +533,7 @@ section.content main.create.account {
   section.content main.ram_market,
   section.content main.vote,
   section.content main.resource_management,
-  section.content main.create.account {
+  section.content main.account {
     padding: 27px;
     margin-left: 240px;
   }
@@ -547,7 +550,7 @@ section.content main.search,
 section.content main.ram_market,
 section.content main.vote,
 section.content main.resource_management,
-section.content main.create.account {
+section.content main.account {
   width: 965px;
 }
 
@@ -577,7 +580,7 @@ main.search,
 main.ram_market,
 main.vote,
 main.resource_management,
-main.create.account {
+main.account {
   transition: margin 0.4s;
 }
 
@@ -591,7 +594,7 @@ aside.shrink + main.search,
 aside.shrink + main.ram_market,
 aside.shrink + main.vote,
 aside.shrink + main.resource_management,
-aside.shrink + main.create.account {
+aside.shrink + main.account {
   margin-left: 0;
 }
 
@@ -1100,6 +1103,68 @@ aside.shrink ~ .modal.popup {
 
 .modal.popup.set_division_manual .btn_area button:last-child {
   margin-left: 8px;
+}
+
+.modal.popup.create_account .wrapper {
+  background-color: #282828;
+}
+
+.modal.popup.create_account h2 + p {
+  margin-top: 16px;
+  line-height: 1.6;
+  max-width: 20em;
+}
+
+.modal.popup.create_account dl {
+  margin: 24px 32px 8px;
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  grid-template-rows: repeat(3, 65px);
+  text-align: center;
+}
+
+.modal.popup.create_account dl dt, .modal.popup.create_account dl dd {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1px;
+}
+
+.modal.popup.create_account dl dt {
+  font-size: 0.875rem;
+  vertical-align: middle;
+  background-color: #0e0e0e;
+}
+
+.modal.popup.create_account dl dd {
+  font-size: 0.8125rem;
+  background-color: #161616;
+}
+
+.modal.popup.create_account dl ~ .btn_area {
+  margin-left: 32px;
+  margin-right: 32px;
+  margin-top: 24px;
+}
+
+.modal.popup.create_account dl ~ .btn_area button {
+  width: 100%;
+}
+
+.modal.popup.create_account dl + .btn_area {
+  margin-top: 16px;
+  margin-bottom: 0px;
+  display: flex;
+}
+
+.modal.popup.create_account dl + .btn_area button {
+  height: 36px;
+  line-height: 34px;
+  flex: 1;
+}
+
+.modal.popup.create_account dl + .btn_area button:first-child {
+  margin-right: 8px;
 }
 
 div.tab {
@@ -1891,6 +1956,24 @@ main.index a.view.more:before {
   content: '+ ';
 }
 
+main.index .promotion {
+  position: relative;
+  margin-top: 40px;
+  border-radius: 4px;
+  background-color: #0e0e0e;
+  height: 239px;
+}
+
+main.index .promotion ul, main.index .promotion li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+main.index .promotion li img {
+  max-width: 100%;
+}
+
 main.join {
   /* namespace */
 }
@@ -2111,6 +2194,7 @@ main.join article[data-step="payment-info"] .select_payment_type.area {
 }
 
 main.join article[data-step="payment-info"] .select_payment_type.area button.button {
+  flex: 1;
   height: 36px;
   line-height: 34px;
   max-width: 96px;
@@ -2130,6 +2214,7 @@ main.join article[data-step="payment-info"] .confirm.area form label {
 }
 
 main.join article[data-step="payment-info"] .confirm.area button.button {
+  flex: 1;
   max-width: 136px;
 }
 
@@ -2155,6 +2240,14 @@ main.join article[data-step="payment-info"] dl.invoice {
 main.join article[data-step="done"] {
   background: url("../image/bi-hubby.svg#pink") right calc(50% - 67px) no-repeat;
   background-size: 61px 67px;
+}
+
+main.join article[data-step="done"] .button {
+  flex: 1;
+}
+
+main.join article[data-step="done"] .button:last-child {
+  margin-left: 4px;
 }
 
 main.transfer .container {
@@ -3398,17 +3491,62 @@ main.vote section.summary.vote dl dt:after {
 }
 
 main.vote section.summary.vote p:last-child {
-  margin: 0;
   position: absolute;
-  bottom: 32px;
-  right: 176px;
-  height: 16px;
-  font-size: 16px;
-  color: #ffffff;
+  right: 164px;
+  border-radius: 22px;
+  height: 42px;
+  top: 50%;
+  margin: -21px 0 0 0;
+  padding: 12px 16px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  font-size: 0.875rem;
+  color: #000;
+  background-color: #ffffff;
+  z-index: 4;
+  animation: popover 3s;
+  opacity: 1;
+  transform: scale(1);
+}
+
+main.vote section.summary.vote p:last-child strong {
+  margin-left: 0.2em;
 }
 
 main.vote section.summary.vote p:last-child:first-letter {
   text-transform: uppercase;
+}
+
+main.vote section.summary.vote p:last-child:after {
+  z-index: -1;
+  content: '';
+  background-color: #ffffff;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  bottom: -1px;
+  right: 28px;
+  transform: skew(49deg) rotate(33deg);
+  transform-origin: left top;
+}
+
+@keyframes popover {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  80% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  85% {
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 main.vote section.bp.list th, main.vote section.bp.list td {
@@ -3586,49 +3724,179 @@ main.vote section.bp.list tbody td span.bp.bi {
   background-color: #0e0e0e;
 }
 
-main.create.account .container {
-  background-color: #282828;
+main.proxy.vote h3 {
+  font-size: 1.5rem;
 }
 
-main.create.account .summary.account {
+main.proxy.vote h3 + p {
+  margin-top: 24px;
+  color: #ffffff;
+  font-size: 0.8125rem;
+  line-height: 1.6;
+}
+
+main.proxy.vote .philosophy {
+  background-color: #161616;
   padding: 32px;
-  border-bottom: 1px solid #403e41;
+  display: flex;
+  align-items: center;
 }
 
-main.create.account .summary.account h3 {
-  font-size: 0.875rem;
-  color: #999;
+main.proxy.vote .philosophy button.ok {
+  padding: 0 24px;
+  margin-top: 24px;
 }
 
-main.create.account .summary.account h3 strong {
-  color: #fff;
-  font-size: 1.25rem;
-  display: block;
-  font-weight: 100;
+main.proxy.vote .philosophy div.animated.image {
+  min-width: 301px;
+  height: 301px;
+  background: url("../image/bnr-dapp@2x.png") center center no-repeat;
+  background-size: cover;
+  border-radius: 2px;
+  flex-grow: 1;
+  margin-left: 69px;
+  order: 2;
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.1);
 }
 
-main.create.account form {
-  padding: 32px 32px 16px;
+main.proxy.vote .proxy.vote.status {
+  margin-top: 8px;
 }
 
-main.create.account form ul, main.create.account form li {
+main.proxy.vote .proxy.vote.status ul, main.proxy.vote .proxy.vote.status li {
   margin: 0;
   padding: 0;
   list-style-type: none;
 }
 
-main.create.account form li {
+main.proxy.vote .proxy.vote.status ul {
+  display: flex;
+}
+
+main.proxy.vote .proxy.vote.status ul li {
+  padding: 24px 32px;
+  background-color: #161616;
+  flex: 1;
+  margin-left: 8px;
+  font-size: 0.875rem;
+}
+
+main.proxy.vote .proxy.vote.status ul li:first-child {
+  margin-left: 0;
+}
+
+main.proxy.vote .proxy.vote.status ul li strong {
+  display: block;
+  font-size: 1.125rem;
+  font-weight: 100;
+  color: #ffffff;
+  margin-top: 4px;
+}
+
+main.proxy.vote .voted.bp {
+  margin-top: 64px;
+}
+
+main.proxy.vote .voted.bp ul, main.proxy.vote .voted.bp li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+main.proxy.vote .voted.bp ul {
+  display: grid;
+  grid-template-columns: repeat(3, calc(100% / 3));
+  margin: 20px -4px -4px;
+}
+
+main.proxy.vote .voted.bp li {
+  background-color: #161616;
+  margin: 4px;
+  padding: 20px 20px 20px 80px;
+  position: relative;
+}
+
+main.proxy.vote .voted.bp li img {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+}
+
+main.proxy.vote .voted.bp li strong {
+  color: #ffffff;
+  font-weight: 100;
+  font-size: 1rem;
+  display: block;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+main.proxy.vote .voted.bp li span {
+  margin-top: 4px;
+  display: block;
+  font-size: 0.875rem;
+}
+
+main.create.account .container,
+main.change.account.key .container {
+  margin-top: 32px;
+  background-color: #282828;
+}
+
+main.create.account .summary.account,
+main.change.account.key .summary.account {
+  padding: 32px;
+  border-bottom: 1px solid #403e41;
+}
+
+main.create.account .summary.account h3,
+main.change.account.key .summary.account h3 {
+  font-size: 0.875rem;
+  color: #999;
+}
+
+main.create.account .summary.account h3 strong,
+main.change.account.key .summary.account h3 strong {
+  color: #fff;
+  font-size: 1.25rem;
+  display: block;
+  font-weight: 100;
+  margin-top: 8px;
+}
+
+main.create.account form,
+main.change.account.key form {
+  padding: 32px 32px 16px;
+}
+
+main.create.account form ul, main.create.account form li,
+main.change.account.key form ul,
+main.change.account.key form li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+main.create.account form li,
+main.change.account.key form li {
   margin-top: 4px;
   background: #161616;
   padding: 32px;
 }
 
-main.create.account form li:first-child {
+main.create.account form li:first-child,
+main.change.account.key form li:first-child {
   margin-top: initial;
 }
 
 main.create.account form input[type="text"],
-main.create.account form input[type="number"] {
+main.create.account form input[type="number"],
+main.change.account.key form input[type="text"],
+main.change.account.key form input[type="number"] {
   border: 0;
   width: 100%;
   height: 28px;
@@ -3639,19 +3907,25 @@ main.create.account form input[type="number"] {
 }
 
 main.create.account form input[type="text"]:focus,
-main.create.account form input[type="number"]:focus {
+main.create.account form input[type="number"]:focus,
+main.change.account.key form input[type="text"]:focus,
+main.change.account.key form input[type="number"]:focus {
   border-color: #ffffff;
   outline: 0;
 }
 
 main.create.account form input[type="text"]:focus::placeholder,
-main.create.account form input[type="number"]:focus::placeholder {
+main.create.account form input[type="number"]:focus::placeholder,
+main.change.account.key form input[type="text"]:focus::placeholder,
+main.change.account.key form input[type="number"]:focus::placeholder {
   transition: color 0.4s;
   color: #aaa;
 }
 
 main.create.account form input[type="text"] + span.description,
-main.create.account form input[type="number"] + span.description {
+main.create.account form input[type="number"] + span.description,
+main.change.account.key form input[type="text"] + span.description,
+main.change.account.key form input[type="number"] + span.description {
   margin-top: 12px;
   display: block;
   font-size: 0.8125rem;
@@ -3662,51 +3936,100 @@ main.create.account form input[type="number"] + span.description {
 main.create.account form input[type="text"]:invalid + span.validate,
 main.create.account form input[type="text"] + span.false.validate.description,
 main.create.account form input[type="number"]:invalid + span.validate,
-main.create.account form input[type="number"] + span.false.validate.description {
+main.create.account form input[type="number"] + span.false.validate.description,
+main.change.account.key form input[type="text"]:invalid + span.validate,
+main.change.account.key form input[type="text"] + span.false.validate.description,
+main.change.account.key form input[type="number"]:invalid + span.validate,
+main.change.account.key form input[type="number"] + span.false.validate.description {
   color: #ff6b64;
 }
 
 main.create.account form input[type="text"]:valid + span.validate,
 main.create.account form input[type="text"] + span.true.validate.description,
 main.create.account form input[type="number"]:valid + span.validate,
-main.create.account form input[type="number"] + span.true.validate.description {
+main.create.account form input[type="number"] + span.true.validate.description,
+main.change.account.key form input[type="text"]:valid + span.validate,
+main.change.account.key form input[type="text"] + span.true.validate.description,
+main.change.account.key form input[type="number"]:valid + span.validate,
+main.change.account.key form input[type="number"] + span.true.validate.description {
   color: #79c720;
 }
 
 main.create.account form input[type="text"]:placeholder-shown + span.description,
-main.create.account form input[type="number"]:placeholder-shown + span.description {
+main.create.account form input[type="number"]:placeholder-shown + span.description,
+main.change.account.key form input[type="text"]:placeholder-shown + span.description,
+main.change.account.key form input[type="number"]:placeholder-shown + span.description {
   color: inherit;
 }
 
-main.create.account .btn_area {
+main.create.account .btn_area,
+main.change.account.key .btn_area {
   padding: 0 32px;
   text-align: right;
 }
 
-main.create.account .btn_area button {
+main.create.account .btn_area button,
+main.change.account.key .btn_area button {
   margin-left: 4px;
   width: 157px;
 }
 
-main.create.account .account.list {
+main.create.account .account.list,
+main.change.account.key .account.list {
   margin-top: 32px;
   padding: 32px;
 }
 
-main.create.account .account.list h3 {
+main.create.account .account.list h3,
+main.change.account.key .account.list h3 {
   padding-bottom: 24px;
 }
 
 main.create.account .account.list th,
-main.create.account .account.list td {
+main.create.account .account.list td,
+main.change.account.key .account.list th,
+main.change.account.key .account.list td {
   text-align: left;
   padding-left: 16px;
   padding-right: 16px;
 }
 
-main.create.account .account.list > div.btn_area {
+main.create.account .account.list > div.btn_area,
+main.change.account.key .account.list > div.btn_area {
   text-align: center;
   padding: 32px 32px 0;
+}
+
+main.create.account div.notice.alert,
+main.change.account.key div.notice.alert {
+  margin: 32px;
+  padding: 28px 32px;
+  background-color: #0e0e0e;
+  display: flex;
+  align-items: center;
+  color: #ff6b64;
+}
+
+main.create.account div.notice.alert h3,
+main.change.account.key div.notice.alert h3 {
+  color: inherit;
+  font-size: 1.5rem;
+  white-space: nowrap;
+  padding-left: 24px;
+  background: url("../image/icon-alert.svg") center left no-repeat transparent;
+}
+
+main.create.account div.notice.alert p,
+main.change.account.key div.notice.alert p {
+  font-size: 0.875rem;
+  padding-left: 36px;
+  margin: 0;
+  margin-left: 36px;
+  border-left: 1px solid #282828;
+}
+
+main.change.account.key .btn_area {
+  padding-bottom: 32px;
 }
 
 /*# sourceMappingURL=style.css.map */
