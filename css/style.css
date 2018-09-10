@@ -1057,7 +1057,7 @@ aside.shrink ~ .modal.popup {
 }
 
 .modal.popup.set_division_manual .form.container p {
-  margin: 4px 0 8px;
+  margin: 8px 0 0;
 }
 
 .modal.popup.set_division_manual .form.container form {
