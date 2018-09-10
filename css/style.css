@@ -896,6 +896,24 @@ aside.shrink ~ .modal.popup {
   transform: translate(-50%, 0);
 }
 
+@media (min-width: 1601px) {
+  .resource_management .modal.popup {
+    left: 300px;
+  }
+}
+
+@media (min-width: 1281px) and (max-width: 1600px) {
+  .resource_management .modal.popup {
+    left: 18.75vw;
+  }
+}
+
+@media (max-width: 1280px) {
+  .resource_management .modal.popup {
+    left: 240px;
+  }
+}
+
 .modal.popup.rental_account .result.list ul, .modal.popup.rental_account .result.list li, .modal.popup.rental_account .result.list p {
   margin: 0;
   padding: 0;
@@ -3366,13 +3384,13 @@ main.resource_management section {
   flex-direction: column;
 }
 
-main.resource_management section .btn_area {
+main.resource_management section > .btn_area {
   position: absolute;
   right: 32px;
   bottom: 32px;
 }
 
-main.resource_management section .btn_area button {
+main.resource_management section > .btn_area button {
   width: 136px;
   height: 52px;
   border-radius: 2px;

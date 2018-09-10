@@ -157,6 +157,7 @@
 		<a href="resource-rental-cancel.html">임대취소하기</a>
 	</div>
 	<div class="stake container">
+
 		<div class="my resource">
 			<div>
 				<h3>CPU 총량
@@ -202,6 +203,40 @@
 			</div>
 			<div class="btn_area">
 				<button type="button" class="ok button" disabled>확인</button>
+			</div>
+		</section>
+		<section id="popup" class="set_division_manual modal popup" aria-live="true" role="alert">
+			<div class="wrapper">
+				<h2>토큰 스테이크 수량 직접 설정</h2>
+				<div class="token status">
+					<h3>스테이크할 토큰
+						<strong>10 EOS</strong>
+					</h3>
+					<button type="button" class="set auto button">자동 분배</button>
+				</div>
+				<div class="form container">
+					<h3>CPU</h3>
+					<p>Staked : 18 EOS</p>
+					<form action="" class="true validate">
+						<input id="" type="text" name="" class="user" placeholder="스테이크할 수량을 설정하세요" data-validate="false">
+						<span>EOS</span>
+					</form>
+				</div>
+
+				<div class="form container">
+					<h3>NET</h3>
+					<p>Staked : 18 EOS</p>
+					<form action="">
+						<input id="" type="text" name="" class="user" placeholder="스테이크할 수량을 설정하세요" data-validate="true">
+						<span>EOS</span>
+					</form>
+				</div>
+
+				<p class="validate description">7:3 비율로 스테이킹 하는 것이 가장 좋습니다.</p>
+				<div class="btn_area">
+					<button type="button" class="undo button">취소</button>
+					<button type="button" class="ok button" disabled>확인</button>
+				</div>
 			</div>
 		</section>
 		<script>
@@ -265,41 +300,6 @@
 		</script>
 	</div>
 </main>
-<section id="popup" class="set_division_manual modal popup" aria-live="true" role="alert">
-	<div class="wrapper">
-		<h2>토큰 스테이크 수량 직접 설정</h2>
-		<div class="token status">
-			<h3>스테이크할 토큰
-				<strong>10 EOS</strong>
-			</h3>
-			<button type="button" class="set auto button">자동 분배</button>
-		</div>
-		<div class="form container">
-			<h3>CPU</h3>
-			<p>Staked : 18 EOS</p>
-			<form action="" class="true validate">
-				<input id="" type="text" name="" class="user" placeholder="스테이크할 수량을 설정하세요" data-validate="false">
-				<span>EOS</span>
-			</form>
-		</div>
-
-		<div class="form container">
-			<h3>NET</h3>
-			<p>Staked : 18 EOS</p>
-			<form action="">
-				<input id="" type="text" name="" class="user" placeholder="스테이크할 수량을 설정하세요" data-validate="true">
-				<span>EOS</span>
-			</form>
-		</div>
-
-		<p class="validate description">7:3 비율로 스테이킹 하는 것이 가장 좋습니다.</p>
-		<div class="btn_area">
-			<button type="button" class="undo button">취소</button>
-			<button type="button" class="ok button" disabled>확인</button>
-		</div>
-	</div>
-</section>
-
 <script>
 // popup 닫기
 (function () {
