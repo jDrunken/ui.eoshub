@@ -504,7 +504,22 @@ aside.shrink {
 
 }
 
-// dcase type
+// type case
+.resource_management .modal.popup {
+	@include media ('>1600px') {
+		left:300px;
+	}
+	@include media ('>1280px','<=1600px') {
+		left:18.75vw;
+	}
+	@include media ('<=1280px') {
+		left:240px;
+	}
+}
+
+
+
+// type case
 .modal.popup.rental_account .result.list {
 	ul,li,p {
 		margin:0;
@@ -626,7 +641,7 @@ aside.shrink {
 		}
 
 		p {
-			margin:4px 0 8px;
+			margin:8px 0 12px;
 		}
 
 		form {
@@ -634,9 +649,9 @@ aside.shrink {
 			padding:0;
 			display:block;
 			position:relative;
+			background-color:#232323;
 
 			input {
-				background-color:#232323;
 				border:0;
 				border-bottom:1px solid $dark-gray;
 				line-height:48px;

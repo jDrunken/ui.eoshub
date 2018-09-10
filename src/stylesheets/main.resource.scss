@@ -305,7 +305,7 @@ main.resource_management {
 		display:flex;
 		flex-direction:column;
 
-		.btn_area {
+		> .btn_area {
 			position:absolute;
 			right:32px;
 			bottom:32px;
