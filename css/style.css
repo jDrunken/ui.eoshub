@@ -1057,7 +1057,7 @@ aside.shrink ~ .modal.popup {
 }
 
 .modal.popup.set_division_manual .form.container p {
-  margin: 8px 0 0;
+  margin: 8px 0 12px;
 }
 
 .modal.popup.set_division_manual .form.container form {
@@ -1065,10 +1065,10 @@ aside.shrink ~ .modal.popup {
   padding: 0;
   display: block;
   position: relative;
+  background-color: #232323;
 }
 
 .modal.popup.set_division_manual .form.container form input {
-  background-color: #232323;
   border: 0;
   border-bottom: 1px solid #5d5d5d;
   line-height: 48px;
