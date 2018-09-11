@@ -139,6 +139,7 @@ main.resource_management {
 
 			&:placeholder-shown:valid {
 	 			border-color:$gray;
+
 			}
 
 			&[data-validate="true"] {
