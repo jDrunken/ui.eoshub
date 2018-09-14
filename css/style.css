@@ -3134,11 +3134,11 @@ main.resource_management .description {
 }
 
 main.resource_management .description.validate.false {
-  color: #ff6b64;
+  color: #ff6b64 !important;
 }
 
 main.resource_management .description.validate.true {
-  color: #79c720;
+  color: #79c720 !important;
 }
 
 main.resource_management input + span.description {
@@ -3253,21 +3253,6 @@ main.resource_management div.input.field input[type="text"].size.large:focus::pl
 main.resource_management div.input.field input[type="number"].size.large:focus::placeholder {
   transition: color 0.4s;
   color: #aaa;
-}
-
-main.resource_management div.input.field input[type="text"].size.large:invalid + span.validate,
-main.resource_management div.input.field input[type="number"].size.large:invalid + span.validate {
-  color: #ff6b64;
-}
-
-main.resource_management div.input.field input[type="text"].size.large:valid + span.validate,
-main.resource_management div.input.field input[type="number"].size.large:valid + span.validate {
-  color: #79c720;
-}
-
-main.resource_management div.input.field input[type="text"].size.large:placeholder-shown + span.description,
-main.resource_management div.input.field input[type="number"].size.large:placeholder-shown + span.description {
-  color: inherit;
 }
 
 main.resource_management div.input.field input.size.large + span.description ~ button {
@@ -3412,6 +3397,16 @@ main.resource_management .rental.container .field.group {
 main.resource_management .unstake.container .field.group > .input.field:last-child,
 main.resource_management .rental.container .field.group > .input.field:last-child {
   margin-left: 35px;
+}
+
+main.resource_management .unstake.container .field.group input,
+main.resource_management .rental.container .field.group input {
+  padding: 16px 0;
+}
+
+main.resource_management .unstake.container .field.group span.unit,
+main.resource_management .rental.container .field.group span.unit {
+  top: 16px;
 }
 
 main.resource_management .rental.container .available.status {
