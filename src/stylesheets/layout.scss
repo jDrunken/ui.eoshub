@@ -109,6 +109,11 @@ section.content {
 	main.account {
 		padding-top:42px;
 	}
+
+
+	// width
+	main.search,
+	main.ram_market,
 	main.index {
 		max-width:1560px;
 		width:80.425vw;
@@ -116,13 +121,12 @@ section.content {
 	}
 
 	main.transfer,
-	main.search,
-	main.ram_market,
 	main.vote,
-	main.resource_management,
-	main.account {
+	main.account,
+	main.resource_management {
 		width:965px;
 	}
+	// // width
 
 	aside {
 		box-sizing:border-box;
