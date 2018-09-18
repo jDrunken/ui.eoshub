@@ -100,6 +100,15 @@ section.content {
 		}
 
 	}
+
+	main.transfer,
+	main.search,
+	main.ram_market,
+	main.vote,
+	main.resource_management,
+	main.account {
+		padding-top:42px;
+	}
 	main.index {
 		max-width:1560px;
 		width:80.425vw;
