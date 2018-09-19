@@ -390,16 +390,18 @@ a.button.go.main {
   height: 52px;
 }
 
-button[type="button"].button.ok,
-a.button.ok {
+button[type="button"].button.ok, button[type="button"].button.login,
+a.button.ok,
+a.button.login {
   background-image: linear-gradient(111deg, #ff606b, #ff1f90);
   color: #ffffff;
+  border-width: 0;
 }
 
-button[type="button"].button.undo, button[type="button"].button.choice, button[type="button"].button.login,
+button[type="button"].button.undo, button[type="button"].button.choice, button[type="button"].button.join,
 a.button.undo,
 a.button.choice,
-a.button.login {
+a.button.join {
   border: 1px solid #999;
 }
 
@@ -539,6 +541,17 @@ section.content main.account {
   }
 }
 
+section.content main.transfer,
+section.content main.search,
+section.content main.ram_market,
+section.content main.vote,
+section.content main.resource_management,
+section.content main.account {
+  padding-top: 42px;
+}
+
+section.content main.search,
+section.content main.ram_market,
 section.content main.index {
   max-width: 1560px;
   width: 80.425vw;
@@ -546,11 +559,9 @@ section.content main.index {
 }
 
 section.content main.transfer,
-section.content main.search,
-section.content main.ram_market,
 section.content main.vote,
-section.content main.resource_management,
-section.content main.account {
+section.content main.account,
+section.content main.resource_management {
   width: 965px;
 }
 
@@ -1498,16 +1509,6 @@ aside .btn_area a.button {
   border-radius: 2px;
 }
 
-aside .btn_area a.button.login {
-  background-image: linear-gradient(112deg, #ff5252, #aa00ff);
-  color: #fff;
-}
-
-aside .btn_area a.button.join {
-  border-width: 1px;
-  border-color: #999;
-}
-
 @media (max-width: 1649px) {
   aside .btn_area {
     display: block;
@@ -1517,6 +1518,9 @@ aside .btn_area a.button.join {
     margin: 2px 0;
     display: block;
     width: 100%;
+  }
+  aside .btn_area a.button:last-child {
+    margin-top: 4px;
   }
 }
 
@@ -1976,7 +1980,7 @@ main.index a.view.more:before {
 
 main.index .promotion {
   position: relative;
-  margin-top: 40px;
+  margin-top: 32px;
   border-radius: 4px;
   background-color: #0e0e0e;
   height: 239px;
@@ -2659,13 +2663,17 @@ main.search .transaction.history table td.info {
 
 main.search .transaction.history table td.info span.memo.popup {
   display: inline-block;
-  height: 20px;
-  width: 20px;
+  height: 18px;
+  width: 18px;
   overflow: hidden;
   position: absolute;
   top: 50%;
   right: 12px;
   margin-top: calc(-20px / 2);
+}
+
+main.search .transaction.history table td.info span.memo.popup > span {
+  display: block;
 }
 
 main.search .transaction.history table td.info span.memo.popup button {
@@ -2688,12 +2696,13 @@ main.search .transaction.history table td.info span.memo.popup.viewing {
   background-color: #282828;
   box-shadow: 4px 4px 12px 0 rgba(0, 0, 0, 0.5);
   width: 200px;
+  height: auto;
   min-height: 182px;
   z-index: 10;
   padding: 16px;
   box-sizing: border-box;
-  margin-top: -30px;
-  margin-right: -20px;
+  margin-top: -27px;
+  margin-right: -18px;
 }
 
 main.search .transaction.history table td.info span.memo.popup.viewing strong,
@@ -2712,8 +2721,8 @@ main.search .transaction.history table td.info span.memo.popup.viewing strong {
 }
 
 main.search .transaction.history table td.info span.memo.popup.viewing button {
-  right: 20px;
-  top: 20px;
+  right: 16px;
+  top: 17px;
   position: absolute;
   transform: rotate(45deg);
 }
