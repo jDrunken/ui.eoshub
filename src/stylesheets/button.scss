@@ -77,10 +77,9 @@ a.button {
 		cursor:not-allowed;
 	}
 
-	// 더 보기
-	//
 	&.select,
-	&.view_more {
+	&.view_more,
+	&.action {
 		padding:0 40px;
 		height: 52px;
 		border-radius: 2px;
