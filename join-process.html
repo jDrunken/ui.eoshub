@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+
+
+<meta charset="UTF-8">
+
+<title>EOShub</title>
+
+<meta charset="utf-8">
+
+<meta name="description" content="">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta property="og:title" content="eoshub">
+<meta property="og:description" content="eoshub">			
+<meta property="og:image" content="https://eoshub.io/">
+<meta property="og:url" content="https://eoshub.io/">
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?">
+
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+</head>
+<body>
+
+<div id="elm-target">
+	<div>
+		
+<header>
+	<h1><a href="index-view.html">eoshub</a></h1>
+	<div class="language">
+		<button type="button" class="selected">한글</button>
+		<button type="button">EN</button>
+		<button type="button">中国</button>
+	</div>
+	<form action="search.html">
+		<input type="text" placeholder="계정명, 공개 키 검색하기" />
+		<button type="submit">검색</button>
+	</form>
+</header>
+
+
+		<section class="content">
+
+<div id="notification" class="notification panel" aria-live="true" role="alert">
+    <div class="view success">
+        <p>코드 메일로 전송완료!</p>
+		<p>메일을 확인해주세요.</p>
+        <button type="button" class="icon close button">닫기</button>
+    </div>
+</div>
+<script>
+(function () {
+	var close = document.querySelector('.notification.panel button.close.button');
+	var target = document.querySelector('.notification.panel');
+	close.addEventListener('click',function () {
+		target.classList.remove('viewing');
+	});
+})();
+</script>
+
+<main class="join">
+	<article>
+		<h2>계정생성하기</h2>
+		<p>1-5 사이의 숫자와 영어 소문자의 조합으로 12글자만 가능합니다.</p>
+
+		<div class="container">
+			<h3>계정명 입력</h3>
+			<input type="text" class="account_name" placeholder="ex) eoshuby12345" required>
+			<span class="true validate">사용가능한 이메일입니다.</span>
+			<span class="false validate">이미 존재하는 계정입니다.</span>
+			<span class="false validate">이메일을 확인해주세요!</span>
+		</div>
+
+		<div class="container">
+			<h3>키 생성</h3>
+			<dl class="keybox">
+				<dt>공개 키</dt>
+				<dd title="툴팁">werwerewrwrwerwerwerwerwerewrwrwerwerwerwerwerewrwrwerwerwerwwwwerwerewrwrwerwerwerw</dd>
+
+				<dt>개인 키</dt>
+				<dd>werwerewrwrwerwerwerw</dd>
+			</dl>
+			<textarea id="key" wai-aria="hidden" class="hidden_copy_field">PublicKey:sdfsdfsdf
+			PrivateKey:wefwefwefwef</textarea>
+
+			<button type="button" class="refresh button">새로 고침</button>
+			<div class="btn_area">
+				<button type="button" id="copy" class="copy button">키 한 번에 복사하기</button>
+			</div>
+			<p class="important description">* 계정을 증명할 중요한 정보니 복사하여 안전하게 보관하세요!</p>
+		</div>
+
+		
+
+		<script>
+		(function () {
+			var button = document.getElementById('copy');
+			var target = document.getElementById('key');
+			var description = document.querySelector('p.important.description');
+
+			button.addEventListener('click',function (){
+				target.select();
+				document.execCommand("copy");
+
+				description.innerText = '키가 복사되었습니다. 안전한 곳에 보관해주세요!';
+				description.classList.add('copied');
+			});
+		})();
+		</script>
+
+
+
+
+
+		<h3>이메일 인증</h3>
+		<div class="container">
+			<section class="email verification">
+				<input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" name="" value="" placeholder="이메일을 입력해주세요." />
+				<button type="button" class="action button" id="sendCode">코드 전송</button>
+
+				<input type="text" name="" value="" id="inputCode" placeholder="메일로 전송된 코드를 입력해주세요." />
+				<button type="button" class="action button" disabled id="inputCodeValidate">확인</button>
+			</section>
+
+			<div class="validation bunch">
+				<span class="description"> <time>3:00</time> 안으로 코드를 입력해주세요.  </span>
+				<span class="false validate description">일치하지 않는 코드입니다.</span>
+				<span class="true validate description">이메일 인증이 완료됐습니다.</span>
+
+				<button type="button" class="re_send button">코드 재전송</button>
+			</div>
+		</div>
+		<script>
+		// 데모용 스크립트
+		(function () {
+			timer = {
+				remain : 180,
+				trigger : false,
+				running : false
+			};
+
+			var button = {
+				send : document.getElementById('sendCode'),
+				validate : document.getElementById('checkValidationCode')
+			};
+
+			var validation = document.querySelector('.validation.bunch');
+			var description = document.querySelector('.validation.bunch > span:nth-of-type(1)');
+
+			var notificator = document.querySelector('.notification.panel');
+
+			var runTimer = function () {
+				if (!timer || !timer.trigger) {return;}
+
+				if(!!timer.trigger) {
+					if (timer.remain > 0) {
+						timer.remain--;
+						var mm = Math.floor(timer.remain/60);
+						var ss = (timer.remain%60).toString();
+
+						if (ss.length === 1) {
+							ss = '0' + ss;
+						}
+						description.innerHTML = ' <time>'+mm+':'+ss+'</time> 안으로 코드를 입력해주세요.';
+
+					} else {
+						clearInterval(reduceTime);
+						timer.remain = 180;
+						timer.trigger = false;
+						timer.running = false;
+						description.innerHTML = '제한시간이 만료되었습니다.<br>코드 전송 버튼을 다시 눌러주시기 바랍니다.';
+					}
+				}
+			}
+
+			// 코드 전송 버튼을 누르면 티커 올려주고 밸리데이터 보여주고 타이머 돌림
+			button.send.addEventListener('click',function () {
+				// 밸리데이션 엘리먼트 보여줌
+				validation.classList.add('viewing');
+
+				// ticker 보여줌
+				notificator.classList.add('viewing');
+
+				// ticker는 10초 이후에 닫습니다.
+				setTimeout(function () {
+					notificator.classList.remove('viewing');
+				},5000);
+
+				timer.trigger = true;
+				if (!timer.running) {
+					timer.running = true;
+					reduceTime = setInterval(function () {
+						runTimer()
+					},1000);
+				}
+			});
+		})();
+
+		// 메일로 전송된 코드를 입력하면
+		(function () {
+			var input = document.getElementById('inputCode');
+			var button = document.getElementById('inputCodeValidate');
+
+				input.addEventListener('input',function () {
+					if (timer.trigger) {
+						button.removeAttribute('disabled');
+					}
+				});
+		})();
+		</script>
+
+		<div class="container">
+		<h3>결제정보</h3>
+			<dl class="invoice">
+				<dt>CPU</dt>
+				<dd>0.5 EOS</dd>
+
+				<dt>NET</dt>
+				<dd>0.5 EOS</dd>
+
+				<dt>RAM</dt>
+				<dd>1 EOS</dd>
+			</dl>
+
+			<div class="select_payment_type area">
+				<button type="button" class="choice ing button">가상계좌</button>
+				<button type="button" class="choice button" disabled>신용카드</button>
+				<p class="amount">
+					총 결제금액 <strong>11,320</strong> 원
+				</p>
+			</div>
+		</div>
+
+		<div class="confirm area">
+			<section>
+				<input type="checkbox" id="agreeContract">
+				<label for="agreeContract">EOS Consitution에 동의합니다.</label>
+			</section>
+			<button type="button" class="ok button" disabled>생성하기</button>
+		</div>
+		<script>
+		// 데모용 스크립트
+		(function (){
+			var check = document.getElementById('agreeContract');
+			var button = document.querySelector('.confirm.area button');
+			check.addEventListener('change',function () {
+				if(check.checked) {
+					button.removeAttribute('disabled');
+				} else {
+					button.setAttribute('disabled','');
+				}
+			});
+
+			button.addEventListener('click',function () {
+				console.log('hello world');
+				var isGithubPage = /eoshub/.test(location.pathname);
+				location.pathname = isGithubPage ? '/ui.eoshub/join-process-ok.html' : '/join-process-ok.html'
+			});
+		})();
+		</script>
+
+		<p class="exist_account">
+			이미 이오스 계정이 있으신가요?
+			<a href="index-view.html">로그인하기</a>
+		</p>
+	</article>
+</main>
+
+		</section>
+	</div>
+</div>
+</body>
+</html>

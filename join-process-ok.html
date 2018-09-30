@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+
+
+<meta charset="UTF-8">
+
+<title>EOShub</title>
+
+<meta charset="utf-8">
+
+<meta name="description" content="">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta property="og:title" content="eoshub">
+<meta property="og:description" content="eoshub">			
+<meta property="og:image" content="https://eoshub.io/">
+<meta property="og:url" content="https://eoshub.io/">
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?">
+
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+</head>
+<body>
+
+<div id="elm-target">
+	<div>
+		
+<header>
+	<h1><a href="index-view.html">eoshub</a></h1>
+	<div class="language">
+		<button type="button" class="selected">한글</button>
+		<button type="button">EN</button>
+		<button type="button">中国</button>
+	</div>
+	<form action="search.html">
+		<input type="text" placeholder="계정명, 공개 키 검색하기" />
+		<button type="submit">검색</button>
+	</form>
+</header>
+
+
+		<section class="content">
+
+<main class="join">
+	<article data-step="validate-email-ok">
+		<h2>입금 후 결제완료 버튼을 눌러주세요.</h2>
+		<p>입금을 하셨는지 다시 한번 확인하고 결제완료를 눌러주세요.</p>
+
+		<div class="btn_area">
+			
+			<button type="button" class="ok button">결제완료</button>
+		</div>
+	</article>
+</main>
+
+
+<section id="popup" class="virtual_account_check modal popup viewing" aria-live="true" role="alert">
+	<div class="wrapper">
+		<h2>가상계좌입금</h2>
+		<p>생성된 가상계좌로<br />
+			총 결제금액인 <strong>11,320</strong>원을 입금해주세요!</p>
+
+		<dl>
+			<dt>은행</dt>
+			<dd>신한은행</dd>
+
+			<dt>가상계좌명</dt>
+			<dd>123-456-123456</dd>
+
+			<dt>결제자명</dt>
+			<dd>qwertyuioqwertyuioqwertyuioqwertyuioqwertyuioqwertyuioqwertyuiopppppppqwertyuiop</dd>
+
+			<dt>입금만료일</dt>
+			<dd>2012-12-12</dd>
+		</dl>
+		<div class="btn_area">
+			<button type="button" class="ok button">확인</button>
+		</div>
+		<button id="closePopup" type="button" class="close button">닫기</button>
+	</div>
+</section>
+
+<script>
+	// popup 닫기
+	(function () {
+		document.getElementById('closePopup').addEventListener('click',function () {
+			document.getElementById('popup').classList.remove('viewing');
+		});
+		// 팝업안의 ok버튼을 클릭하면
+		document.querySelector('.modal.popup .btn_area button').addEventListener('click',function () {
+			document.getElementById('popup').classList.remove('viewing');
+			// 대리구매를 보여줌
+			document.querySelector('div.target').removeAttribute('hidden');
+		});
+	})();
+
+// popup 열기
+// (function () {
+//     document.getElementById('openPopup').addEventListener('click',function(e) {
+//         document.getElementById('popup').classList.add('viewing');
+//     });
+// })();
+
+</script>
+
+
+		</section>
+	</div>
+</div>
+</body>
+</html>

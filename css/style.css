@@ -378,13 +378,14 @@ a.button {
   transition: background-color 0.3s, color 0.3s, background-image 0.3s;
 }
 
-button[type="button"].button.ok, button[type="button"].button.undo, button[type="button"].button.choice, button[type="button"].button.tab, button[type="button"].button.login, button[type="button"].button.go.main,
+button[type="button"].button.ok, button[type="button"].button.undo, button[type="button"].button.choice, button[type="button"].button.tab, button[type="button"].button.login, button[type="button"].button.go.main, button[type="button"].button.copy,
 a.button.ok,
 a.button.undo,
 a.button.choice,
 a.button.tab,
 a.button.login,
-a.button.go.main {
+a.button.go.main,
+a.button.copy {
   line-height: 50px;
   height: 52px;
 }
@@ -397,10 +398,11 @@ a.button.login {
   border-width: 0;
 }
 
-button[type="button"].button.undo, button[type="button"].button.choice, button[type="button"].button.join,
+button[type="button"].button.undo, button[type="button"].button.choice, button[type="button"].button.join, button[type="button"].button.copy,
 a.button.undo,
 a.button.choice,
-a.button.join {
+a.button.join,
+a.button.copy {
   border: 1px solid #999;
 }
 
@@ -421,9 +423,10 @@ a.button:disabled {
   cursor: not-allowed;
 }
 
-button[type="button"].button.select, button[type="button"].button.view_more,
+button[type="button"].button.select, button[type="button"].button.view_more, button[type="button"].button.action,
 a.button.select,
-a.button.view_more {
+a.button.view_more,
+a.button.action {
   padding: 0 40px;
   height: 52px;
   border-radius: 2px;
@@ -652,8 +655,14 @@ aside.shrink ~ .modal.popup {
   color: #fff;
 }
 
-.notification.panel div a {
+.notification.panel div p + p {
   font-size: 0.8125rem;
+  font-weight: 100;
+  margin-top: 3px;
+}
+
+.notification.panel div a {
+  font-size: 0.875rem;
   color: #fff;
 }
 
@@ -726,6 +735,20 @@ aside.shrink ~ .modal.popup {
   .modal.popup {
     left: calc(240px + 60px);
   }
+}
+
+main.join + .modal.popup {
+  left: 0;
+}
+
+.modal.popup p {
+  line-height: 1.6;
+}
+
+.modal.popup p > strong {
+  color: #ffffff;
+  font-weight: 100;
+  margin-right: 0.1em;
 }
 
 .modal.popup span.validate.description {
@@ -1038,7 +1061,7 @@ aside.shrink ~ .modal.popup {
 
 .modal.popup.set_division_manual .token.status button.auto.set:after {
   content: '';
-  displayL: block;
+  display: block;
   width: 22px;
   height: 22px;
   position: absolute;
@@ -1192,6 +1215,46 @@ aside.shrink ~ .modal.popup {
 }
 
 .modal.popup.create_account dl + .btn_area button:first-child {
+  margin-right: 8px;
+}
+
+.modal.popup.virtual_account_check .wrapper {
+  background-color: #282828;
+}
+
+.modal.popup.virtual_account_check dl {
+  margin: 32px;
+  background-color: #161616;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  padding: 12px 24px;
+  font-size: 0.875rem;
+}
+
+.modal.popup.virtual_account_check dl * {
+  padding: 6px 0;
+}
+
+.modal.popup.virtual_account_check dl dt {
+  color: #ffffff;
+  text-align: left;
+}
+
+.modal.popup.virtual_account_check dl dd {
+  text-align: right;
+  word-break: break-all;
+}
+
+.modal.popup.virtual_account_check dl + .btn_area {
+  margin: 16px 32px;
+  display: flex;
+}
+
+.modal.popup.virtual_account_check dl + .btn_area button {
+  flex: 1;
+}
+
+.modal.popup.virtual_account_check dl + .btn_area button:first-child {
   margin-right: 8px;
 }
 
@@ -1773,6 +1836,7 @@ main.index .menu_area .container > div,
 main.index .menu_area .container > a {
   margin: 6px;
   display: block;
+  border-radius: 4px;
 }
 
 main.index .menu_area .container div.greeting {
@@ -1787,7 +1851,6 @@ main.index .menu_area .container > a {
   background-position: 32px 32px;
   background-repeat: no-repeat;
   background-size: 22px 22px;
-  border-radius: 4px;
   position: relative;
   transition: box-shadow 0.4s;
 }
@@ -2004,22 +2067,63 @@ main.join h2 + p {
   font-size: 0.875rem;
 }
 
+main.join h3 {
+  font-size: 1rem;
+  margin: 40px 0 16px;
+}
+
 main.join input[type='email'],
 main.join input[type='text'] {
   outline: 0;
-  padding: 14px 0 14px 31px;
+  padding: 17px 12px;
   border: 0;
-  border-bottom: 1px solid #e8e8e8;
   width: 100%;
   box-sizing: border-box;
+  font-size: 0.875rem;
+  background-color: #282828;
 }
 
-main.join input[type='email'] {
-  background: url("../image/icon-mail.svg") left center no-repeat;
+main.join input[type='email']::placeholder,
+main.join input[type='text']::placeholder {
+  color: #5d5d5d;
 }
 
-main.join input[type='text'] {
-  background: url("../image/icon-id-default.svg") left center no-repeat;
+main.join .container {
+  position: relative;
+}
+
+main.join button.refresh {
+  position: absolute;
+  right: 0;
+  top: 3px;
+  color: #5d5d5d;
+  padding-right: 26px;
+}
+
+main.join button.refresh:after {
+  content: '';
+  display: block;
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  margin-top: -11px;
+  background: url("../image/icon-refresh.svg#dark-gray") right center no-repeat;
+  transition: transform 1s;
+}
+
+main.join button.refresh:hover {
+  color: #ffffff;
+}
+
+main.join button.refresh:hover:after {
+  transform: rotate(180deg);
+  background: url("../image/icon-refresh.svg#white") right center no-repeat;
+}
+
+main.join button.refresh:active:after {
+  transform: rotate(360deg);
 }
 
 main.join div.btn_area {
@@ -2033,58 +2137,106 @@ main.join div.btn_area button {
 
 main.join article {
   box-sizing: border-box;
-}
-
-main.join article[data-step="validate-email"],
-main.join article[data-step="validate-email-ok"],
-main.join article[data-step="copy-key-pair"],
-main.join article[data-step="payment-info"],
-main.join article[data-step="done"] {
   width: 400px;
+  padding: 72px 0;
 }
 
-main.join article[data-step="validate-email"],
-main.join article[data-step="make-account"],
-main.join article[data-step="copy-key-pair"],
-main.join article[data-step="payment-info"],
-main.join article[data-step="done"] {
-  padding-top: 19vh;
+main.join div.validation.bunch {
+  margin-top: 15px;
+  font-size: 0.8125rem;
+  color: #5d5d5d;
+  position: relative;
+  height: 14px;
+  visibility: hidden;
+  overflow: hidden;
 }
 
-main.join form span.validate {
-  font-size: 0.875rem;
-  height: 20px;
-  background-size: 20px;
+main.join div.validation.bunch button.re_send {
+  font-size: 0.8125rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  text-decoration: underline;
+}
+
+main.join div.validation.bunch button.re_send:hover {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+main.join div.validation.bunch time {
+  display: inline-block;
+  width: 3em;
+  letter-spacing: 1px;
+}
+
+main.join div.validation.bunch.viewing {
+  height: initial;
+  visibility: initial;
+}
+
+main.join span.validate {
+  display: block;
+  line-height: 20px;
+  font-size: 0.8125rem;
   padding-left: 28px;
   margin-top: 12px;
-  display: block;
-  visibility: hidden;
 }
 
-main.join form input[valid] + span.validate {
+main.join span.validate.true {
   visibility: visible;
   color: #79c720;
   background: url(../image/icon-check-circle.svg) left center no-repeat;
 }
 
-main.join form input[invalid] + span.validate {
+main.join span.validate.false {
   visibility: visible;
   color: #ff6b64;
   background: url(../image/icon-x-circle.svg) left center no-repeat;
 }
 
-main.join dl {
-  margin: 40px 0 0;
+main.join section.email.verification {
+  margin: 0;
   display: grid;
-  grid-template-columns: 20% auto;
+  grid-template-columns: 1fr 90px;
+  margin: -4px;
+}
+
+main.join section.email.verification * {
+  box-sizing: border-box;
+  margin: 4px;
+}
+
+main.join section.email.verification input {
+  width: initial;
+}
+
+main.join section.email.verification button {
+  min-width: 0;
+  padding: 0;
+  background-color: #0e0e0e;
+}
+
+main.join section.email.verification button[disabled] {
+  color: #403e41;
+  border-color: transparent;
+}
+
+main.join dl {
+  display: grid;
+  grid-template-columns: 30% auto;
 }
 
 main.join dl dt, main.join dl dd {
   box-sizing: border-box;
-  padding: 0 16px;
-  line-height: 62px;
+  padding: 16px;
   font-size: 0.875rem;
-  border-top: 1px solid #5d5d5d;
+  border-top: 1px solid #403e41;
+  word-break: break-all;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 62px;
 }
 
 main.join dl dt:nth-of-type(1), main.join dl dd:nth-of-type(1) {
@@ -2094,102 +2246,104 @@ main.join dl dt:nth-of-type(1), main.join dl dd:nth-of-type(1) {
 main.join dl dt {
   background: #232323;
   text-align: center;
+  justify-content: center;
   color: #ffffff;
 }
 
 main.join dl dd {
-  background-color: #403e41;
+  background-color: #282828;
   color: #999;
   overflow-x: hidden;
   text-overflow: ellipsis;
 }
 
-main.join span[data-progress] {
+main.join dl.keybox dd {
+  justify-content: flex-start;
+}
+
+main.join p.important.description {
+  color: #ff6b64;
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+main.join p.important.description.copied {
+  color: #79c720;
+}
+
+main.join dl.keybox ~ .btn_area {
+  margin-top: 16px;
+}
+
+main.join .select_payment_type.area {
+  margin-top: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #5d5d5d;
   display: flex;
   align-items: center;
+}
+
+main.join .select_payment_type.area button.button {
+  flex: 1;
+  height: 36px;
+  line-height: 34px;
+  max-width: 96px;
+  padding: 0;
+  margin-right: 0.6em;
+}
+
+main.join .confirm.area {
+  margin-top: 32px;
+  display: flex;
   justify-content: space-between;
-  font-size: 2rem;
-  font-weight: 100;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 1.19;
-  letter-spacing: normal;
+  align-items: center;
+}
+
+main.join .confirm.area label {
+  font-size: 0.8125rem;
+}
+
+main.join .confirm.area button.button {
+  flex: 1;
+  max-width: 136px;
+}
+
+main.join p.amount {
+  flex: 1;
+  text-align: right;
+  margin: 0;
+  font-size: 0.8125rem;
+}
+
+main.join p.amount strong {
+  font-size: 1.5rem;
   color: #ffffff;
-  margin-bottom: 24px;
+  font-weight: 100;
+  margin: 0 0.2em;
 }
 
-main.join span[data-progress]:after {
-  content: '';
-  display: inline-block;
-  width: 46px;
-  height: 10px;
+main.join dl.invoice {
+  grid-template-columns: 30% auto;
+  text-align: center;
 }
 
-main.join span[data-progress][data-progress="01"]:after {
-  background: radial-gradient(circle at 5px, #ff5252 0, #ff1f90 5px, transparent 5px), radial-gradient(circle at center, #666 5px, transparent 5px), radial-gradient(circle at 40px, #666 5px, transparent 5px);
-}
-
-main.join span[data-progress][data-progress="02"]:after {
-  background: radial-gradient(circle at 5px, #ff5252 0, #ff1f90 5px, transparent 5px), radial-gradient(circle at center, #ff5252 0, #ff1f90 5px, transparent 5px), radial-gradient(circle at 40px, #666 5px, transparent 5px);
-}
-
-main.join span[data-progress][data-progress="03"]:after {
-  background: radial-gradient(circle at 5px, #ff5252 0, #ff1f90 5px, transparent 5px), radial-gradient(circle at center, #ff5252 0, #ff1f90 5px, transparent 5px), radial-gradient(circle at 40px, #ff5252 0, #ff1f90 5px, transparent 5px);
-}
-
-main.join article[data-step="validate-email"] form span.validate {
-  font-size: 0.875rem;
-  height: 20px;
-  background-size: 20px;
-  padding-left: 28px;
-  margin-top: 12px;
-  display: block;
-  visibility: hidden;
-}
-
-main.join article[data-step="validate-email"] form input[valid] + span.validate {
-  visibility: visible;
-  color: #79c720;
-  background: url(../image/icon-check-circle.svg) left center no-repeat;
-}
-
-main.join article[data-step="validate-email"] form input[invalid] + span.validate {
-  visibility: visible;
-  color: #ff6b64;
-  background: url(../image/icon-x-circle.svg) left center no-repeat;
-}
-
-main.join article[data-step="validate-email"] p.exist_account {
+main.join p.exist_account {
+  margin-top: 120px;
   text-align: center;
   font-size: 0.875rem;
 }
 
-main.join article[data-step="validate-email"] p.exist_account a {
+main.join p.exist_account a {
   color: #ffffff;
   margin-left: 0.6em;
   text-decoration: underline;
 }
 
-main.join article[data-step="validate-email"] p.exist_account a:visited {
-  color: #aa00ff;
+main.join p.exist_account a:visited {
+  color: #5d5d5d;
 }
 
-main.join article[data-step="validate-email-ok"] {
-  height: calc(100vh - 64px);
-  text-align: center;
-  padding-top: 99px;
-  background: url("../image/bi-hubby.svg#white") center calc(50% - 67px - 32px) no-repeat;
-  background-size: 61px 67px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-main.join article[data-step*="make-account"] form {
-  margin-top: 104px;
-}
-
-main.join article[data-step="copy-key-pair"] textarea.hidden_copy_field {
+main.join textarea.hidden_copy_field {
   border: 0;
   clip: rect(1px, 1px, 1px, 1px);
   clip-path: inset(50%);
@@ -2202,73 +2356,16 @@ main.join article[data-step="copy-key-pair"] textarea.hidden_copy_field {
   word-wrap: normal !important;
 }
 
-main.join article[data-step="copy-key-pair"] .btn_area button:last-child {
-  margin-left: 8px;
-}
-
-main.join article[data-step="payment-info"] .select_payment_type.area {
-  margin-top: 16px;
-  padding-bottom: 16px;
-  border-bottom: 1px solid #5d5d5d;
-  display: flex;
-  align-items: center;
-}
-
-main.join article[data-step="payment-info"] .select_payment_type.area button.button {
-  flex: 1;
-  height: 36px;
-  line-height: 34px;
-  max-width: 96px;
+main.join article[data-step="validate-email-ok"] {
+  height: calc(100vh - 64px);
   padding: 0;
-  margin-right: 0.6em;
-}
-
-main.join article[data-step="payment-info"] .confirm.area {
-  margin-top: 32px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-main.join article[data-step="payment-info"] .confirm.area form label {
-  font-size: 0.875rem;
-}
-
-main.join article[data-step="payment-info"] .confirm.area button.button {
-  flex: 1;
-  max-width: 136px;
-}
-
-main.join article[data-step="payment-info"] p.amount {
-  flex: 1;
-  text-align: right;
-  margin: 0;
-  font-size: 0.8125rem;
-}
-
-main.join article[data-step="payment-info"] p.amount strong {
-  font-size: 1.5rem;
-  color: #ffffff;
-  font-weight: 100;
-  margin: 0 0.2em;
-}
-
-main.join article[data-step="payment-info"] dl.invoice {
-  grid-template-columns: 30% auto;
   text-align: center;
-}
-
-main.join article[data-step="done"] {
-  background: url("../image/bi-hubby.svg#pink") right calc(50% - 67px) no-repeat;
+  padding-top: 99px;
+  background: url("../image/bi-hubby.svg#white") center calc(50% - 67px - 32px) no-repeat;
   background-size: 61px 67px;
-}
-
-main.join article[data-step="done"] .button {
-  flex: 1;
-}
-
-main.join article[data-step="done"] .button:last-child {
-  margin-left: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 main.transfer .container {
