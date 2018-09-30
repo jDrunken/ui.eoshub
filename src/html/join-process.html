@@ -2,6 +2,23 @@
 
 
 <!-- @@block = main -->
+<div id="notification" class="notification panel" aria-live="true" role="alert">
+    <div class="view success">
+        <p>코드 메일로 전송완료!</p>
+		<p>메일을 확인해주세요.</p>
+        <button type="button" class="icon close button">닫기</button>
+    </div>
+</div>
+<script>
+(function () {
+	var close = document.querySelector('.notification.panel button.close.button');
+	var target = document.querySelector('.notification.panel');
+	close.addEventListener('click',function () {
+		target.classList.remove('viewing');
+	});
+})();
+</script>
+
 <main class="join">
 	<article>
 		<h2>계정생성하기</h2>
@@ -24,8 +41,37 @@
 				<dt>개인 키</dt>
 				<dd>werwerewrwrwerwerwerw</dd>
 			</dl>
+			<textarea id="key" wai-aria="hidden" class="hidden_copy_field">PublicKey:sdfsdfsdf
+			PrivateKey:wefwefwefwef</textarea>
+
 			<button type="button" class="refresh button">새로 고침</button>
+			<div class="btn_area">
+				<button type="button" id="copy" class="copy button">키 한 번에 복사하기</button>
+			</div>
+			<p class="important description">* 계정을 증명할 중요한 정보니 복사하여 안전하게 보관하세요!</p>
 		</div>
+
+		<!-- 데모용 스크립트입니다. -->
+
+		<script>
+		(function () {
+			var button = document.getElementById('copy');
+			var target = document.getElementById('key');
+			var description = document.querySelector('p.important.description');
+
+			button.addEventListener('click',function (){
+				target.select();
+				document.execCommand("copy");
+
+				description.innerText = '키가 복사되었습니다. 안전한 곳에 보관해주세요!';
+				description.classList.add('copied');
+			});
+		})();
+		</script>
+
+
+
+
 
 		<h3>이메일 인증</h3>
 		<div class="container">
@@ -62,6 +108,8 @@
 			var validation = document.querySelector('.validation.bunch');
 			var description = document.querySelector('.validation.bunch > span:nth-of-type(1)');
 
+			var notificator = document.querySelector('.notification.panel');
+
 			var runTimer = function () {
 				if (!timer || !timer.trigger) {return;}
 
@@ -88,7 +136,17 @@
 
 			// 코드 전송 버튼을 누르면 티커 올려주고 밸리데이터 보여주고 타이머 돌림
 			button.send.addEventListener('click',function () {
+				// 밸리데이션 엘리먼트 보여줌
 				validation.classList.add('viewing');
+
+				// ticker 보여줌
+				notificator.classList.add('viewing');
+
+				// ticker는 10초 이후에 닫습니다.
+				setTimeout(function () {
+					notificator.classList.remove('viewing');
+				},5000);
+
 				timer.trigger = true;
 				if (!timer.running) {
 					timer.running = true;
@@ -126,7 +184,7 @@
 			</dl>
 
 			<div class="select_payment_type area">
-				<button type="button" class="choice button">가상계좌</button>
+				<button type="button" class="choice ing button">가상계좌</button>
 				<button type="button" class="choice button" disabled>신용카드</button>
 				<p class="amount">
 					총 결제금액 <strong>11,320</strong> 원
@@ -149,7 +207,13 @@
 			check.addEventListener('change',function () {
 				if(check.checked) {
 					button.removeAttribute('disabled');
+				} else {
+					button.setAttribute('disabled','');
 				}
+			});
+
+			button.addEventListener('click',function () {
+				location.pathname = 'join-proecss-ok.html';
 			});
 		})();
 		</script>
@@ -160,19 +224,4 @@
 		</p>
 	</article>
 </main>
-
-<div id="notification" class="notification panel viewing" aria-live="true" role="alert">
-    <div class="view success">
-        <p>코드 메일로 전송완료!</p>
-		<p>메일을 확인해주세요.</p>
-        <button type="button" class="icon close button">닫기</button>
-    </div>
-</div>
-
-<script>
-// 데모코드입니다.
-(function () {
-	var target =
-})();
-</script>
 <!-- @@close -->

@@ -185,19 +185,26 @@ main.join {
 
 		dt,dd  {
 			box-sizing:border-box;
-			padding:0 16px;
-			line-height:62px;
+			padding:16px;
+			// line-height:62px;
 			font-size:$small;
 			border-top:1px solid $x-dark-gray;
+			word-break:break-all;
 
 			&:nth-of-type(1) {
 				border-top-width:0;
 			}
+
+			display:flex;
+			align-items:center;
+			justify-content:center;
+			min-height:62px;
 		}
 
 		dt {
 			background:#232323;
 			text-align:center;
+			justify-content:center;
 			color:$white;
 		}
 
@@ -208,6 +215,27 @@ main.join {
 			text-overflow:ellipsis;
 		}
 	}
+
+	dl.keybox {
+		dd {
+			justify-content:flex-start;
+		}
+	}
+
+	p.important.description {
+		color:$red;
+		font-size:$small;
+		text-align:center;
+		&.copied {
+			color: #79c720;
+		}
+
+	}
+
+	dl.keybox ~ .btn_area {
+		margin-top:16px;
+	}
+
 	.select_payment_type.area {
 		margin-top:16px;
 		padding-bottom:16px;
@@ -279,31 +307,28 @@ main.join {
 			}
 		}
 	}
+
+	textarea.hidden_copy_field {
+		border: 0;
+		clip: rect(1px, 1px, 1px, 1px);
+		clip-path: inset(50%);
+		height: 1px;
+		margin: -1px;
+		overflow: hidden;
+		padding: 0;
+		position: absolute !important;
+		width: 1px;
+		word-wrap: normal !important;
+	}
+
 }
 
 
+
 main.join {
-	article[data-step="validate-email"] {
-		form {
-
-			input[valid] + span.validate {
-				visibility:visible;
-				color: #79c720;
-				background: url(../image/icon-check-circle.svg) left center no-repeat;
-			}
-
-			input[invalid] + span.validate {
-				visibility:visible;
-				color: #ff6b64;
-				background: url(../image/icon-x-circle.svg) left center no-repeat;
-			}
-		}
-
-
-	}
-
 	article[data-step="validate-email-ok"] {
 		height:calc(100vh - #{$header_height});
+		padding:0;
 		text-align:center;
 
 		padding-top:67px + 32px;
@@ -315,46 +340,4 @@ main.join {
 		justify-content:center;
 
 	}
-
-	article[data-step*="make-account"] {
-		form {
-			margin-top:104px;
-		}
-	}
-
-	article[data-step="copy-key-pair"] {
-		textarea.hidden_copy_field {
-			border: 0;
-			clip: rect(1px, 1px, 1px, 1px);
-			clip-path: inset(50%);
-			height: 1px;
-			margin: -1px;
-			overflow: hidden;
-			padding: 0;
-			position: absolute !important;
-			width: 1px;
-			word-wrap: normal !important;
-		}
-
-		.btn_area button:last-child {
-			margin-left:8px;
-		}
-	}
-
-	article[data-step="payment-info"] {
-		// area
-	}
-
-	article[data-step="done"] {
-		background:url('../image/bi-hubby.svg#pink') right calc(50% - 67px) no-repeat;
-		background-size:61px 67px;
-
-		.button {
-			flex:1;
-			&:last-child {
-				margin-left:4px;
-			}
-		}
-	}
 }
-
