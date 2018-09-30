@@ -56,22 +56,12 @@
 	})();
 
 // popup 열기
-(function () {
-	document.getElementById('openPopup').addEventListener('click',function(e) {
-		document.getElementById('popup').classList.add('viewing');
-	});
-})();
+// (function () {
+//     document.getElementById('openPopup').addEventListener('click',function(e) {
+//         document.getElementById('popup').classList.add('viewing');
+//     });
+// })();
 
-// popup 안에 값이 입력되면 disabed 뜯어내기
-(function () {
-	document.querySelector('.modal.popup form input').addEventListener('keyup',function () {
-		if (this.value.length > 0) {
-			document.querySelector('.modal.popup .btn_area button').removeAttribute('disabled');
-		} else {
-			document.querySelector('.modal.popup .btn_area button').setAttribute('disabled','');
-		}
-	});
-})();
 </script>
 
 <!-- @@close -->

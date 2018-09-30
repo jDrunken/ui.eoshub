@@ -213,7 +213,9 @@
 			});
 
 			button.addEventListener('click',function () {
-				location.pathname = 'join-proecss-ok.html';
+				console.log('hello world');
+				var isGithubPage = /eoshub/.test(location.pathname);
+				location.pathname = isGithubPage ? '/ui.eoshub/join-process-ok.html' : '/join-process-ok.html'
 			});
 		})();
 		</script>
