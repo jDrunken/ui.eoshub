@@ -1,0 +1,78 @@
+<!-- @@master = ../template/master-join.html -->
+
+
+<!-- @@block = main -->
+<main class="join">
+	<article data-step="validate-email-ok">
+		<h2>입금 후 결제완료 버튼을 눌러주세요.</h2>
+		<p>입금을 하셨는지 다시 한번 확인하고 결제완료를 눌러주세요.</p>
+
+		<div class="btn_area">
+			<!-- blocking에는 disabled proerty를 더해주세요.-->
+			<button type="button" class="ok button">결제완료</button>
+		</div>
+	</article>
+</main>
+
+
+<section id="popup" class="virtual_account_check modal popup viewing" aria-live="true" role="alert">
+	<div class="wrapper">
+		<h2>가상계좌입금</h2>
+		<p>생성된 가상계좌로<br />
+			총 결제금액인 <strong>11,320</strong>원을 입금해주세요!</p>
+
+		<dl>
+			<dt>은행</dt>
+			<dd>신한은행</dd>
+
+			<dt>가상계좌명</dt>
+			<dd>123-456-123456</dd>
+
+			<dt>결제자명</dt>
+			<dd>qwertyuioqwertyuioqwertyuioqwertyuioqwertyuioqwertyuioqwertyuiopppppppqwertyuiop</dd>
+
+			<dt>입금만료일</dt>
+			<dd>2012-12-12</dd>
+		</dl>
+		<div class="btn_area">
+			<button type="button" class="ok button">확인</button>
+		</div>
+		<button id="closePopup" type="button" class="close button">닫기</button>
+	</div>
+</section>
+
+<script>
+	// popup 닫기
+	(function () {
+		document.getElementById('closePopup').addEventListener('click',function () {
+			document.getElementById('popup').classList.remove('viewing');
+		});
+		// 팝업안의 ok버튼을 클릭하면
+		document.querySelector('.modal.popup .btn_area button').addEventListener('click',function () {
+			document.getElementById('popup').classList.remove('viewing');
+			// 대리구매를 보여줌
+			document.querySelector('div.target').removeAttribute('hidden');
+		});
+	})();
+
+// popup 열기
+(function () {
+	document.getElementById('openPopup').addEventListener('click',function(e) {
+		document.getElementById('popup').classList.add('viewing');
+	});
+})();
+
+// popup 안에 값이 입력되면 disabed 뜯어내기
+(function () {
+	document.querySelector('.modal.popup form input').addEventListener('keyup',function () {
+		if (this.value.length > 0) {
+			document.querySelector('.modal.popup .btn_area button').removeAttribute('disabled');
+		} else {
+			document.querySelector('.modal.popup .btn_area button').setAttribute('disabled','');
+		}
+	});
+})();
+</script>
+
+<!-- @@close -->
+
