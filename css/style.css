@@ -2784,7 +2784,7 @@ main.search .transaction.history table td.info span.memo.popup > span {
 main.search .transaction.history table td.info span.memo.popup button {
   text-indent: -999em;
   overflow: hidden;
-  background: url("../image/icon-close-plus.svg");
+  background: url("../image/icon-memo.svg");
   height: 20px;
   width: 20px;
   transition: transform 0.1s;
@@ -2829,6 +2829,7 @@ main.search .transaction.history table td.info span.memo.popup.viewing button {
   right: 16px;
   top: 17px;
   position: absolute;
+  background: url("../image/icon-close-plus.svg");
   transform: rotate(45deg);
 }
 
