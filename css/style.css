@@ -2784,7 +2784,8 @@ main.search .transaction.history table td.info span.memo.popup > span {
 main.search .transaction.history table td.info span.memo.popup button {
   text-indent: -999em;
   overflow: hidden;
-  background: url("../image/icon-memo.svg");
+  background: url("../image/icon-memo.svg") center center no-repeat;
+  background-size: 18px;
   height: 20px;
   width: 20px;
   transition: transform 0.1s;
@@ -2823,13 +2824,14 @@ main.search .transaction.history table td.info span.memo.popup.viewing strong {
   font-size: 0.875rem;
   color: #ffffff;
   margin-bottom: 16px;
+  background-size: 20px;
 }
 
 main.search .transaction.history table td.info span.memo.popup.viewing button {
   right: 16px;
   top: 17px;
   position: absolute;
-  background: url("../image/icon-close-plus.svg");
+  background-image: url("../image/icon-close-plus.svg");
   transform: rotate(45deg);
 }
 
