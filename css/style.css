@@ -776,7 +776,7 @@ main.join + .modal.popup {
 .modal.popup .wrapper {
   background-color: #403e41;
   position: absolute;
-  top: calc(64px + 61px + 100px);
+  top: calc(50% + 61px/2);
   left: 50%;
   min-width: 386px;
   width: 30.15625%;
@@ -784,6 +784,7 @@ main.join + .modal.popup {
   border-radius: 4px;
   padding: 32px 0;
   box-sizing: border-box;
+  z-index: 100;
 }
 
 .modal.popup .wrapper h2 {
@@ -917,7 +918,7 @@ main.join + .modal.popup {
 
 .modal.popup .wrapper {
   transition: transform 0.4s;
-  transform: translate(-50%, -10%);
+  transform: translate(-50%, -60%);
 }
 
 .modal.popup.viewing {
@@ -926,7 +927,7 @@ main.join + .modal.popup {
 }
 
 .modal.popup.viewing .wrapper {
-  transform: translate(-50%, 0);
+  transform: translate(-50%, -50%);
 }
 
 @media (min-width: 1601px) {
@@ -4009,9 +4010,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -156px 0px;
-  width: 96px;
-  height: 96px;
+  background-position: -188px 0px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-1eostheworld:before {
@@ -4028,9 +4029,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -1248px -624px;
-  width: 96px;
-  height: 96px;
+  background-position: -1504px -752px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-acroeos12345:before {
@@ -4047,9 +4048,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: 0px -156px;
-  width: 96px;
-  height: 96px;
+  background-position: 0px -188px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-activeeoscom:before {
@@ -4066,9 +4067,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -156px -156px;
-  width: 96px;
-  height: 96px;
+  background-position: -188px -188px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-alohaeosprod:before {
@@ -4085,9 +4086,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -312px 0px;
-  width: 96px;
-  height: 96px;
+  background-position: -376px 0px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-argentinaeos:before {
@@ -4104,9 +4105,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -312px -156px;
-  width: 96px;
-  height: 96px;
+  background-position: -376px -188px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-atticlabeosb:before {
@@ -4123,9 +4124,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: 0px -312px;
-  width: 96px;
-  height: 96px;
+  background-position: 0px -376px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-atticlabeosp:before {
@@ -4142,9 +4143,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -156px -312px;
-  width: 96px;
-  height: 96px;
+  background-position: -188px -376px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-auroraeoscom:before {
@@ -4161,9 +4162,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -312px -312px;
-  width: 96px;
-  height: 96px;
+  background-position: -376px -376px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-aus1genereos:before {
@@ -4180,9 +4181,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -468px 0px;
-  width: 96px;
-  height: 96px;
+  background-position: -564px 0px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-bchainlabeos:before {
@@ -4199,9 +4200,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: 0px -1715px;
-  width: 96px;
-  height: 58px;
+  background-position: -564px -188px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-bitfinexeos1:before {
@@ -4218,9 +4219,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -468px -312px;
-  width: 96px;
-  height: 96px;
+  background-position: -564px -376px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-bitspacenode:before {
@@ -4237,9 +4238,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: 0px -468px;
-  width: 96px;
-  height: 96px;
+  background-position: 0px -564px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-blockchained:before {
@@ -4256,9 +4257,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -156px -468px;
-  width: 96px;
-  height: 96px;
+  background-position: -188px -564px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-blockgenesys:before {
@@ -4275,9 +4276,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -312px -468px;
-  width: 96px;
-  height: 96px;
+  background-position: -376px -564px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-blockgenicbp:before {
@@ -4294,9 +4295,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -468px -468px;
-  width: 96px;
-  height: 96px;
+  background-position: -564px -564px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-blockmatrix1:before {
@@ -4313,9 +4314,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -624px 0px;
-  width: 96px;
-  height: 96px;
+  background-position: -752px 0px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-blocksmithio:before {
@@ -4332,9 +4333,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -624px -156px;
-  width: 96px;
-  height: 96px;
+  background-position: -752px -188px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-bp2bp2bp2bp2:before {
@@ -4351,9 +4352,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -1560px -1560px;
-  width: 96px;
-  height: 63px;
+  background-position: -752px -376px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-bpacbpacbpac:before {
@@ -4370,9 +4371,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -156px -1715px;
-  width: 96px;
-  height: 50px;
+  background-position: -752px -564px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-bpeosindexio:before {
@@ -4389,9 +4390,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: 0px -624px;
-  width: 96px;
-  height: 96px;
+  background-position: 0px -752px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-bpkhmereoskh:before {
@@ -4408,9 +4409,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -156px -624px;
-  width: 96px;
-  height: 96px;
+  background-position: -188px -752px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-btccpooleos1:before {
@@ -4427,9 +4428,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -312px -624px;
-  width: 96px;
-  height: 96px;
+  background-position: -376px -752px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-buildteameos:before {
@@ -4446,9 +4447,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -156px -1560px;
-  width: 96px;
-  height: 93px;
+  background-position: -564px -752px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-cochainworld:before {
@@ -4465,9 +4466,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -624px -624px;
-  width: 96px;
-  height: 96px;
+  background-position: -752px -752px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-costaricaeos:before {
@@ -4484,9 +4485,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -780px 0px;
-  width: 96px;
-  height: 96px;
+  background-position: -940px 0px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-cryptolions1:before {
@@ -4503,9 +4504,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -780px -156px;
-  width: 96px;
-  height: 96px;
+  background-position: -940px -188px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-daoeosbpbwin:before {
@@ -4522,9 +4523,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -468px -1560px;
-  width: 96px;
-  height: 90px;
+  background-position: -940px -376px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-dutcheosxxxx:before {
@@ -4541,9 +4542,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -780px -468px;
-  width: 96px;
-  height: 96px;
+  background-position: -940px -564px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-emergepoland:before {
@@ -4560,9 +4561,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -780px -624px;
-  width: 96px;
-  height: 96px;
+  background-position: -940px -752px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-eos42freedom:before {
@@ -4579,9 +4580,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -1716px -312px;
-  width: 93px;
-  height: 96px;
+  background-position: 0px -940px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-eosafricaone:before {
@@ -4598,9 +4599,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -1716px 0px;
-  width: 94px;
-  height: 96px;
+  background-position: -188px -940px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-eosamericas2:before {
@@ -4617,9 +4618,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -312px -780px;
-  width: 96px;
-  height: 96px;
+  background-position: -376px -940px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-eosamsterdam:before {
@@ -4636,9 +4637,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -936px -1560px;
-  width: 96px;
-  height: 76px;
+  background-position: -564px -940px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-eosantpoolbp:before {
@@ -4655,9 +4656,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -624px -780px;
-  width: 96px;
-  height: 96px;
+  background-position: -752px -940px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-eosarabianet:before {
@@ -4674,9 +4675,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -780px -780px;
-  width: 96px;
-  height: 96px;
+  background-position: -940px -940px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-eosasia11111:before {
@@ -4693,9 +4694,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -936px 0px;
-  width: 96px;
-  height: 96px;
+  background-position: -1128px 0px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-eosauthority:before {
@@ -4712,9 +4713,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -936px -156px;
-  width: 96px;
-  height: 96px;
+  background-position: -1128px -188px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-eosbarcelona:before {
@@ -4731,9 +4732,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -312px -1560px;
-  width: 96px;
-  height: 90px;
+  background-position: -1128px -376px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-eosbeijingbp:before {
@@ -4750,9 +4751,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -936px -468px;
-  width: 96px;
-  height: 96px;
+  background-position: -1128px -564px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-eosbixinboot:before {
@@ -4769,9 +4770,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -936px -624px;
-  width: 96px;
-  height: 96px;
+  background-position: -1128px -752px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-eosbluchain1:before {
@@ -4788,9 +4789,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -468px -1715px;
-  width: 96px;
-  height: 29px;
+  background-position: -1128px -940px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-eoscafeblock:before {
@@ -4807,9 +4808,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: 0px -936px;
-  width: 96px;
-  height: 96px;
+  background-position: 0px -1128px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-eoscanadacom:before {
@@ -4826,9 +4827,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -156px -936px;
-  width: 96px;
-  height: 96px;
+  background-position: -188px -1128px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-eoscannonchn:before {
@@ -4845,9 +4846,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -312px -936px;
-  width: 96px;
-  height: 96px;
+  background-position: -376px -1128px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-eoschaintech:before {
@@ -4864,9 +4865,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -468px -936px;
-  width: 96px;
-  height: 96px;
+  background-position: -564px -1128px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-eoscleanerbp:before {
@@ -4883,9 +4884,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -624px -936px;
-  width: 96px;
-  height: 96px;
+  background-position: -752px -1128px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-eoscybexiobp:before {
@@ -4902,9 +4903,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -780px -936px;
-  width: 96px;
-  height: 96px;
+  background-position: -940px -1128px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-eosdacserver:before {
@@ -4921,9 +4922,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -1716px -624px;
-  width: 85px;
-  height: 96px;
+  background-position: -1128px -1128px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-eosdublinwow:before {
@@ -4940,9 +4941,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -1092px 0px;
-  width: 96px;
-  height: 96px;
+  background-position: -1316px 0px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-eosecoeoseco:before {
@@ -4959,9 +4960,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: 0px -1560px;
-  width: 96px;
-  height: 95px;
+  background-position: -1316px -188px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-eoseouldotio:before {
@@ -4978,9 +4979,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -1716px -780px;
-  width: 85px;
-  height: 96px;
+  background-position: -1316px -376px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-eosfishrocks:before {
@@ -4997,9 +4998,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -1092px -468px;
-  width: 96px;
-  height: 96px;
+  background-position: -1316px -564px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-eosflareiobp:before {
@@ -5016,9 +5017,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -1092px -624px;
-  width: 96px;
-  height: 96px;
+  background-position: -1316px -752px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-eosflytomars:before {
@@ -5035,9 +5036,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -624px -1560px;
-  width: 96px;
-  height: 87px;
+  background-position: -1316px -940px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-eosfutureldn:before {
@@ -5054,9 +5055,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -1716px -1248px;
-  width: 64px;
-  height: 96px;
+  background-position: -1316px -1128px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-eosgenblockp:before {
@@ -5073,9 +5074,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: 0px -1092px;
-  width: 96px;
-  height: 96px;
+  background-position: 0px -1316px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-eosgermanybp:before {
@@ -5092,9 +5093,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -780px -1560px;
-  width: 96px;
-  height: 82px;
+  background-position: -188px -1316px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-eoshcchealth:before {
@@ -5111,9 +5112,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -312px -1092px;
-  width: 96px;
-  height: 96px;
+  background-position: -376px -1316px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-eoshenzhenio:before {
@@ -5130,9 +5131,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -468px -1092px;
-  width: 96px;
-  height: 96px;
+  background-position: -564px -1316px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-eoshuobipool:before {
@@ -5149,9 +5150,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -624px -1092px;
-  width: 96px;
-  height: 96px;
+  background-position: -752px -1316px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-eosimperabpi:before {
@@ -5168,9 +5169,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -780px -1092px;
-  width: 96px;
-  height: 96px;
+  background-position: -940px -1316px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-eosiodetroit:before {
@@ -5187,9 +5188,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -936px -1092px;
-  width: 96px;
-  height: 96px;
+  background-position: -1128px -1316px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-eosiomeetone:before {
@@ -5206,9 +5207,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -1092px -1092px;
-  width: 96px;
-  height: 96px;
+  background-position: -1316px -1316px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-eosisgravity:before {
@@ -5225,9 +5226,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -1716px -936px;
-  width: 74px;
-  height: 96px;
+  background-position: -1504px 0px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-eoslambdacom:before {
@@ -5244,9 +5245,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -1248px -156px;
-  width: 96px;
-  height: 96px;
+  background-position: -1504px -188px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-eoslawyereos:before {
@@ -5263,9 +5264,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -1248px -312px;
-  width: 96px;
-  height: 96px;
+  background-position: -1504px -376px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-eoslithuania:before {
@@ -5282,9 +5283,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -1248px -468px;
-  width: 96px;
-  height: 96px;
+  background-position: -1504px -564px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-eosmedinodes:before {
@@ -5302,8 +5303,8 @@ main.proxy.vote .voted.bp li span {
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
   background-position: 0px 0px;
-  width: 96px;
-  height: 96px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-eosmesodotio:before {
@@ -5320,9 +5321,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -1248px -780px;
-  width: 96px;
-  height: 96px;
+  background-position: -1504px -940px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-eosmetaliobp:before {
@@ -5339,9 +5340,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -1248px -936px;
-  width: 96px;
-  height: 96px;
+  background-position: -1504px -1128px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-eosnairobike:before {
@@ -5358,9 +5359,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -1248px -1092px;
-  width: 96px;
-  height: 96px;
+  background-position: -1504px -1316px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-eosnationftw:before {
@@ -5377,9 +5378,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: 0px -1248px;
-  width: 96px;
-  height: 96px;
+  background-position: 0px -1504px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-eosnewyorkio:before {
@@ -5396,9 +5397,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -156px -1248px;
-  width: 96px;
-  height: 96px;
+  background-position: -188px -1504px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-eosnigeriago:before {
@@ -5415,9 +5416,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -1716px -1092px;
-  width: 68px;
-  height: 96px;
+  background-position: -376px -1504px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-eosnodeonebp:before {
@@ -5434,9 +5435,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -468px -1248px;
-  width: 96px;
-  height: 96px;
+  background-position: -564px -1504px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-eosorangeeos:before {
@@ -5453,9 +5454,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -624px -1248px;
-  width: 96px;
-  height: 96px;
+  background-position: -752px -1504px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-eospaceioeos:before {
@@ -5472,9 +5473,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -780px -1248px;
-  width: 96px;
-  height: 96px;
+  background-position: -940px -1504px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-eospacificbp:before {
@@ -5491,9 +5492,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -936px -1248px;
-  width: 96px;
-  height: 96px;
+  background-position: -1128px -1504px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-eospalliumss:before {
@@ -5510,9 +5511,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -1092px -1248px;
-  width: 96px;
-  height: 96px;
+  background-position: -1316px -1504px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-eosphereiobp:before {
@@ -5529,9 +5530,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -1248px -1248px;
-  width: 96px;
-  height: 96px;
+  background-position: -1504px -1504px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-eosrealbpcsg:before {
@@ -5548,9 +5549,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -1404px 0px;
-  width: 96px;
-  height: 96px;
+  background-position: -1692px 0px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-eosriobrazil:before {
@@ -5567,9 +5568,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -1716px -156px;
-  width: 94px;
-  height: 96px;
+  background-position: -1692px -188px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-eossocalprod:before {
@@ -5586,9 +5587,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -1404px -312px;
-  width: 96px;
-  height: 96px;
+  background-position: -1692px -376px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-eosstorebest:before {
@@ -5605,9 +5606,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -1404px -468px;
-  width: 96px;
-  height: 96px;
+  background-position: -1692px -564px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-eossv12eossv:before {
@@ -5624,9 +5625,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -1404px -624px;
-  width: 96px;
-  height: 96px;
+  background-position: -1692px -752px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-eosswedenorg:before {
@@ -5643,9 +5644,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -1404px -780px;
-  width: 96px;
-  height: 96px;
+  background-position: -1692px -940px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-eosteaeostea:before {
@@ -5662,9 +5663,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -1404px -936px;
-  width: 96px;
-  height: 96px;
+  background-position: -1692px -1128px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-eosthushuimu:before {
@@ -5681,9 +5682,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -1404px -1092px;
-  width: 96px;
-  height: 96px;
+  background-position: -1692px -1316px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-eostitanprod:before {
@@ -5700,9 +5701,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -1404px -1248px;
-  width: 96px;
-  height: 96px;
+  background-position: -1692px -1504px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-eostribeprod:before {
@@ -5719,9 +5720,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: 0px -1404px;
-  width: 96px;
-  height: 96px;
+  background-position: 0px -1692px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-eosukblocpro:before {
@@ -5738,9 +5739,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -156px -1404px;
-  width: 96px;
-  height: 96px;
+  background-position: -188px -1692px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-eosvancouver:before {
@@ -5757,9 +5758,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -312px -1404px;
-  width: 96px;
-  height: 96px;
+  background-position: -376px -1692px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-eosvenezuela:before {
@@ -5776,9 +5777,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -468px -1404px;
-  width: 96px;
-  height: 96px;
+  background-position: -564px -1692px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-eosvibesbloc:before {
@@ -5795,9 +5796,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -624px -1404px;
-  width: 96px;
-  height: 96px;
+  background-position: -752px -1692px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-eosvietnambp:before {
@@ -5814,9 +5815,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -780px -1404px;
-  width: 96px;
-  height: 96px;
+  background-position: -940px -1692px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-eosvolgabpru:before {
@@ -5833,9 +5834,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -936px -1404px;
-  width: 96px;
-  height: 96px;
+  background-position: -1128px -1692px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-eoswingdotio:before {
@@ -5852,9 +5853,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -1092px -1404px;
-  width: 96px;
-  height: 96px;
+  background-position: -1316px -1692px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-eoswondersbp:before {
@@ -5871,9 +5872,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -1248px -1404px;
-  width: 96px;
-  height: 96px;
+  background-position: -1504px -1692px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-eosyskoreabp:before {
@@ -5890,9 +5891,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -1404px -1404px;
-  width: 96px;
-  height: 96px;
+  background-position: -1692px -1692px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-eoszonrussia:before {
@@ -5909,9 +5910,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -1560px 0px;
-  width: 96px;
-  height: 96px;
+  background-position: -1880px 0px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-franceosysbp:before {
@@ -5928,9 +5929,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -1560px -156px;
-  width: 96px;
-  height: 96px;
+  background-position: -1880px -188px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-ge4dqojvgmge:before {
@@ -5947,9 +5948,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -1248px -1560px;
-  width: 96px;
-  height: 72px;
+  background-position: -1880px -376px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-geosoneforbp:before {
@@ -5966,9 +5967,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -1560px -468px;
-  width: 96px;
-  height: 96px;
+  background-position: -1880px -564px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-germaneostop:before {
@@ -5985,9 +5986,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -1716px -1404px;
-  width: 64px;
-  height: 96px;
+  background-position: -1880px -752px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-gy3dqnjtgyge:before {
@@ -6004,9 +6005,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -1560px -780px;
-  width: 96px;
-  height: 96px;
+  background-position: -1880px -940px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-ha4daobxg4ge:before {
@@ -6023,9 +6024,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -1560px -936px;
-  width: 96px;
-  height: 96px;
+  background-position: -1880px -1128px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-helloeoscnbp:before {
@@ -6042,9 +6043,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -1560px -1092px;
-  width: 96px;
-  height: 96px;
+  background-position: -1880px -1316px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-hexlantttttt:before {
@@ -6061,9 +6062,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -1560px -1248px;
-  width: 96px;
-  height: 96px;
+  background-position: -1880px -1504px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-hkeoshkeosbp:before {
@@ -6080,9 +6081,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -1560px -1404px;
-  width: 96px;
-  height: 96px;
+  background-position: -1880px -1692px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-icekkkkkkkkk:before {
@@ -6099,9 +6100,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -1560px -624px;
-  width: 96px;
-  height: 96px;
+  background-position: 0px -1880px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-jedaaaaaaaaa:before {
@@ -6118,9 +6119,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -1560px -312px;
-  width: 96px;
-  height: 96px;
+  background-position: -188px -1880px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-jrrcryptoeos:before {
@@ -6137,9 +6138,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -1404px -156px;
-  width: 96px;
-  height: 96px;
+  background-position: -376px -1880px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-kunablockprd:before {
@@ -6156,9 +6157,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -624px -1715px;
-  width: 96px;
-  height: 29px;
+  background-position: -564px -1880px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-libertyblock:before {
@@ -6175,9 +6176,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -312px -1248px;
-  width: 96px;
-  height: 96px;
+  background-position: -752px -1880px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-moreisfuture:before {
@@ -6194,9 +6195,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -1248px 0px;
-  width: 96px;
-  height: 96px;
+  background-position: -940px -1880px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-oasisproduce:before {
@@ -6213,9 +6214,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -156px -1092px;
-  width: 96px;
-  height: 96px;
+  background-position: -1128px -1880px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-onechaindapp:before {
@@ -6232,9 +6233,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -1092px -936px;
-  width: 96px;
-  height: 96px;
+  background-position: -1316px -1880px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-oraclegogogo:before {
@@ -6251,9 +6252,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -1092px -780px;
-  width: 96px;
-  height: 96px;
+  background-position: -1504px -1880px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-philippinebp:before {
@@ -6270,9 +6271,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -1092px -312px;
-  width: 96px;
-  height: 96px;
+  background-position: -1692px -1880px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-privexinceos:before {
@@ -6289,9 +6290,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -1716px -468px;
-  width: 93px;
-  height: 96px;
+  background-position: -1880px -1880px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-qxeosqxeosbp:before {
@@ -6308,9 +6309,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -1092px -1560px;
-  width: 96px;
-  height: 74px;
+  background-position: -2068px 0px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-roelandp1eos:before {
@@ -6327,9 +6328,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -1092px -156px;
-  width: 96px;
-  height: 96px;
+  background-position: -2068px -188px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-saltblockeos:before {
@@ -6346,9 +6347,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -936px -936px;
-  width: 96px;
-  height: 96px;
+  background-position: -2068px -376px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-sheleaders21:before {
@@ -6365,9 +6366,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -936px -780px;
-  width: 96px;
-  height: 96px;
+  background-position: -2068px -564px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-sheos21sheos:before {
@@ -6384,9 +6385,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -1404px -1560px;
-  width: 96px;
-  height: 63px;
+  background-position: -2068px -752px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-stakedstaked:before {
@@ -6403,9 +6404,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -936px -312px;
-  width: 96px;
-  height: 96px;
+  background-position: -2068px -940px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-starteosiobp:before {
@@ -6422,9 +6423,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -468px -780px;
-  width: 96px;
-  height: 96px;
+  background-position: -2068px -1128px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-superoneiobp:before {
@@ -6441,9 +6442,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -156px -780px;
-  width: 96px;
-  height: 96px;
+  background-position: -2068px -1316px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-swedencornet:before {
@@ -6460,9 +6461,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: 0px -780px;
-  width: 96px;
-  height: 96px;
+  background-position: -2068px -1504px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-switzerlanda:before {
@@ -6479,9 +6480,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -780px -312px;
-  width: 96px;
-  height: 96px;
+  background-position: -2068px -1692px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-syndicateoss:before {
@@ -6498,9 +6499,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -468px -624px;
-  width: 96px;
-  height: 96px;
+  background-position: -2068px -1880px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-teamgreymass:before {
@@ -6517,9 +6518,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -624px -468px;
-  width: 96px;
-  height: 96px;
+  background-position: 0px -2068px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-tokenika4eos:before {
@@ -6536,9 +6537,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -624px -312px;
-  width: 96px;
-  height: 96px;
+  background-position: -188px -2068px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-unlimitedeos:before {
@@ -6555,9 +6556,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -468px -156px;
-  width: 96px;
-  height: 96px;
+  background-position: -376px -2068px;
+  width: 128px;
+  height: 128px;
 }
 
 .bp-zbeosbp11111:before {
@@ -6574,9 +6575,9 @@ main.proxy.vote .voted.bp li span {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.38);
   background-image: url(../image/bp-list.png);
-  background-position: -312px -1715px;
-  width: 96px;
-  height: 33px;
+  background-position: -564px -2068px;
+  width: 128px;
+  height: 128px;
 }
 
 main.create.account .container,
