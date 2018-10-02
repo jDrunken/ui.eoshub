@@ -26,8 +26,21 @@ var gulp = require('gulp')
     makeIndex    = require('gulp-index'),
 
     // gulp-gh-pages
-    publish = require('gulp-gh-pages')
+    publish = require('gulp-gh-pages'),
+
+	// make imagemap
+	spritesmith = require('gulp.spritesmith'),
+	imagemin = require('gulp-imagemin'),
+	merge = require('merge-stream'),
+	buffer = require('vinyl-buffer'),
+
+	//make shell
+	shell = require('gulp-shell'),
+
+	runSequence = require('run-sequence')
 ;
+
+
 
 
 // 환경설정
@@ -181,6 +194,55 @@ gulp.task('release', function () {
             message : 'eoshub :: 깃허브 페이지에 반영됨. Published to Github pages'
         }))
 });
+
+
+// --------------------------------------------------------------------------------
+// make imagesprite
+// --------------------------------------------------------------------------------
+// 독립적인 path를 쓰는 것으로 놔둬보자.
+
+gulp.task('imagehandling',function () {
+	return gulp.src('src/bp-list-image/*.png')
+		.pipe(gulp.dest('src/bp-list-image/resized'))
+		.pipe(shell([
+			// 'echo `convert <%= file.path %> -format "%[pixel:u.p{0,0}]" info:`',
+			// 'echo <%= file.base %><%= file.relative%>',
+			// 'echo <%=file.base %>resized/<%= file.relative %>',
+			// 'convert <%= file.base %><%= file.relative%> -quality 100 -resize 96x96 -fuzz 10% -trim -gravity center -background `convert <%= file.base %><%= file.relative%> -format "%[pixel:u.p{10,10}]" info:` -extent 128x128 png:<%=file.base %>resized/<%= file.relative %>'
+			'convert <%= file.path %> -quality 100 -resize 96x96 -fuzz 10% -trim -gravity center -background `convert <%= file.path %> -format "%[pixel:u.p{10,10}]" info:` -extent 128x128 png:<%=file.path %>'
+		]))
+});
+
+gulp.task('sprite', function () {
+	var spriteData = gulp.src('src/bp-list-image/resized/*.png').pipe(spritesmith(
+		{
+			// retinaSrcFilter:'*@2x.png',
+			imgPath: '../image/bp-list.png',
+			imgName: 'src/image/bp-list.png',
+			cssName: 'src/stylesheets/main.vote.bp.list.scss',
+			padding: 60,
+			cssVarMap: function (sprite) {
+				sprite.name = 'bp-' + sprite.name;
+			}
+		}
+	));
+
+	var imgStream = spriteData.img
+		.pipe(buffer())
+		.pipe(imagemin())
+		.pipe(gulp.dest('./'));
+
+	var cssStream = spriteData.css
+		.pipe(gulp.dest('./'));
+
+	return merge(imgStream, cssStream);
+});
+
+gulp.task('makeSprite',function () {
+	runSequence('imagehandling','sprite');
+});
+
+
 
 // --------------------------------------------------------------------------------
 // pipe running
