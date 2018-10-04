@@ -3486,22 +3486,22 @@ main.resource_management div.my.resource > div .status span.hell {
   background-color: #ff6b64;
 }
 
-main.resource_management > section {
+main.resource_management section:not(.modal) {
   margin: 8px 32px;
   padding: 32px;
   background-color: #0e0e0e;
   position: relative;
 }
 
-main.resource_management > section .wallet.status {
+main.resource_management section:not(.modal) .wallet.status {
   position: relative;
 }
 
-main.resource_management > section .wallet.status p {
+main.resource_management section:not(.modal) .wallet.status p {
   margin: 4px 0 0 0;
 }
 
-main.resource_management > section .wallet.status a, main.resource_management > section .wallet.status p:last-child {
+main.resource_management section:not(.modal) .wallet.status a, main.resource_management section:not(.modal) .wallet.status p:last-child {
   font-size: 0.875rem;
   position: absolute;
   top: 0;
@@ -3510,13 +3510,13 @@ main.resource_management > section .wallet.status a, main.resource_management > 
   text-decoration: underline;
 }
 
-main.resource_management > section .wallet.status p:last-child {
+main.resource_management section:not(.modal) .wallet.status p:last-child {
   margin-top: 0;
   text-decoration: none;
   color: #999;
 }
 
-main.resource_management > section {
+main.resource_management section:not(.modal) {
   display: flex;
   flex-direction: column;
   height: 277px;
@@ -3524,13 +3524,13 @@ main.resource_management > section {
   justify-content: space-between;
 }
 
-main.resource_management > section > .btn_area {
+main.resource_management section:not(.modal) > .btn_area {
   position: absolute;
   right: 32px;
   bottom: 32px;
 }
 
-main.resource_management > section > .btn_area button {
+main.resource_management section:not(.modal) > .btn_area button {
   width: 136px;
   height: 52px;
   border-radius: 2px;
