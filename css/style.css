@@ -930,6 +930,85 @@ main.join + .modal.popup {
   transform: translate(-50%, -50%);
 }
 
+.modal.popup .token.status {
+  padding: 32px;
+  background-color: #161616;
+  position: relative;
+}
+
+.modal.popup .token.status h3 {
+  font-size: 0.875rem;
+}
+
+.modal.popup .token.status h3 strong {
+  display: block;
+  margin-top: 8px;
+  font-weight: 100;
+  font-size: 1.75rem;
+}
+
+.modal.popup .token.status button.auto.set {
+  position: absolute;
+  right: 32px;
+  top: 32px;
+  padding-right: 26px;
+}
+
+.modal.popup .token.status button.auto.set:after {
+  content: '';
+  display: block;
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  margin-top: -11px;
+  background: url("../image/icon-refresh.svg") right center no-repeat;
+  transition: transform 1s, color 1s;
+}
+
+.modal.popup .token.status button.auto.set:hover {
+  color: #ffffff;
+}
+
+.modal.popup .token.status button.auto.set:hover:after {
+  transform: rotate(180deg);
+}
+
+.modal.popup .result.list ul, .modal.popup .result.list li, .modal.popup .result.list p {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.modal.popup .result.list li {
+  font-size: 0.8125rem;
+  background-color: #161616;
+  padding: 16px;
+  position: relative;
+  margin-top: 8px;
+}
+
+.modal.popup .result.list li h3 {
+  margin-bottom: 8px;
+}
+
+.modal.popup .result.list li p {
+  line-height: 1.5;
+}
+
+.modal.popup .result.list li button {
+  color: #ff6b64;
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.modal.popup .result.list li:first-child {
+  margin-top: 0;
+}
+
 @media (min-width: 1601px) {
   .resource_management .modal.popup {
     left: 300px;
@@ -946,40 +1025,6 @@ main.join + .modal.popup {
   .resource_management .modal.popup {
     left: 240px;
   }
-}
-
-.modal.popup.rental_account .result.list ul, .modal.popup.rental_account .result.list li, .modal.popup.rental_account .result.list p {
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-}
-
-.modal.popup.rental_account .result.list li {
-  font-size: 0.8125rem;
-  background-color: #282828;
-  padding: 16px;
-  position: relative;
-  margin-top: 8px;
-}
-
-.modal.popup.rental_account .result.list li h3 {
-  margin-bottom: 8px;
-}
-
-.modal.popup.rental_account .result.list li p {
-  line-height: 1.5;
-}
-
-.modal.popup.rental_account .result.list li button {
-  color: #ff6b64;
-  position: absolute;
-  right: 16px;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.modal.popup.rental_account .result.list li:first-child {
-  margin-top: 0;
 }
 
 .modal.popup.buy_ram form {
@@ -1034,51 +1079,6 @@ main.join + .modal.popup {
   top: 5px;
   width: auto;
   z-index: 100000;
-}
-
-.modal.popup.set_division_manual .token.status {
-  padding: 32px;
-  background-color: #161616;
-  position: relative;
-}
-
-.modal.popup.set_division_manual .token.status h3 {
-  font-size: 0.875rem;
-}
-
-.modal.popup.set_division_manual .token.status h3 strong {
-  display: block;
-  margin-top: 8px;
-  font-weight: 100;
-  font-size: 1.75rem;
-}
-
-.modal.popup.set_division_manual .token.status button.auto.set {
-  position: absolute;
-  right: 32px;
-  top: 32px;
-  padding-right: 26px;
-}
-
-.modal.popup.set_division_manual .token.status button.auto.set:after {
-  content: '';
-  display: block;
-  width: 22px;
-  height: 22px;
-  position: absolute;
-  top: 50%;
-  right: 0;
-  margin-top: -11px;
-  background: url("../image/icon-refresh.svg") right center no-repeat;
-  transition: transform 1s, color 1s;
-}
-
-.modal.popup.set_division_manual .token.status button.auto.set:hover {
-  color: #ffffff;
-}
-
-.modal.popup.set_division_manual .token.status button.auto.set:hover:after {
-  transform: rotate(180deg);
 }
 
 .modal.popup.set_division_manual .form.container {
@@ -1257,6 +1257,23 @@ main.join + .modal.popup {
 
 .modal.popup.virtual_account_check dl + .btn_area button:first-child {
   margin-right: 8px;
+}
+
+.modal.popup.rental_account.cancel .wrapper {
+  padding-top: 0;
+  background-color: #282828;
+}
+
+.modal.popup.rental_account.cancel .token.status + h3 {
+  font-size: 0.875rem;
+  margin-left: 32px;
+  margin-top: 24px;
+}
+
+.modal.popup.rental_account.cancel form {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  background-color: #403e41;
 }
 
 div.tab {
@@ -3238,7 +3255,7 @@ main.resource_management h3 {
 
 main.resource_management h3 ~ p {
   font-size: 0.875rem;
-  margin: 5px 0 0 0;
+  margin: 0px;
 }
 
 main.resource_management div.tab {
@@ -3404,7 +3421,7 @@ main.resource_management div.my.resource > div {
   border-radius: 2px;
   background-color: #0e0e0e;
   box-sizing: border-box;
-  padding: 28px;
+  padding: 24px 28px;
   position: relative;
 }
 
@@ -3414,7 +3431,7 @@ main.resource_management div.my.resource > div:first-child {
 
 main.resource_management div.my.resource > div h3 strong {
   display: block;
-  font-size: 1.25rem;
+  font-size: 1.75rem;
   font-weight: 100;
   color: #ffffff;
   margin-top: 4px;
@@ -3594,6 +3611,33 @@ main.resource_management .rental.container .available.status a {
 
 main.resource_management .rental.container section {
   padding: 30px 32px;
+}
+
+main.resource_management .rental.cancel.container section.search {
+  margin: 0 0 32px 32px;
+  padding: 0;
+  background: transparent;
+}
+
+main.resource_management .rental.cancel.container section.search .input.field > * {
+  height: 48px;
+  vertical-align: top;
+}
+
+main.resource_management .rental.cancel.container section.search .input.field > button {
+  line-height: 46px;
+  background-color: #403e41;
+  color: #ffffff;
+  border-radius: 0;
+}
+
+main.resource_management .rental.cancel.container section.search .input.field input[type='text'] {
+  font-weight: normal;
+  width: 294px;
+  font-size: 0.875rem;
+  background-color: #161616;
+  padding: 0 12px;
+  margin-right: 8px;
 }
 
 main.vote div.tab {
