@@ -15,22 +15,29 @@
 		<a href="resource-rental-cancel.html" class="ing">임대취소하기</a>
 	</div>
 	<div class="rental cancel container">
-		<div class="available status">
-			<h3>임대해준 토큰 총량
-				<strong>8 EOS</strong>
-			</h3>
-			<a href="#viewRentalListAccount" id="viewRentalListAccount">임대해준 계정 리스트 보기</a>
+		<section class="search">
+			<div class="input field">
+				<input type="text" placeholder="임대를 취소할 계정을 선택해주세요." class="size large" maxlength="12">
+				<button type="button" id="viewRentalListAccount" class="choice button">임대 계정 리스트</button>
+				<a href="#viewRentalListAccount" id="">임대해준 계정 리스트 보기</a>
+			</div>
+		</section>
+
+		<div class="my resource">
+			<div>
+				<h3>임대해준 CPU
+					<strong>18 EOS</strong>
+				</h3>
+			</div>
+			<div>
+				<h3>임대해준 NET
+					<strong>18 EOS</strong>
+				</h3>
+			</div>
 		</div>
 
 		<section>
-			<div class="input field">
-				<input type="text" placeholder="임대취소할 계정의 이름을 입력하세요" autofocus required pattern="[\w\d]+" class="size large" maxlength="12">
-				<span class="validate description">계정이름 예시:eoshubby</span>
-			</div>
-		</section>
-		<section>
-
-			<h3>임대해준 토큰 총량</h3>
+			<h3>내가 임대해준 토큰</h3>
 			<p>0 EOS</p>
 			<div class="field group">
 				<div class="input field">
@@ -105,9 +112,15 @@
 		</script>
 	</div>
 </main>
-<section id="popup" class="rental_account modal popup" aria-live="true" role="alert">
+<section id="popup" class="rental_account cancel modal popup" aria-live="true" role="alert">
 	<div class="wrapper">
-		<h2>임대해준 계정 리스트</h2>
+		<div class="token status">
+			<h3>임대받은 토큰 총량
+				<strong>10 EOS</strong>
+			</h3>
+		</div>
+
+		<h3>임대해준 계정 리스트</h3>
 		<form action="">
 			<input id="" type="text" name="" class="search_token" placeholder="계정명 검색하기">
 			<button type="button">검색</button>
@@ -169,7 +182,7 @@
 
 // popup 안에 값이 입력되면 disabed 뜯어내기
 (function () {
-	document.querySelector('.modal.popup form input').addEventListener('keyup',function () {
+		document.querySelector('.modal.popup form input').addEventListener('keyup',function () {
 		if (this.value.length > 0) {
 			document.querySelector('.modal.popup .btn_area button.ok').removeAttribute('disabled');
 		} else {

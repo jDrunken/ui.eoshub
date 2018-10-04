@@ -16,37 +16,11 @@
 	</div>
 	<div class="stake container">
 
-		<div class="my resource">
-			<div>
-				<h3>CPU 총량
-					<strong>18 EOS</strong>
-				</h3>
-
-				<p>내가 스테이크한 토큰 : 8 EOS</p>
-				<p>임대받은 토큰 : 4 EOS</p>
-				<div class="graph status">
-					<span class="hell" style="height:10%"></span>
-					10%
-				</div>
-			</div>
-			<div>
-				<h3>NET 총량
-					<strong>18 EOS</strong>
-				</h3>
-
-				<p>내가 스테이크한 토큰 : 8 EOS</p>
-				<p>임대받은 토큰 : 4 EOS</p>
-				<div class="graph status">
-					<span class="hell" style="height:10%"></span>
-					10%
-				</div>
-			</div>
-		</div>
+		<p>스테이크 가능한 토큰 수량<em>8 EOS</em></p>
 
 		<section>
 			<div class="wallet status">
-				<h3>스테이크 가능한 토큰</h3>
-				<p>100 EOS</p>
+				<h3>최소 1 EOS 이상은 스테이크 해놓으시는게 좋습니다. :)</h3>
 				<a href="#setDirect" id="setDirect">직접설정</a>
 			</div>
 
@@ -59,11 +33,25 @@
 				<button type="button">70%</button>
 				<button type="button">최대</button>
 			</div>
+			<script>
+			(function () {
+				var input = document.getElementById('EOS');
+				var description = document.querySelector('.input.field > span.description.validate');
+				input.addEventListener('keyup',function () {
+
+					if (!!input.value.length) {
+						description.classList.add('true');
+					} else {
+						description.classList.remove('true');
+					}
+				});
+			})();
+			</script>
 			<div class="btn_area">
 				<button type="button" class="ok button" disabled>확인</button>
 			</div>
 		</section>
-		<section id="popup" class="set_division_manual modal popup" aria-live="true" role="alert">
+		<section id="popup" class="set_division_manual modal popup viewing" aria-live="true" role="alert">
 			<div class="wrapper">
 				<h2>토큰 스테이크 수량 직접 설정</h2>
 				<div class="token status">
