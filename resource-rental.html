@@ -132,8 +132,10 @@
 		<li>
 			<span class="title">stake</span>
 			<span class="amount">32.3812</span>
-			<span class="status available">트랜잭션 가능</span>
-			<span class="status unavailable">트랜잭션 불가능</span>
+			<span class="status fine">트랜잭션 가능</span>
+			<span class="status good">트랜잭션 가능</span>
+			<span class="status bad">트랜잭션 가능</span>
+			<span class="status hell">트랜잭션 불가능</span>
 		</li>
 		<li>
 			<span class="title">refunding</span>
@@ -170,10 +172,13 @@
 				<span class="validate description">계정이름 예시:eoshubby</span>
 			</div>
 		</section>
-		<section>
 
-			<h3>임대해 줄 토큰 총량</h3>
-			<p>0 EOS</p>
+		<section>
+			<div class="wallet status">
+				<h3>임대해 줄 토큰 총량</h3>
+				<p>0 EOS</p>
+				<p class="validate description"> 임대가능한 수량입니다.  </p>
+			</div>
 			<div class="field group">
 				<div class="input field">
 					<label for="cpu">CPU</label>

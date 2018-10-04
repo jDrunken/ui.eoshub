@@ -1705,11 +1705,19 @@ aside .wallet.status li span.status:before {
   vertical-align: baseline;
 }
 
-aside .wallet.status li span.status.available:before {
+aside .wallet.status li span.status.fine:before {
+  background-color: #536dfe;
+}
+
+aside .wallet.status li span.status.good:before {
   background-color: #79c720;
 }
 
-aside .wallet.status li span.status.unavailable:before {
+aside .wallet.status li span.status.bad:before {
+  background-color: #f5cb23;
+}
+
+aside .wallet.status li span.status.hell:before {
   background-color: #ff6b64;
 }
 
@@ -3296,7 +3304,7 @@ main.resource_management div.input.field input[type="number"]:focus {
 
 main.resource_management div.input.field label {
   position: absolute;
-  top: calc(-1em - 4px);
+  top: calc(-1em - 8px);
   font-size: 0.8125rem;
   color: #ffffff;
 }
@@ -3383,7 +3391,7 @@ main.resource_management div.input.field input[type="number"].size.large:focus::
 }
 
 main.resource_management div.input.field input.size.large + span.description ~ button {
-  margin-top: 37px;
+  margin-top: 45px;
 }
 
 main.resource_management div.my.resource {
@@ -3494,6 +3502,9 @@ main.resource_management section .wallet.status p:last-child {
 main.resource_management section {
   display: flex;
   flex-direction: column;
+  height: 277px;
+  box-sizing: border-box;
+  justify-content: space-between;
 }
 
 main.resource_management section > .btn_area {
@@ -3509,9 +3520,22 @@ main.resource_management section > .btn_area button {
   border: solid 1px #5d5d5d;
 }
 
-main.resource_management
-.stake.container .input.field {
-  margin-top: 45px;
+main.resource_management .stake.container p {
+  font-size: 0.875rem;
+  color: #999;
+  margin: 0 0 32px 32px;
+}
+
+main.resource_management .stake.container p em {
+  margin-top: 12px;
+  display: block;
+  font-size: 1.75rem;
+  font-weight: 300;
+  color: #ffffff;
+}
+
+main.resource_management .stake.container .input.field {
+  margin-top: 67px;
 }
 
 main.resource_management .unstake.container .field.group,
@@ -3534,6 +3558,10 @@ main.resource_management .rental.container .field.group input {
 main.resource_management .unstake.container .field.group span.unit,
 main.resource_management .rental.container .field.group span.unit {
   top: 16px;
+}
+
+main.resource_management .rental.container > section:nth-of-type(1) {
+  height: initial;
 }
 
 main.resource_management .rental.container .available.status {
@@ -3736,7 +3764,7 @@ main.vote section.bp.list tr.buy.korea {
 main.vote section.bp.list thead th {
   position: sticky;
   top: 64px;
-  z-index: 10;
+  z-index: 3;
 }
 
 main.vote section.bp.list thead th:nth-of-type(2) {
