@@ -195,101 +195,101 @@
 				<button type="button" class="ok button" disabled>확인</button>
 			</div>
 		</section>
+		<section id="popup" class="set_division_manual modal popup viewing" aria-live="true" role="alert">
+			<div class="wrapper">
+				<h2>토큰 스테이크 수량 직접 설정</h2>
+				<div class="token status">
+					<h3>스테이크할 토큰
+						<strong>10 EOS</strong>
+					</h3>
+					<button type="button" class="set auto button">자동 분배</button>
+				</div>
+				<div class="form container">
+					<h3>CPU</h3>
+					<p>Staked : 18 EOS</p>
+					<form action="" class="true validate">
+						<input id="" type="text" name="" class="user" placeholder="스테이크할 수량을 설정하세요" data-validate="false">
+						<span>EOS</span>
+					</form>
+				</div>
+
+				<div class="form container">
+					<h3>NET</h3>
+					<p>Staked : 18 EOS</p>
+					<form action="">
+						<input id="" type="text" name="" class="user" placeholder="스테이크할 수량을 설정하세요" data-validate="true">
+						<span>EOS</span>
+					</form>
+				</div>
+
+				<p class="validate description">7:3 비율로 스테이킹 하는 것이 가장 좋습니다.</p>
+				<div class="btn_area">
+					<button type="button" class="undo button">취소</button>
+					<button type="button" class="ok button" disabled>확인</button>
+				</div>
+			</div>
+		</section>
+		<script>
+		// 수량 조절 버튼 클릭
+		(function () {
+			var button = document.querySelectorAll('div.input.field button');
+			var clicked;
+
+			for (var i=0; i<button.length; i++) {
+				button[i].addEventListener('click', function () {
+					if (!!clicked) {
+						clicked.classList.remove('clicked');
+					}
+					this.classList.add('clicked');
+					clicked = this;
+				});
+			}
+		})();
+
+		// 클릭시 수량 정해줌
+		(function () {
+			var button = document.querySelectorAll('div.input.field button');
+			var input = document.querySelector('input[type="number"]');
+			var submit = document.querySelector('.btn_area button');
+			var max = parseInt(1000);
+
+			button[0].addEventListener('click', function () {
+				input.value = max*0.1
+				input.focus();
+			});
+			button[1].addEventListener('click', function () {
+				input.value = max*0.5;
+				input.focus();
+			});
+			button[2].addEventListener('click', function () {
+				input.value = max*0.7;
+				input.focus();
+			});
+			button[3].addEventListener('click', function () {
+				input.value = max*1;
+				input.focus();
+			});
+		})();
+
+		// 확인 (submit) 버튼 활성화
+		(function () {
+			var submit = document.querySelector('.btn_area button');
+			var input = document.querySelector('input[type="number"]');
+
+			input.addEventListener('focus',function () {
+				console.log(this.vaule);
+				if(this.value > 0) {
+					submit.removeAttribute('disabled');
+				}
+			});
+
+			input.addEventListener('keyup',function () {
+				!this.value > 0 ?  submit.setAttribute('disabled','') : submit.removeAttribute('disabled')
+			});
+		})();
+		</script>
 	</div>
 </main>
-<section id="popup" class="set_division_manual modal popup" aria-live="true" role="alert">
-	<div class="wrapper">
-		<h2>토큰 스테이크 수량 직접 설정</h2>
-		<div class="token status">
-			<h3>스테이크할 토큰
-				<strong>10 EOS</strong>
-			</h3>
-			<button type="button" class="set auto button">자동 분배</button>
-		</div>
-		<div class="form container">
-			<h3>CPU</h3>
-			<p>Staked : 18 EOS</p>
-			<form action="" class="true validate">
-				<input id="" type="text" name="" class="user" placeholder="스테이크할 수량을 설정하세요" data-validate="false">
-				<span>EOS</span>
-			</form>
-		</div>
-
-		<div class="form container">
-			<h3>NET</h3>
-			<p>Staked : 18 EOS</p>
-			<form action="">
-				<input id="" type="text" name="" class="user" placeholder="스테이크할 수량을 설정하세요" data-validate="true">
-				<span>EOS</span>
-			</form>
-		</div>
-
-		<p class="validate description">7:3 비율로 스테이킹 하는 것이 가장 좋습니다.</p>
-		<div class="btn_area">
-			<button type="button" class="undo button">취소</button>
-			<button type="button" class="ok button" disabled>확인</button>
-		</div>
-	</div>
-</section>
-<script>
-// 수량 조절 버튼 클릭
-(function () {
-	var button = document.querySelectorAll('div.input.field button');
-	var clicked;
-
-	for (var i=0; i<button.length; i++) {
-		button[i].addEventListener('click', function () {
-			if (!!clicked) {
-				clicked.classList.remove('clicked');
-			}
-			this.classList.add('clicked');
-			clicked = this;
-		});
-	}
-})();
-
-// 클릭시 수량 정해줌
-(function () {
-	var button = document.querySelectorAll('div.input.field button');
-	var input = document.querySelector('input[type="number"]');
-	var submit = document.querySelector('.btn_area button');
-	var max = parseInt(1000);
-
-	button[0].addEventListener('click', function () {
-		input.value = max*0.1
-		input.focus();
-	});
-	button[1].addEventListener('click', function () {
-		input.value = max*0.5;
-		input.focus();
-	});
-	button[2].addEventListener('click', function () {
-		input.value = max*0.7;
-		input.focus();
-	});
-	button[3].addEventListener('click', function () {
-		input.value = max*1;
-		input.focus();
-	});
-})();
-
-// 확인 (submit) 버튼 활성화
-(function () {
-	var submit = document.querySelector('.btn_area button');
-	var input = document.querySelector('input[type="number"]');
-
-	input.addEventListener('focus',function () {
-		console.log(this.vaule);
-		if(this.value > 0) {
-			submit.removeAttribute('disabled');
-		}
-	});
-
-	input.addEventListener('keyup',function () {
-		!this.value > 0 ?  submit.setAttribute('disabled','') : submit.removeAttribute('disabled')
-	});
-})();
-</script>
 <script>
 // popup 닫기
 (function () {
