@@ -350,10 +350,10 @@ main.vote {
 main.proxy.vote {
 
 	h3 {
-		font-size:$x-large;
+		font-size:$large;
 
-		+ p {
-			margin-top:24px;
+		~ p {
+			margin-top:29px;
 			color:$white;
 			font-size:$x-small;
 			line-height:1.6;
@@ -363,14 +363,17 @@ main.proxy.vote {
 
 	.philosophy {
 		background-color:$xxx-dark-gray;
-		padding:32px;
+		padding:48px 60px;
 
 		display:flex;
 		align-items:center;
 
-		button.ok {
-			padding:0 24px;
-			margin-top:24px;
+		.btn_area {
+			text-align:center;
+			button.ok {
+				padding:0 24px;
+				margin-top:24px;
+			}
 		}
 
 		div.animated.image {
