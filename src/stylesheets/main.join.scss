@@ -341,3 +341,11 @@ main.join {
 
 	}
 }
+
+main.join {
+	article[data-step="validate-email-ok"] {
+		.btn_area button {
+			flex:1;
+		}
+	}
+}
