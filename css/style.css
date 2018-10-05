@@ -2729,7 +2729,7 @@ main.search .resource .wrapper > div {
 }
 
 main.search .resource .wrapper > div h4 {
-  font-size: 0.875rem;
+  font-size: 1rem;
   color: #ffffff;
   line-height: 1.6;
 }
@@ -2738,7 +2738,12 @@ main.search .resource .wrapper > div p {
   font-size: 0.875rem;
   color: #999;
   line-height: 1.6;
-  margin: 1.5em 0 0 0;
+  margin: 0;
+}
+
+main.search .resource .wrapper > div p:nth-of-type(1) {
+  margin: 0.6em 0;
+  color: #ffffff;
 }
 
 main.search .resource .wrapper > div .status {
@@ -2787,7 +2792,7 @@ main.search .resource .wrapper > div .status span.hell {
 }
 
 main.search .resource .wrapper > div .status span:before, main.search .resource .wrapper > div .status span:after {
-  opacity: 0.2;
+  opacity: 0.4;
   content: '';
   display: block;
   position: absolute;
