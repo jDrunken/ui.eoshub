@@ -2082,6 +2082,9 @@ main.index .dashboard .mainnet.status li strong {
 main.index .dashboard .mainnet.status li span {
   margin-top: 6px;
   font-size: 0.875rem;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 main.index a.view.more {
