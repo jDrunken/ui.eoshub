@@ -2059,7 +2059,7 @@ main.index .dashboard .container a p {
 main.index .dashboard .mainnet.status {
   display: grid;
   grid-template-columns: repeat(4, 25%);
-  grid-template-rows: 100px;
+  grid-template-rows: 112px;
   margin: 24px -6px;
 }
 
