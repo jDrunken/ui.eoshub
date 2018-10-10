@@ -2519,6 +2519,29 @@ main.transfer .wallet.status p em {
   color: #ffffff;
 }
 
+main.transfer .wallet.status p span.validate.description {
+  display: block;
+  margin-top: 12px;
+}
+
+main.transfer .wallet.status p span.validate.description:before {
+  content: '';
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  margin-right: 0.4em;
+  vertical-align: baseline;
+}
+
+main.transfer .wallet.status p span.validate.description.true:before {
+  background-color: #79c720;
+}
+
+main.transfer .wallet.status p span.validate.description.false:before {
+  background-color: #ff6b64;
+}
+
 main.transfer .wallet.status a {
   text-decoration: underline;
   color: #ffffff;
