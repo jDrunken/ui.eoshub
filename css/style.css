@@ -1987,24 +1987,21 @@ main.index .menu_area .container .card h3 {
   line-height: 1.7;
 }
 
-main.index .dapps {
+main.index .dashboard {
   position: relative;
-  margin-top: 40px;
+  margin-top: 64px;
 }
 
-main.index .dapps h2 {
+main.index .dashboard h2 {
   font-size: 1.25rem;
   color: #ffffff;
-  padding-left: 32px;
-  background: url("../image/icon-application.svg") left center no-repeat;
-  background-size: 22px 22px;
 }
 
-main.index .dapps h2 + p {
+main.index .dashboard h2 + p {
   font-size: 0.875rem;
 }
 
-main.index .dapps .rolling.banner {
+main.index .dashboard .rolling.banner {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2015,13 +2012,19 @@ main.index .dapps .rolling.banner {
   margin-top: 24px;
 }
 
-main.index .dapps .container {
+main.index .dashboard ul, main.index .dashboard li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+main.index .dashboard .container {
   display: none;
   margin-top: 12px;
   display: flex;
 }
 
-main.index .dapps .container a {
+main.index .dashboard .container a {
   flex: 1;
   display: flex;
   justify-content: center;
@@ -2034,23 +2037,51 @@ main.index .dapps .container a {
   padding: 32px;
 }
 
-main.index .dapps .container a:first-child {
+main.index .dashboard .container a:first-child {
   margin-left: 0;
 }
 
-main.index .dapps .container a:last-child {
+main.index .dashboard .container a:last-child {
   margin-right: 0;
 }
 
-main.index .dapps .container a h3 {
+main.index .dashboard .container a h3 {
   font-size: 1rem;
   color: #ffffff;
 }
 
-main.index .dapps .container a p {
+main.index .dashboard .container a p {
   font-size: 0.875rem;
   margin: 0;
   color: #999;
+}
+
+main.index .dashboard .mainnet.status {
+  display: grid;
+  grid-template-columns: repeat(4, 25%);
+  grid-template-rows: 100px;
+  margin: 24px -6px;
+}
+
+main.index .dashboard .mainnet.status li {
+  padding: 0 32px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 4px;
+  margin: 6px;
+  background-color: #282828;
+}
+
+main.index .dashboard .mainnet.status li strong {
+  color: #ffffff;
+  font-weight: 100;
+}
+
+main.index .dashboard .mainnet.status li span {
+  margin-top: 6px;
+  font-size: 0.875rem;
 }
 
 main.index a.view.more {
