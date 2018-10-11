@@ -499,7 +499,8 @@ section.content main.search,
 section.content main.ram_market,
 section.content main.vote,
 section.content main.resource_management,
-section.content main.account {
+section.content main.account,
+section.content main.error_404 {
   height: inherit;
   box-sizing: border-box;
   padding: 42px;
@@ -512,7 +513,8 @@ section.content main.account {
   section.content main.ram_market,
   section.content main.vote,
   section.content main.resource_management,
-  section.content main.account {
+  section.content main.account,
+  section.content main.error_404 {
     margin-left: calc(300px);
   }
 }
@@ -524,7 +526,8 @@ section.content main.account {
   section.content main.ram_market,
   section.content main.vote,
   section.content main.resource_management,
-  section.content main.account {
+  section.content main.account,
+  section.content main.error_404 {
     padding: 2.425vw;
     margin-left: calc(18.75vw);
   }
@@ -537,7 +540,8 @@ section.content main.account {
   section.content main.ram_market,
   section.content main.vote,
   section.content main.resource_management,
-  section.content main.account {
+  section.content main.account,
+  section.content main.error_404 {
     padding: 27px;
     margin-left: 240px;
   }
@@ -563,7 +567,8 @@ section.content main.index {
 section.content main.transfer,
 section.content main.vote,
 section.content main.account,
-section.content main.resource_management {
+section.content main.resource_management,
+section.content main.error_404 {
   width: 965px;
 }
 
@@ -593,7 +598,8 @@ main.search,
 main.ram_market,
 main.vote,
 main.resource_management,
-main.account {
+main.account,
+main.error_404 {
   transition: margin 0.4s;
 }
 
@@ -607,7 +613,8 @@ aside.shrink + main.search,
 aside.shrink + main.ram_market,
 aside.shrink + main.vote,
 aside.shrink + main.resource_management,
-aside.shrink + main.account {
+aside.shrink + main.account,
+aside.shrink + main.error_404 {
   margin-left: 0;
 }
 
@@ -1297,6 +1304,33 @@ div.tab a.ing,
 div.tab button.ing {
   border-top: 2px solid #ff1f90;
   background-color: #0e0e0e;
+}
+
+section.content main.error_404 {
+  position: relative;
+  height: calc(100vh - 64px);
+}
+
+section.error.message.wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+section.error.message.wrapper:before {
+  content: '';
+  background: url("../image/bnr-404@2x.png") center center no-repeat transparent;
+  background-size: contain;
+  display: block;
+  width: 381px;
+  height: 291px;
+}
+
+section.error.message.wrapper h2 {
+  margin-top: 8px;
+  text-align: center;
+  font-size: 1.5rem;
 }
 
 header {
