@@ -211,7 +211,6 @@
 			(function (button,target,i) {
 				banner[i].addEventListener('mouseover',function () {
 					clearInterval(rolling);
-					target.dataset.display = i+1;
 				});
 				banner[i].addEventListener('mouseout',function () {
 					rolling = setInterval(interval,timer)
