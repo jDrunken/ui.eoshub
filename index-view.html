@@ -132,38 +132,89 @@
 		</div>
 	</section>
 
-	<section class="dashboard">
-		<h2>EOS Dashboard</h2>
-		<p>실시간 이오스 메인넷 상황입니다.</p>
+	
+		
+		
 
-		<ul class="mainnet status">
-			<li>
-				<strong>Producer</strong>
-				<span>ATTILABEOSB</span>
-			</li>
-			<li>
-				<strong>Head Block</strong>
-				<span>Langchain</span>
-			</li>
-			<li>
-				<strong>CurrentMax TPS</strong>
-				<span>31 / 3996</span>
-			</li>
-			<li>
-				<strong>EOS price</strong>
-				<span>$5.75</span>
-			</li>
-		</ul>
+		
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+		
+	
+	<section class="promotion" data-display="1" data-max="3">
+		<h3>AD</h3>
+		<div class="rolling banner">
+			<a href="" class="viewing">
+				<img src="./image/bnr-dapp@2x.png" alt="">
+			</a>
+			<a href="">
+				<img src="./image/bnr-fuze.png" alt="">
+			</a>
+			<a href="">
+				<img src="./image/bnr-nova.png" alt="">
+			</a>
+		</div>
+		<div class="banner handler">
+			<button type="button" class="rotate banner circle button">Dapp contest banner</button>
+			<button type="button" class="rotate banner circle button">Fuze banner</button>
+			<button type="button" class="rotate banner circle button">Nova wallet</button>
+		</div>
 	</section>
-	
-		
-			
-				
-					
-				
-			
-		
-	
+	<script>
+	// rolling banner demo script
+	(function () {
+		var button = document.querySelectorAll('.promotion .banner.handler button');
+		var banner = document.querySelectorAll('.promotion .rolling.banner a');
+		var target = document.querySelector('.promotion')
+		var max = document.querySelector('.promotion').dataset.max
+		console.log(button,target);
+
+		// 이제 롤링을 해야지?
+		function interval () {
+			if (target.dataset.display >= max) {
+				target.dataset.display = 1;
+			} else {
+				target.dataset.display++;
+			}
+		}
+		var rolling = setInterval(interval,7000)
+
+		for (var i=0; i<button.length; i++) {
+			(function (button,target,i) {
+				banner[i].addEventListener('mouseover',function () {
+					clearInterval(rolling);
+					target.dataset.display = i+1;
+				});
+				banner[i].addEventListener('mouseout',function () {
+					rolling = setInterval(interval,7000)
+				});
+
+				button[i].addEventListener('mouseover',function () {
+					clearInterval(rolling);
+					target.dataset.display = i+1;
+				});
+				button[i].addEventListener('mouseout',function () {
+					rolling = setInterval(interval,7000)
+				});
+			})(button,target,i);
+		}
+
+	})();
+	</script>
 	
 	
 	
