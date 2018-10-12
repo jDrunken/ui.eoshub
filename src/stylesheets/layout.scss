@@ -270,24 +270,18 @@ aside.shrink {
 		background-repeat:no-repeat;
 
 		&.success {
+			background-color:#79c720;
+			background-image:url('../image/bi-hubby.svg#white');
+			background-size:81px auto;
 		}
 
 		&.fail {
+			background-color:#ff6b64;
+			background-image:url('../image/bi-hubby.svg#white#alert');
+			background-size:91px auto;
 		}
 
 	}
-
-    .view.success {
-		background-color:#79c720;
-        background-image:url('../image/bi-hubby.svg#white');
-        background-size:81px auto;
-    }
-
-    .view.fail {
-		background-color:#ff6b64;
-        background-image:url('../image/bi-hubby.svg#white#alert');
-        background-size:91px auto;
-    }
 
     // interaction
     z-index:-1;
