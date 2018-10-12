@@ -203,6 +203,7 @@ aside.shrink {
 .notification.panel {
     position:fixed;
     right:42px;
+	z-index:10;
 	top:calc(#{$header_height} + 42px);
 
 		@include media ('>1280px','<=1600px') {
