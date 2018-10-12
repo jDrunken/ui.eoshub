@@ -168,7 +168,7 @@ gulp.task('make:popupStyleForRuby',function () {
 			path.source.style+'/base.scss',
 			path.source.style+'/button.scss',
 			path.source.style+'/layout.scss',
-			path.source.style+'/popup.scss'
+			path.source.style+'/common.popup.scss'
 		])
 		// gulp.src(path.source.style+'/**/*.scss')
 		.pipe(concat('popup.scss'))

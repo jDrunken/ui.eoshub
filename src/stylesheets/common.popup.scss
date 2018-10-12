@@ -581,6 +581,14 @@ aside.shrink ~ .modal.popup {
 	}
 }
 
+// for ruby
+body > .modal.popup.virtual_account_check {
+	left:0 !important;
+	> .wrapper {
+		top:50%;
+	}
+}
+
 
 .modal.popup.rental_account.cancel {
 	.wrapper {
