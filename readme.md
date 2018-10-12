@@ -30,9 +30,16 @@ gulp deploy
 
 --------------------------------------------------------------------------------
 
-# bp list의 imagesprite 처리
+# extra
+
+## bp list의 imagesprite 처리
 ```
 gulp makeSprite
+```
+
+## ruby에서 사용하는 popup sass 파일의 별도 생성
+```
+gulp make:popupStyleForRuby
 ```
 
 --------------------------------------------------------------------------------
@@ -43,6 +50,10 @@ gulp makeSprite
 처리된 asset을 저장소끼리 복사합니다.
 
 ``` bash
+# 스타일시트와 이미지 파일을 복사함
 cp -rf ~/workspace/ui.eoshub/src/stylesheets   ~/workspace/eoshub.io/app/frontend/src/
 cp -rf ~/workspace/ui.eoshub/src/image ~/workspace/eoshub.io/app/frontend/src
+
+# 팝업용 스타일시트를 루비로 추가함
+cp  ~/workspace/ui.eoshub/deploy/css/popup.scss ~/workspace/eoshub.io/app/assets/stylesheets
 ```

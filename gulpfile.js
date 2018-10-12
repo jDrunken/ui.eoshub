@@ -37,7 +37,10 @@ var gulp = require('gulp')
 	//make shell
 	shell = require('gulp-shell'),
 
-	runSequence = require('run-sequence')
+	runSequence = require('run-sequence'),
+
+	// sass file merging
+	concat = require('gulp-concat')
 ;
 
 
@@ -143,7 +146,7 @@ gulp.task('clean',function () {
 // scss 변환 :: local
 gulp.task('convert:sass:sourcemap', function () {
 
-    return gulp.src(path.source.style + '/**/style.scss')
+	return gulp.src(path.source.style + '/**/style.scss')
         .pipe(sourcemaps.init())
         .pipe(sass({
             outputStyle: 'expanded'
@@ -157,6 +160,20 @@ gulp.task('convert:sass:sourcemap', function () {
         .pipe(livereload());
 });
 
+
+// sass concat to ruby production site
+gulp.task('make:popupStyleForRuby',function () {
+	gulp.src([
+			path.source.style+'/env.scss',
+			path.source.style+'/base.scss',
+			path.source.style+'/button.scss',
+			path.source.style+'/layout.scss',
+			path.source.style+'/popup.scss'
+		])
+		// gulp.src(path.source.style+'/**/*.scss')
+		.pipe(concat('popup.scss'))
+		.pipe(gulp.dest(path.deploy + '/css'))
+});
 
 // html 처리
 gulp.task('html',function () {
@@ -194,7 +211,6 @@ gulp.task('release', function () {
             message : 'eoshub :: 깃허브 페이지에 반영됨. Published to Github pages'
         }))
 });
-
 
 // --------------------------------------------------------------------------------
 // make imagesprite
@@ -257,7 +273,7 @@ gulp.task('local', function () {
 });
 
 gulp.task('deploy', function () {
-    runSequence('clean','make:index.html',['copy:image','copy:conf'],'convert:sass:sourcemap', 'html','release');
+    runSequence('clean','make:index.html',['copy:image','copy:conf'],'convert:sass:sourcemap', 'html','release','make:popupStyleForRuby');
 });
 
 
