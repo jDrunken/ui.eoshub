@@ -625,6 +625,7 @@ aside.shrink ~ .modal.popup {
 .notification.panel {
   position: fixed;
   right: 42px;
+  z-index: 10;
   top: calc(64px + 42px);
   z-index: -1;
 }
@@ -645,12 +646,13 @@ aside.shrink ~ .modal.popup {
 
 .notification.panel div {
   width: 406px;
-  height: 96px;
+  min-height: 96px;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.16);
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   padding-left: 40px;
+  padding-right: 130px;
   justify-content: center;
   position: absolute;
   top: 0;
@@ -690,13 +692,20 @@ aside.shrink ~ .modal.popup {
   transform: scale(1.1);
 }
 
+.notification.panel .view {
+  background-position: 285px calc(100% + 36px);
+  background-repeat: no-repeat;
+}
+
 .notification.panel .view.success {
-  background: url("../image/bi-hubby.svg#white") 285px 36px no-repeat #79c720;
+  background-color: #79c720;
+  background-image: url("../image/bi-hubby.svg#white");
   background-size: 81px auto;
 }
 
 .notification.panel .view.fail {
-  background: url("../image/bi-hubby.svg#white#alert") 285px 36px no-repeat #ff6b64;
+  background-color: #ff6b64;
+  background-image: url("../image/bi-hubby.svg#white#alert");
   background-size: 91px auto;
 }
 
@@ -2409,7 +2418,7 @@ main.join div.btn_area button {
 
 main.join article {
   box-sizing: border-box;
-  width: 400px;
+  width: 460px;
   padding: 72px 0;
 }
 
@@ -2470,7 +2479,7 @@ main.join span.validate.false {
 main.join section.email.verification {
   margin: 0;
   display: grid;
-  grid-template-columns: 1fr 90px;
+  grid-template-columns: 1fr 120px;
   margin: -4px;
 }
 
@@ -2535,7 +2544,8 @@ main.join dl.keybox dd {
 
 main.join p.important.description {
   color: #ff6b64;
-  font-size: 0.875rem;
+  font-size: 0.8125rem;
+  font-weight: 100;
   text-align: center;
 }
 
@@ -2559,9 +2569,13 @@ main.join .select_payment_type.area button.button {
   flex: 1;
   height: 36px;
   line-height: 34px;
-  max-width: 96px;
   padding: 0;
   margin-right: 0.6em;
+}
+
+main.join .select_payment_type.area p {
+  margin-left: 34px;
+  flex: 1;
 }
 
 main.join .confirm.area {
@@ -3899,7 +3913,7 @@ main.resource_management .stake.container p {
 }
 
 main.resource_management .stake.container p em {
-  margin-top: 12px;
+  margin-top: 4px;
   display: block;
   font-size: 1.75rem;
   font-weight: 300;
@@ -4305,6 +4319,11 @@ main.vote section.bp.list tbody td span.bi:before {
   left: 50%;
   transform: translate(-50%, -50%);
   opacity: 0.3;
+}
+
+main.vote section.bp.list .btn_area {
+  margin-top: 16px;
+  text-align: center;
 }
 
 main.proxy.vote h3 {
