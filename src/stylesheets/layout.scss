@@ -219,12 +219,13 @@ aside.shrink {
     // response
     div {
         width:406px;
-        height:96px;
+        min-height:96px;
         box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.16);
         box-sizing:border-box;
         display:flex;
         flex-direction:column;
         padding-left:40px;
+        padding-right:130px;
         justify-content:center;
         position:absolute;
 		top:0;
@@ -264,13 +265,27 @@ aside.shrink {
         }
     }
 
+	.view {
+		background-position:285px calc(100% + 36px);
+		background-repeat:no-repeat;
+
+		&.success {
+		}
+
+		&.fail {
+		}
+
+	}
+
     .view.success {
-        background:url('../image/bi-hubby.svg#white') 285px 36px no-repeat #79c720;
+		background-color:#79c720;
+        background-image:url('../image/bi-hubby.svg#white');
         background-size:81px auto;
     }
 
     .view.fail {
-        background:url('../image/bi-hubby.svg#white#alert') 285px 36px no-repeat #ff6b64;
+		background-color:#ff6b64;
+        background-image:url('../image/bi-hubby.svg#white#alert');
         background-size:91px auto;
     }
 
