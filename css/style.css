@@ -603,10 +603,6 @@ main.error_404 {
   transition: margin 0.4s;
 }
 
-section.modal.popup {
-  transition: left 0.4s;
-}
-
 aside.shrink + main.index,
 aside.shrink + main.transfer,
 aside.shrink + main.search,
@@ -616,10 +612,6 @@ aside.shrink + main.resource_management,
 aside.shrink + main.account,
 aside.shrink + main.error_404 {
   margin-left: 0;
-}
-
-aside.shrink ~ .modal.popup {
-  left: 0;
 }
 
 .notification.panel {
@@ -722,6 +714,64 @@ aside.shrink ~ .modal.popup {
 .notification.panel.viewing div {
   opacity: 1;
   transform: translateY(0);
+}
+
+div.tab {
+  box-sizing: border-box;
+  display: flex;
+}
+
+div.tab a,
+div.tab button {
+  flex: 1 0 50%;
+  height: 52px;
+  line-height: 52px;
+  background-color: #282828;
+  box-sizing: border-box;
+  padding: 0 35px;
+  text-align: center;
+  border-radius: 0;
+}
+
+div.tab a.ing,
+div.tab button.ing {
+  border-top: 2px solid #ff1f90;
+  background-color: #0e0e0e;
+}
+
+section.content main.error_404 {
+  position: relative;
+  height: calc(100vh - 64px);
+}
+
+section.error.message.wrapper {
+  position: absolute;
+  top: calc(50% - 6vh);
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+section.error.message.wrapper:before {
+  content: '';
+  background: url("../image/bnr-404@2x.png") center center no-repeat transparent;
+  background-size: contain;
+  display: block;
+  width: 381px;
+  height: 251px;
+}
+
+section.error.message.wrapper h2 {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+section.modal.popup {
+  transition: left 0.4s;
+}
+
+aside.shrink ~ .modal.popup {
+  left: 0;
 }
 
 .modal.popup {
@@ -1290,56 +1340,6 @@ main.join + .modal.popup {
   margin-top: 16px;
   margin-bottom: 16px;
   background-color: #403e41;
-}
-
-div.tab {
-  box-sizing: border-box;
-  display: flex;
-}
-
-div.tab a,
-div.tab button {
-  flex: 1 0 50%;
-  height: 52px;
-  line-height: 52px;
-  background-color: #282828;
-  box-sizing: border-box;
-  padding: 0 35px;
-  text-align: center;
-  border-radius: 0;
-}
-
-div.tab a.ing,
-div.tab button.ing {
-  border-top: 2px solid #ff1f90;
-  background-color: #0e0e0e;
-}
-
-section.content main.error_404 {
-  position: relative;
-  height: calc(100vh - 64px);
-}
-
-section.error.message.wrapper {
-  position: absolute;
-  top: calc(50% - 6vh);
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-section.error.message.wrapper:before {
-  content: '';
-  background: url("../image/bnr-404@2x.png") center center no-repeat transparent;
-  background-size: contain;
-  display: block;
-  width: 381px;
-  height: 251px;
-}
-
-section.error.message.wrapper h2 {
-  margin-top: 20px;
-  text-align: center;
-  font-size: 1.5rem;
 }
 
 header {
