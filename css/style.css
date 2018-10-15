@@ -614,108 +614,6 @@ aside.shrink + main.error_404 {
   margin-left: 0;
 }
 
-.notification.panel {
-  position: fixed;
-  right: 42px;
-  z-index: 10;
-  top: calc(64px + 42px);
-  z-index: -1;
-}
-
-@media (min-width: 1281px) and (max-width: 1600px) {
-  .notification.panel {
-    top: calc(64px + 2.425vw);
-    right: 2.425vw;
-  }
-}
-
-@media (max-width: 1280px) {
-  .notification.panel {
-    top: calc(64px + 17px);
-    right: 27px;
-  }
-}
-
-.notification.panel div {
-  width: 406px;
-  min-height: 96px;
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.16);
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  padding-left: 40px;
-  padding-right: 130px;
-  justify-content: center;
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-
-.notification.panel div p {
-  margin: 0;
-  color: #fff;
-}
-
-.notification.panel div p + p {
-  font-size: 0.8125rem;
-  font-weight: 100;
-  margin-top: 3px;
-}
-
-.notification.panel div a {
-  font-size: 0.875rem;
-  color: #fff;
-}
-
-.notification.panel div button.close {
-  position: absolute;
-  right: 10px;
-  top: 10px;
-  text-indent: -999em;
-  overflow: hidden;
-  background: url("../image/icon-close-white-transparent.svg") center center no-repeat;
-  width: 20px;
-  height: 20px;
-  outline: 0;
-  transition: transform 0.1s;
-}
-
-.notification.panel div button.close:hover {
-  transform: scale(1.1);
-}
-
-.notification.panel .view {
-  background-position: 285px calc(100% + 36px);
-  background-repeat: no-repeat;
-}
-
-.notification.panel .view.success {
-  background-color: #79c720;
-  background-image: url("../image/bi-hubby.svg#white");
-  background-size: 81px auto;
-}
-
-.notification.panel .view.fail {
-  background-color: #ff6b64;
-  background-image: url("../image/bi-hubby.svg#white#alert");
-  background-size: 91px auto;
-}
-
-.notification.panel div {
-  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-  opacity: 0;
-  transform: translateY(-100%);
-}
-
-.notification.panel.viewing {
-  z-index: 1;
-}
-
-.notification.panel.viewing div {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 div.tab {
   box-sizing: border-box;
   display: flex;
@@ -1325,6 +1223,14 @@ main.join + .modal.popup {
   margin-right: 8px;
 }
 
+body > .modal.popup.virtual_account_check {
+  left: 0 !important;
+}
+
+body > .modal.popup.virtual_account_check > .wrapper {
+  top: 50%;
+}
+
 .modal.popup.rental_account.cancel .wrapper {
   padding-top: 0;
   background-color: #282828;
@@ -1340,6 +1246,108 @@ main.join + .modal.popup {
   margin-top: 16px;
   margin-bottom: 16px;
   background-color: #403e41;
+}
+
+.notification.panel {
+  position: fixed;
+  right: 42px;
+  z-index: 10;
+  top: calc(64px + 42px);
+  z-index: -1;
+}
+
+@media (min-width: 1281px) and (max-width: 1600px) {
+  .notification.panel {
+    top: calc(64px + 2.425vw);
+    right: 2.425vw;
+  }
+}
+
+@media (max-width: 1280px) {
+  .notification.panel {
+    top: calc(64px + 17px);
+    right: 27px;
+  }
+}
+
+.notification.panel div {
+  width: 406px;
+  min-height: 96px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.16);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  padding-left: 40px;
+  padding-right: 130px;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.notification.panel div p {
+  margin: 0;
+  color: #fff;
+}
+
+.notification.panel div p + p {
+  font-size: 0.8125rem;
+  font-weight: 100;
+  margin-top: 3px;
+}
+
+.notification.panel div a {
+  font-size: 0.875rem;
+  color: #fff;
+}
+
+.notification.panel div button.close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  text-indent: -999em;
+  overflow: hidden;
+  background: url("../image/icon-close-white-transparent.svg") center center no-repeat;
+  width: 20px;
+  height: 20px;
+  outline: 0;
+  transition: transform 0.1s;
+}
+
+.notification.panel div button.close:hover {
+  transform: scale(1.1);
+}
+
+.notification.panel .view {
+  background-position: 285px calc(100% + 36px);
+  background-repeat: no-repeat;
+}
+
+.notification.panel .view.success {
+  background-color: #79c720;
+  background-image: url("../image/bi-hubby.svg#white");
+  background-size: 81px auto;
+}
+
+.notification.panel .view.fail {
+  background-color: #ff6b64;
+  background-image: url("../image/bi-hubby.svg#white#alert");
+  background-size: 91px auto;
+}
+
+.notification.panel div {
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  opacity: 0;
+  transform: translateY(-100%);
+}
+
+.notification.panel.viewing {
+  z-index: 1;
+}
+
+.notification.panel.viewing div {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 header {
