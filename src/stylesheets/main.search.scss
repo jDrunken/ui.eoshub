@@ -351,6 +351,14 @@ main.search {
 					text-align:center;
 				}
 			}
+
+			td a {
+				transition:color 0.4s;
+				text-decoration:underline;
+				&:hover {
+					color:$white;
+				}
+			}
 		}
 
 	}
