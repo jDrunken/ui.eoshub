@@ -82,6 +82,12 @@ main.search {
 
 			span {
 				font-size:$small;
+				&.remaining.time {
+					display:block;
+					position:absolute;
+					top:16px;
+					right:24px;
+				}
 			}
 
 			strong {
