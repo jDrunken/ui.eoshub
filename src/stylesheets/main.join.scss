@@ -277,6 +277,20 @@ main.join {
 			max-width:136px;
 		}
 
+		// 헌법 전문 보기
+		a {
+			font-size:$x-small;
+			display:block;
+			margin-left:1.6rem;
+			margin-top:0.4em;
+			text-decoration:underline;
+			transition:color 0.4s;
+
+			&:hover {
+				color:$white;
+			}
+		}
+
 	}
 
 	p.amount {
