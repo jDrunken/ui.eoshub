@@ -2369,6 +2369,7 @@ main.join input[type='text'] {
   width: 100%;
   box-sizing: border-box;
   font-size: 0.875rem;
+  color: #ffffff;
   background-color: #282828;
 }
 
@@ -2602,6 +2603,19 @@ main.join .confirm.area button.button {
   max-width: 136px;
 }
 
+main.join .confirm.area a {
+  font-size: 0.8125rem;
+  display: block;
+  margin-left: 1.6rem;
+  margin-top: 0.4em;
+  text-decoration: underline;
+  transition: color 0.4s;
+}
+
+main.join .confirm.area a:hover {
+  color: #ffffff;
+}
+
 main.join p.amount {
   flex: 1;
   text-align: right;
@@ -2710,8 +2724,8 @@ main.transfer .container form input[type="text"],
 main.transfer .container form input[type="number"] {
   border: 0;
   width: 100%;
-  height: 28px;
-  line-height: 2;
+  height: 30px;
+  line-height: 1.5;
   font-size: 28px;
   font-weight: 100;
   color: #ffffff;
@@ -2923,6 +2937,13 @@ main.search .summary li {
 
 main.search .summary li span {
   font-size: 0.875rem;
+}
+
+main.search .summary li span.remaining.time {
+  display: block;
+  position: absolute;
+  top: 16px;
+  right: 24px;
 }
 
 main.search .summary li strong {
@@ -3139,6 +3160,15 @@ main.search .permission table th:nth-of-type(2), main.search .permission table t
   text-align: center;
 }
 
+main.search .permission table td a {
+  transition: color 0.4s;
+  text-decoration: underline;
+}
+
+main.search .permission table td a:hover {
+  color: #ffffff;
+}
+
 main.search .transaction.history {
   padding: 0 32px;
   margin-top: 72px;
@@ -3253,18 +3283,34 @@ main.search.public_key .container {
   margin-top: 40px;
 }
 
+main.search.public_key .summary {
+  display: block;
+  padding: 48px;
+}
+
+main.search.public_key .summary dt {
+  font-size: 0.875rem;
+  background: url("../image/icon-key.svg") left top no-repeat transparent;
+  background-size: 20px auto;
+  padding-left: 28px;
+}
+
 main.search.public_key .summary dd {
-  margin-top: 8px;
+  margin-top: 12px;
   color: #ffffff;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   font-weight: 300;
 }
 
-main.search.public_key div.keybox {
+main.search.public_key p.description {
+  margin: 32px 0 0 0;
   border-top: 1px solid #5d5d5d;
+  padding: 24px 32px;
+  font-size: 0.875rem;
+}
+
+main.search.public_key div.keybox {
   padding: 0 32px;
-  padding-top: 40px;
-  margin-top: 40px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   column-gap: 8px;
@@ -3274,7 +3320,7 @@ main.search.public_key div.keybox {
 main.search.public_key div.keybox > div {
   background-color: #161616;
   font-size: 0.875rem;
-  padding: 24px 32px;
+  padding: 21px 32px;
   position: relative;
 }
 
@@ -3283,8 +3329,10 @@ main.search.public_key div.keybox > div:first-child {
 }
 
 main.search.public_key div.keybox > div strong {
+  margin-top: 4px;
   color: #ffffff;
   display: block;
+  font-weight: 400;
 }
 
 main.search.public_key div.keybox > div button {
