@@ -13,7 +13,8 @@ section.modal.popup {
 }
 
 
-aside.shrink ~ .modal.popup {
+aside.shrink ~ .modal.popup,
+aside.shrink ~ main .modal.popup {
 	left:0;
 }
 
