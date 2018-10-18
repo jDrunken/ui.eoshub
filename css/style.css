@@ -443,6 +443,10 @@ html, body {
   height: 100%;
 }
 
+body {
+  overflow-y: scroll;
+}
+
 div#elm-target {
   height: 100vh;
   box-sizing: border-box;
@@ -668,7 +672,8 @@ section.modal.popup {
   transition: left 0.4s;
 }
 
-aside.shrink ~ .modal.popup {
+aside.shrink ~ .modal.popup,
+aside.shrink ~ main .modal.popup {
   left: 0;
 }
 
@@ -795,7 +800,7 @@ main.join + .modal.popup {
 }
 
 .modal.popup form input.user {
-  background-image: url("../image/icon-id-default.svg");
+  background-image: url("../image/icon-id-default.svg#lignt-gray");
 }
 
 .modal.popup form button {
@@ -1051,7 +1056,7 @@ main.join + .modal.popup {
 
 .modal.popup.set_division_manual .form.container h3, .modal.popup.set_division_manual .form.container p {
   font-size: 0.875rem;
-  margin: 0;
+  margin: 0 0 8px;
 }
 
 .modal.popup.set_division_manual .form.container p {
@@ -1367,7 +1372,7 @@ header h1 {
 }
 
 header h1 a {
-  display: inline-block;
+  display: block;
   width: inherit;
   height: inherit;
   text-indent: -999em;
@@ -2725,7 +2730,7 @@ main.transfer .container form input[type="number"] {
   border: 0;
   width: 100%;
   height: 30px;
-  line-height: 1.5;
+  line-height: 1.1;
   font-size: 28px;
   font-weight: 100;
   color: #ffffff;
@@ -2909,7 +2914,7 @@ main.search .summary dl dd {
 }
 
 main.search .summary dl dt.id {
-  background: url("../image/icon-id-default.svg") left center no-repeat;
+  background: url("../image/icon-id-default.svg#medium-gray") left center no-repeat;
   background-size: 20px;
   padding-left: 28px;
 }
@@ -3321,11 +3326,19 @@ main.search.public_key div.keybox > div {
   background-color: #161616;
   font-size: 0.875rem;
   padding: 21px 32px;
+  cursor: pointer;
+  transition: transform 0.1s,background-color 0.4s;
+  transform-origin: center center;
   position: relative;
 }
 
 main.search.public_key div.keybox > div:first-child {
   margin-left: 0;
+}
+
+main.search.public_key div.keybox > div:hover {
+  background-color: #0e0e0e;
+  transform: scale(1.02);
 }
 
 main.search.public_key div.keybox > div strong {
