@@ -217,7 +217,7 @@ gulp.task('release', function () {
 // --------------------------------------------------------------------------------
 // 독립적인 path를 쓰는 것으로 놔둬보자.
 
-gulp.task('imagehandling',function () {
+gulp.task('imagehandling:bp',function () {
 	return gulp.src('src/bp-list-image/*.png')
 		.pipe(gulp.dest('src/bp-list-image/resized'))
 		.pipe(shell([
@@ -229,7 +229,19 @@ gulp.task('imagehandling',function () {
 		]))
 });
 
-gulp.task('sprite', function () {
+gulp.task('imagehandling:token',function () {
+	return gulp.src('src/token-list-image/*.png')
+		.pipe(gulp.dest('src/token-list-image/resized'))
+		.pipe(shell([
+			// 'echo `convert <%= file.path %> -format "%[pixel:u.p{0,0}]" info:`',
+			// 'echo <%= file.base %><%= file.relative%>',
+			// 'echo <%=file.base %>resized/<%= file.relative %>',
+			// 'convert <%= file.base %><%= file.relative%> -quality 100 -resize 96x96 -fuzz 10% -trim -gravity center -background `convert <%= file.base %><%= file.relative%> -format "%[pixel:u.p{10,10}]" info:` -extent 128x128 png:<%=file.base %>resized/<%= file.relative %>'
+			'convert <%= file.path %> -quality 100 -resize 96x96 -fuzz 10% -trim -gravity center -background `convert <%= file.path %> -format "%[pixel:u.p{10,10}]" info:` -extent 128x128 png:<%=file.path %>'
+		]))
+});
+
+gulp.task('sprite:bp', function () {
 	var spriteData = gulp.src('src/bp-list-image/resized/*.png').pipe(spritesmith(
 		{
 			// retinaSrcFilter:'*@2x.png',
@@ -254,8 +266,36 @@ gulp.task('sprite', function () {
 	return merge(imgStream, cssStream);
 });
 
+
+gulp.task('sprite:token', function () {
+	var spriteData = gulp.src('src/token-list-image/resized/*.png').pipe(spritesmith(
+		{
+			// retinaSrcFilter:'*@2x.png',
+			imgPath: '../image/token-list.png',
+			imgName: 'src/image/token-list.png',
+			cssName: 'src/stylesheets/main.token.list.scss',
+			padding: 60,
+			cssVarMap: function (sprite) {
+				// sprite.name = 'token-' + sprite.name;
+			}
+		}
+	));
+
+	var imgStream = spriteData.img
+		.pipe(buffer())
+		.pipe(imagemin())
+		.pipe(gulp.dest('./'));
+
+	var cssStream = spriteData.css
+		.pipe(gulp.dest('./'));
+
+	return merge(imgStream, cssStream);
+});
+
+
+
 gulp.task('makeSprite',function () {
-	runSequence('imagehandling','sprite');
+	runSequence('imagehandling:bp','sprite:bp','imagehandling:token','sprite:token');
 });
 
 
