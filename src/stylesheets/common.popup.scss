@@ -105,7 +105,7 @@ aside.shrink ~ main .modal.popup {
 
 		form {
 			margin-left:32px;
-			margin-right:32px;
+			margin-right:27px;
 		}
 	}
 
@@ -154,46 +154,6 @@ aside.shrink ~ main .modal.popup {
 		height:350px;
 		overflow-x:hidden;
 		overflow:auto;
-
-
-		// case :: tokenlist in transfer
-		.tokenlist & button {
-			width:100%;
-
-			display:flex;
-			align-items:center;
-			background-color:$xx-dark-gray;
-
-			margin-top:4px;
-			padding:20px;
-
-			text-align:initial;
-			font-size:$small;
-
-			outline:0;
-
-			img {
-				background-color:$gray;
-				border-radius:100%;
-				width:100%;
-				max-width:32px;
-				max-height:32px;
-			}
-
-			span {
-				margin-left:12px;
-			}
-
-			strong {
-				font-size:$normal;
-				color:$white;
-				display:block;
-			}
-
-			&:first-child {
-				margin-top:0;
-			}
-		}
 	 }
 
 
@@ -347,6 +307,7 @@ aside.shrink ~ main .modal.popup {
 				margin-top:0;
 			}
 		}
+
 	}
 }
 
@@ -581,7 +542,64 @@ aside.shrink ~ main .modal.popup {
 	}
 }
 
-// for ruby
+.modal.popup.tokenlist {
+	.wrapper {
+		background-color:$xx-dark-gray;
+	}
+
+	form {
+		background-color:$xxx-dark-gray;
+	}
+
+	.result.list {
+		> button {
+			text-align:left;
+			font-size:$x-small;
+			background-color:$xxx-dark-gray;
+			padding:20px 0;
+			margin-bottom:5px;
+			position:relative;
+			width:100%;
+			box-sizing:border-box;
+
+			span {
+				margin-left:64px;
+				display:block;
+
+				strong {
+					font-size:$normal;
+					font-weight:400;
+					color:$white;
+					display:block;
+					margin-bottom:4px;
+				}
+			}
+
+			&.token.bi:before {
+				content:'';
+				position:absolute;
+				top:50%;
+				left:20px;
+				display:block;
+				width:32px;
+				height:32px;
+				border-radius:100%;
+				background-color:#fff;
+				transform:translateY(-50%);
+			}
+
+			transition:background-color 0.2s;
+			&:hover {
+				background-color:$xxxx-dark-gray;
+			}
+		}
+	}
+}
+
+
+
+
+// for payment (ruby)
 body > .modal.popup.virtual_account_check {
 	left:0 !important;
 	> .wrapper {
@@ -609,4 +627,5 @@ body > .modal.popup.virtual_account_check {
 	}
 }
 // type case
+
 
