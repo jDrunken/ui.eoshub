@@ -2,3 +2,4 @@ deploy
 node_modules
 /.publish
 src/bp-list-image/resized
+src/token-list-image/resized
