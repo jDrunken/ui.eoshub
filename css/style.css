@@ -1207,11 +1207,15 @@ main.join + .modal.popup {
   font-size: 0.8125rem;
   background-color: #161616;
   padding: 20px 0;
-  margin-bottom: 5px;
   position: relative;
   width: 100%;
   box-sizing: border-box;
+  margin-bottom: 5px;
   transition: background-color 0.2s;
+}
+
+.modal.popup.tokenlist .result.list > button:last-child {
+  margin-bottom: 0;
 }
 
 .modal.popup.tokenlist .result.list > button span {
