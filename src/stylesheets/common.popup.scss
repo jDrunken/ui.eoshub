@@ -556,7 +556,7 @@ aside.shrink ~ main .modal.popup {
 			text-align:left;
 			font-size:$x-small;
 			background-color:$xxx-dark-gray;
-			padding:20px 0;
+			padding:20px 64px;
 			position:relative;
 			width:100%;
 			box-sizing:border-box;
@@ -566,7 +566,6 @@ aside.shrink ~ main .modal.popup {
 			}
 
 			span {
-				margin-left:64px;
 				display:block;
 
 				strong {
@@ -574,22 +573,51 @@ aside.shrink ~ main .modal.popup {
 					font-weight:400;
 					color:$white;
 					display:block;
-					margin-bottom:4px;
 				}
 			}
 
-			&.token.bi:before {
+			&.token:before {
 				content:'';
 				position:absolute;
 				top:50%;
 				left:20px;
 				display:block;
+				border-radius:100%;
+				transform:translateY(-50%);
+				transform-origin:left center;
+				background-image:url('../image/icon-eos.png');
+				background-position:center center;
+				background-repeat:no-repeat;
 				width:32px;
 				height:32px;
-				border-radius:100%;
-				background-color:#fff;
-				transform:translateY(-50%);
+				background-color:#443f54;
 			}
+
+			@mixin sprites-token($sprites) {
+				@each $sprite in $sprites {
+					$sprite-name: nth($sprite, 10);
+
+					&.#{$sprite-name}:before {
+						display:none;
+					}
+					&.#{$sprite-name}:after {
+						@include sprite($sprite);
+						content:'';
+						position:absolute;
+						top:50%;
+						left:20px;
+						display:block;
+						border-radius:100%;
+						transform:translateY(-50%) scale(0.25);
+						background-color:$white;
+						transform-origin:left center;
+						box-shadow:0 0 10px 0 rgba(255,255,255,1);
+					}
+				}
+			}
+
+			@include sprites-token($spritesheet-sprites);
+
 
 			transition:background-color 0.2s;
 			&:hover {
@@ -600,6 +628,10 @@ aside.shrink ~ main .modal.popup {
 }
 
 
+// bp name list
+
+// $spritesheet-width: 1216px;
+// $spritesheet-height: 1179px;
 
 
 // for payment (ruby)
