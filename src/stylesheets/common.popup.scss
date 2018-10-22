@@ -557,10 +557,13 @@ aside.shrink ~ main .modal.popup {
 			font-size:$x-small;
 			background-color:$xxx-dark-gray;
 			padding:20px 0;
-			margin-bottom:5px;
 			position:relative;
 			width:100%;
 			box-sizing:border-box;
+			margin-bottom:5px;
+			&:last-child {
+				margin-bottom:0;
+			}
 
 			span {
 				margin-left:64px;
