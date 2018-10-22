@@ -766,7 +766,7 @@ main.join + .modal.popup {
 
 .modal.popup .wrapper form {
   margin-left: 32px;
-  margin-right: 32px;
+  margin-right: 27px;
 }
 
 .modal.popup form {
@@ -812,40 +812,6 @@ main.join + .modal.popup {
   height: 350px;
   overflow-x: hidden;
   overflow: auto;
-}
-
-.tokenlist .modal.popup .result.list button {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  background-color: #282828;
-  margin-top: 4px;
-  padding: 20px;
-  text-align: initial;
-  font-size: 0.875rem;
-  outline: 0;
-}
-
-.tokenlist .modal.popup .result.list button img {
-  background-color: #999;
-  border-radius: 100%;
-  width: 100%;
-  max-width: 32px;
-  max-height: 32px;
-}
-
-.tokenlist .modal.popup .result.list button span {
-  margin-left: 12px;
-}
-
-.tokenlist .modal.popup .result.list button strong {
-  font-size: 1rem;
-  color: #ffffff;
-  display: block;
-}
-
-.tokenlist .modal.popup .result.list button:first-child {
-  margin-top: 0;
 }
 
 .modal.popup button.close {
@@ -1226,6 +1192,56 @@ main.join + .modal.popup {
 
 .modal.popup.virtual_account_check dl + .btn_area button:first-child {
   margin-right: 8px;
+}
+
+.modal.popup.tokenlist .wrapper {
+  background-color: #282828;
+}
+
+.modal.popup.tokenlist form {
+  background-color: #161616;
+}
+
+.modal.popup.tokenlist .result.list > button {
+  text-align: left;
+  font-size: 0.8125rem;
+  background-color: #161616;
+  padding: 20px 0;
+  margin-bottom: 5px;
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  transition: background-color 0.2s;
+}
+
+.modal.popup.tokenlist .result.list > button span {
+  margin-left: 64px;
+  display: block;
+}
+
+.modal.popup.tokenlist .result.list > button span strong {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #ffffff;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.modal.popup.tokenlist .result.list > button.token.bi:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  display: block;
+  width: 32px;
+  height: 32px;
+  border-radius: 100%;
+  background-color: #fff;
+  transform: translateY(-50%);
+}
+
+.modal.popup.tokenlist .result.list > button:hover {
+  background-color: #0e0e0e;
 }
 
 body > .modal.popup.virtual_account_check {
@@ -3277,6 +3293,16 @@ main.search .transaction.history table td.info span.memo.popup.viewing button {
 
 main.search .transaction.history table td.info span.memo.popup.viewing span.description {
   line-height: 1.5;
+}
+
+main.search .transaction.history table td.received {
+  font-weight: 600;
+  color: #79c720;
+}
+
+main.search .transaction.history table td.sent {
+  font-weight: 600;
+  color: #ff6b64;
 }
 
 main.search div.btn_area {
