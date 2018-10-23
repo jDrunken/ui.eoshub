@@ -944,6 +944,71 @@ main.join + .modal.popup {
   margin-top: 0;
 }
 
+body > .modal.popup.virtual_account_check {
+  left: 0 !important;
+}
+
+body > .modal.popup.virtual_account_check > .wrapper {
+  top: 50%;
+}
+
+.modal.popup.rental_account.cancel .wrapper {
+  padding-top: 0;
+  background-color: #282828;
+}
+
+.modal.popup.rental_account.cancel .token.status + h3 {
+  font-size: 0.875rem;
+  margin-left: 32px;
+  margin-top: 24px;
+}
+
+.modal.popup.rental_account.cancel form {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  background-color: #403e41;
+}
+
+.modal.popup.virtual_account_check .wrapper {
+  background-color: #282828;
+}
+
+.modal.popup.virtual_account_check dl {
+  margin: 32px;
+  background-color: #161616;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  padding: 12px 24px;
+  font-size: 0.875rem;
+}
+
+.modal.popup.virtual_account_check dl * {
+  padding: 6px 0;
+}
+
+.modal.popup.virtual_account_check dl dt {
+  color: #ffffff;
+  text-align: left;
+}
+
+.modal.popup.virtual_account_check dl dd {
+  text-align: right;
+  word-break: break-all;
+}
+
+.modal.popup.virtual_account_check dl + .btn_area {
+  margin: 16px 32px;
+  display: flex;
+}
+
+.modal.popup.virtual_account_check dl + .btn_area button {
+  flex: 1;
+}
+
+.modal.popup.virtual_account_check dl + .btn_area button:first-child {
+  margin-right: 8px;
+}
+
 @media (min-width: 1601px) {
   .resource_management .modal.popup {
     left: 300px;
@@ -1151,46 +1216,6 @@ main.join + .modal.popup {
 }
 
 .modal.popup.create_account dl + .btn_area button:first-child {
-  margin-right: 8px;
-}
-
-.modal.popup.virtual_account_check .wrapper {
-  background-color: #282828;
-}
-
-.modal.popup.virtual_account_check dl {
-  margin: 32px;
-  background-color: #161616;
-  display: grid;
-  grid-template-columns: 50% 50%;
-  padding: 12px 24px;
-  font-size: 0.875rem;
-}
-
-.modal.popup.virtual_account_check dl * {
-  padding: 6px 0;
-}
-
-.modal.popup.virtual_account_check dl dt {
-  color: #ffffff;
-  text-align: left;
-}
-
-.modal.popup.virtual_account_check dl dd {
-  text-align: right;
-  word-break: break-all;
-}
-
-.modal.popup.virtual_account_check dl + .btn_area {
-  margin: 16px 32px;
-  display: flex;
-}
-
-.modal.popup.virtual_account_check dl + .btn_area button {
-  flex: 1;
-}
-
-.modal.popup.virtual_account_check dl + .btn_area button:first-child {
   margin-right: 8px;
 }
 
@@ -2004,31 +2029,6 @@ main.join + .modal.popup {
 
 .modal.popup.tokenlist .result.list > button:hover {
   background-color: #0e0e0e;
-}
-
-body > .modal.popup.virtual_account_check {
-  left: 0 !important;
-}
-
-body > .modal.popup.virtual_account_check > .wrapper {
-  top: 50%;
-}
-
-.modal.popup.rental_account.cancel .wrapper {
-  padding-top: 0;
-  background-color: #282828;
-}
-
-.modal.popup.rental_account.cancel .token.status + h3 {
-  font-size: 0.875rem;
-  margin-left: 32px;
-  margin-top: 24px;
-}
-
-.modal.popup.rental_account.cancel form {
-  margin-top: 16px;
-  margin-bottom: 16px;
-  background-color: #403e41;
 }
 
 .notification.panel {
