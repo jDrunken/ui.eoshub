@@ -1206,7 +1206,7 @@ main.join + .modal.popup {
   text-align: left;
   font-size: 0.8125rem;
   background-color: #161616;
-  padding: 20px 0;
+  padding: 20px 64px;
   position: relative;
   width: 100%;
   box-sizing: border-box;
@@ -1219,7 +1219,6 @@ main.join + .modal.popup {
 }
 
 .modal.popup.tokenlist .result.list > button span {
-  margin-left: 64px;
   display: block;
 }
 
@@ -1228,20 +1227,779 @@ main.join + .modal.popup {
   font-weight: 400;
   color: #ffffff;
   display: block;
-  margin-bottom: 4px;
 }
 
-.modal.popup.tokenlist .result.list > button.token.bi:before {
+.modal.popup.tokenlist .result.list > button.token:before {
   content: '';
   position: absolute;
   top: 50%;
   left: 20px;
   display: block;
+  border-radius: 100%;
+  transform: translateY(-50%);
+  transform-origin: left center;
+  background-image: url("../image/icon-eos.png");
+  background-position: center center;
+  background-repeat: no-repeat;
   width: 32px;
   height: 32px;
+  background-color: #443f54;
+}
+
+.modal.popup.tokenlist .result.list > button.ADE:before {
+  display: none;
+}
+
+.modal.popup.tokenlist .result.list > button.ADE:after {
+  background-image: url(../image/token-list.png);
+  background-position: -188px 0px;
+  width: 128px;
+  height: 128px;
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  display: block;
   border-radius: 100%;
-  background-color: #fff;
-  transform: translateY(-50%);
+  transform: translateY(-50%) scale(0.25);
+  background-color: #ffffff;
+  transform-origin: left center;
+  box-shadow: 0 0 10px 0 white;
+}
+
+.modal.popup.tokenlist .result.list > button.ATD:before {
+  display: none;
+}
+
+.modal.popup.tokenlist .result.list > button.ATD:after {
+  background-image: url(../image/token-list.png);
+  background-position: -752px -376px;
+  width: 128px;
+  height: 128px;
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  display: block;
+  border-radius: 100%;
+  transform: translateY(-50%) scale(0.25);
+  background-color: #ffffff;
+  transform-origin: left center;
+  box-shadow: 0 0 10px 0 white;
+}
+
+.modal.popup.tokenlist .result.list > button.ATMOS:before {
+  display: none;
+}
+
+.modal.popup.tokenlist .result.list > button.ATMOS:after {
+  background-image: url(../image/token-list.png);
+  background-position: 0px -188px;
+  width: 128px;
+  height: 128px;
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  display: block;
+  border-radius: 100%;
+  transform: translateY(-50%) scale(0.25);
+  background-color: #ffffff;
+  transform-origin: left center;
+  box-shadow: 0 0 10px 0 white;
+}
+
+.modal.popup.tokenlist .result.list > button.BEAN:before {
+  display: none;
+}
+
+.modal.popup.tokenlist .result.list > button.BEAN:after {
+  background-image: url(../image/token-list.png);
+  background-position: -188px -188px;
+  width: 128px;
+  height: 128px;
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  display: block;
+  border-radius: 100%;
+  transform: translateY(-50%) scale(0.25);
+  background-color: #ffffff;
+  transform-origin: left center;
+  box-shadow: 0 0 10px 0 white;
+}
+
+.modal.popup.tokenlist .result.list > button.BET:before {
+  display: none;
+}
+
+.modal.popup.tokenlist .result.list > button.BET:after {
+  background-image: url(../image/token-list.png);
+  background-position: -376px 0px;
+  width: 128px;
+  height: 128px;
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  display: block;
+  border-radius: 100%;
+  transform: translateY(-50%) scale(0.25);
+  background-color: #ffffff;
+  transform-origin: left center;
+  box-shadow: 0 0 10px 0 white;
+}
+
+.modal.popup.tokenlist .result.list > button.BLACK:before {
+  display: none;
+}
+
+.modal.popup.tokenlist .result.list > button.BLACK:after {
+  background-image: url(../image/token-list.png);
+  background-position: -376px -188px;
+  width: 128px;
+  height: 128px;
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  display: block;
+  border-radius: 100%;
+  transform: translateY(-50%) scale(0.25);
+  background-color: #ffffff;
+  transform-origin: left center;
+  box-shadow: 0 0 10px 0 white;
+}
+
+.modal.popup.tokenlist .result.list > button.BTC:before {
+  display: none;
+}
+
+.modal.popup.tokenlist .result.list > button.BTC:after {
+  background-image: url(../image/token-list.png);
+  background-position: 0px -376px;
+  width: 128px;
+  height: 128px;
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  display: block;
+  border-radius: 100%;
+  transform: translateY(-50%) scale(0.25);
+  background-color: #ffffff;
+  transform-origin: left center;
+  box-shadow: 0 0 10px 0 white;
+}
+
+.modal.popup.tokenlist .result.list > button.CET:before {
+  display: none;
+}
+
+.modal.popup.tokenlist .result.list > button.CET:after {
+  background-image: url(../image/token-list.png);
+  background-position: -188px -376px;
+  width: 128px;
+  height: 128px;
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  display: block;
+  border-radius: 100%;
+  transform: translateY(-50%) scale(0.25);
+  background-color: #ffffff;
+  transform-origin: left center;
+  box-shadow: 0 0 10px 0 white;
+}
+
+.modal.popup.tokenlist .result.list > button.CHL:before {
+  display: none;
+}
+
+.modal.popup.tokenlist .result.list > button.CHL:after {
+  background-image: url(../image/token-list.png);
+  background-position: -376px -376px;
+  width: 128px;
+  height: 128px;
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  display: block;
+  border-radius: 100%;
+  transform: translateY(-50%) scale(0.25);
+  background-color: #ffffff;
+  transform-origin: left center;
+  box-shadow: 0 0 10px 0 white;
+}
+
+.modal.popup.tokenlist .result.list > button.DAB:before {
+  display: none;
+}
+
+.modal.popup.tokenlist .result.list > button.DAB:after {
+  background-image: url(../image/token-list.png);
+  background-position: -564px 0px;
+  width: 128px;
+  height: 128px;
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  display: block;
+  border-radius: 100%;
+  transform: translateY(-50%) scale(0.25);
+  background-color: #ffffff;
+  transform-origin: left center;
+  box-shadow: 0 0 10px 0 white;
+}
+
+.modal.popup.tokenlist .result.list > button.DEOS:before {
+  display: none;
+}
+
+.modal.popup.tokenlist .result.list > button.DEOS:after {
+  background-image: url(../image/token-list.png);
+  background-position: -564px -188px;
+  width: 128px;
+  height: 128px;
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  display: block;
+  border-radius: 100%;
+  transform: translateY(-50%) scale(0.25);
+  background-color: #ffffff;
+  transform-origin: left center;
+  box-shadow: 0 0 10px 0 white;
+}
+
+.modal.popup.tokenlist .result.list > button.DICE:before {
+  display: none;
+}
+
+.modal.popup.tokenlist .result.list > button.DICE:after {
+  background-image: url(../image/token-list.png);
+  background-position: -564px -376px;
+  width: 128px;
+  height: 128px;
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  display: block;
+  border-radius: 100%;
+  transform: translateY(-50%) scale(0.25);
+  background-color: #ffffff;
+  transform-origin: left center;
+  box-shadow: 0 0 10px 0 white;
+}
+
+.modal.popup.tokenlist .result.list > button.DOGE:before {
+  display: none;
+}
+
+.modal.popup.tokenlist .result.list > button.DOGE:after {
+  background-image: url(../image/token-list.png);
+  background-position: 0px -564px;
+  width: 128px;
+  height: 128px;
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  display: block;
+  border-radius: 100%;
+  transform: translateY(-50%) scale(0.25);
+  background-color: #ffffff;
+  transform-origin: left center;
+  box-shadow: 0 0 10px 0 white;
+}
+
+.modal.popup.tokenlist .result.list > button.EDNA:before {
+  display: none;
+}
+
+.modal.popup.tokenlist .result.list > button.EDNA:after {
+  background-image: url(../image/token-list.png);
+  background-position: -188px -564px;
+  width: 128px;
+  height: 128px;
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  display: block;
+  border-radius: 100%;
+  transform: translateY(-50%) scale(0.25);
+  background-color: #ffffff;
+  transform-origin: left center;
+  box-shadow: 0 0 10px 0 white;
+}
+
+.modal.popup.tokenlist .result.list > button.EOS:before {
+  display: none;
+}
+
+.modal.popup.tokenlist .result.list > button.EOS:after {
+  background-image: url(../image/token-list.png);
+  background-position: -376px -564px;
+  width: 128px;
+  height: 128px;
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  display: block;
+  border-radius: 100%;
+  transform: translateY(-50%) scale(0.25);
+  background-color: #ffffff;
+  transform-origin: left center;
+  box-shadow: 0 0 10px 0 white;
+}
+
+.modal.popup.tokenlist .result.list > button.EOSDAC:before {
+  display: none;
+}
+
+.modal.popup.tokenlist .result.list > button.EOSDAC:after {
+  background-image: url(../image/token-list.png);
+  background-position: -564px -564px;
+  width: 128px;
+  height: 128px;
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  display: block;
+  border-radius: 100%;
+  transform: translateY(-50%) scale(0.25);
+  background-color: #ffffff;
+  transform-origin: left center;
+  box-shadow: 0 0 10px 0 white;
+}
+
+.modal.popup.tokenlist .result.list > button.EOX:before {
+  display: none;
+}
+
+.modal.popup.tokenlist .result.list > button.EOX:after {
+  background-image: url(../image/token-list.png);
+  background-position: -752px 0px;
+  width: 128px;
+  height: 128px;
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  display: block;
+  border-radius: 100%;
+  transform: translateY(-50%) scale(0.25);
+  background-color: #ffffff;
+  transform-origin: left center;
+  box-shadow: 0 0 10px 0 white;
+}
+
+.modal.popup.tokenlist .result.list > button.ESB:before {
+  display: none;
+}
+
+.modal.popup.tokenlist .result.list > button.ESB:after {
+  background-image: url(../image/token-list.png);
+  background-position: -752px -188px;
+  width: 128px;
+  height: 128px;
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  display: block;
+  border-radius: 100%;
+  transform: translateY(-50%) scale(0.25);
+  background-color: #ffffff;
+  transform-origin: left center;
+  box-shadow: 0 0 10px 0 white;
+}
+
+.modal.popup.tokenlist .result.list > button.ETH:before {
+  display: none;
+}
+
+.modal.popup.tokenlist .result.list > button.ETH:after {
+  background-image: url(../image/token-list.png);
+  background-position: 0px 0px;
+  width: 128px;
+  height: 128px;
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  display: block;
+  border-radius: 100%;
+  transform: translateY(-50%) scale(0.25);
+  background-color: #ffffff;
+  transform-origin: left center;
+  box-shadow: 0 0 10px 0 white;
+}
+
+.modal.popup.tokenlist .result.list > button.EVR:before {
+  display: none;
+}
+
+.modal.popup.tokenlist .result.list > button.EVR:after {
+  background-image: url(../image/token-list.png);
+  background-position: -752px -564px;
+  width: 128px;
+  height: 128px;
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  display: block;
+  border-radius: 100%;
+  transform: translateY(-50%) scale(0.25);
+  background-color: #ffffff;
+  transform-origin: left center;
+  box-shadow: 0 0 10px 0 white;
+}
+
+.modal.popup.tokenlist .result.list > button.HORUS:before {
+  display: none;
+}
+
+.modal.popup.tokenlist .result.list > button.HORUS:after {
+  background-image: url(../image/token-list.png);
+  background-position: 0px -752px;
+  width: 128px;
+  height: 128px;
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  display: block;
+  border-radius: 100%;
+  transform: translateY(-50%) scale(0.25);
+  background-color: #ffffff;
+  transform-origin: left center;
+  box-shadow: 0 0 10px 0 white;
+}
+
+.modal.popup.tokenlist .result.list > button.INF:before {
+  display: none;
+}
+
+.modal.popup.tokenlist .result.list > button.INF:after {
+  background-image: url(../image/token-list.png);
+  background-position: -188px -752px;
+  width: 128px;
+  height: 128px;
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  display: block;
+  border-radius: 100%;
+  transform: translateY(-50%) scale(0.25);
+  background-color: #ffffff;
+  transform-origin: left center;
+  box-shadow: 0 0 10px 0 white;
+}
+
+.modal.popup.tokenlist .result.list > button.IQ:before {
+  display: none;
+}
+
+.modal.popup.tokenlist .result.list > button.IQ:after {
+  background-image: url(../image/token-list.png);
+  background-position: -376px -752px;
+  width: 128px;
+  height: 128px;
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  display: block;
+  border-radius: 100%;
+  transform: translateY(-50%) scale(0.25);
+  background-color: #ffffff;
+  transform-origin: left center;
+  box-shadow: 0 0 10px 0 white;
+}
+
+.modal.popup.tokenlist .result.list > button.IRESPO:before {
+  display: none;
+}
+
+.modal.popup.tokenlist .result.list > button.IRESPO:after {
+  background-image: url(../image/token-list.png);
+  background-position: -564px -752px;
+  width: 128px;
+  height: 128px;
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  display: block;
+  border-radius: 100%;
+  transform: translateY(-50%) scale(0.25);
+  background-color: #ffffff;
+  transform-origin: left center;
+  box-shadow: 0 0 10px 0 white;
+}
+
+.modal.popup.tokenlist .result.list > button.KARMA:before {
+  display: none;
+}
+
+.modal.popup.tokenlist .result.list > button.KARMA:after {
+  background-image: url(../image/token-list.png);
+  background-position: -752px -752px;
+  width: 128px;
+  height: 128px;
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  display: block;
+  border-radius: 100%;
+  transform: translateY(-50%) scale(0.25);
+  background-color: #ffffff;
+  transform-origin: left center;
+  box-shadow: 0 0 10px 0 white;
+}
+
+.modal.popup.tokenlist .result.list > button.LLG:before {
+  display: none;
+}
+
+.modal.popup.tokenlist .result.list > button.LLG:after {
+  background-image: url(../image/token-list.png);
+  background-position: -940px 0px;
+  width: 128px;
+  height: 128px;
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  display: block;
+  border-radius: 100%;
+  transform: translateY(-50%) scale(0.25);
+  background-color: #ffffff;
+  transform-origin: left center;
+  box-shadow: 0 0 10px 0 white;
+}
+
+.modal.popup.tokenlist .result.list > button.MEETONE:before {
+  display: none;
+}
+
+.modal.popup.tokenlist .result.list > button.MEETONE:after {
+  background-image: url(../image/token-list.png);
+  background-position: -940px -188px;
+  width: 128px;
+  height: 128px;
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  display: block;
+  border-radius: 100%;
+  transform: translateY(-50%) scale(0.25);
+  background-color: #ffffff;
+  transform-origin: left center;
+  box-shadow: 0 0 10px 0 white;
+}
+
+.modal.popup.tokenlist .result.list > button.OCT:before {
+  display: none;
+}
+
+.modal.popup.tokenlist .result.list > button.OCT:after {
+  background-image: url(../image/token-list.png);
+  background-position: -940px -376px;
+  width: 128px;
+  height: 128px;
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  display: block;
+  border-radius: 100%;
+  transform: translateY(-50%) scale(0.25);
+  background-color: #ffffff;
+  transform-origin: left center;
+  box-shadow: 0 0 10px 0 white;
+}
+
+.modal.popup.tokenlist .result.list > button.POOR:before {
+  display: none;
+}
+
+.modal.popup.tokenlist .result.list > button.POOR:after {
+  background-image: url(../image/token-list.png);
+  background-position: -940px -564px;
+  width: 128px;
+  height: 128px;
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  display: block;
+  border-radius: 100%;
+  transform: translateY(-50%) scale(0.25);
+  background-color: #ffffff;
+  transform-origin: left center;
+  box-shadow: 0 0 10px 0 white;
+}
+
+.modal.popup.tokenlist .result.list > button.PSO:before {
+  display: none;
+}
+
+.modal.popup.tokenlist .result.list > button.PSO:after {
+  background-image: url(../image/token-list.png);
+  background-position: -940px -752px;
+  width: 128px;
+  height: 128px;
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  display: block;
+  border-radius: 100%;
+  transform: translateY(-50%) scale(0.25);
+  background-color: #ffffff;
+  transform-origin: left center;
+  box-shadow: 0 0 10px 0 white;
+}
+
+.modal.popup.tokenlist .result.list > button.PUB:before {
+  display: none;
+}
+
+.modal.popup.tokenlist .result.list > button.PUB:after {
+  background-image: url(../image/token-list.png);
+  background-position: 0px -940px;
+  width: 128px;
+  height: 128px;
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  display: block;
+  border-radius: 100%;
+  transform: translateY(-50%) scale(0.25);
+  background-color: #ffffff;
+  transform-origin: left center;
+  box-shadow: 0 0 10px 0 white;
+}
+
+.modal.popup.tokenlist .result.list > button.RIDL:before {
+  display: none;
+}
+
+.modal.popup.tokenlist .result.list > button.RIDL:after {
+  background-image: url(../image/token-list.png);
+  background-position: -188px -940px;
+  width: 128px;
+  height: 128px;
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  display: block;
+  border-radius: 100%;
+  transform: translateY(-50%) scale(0.25);
+  background-color: #ffffff;
+  transform-origin: left center;
+  box-shadow: 0 0 10px 0 white;
+}
+
+.modal.popup.tokenlist .result.list > button.TRYBE:before {
+  display: none;
+}
+
+.modal.popup.tokenlist .result.list > button.TRYBE:after {
+  background-image: url(../image/token-list.png);
+  background-position: -376px -940px;
+  width: 128px;
+  height: 128px;
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  display: block;
+  border-radius: 100%;
+  transform: translateY(-50%) scale(0.25);
+  background-color: #ffffff;
+  transform-origin: left center;
+  box-shadow: 0 0 10px 0 white;
+}
+
+.modal.popup.tokenlist .result.list > button.WECASH:before {
+  display: none;
+}
+
+.modal.popup.tokenlist .result.list > button.WECASH:after {
+  background-image: url(../image/token-list.png);
+  background-position: -564px -940px;
+  width: 128px;
+  height: 128px;
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  display: block;
+  border-radius: 100%;
+  transform: translateY(-50%) scale(0.25);
+  background-color: #ffffff;
+  transform-origin: left center;
+  box-shadow: 0 0 10px 0 white;
+}
+
+.modal.popup.tokenlist .result.list > button.WIZZ:before {
+  display: none;
+}
+
+.modal.popup.tokenlist .result.list > button.WIZZ:after {
+  background-image: url(../image/token-list.png);
+  background-position: -752px -940px;
+  width: 128px;
+  height: 128px;
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  display: block;
+  border-radius: 100%;
+  transform: translateY(-50%) scale(0.25);
+  background-color: #ffffff;
+  transform-origin: left center;
+  box-shadow: 0 0 10px 0 white;
+}
+
+.modal.popup.tokenlist .result.list > button.ZKS:before {
+  display: none;
+}
+
+.modal.popup.tokenlist .result.list > button.ZKS:after {
+  background-image: url(../image/token-list.png);
+  background-position: -940px -940px;
+  width: 128px;
+  height: 128px;
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  display: block;
+  border-radius: 100%;
+  transform: translateY(-50%) scale(0.25);
+  background-color: #ffffff;
+  transform-origin: left center;
+  box-shadow: 0 0 10px 0 white;
 }
 
 .modal.popup.tokenlist .result.list > button:hover {
