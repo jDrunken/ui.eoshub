@@ -311,6 +311,77 @@ aside.shrink ~ main .modal.popup {
 	}
 }
 
+// for payment (ruby)
+body > .modal.popup.virtual_account_check {
+	left:0 !important;
+	> .wrapper {
+		top:50%;
+	}
+}
+
+
+.modal.popup.rental_account.cancel {
+	.wrapper {
+		padding-top:0;
+		background-color:$xx-dark-gray;
+	}
+
+	.token.status + h3 {
+		font-size:$small;
+		margin-left:32px;
+		margin-top:24px;
+	}
+
+	form {
+		margin-top:16px;
+		margin-bottom:16px;
+		background-color:$x-dark-gray;
+	}
+}
+
+// virtual account deposit
+.modal.popup.virtual_account_check {
+
+	.wrapper {
+		background-color:$xx-dark-gray;
+	}
+	dl {
+		margin: 32px;
+		background-color:$xxx-dark-gray;
+		display:grid;
+		grid-template-columns:50% 50%;
+		padding:12px 24px;
+		font-size:$small;
+
+		* {
+			padding:6px 0;
+		}
+		dt {
+			color:$white;
+			text-align:left;
+		}
+		dd {
+			text-align:right;
+			word-break:break-all;
+		}
+	}
+
+	dl + .btn_area {
+		margin:16px 32px;
+		display:flex;
+		button {
+			flex:1;
+			&:first-child {
+				margin-right:8px;
+			}
+		}
+	}
+}
+// type case
+
+
+
+
 
 
 // type case
@@ -504,43 +575,6 @@ aside.shrink ~ main .modal.popup {
 
 }
 
-.modal.popup.virtual_account_check {
-
-	.wrapper {
-		background-color:$xx-dark-gray;
-	}
-	dl {
-		margin: 32px;
-		background-color:$xxx-dark-gray;
-		display:grid;
-		grid-template-columns:50% 50%;
-		padding:12px 24px;
-		font-size:$small;
-
-		* {
-			padding:6px 0;
-		}
-		dt {
-			color:$white;
-			text-align:left;
-		}
-		dd {
-			text-align:right;
-			word-break:break-all;
-		}
-	}
-
-	dl + .btn_area {
-		margin:16px 32px;
-		display:flex;
-		button {
-			flex:1;
-			&:first-child {
-				margin-right:8px;
-			}
-		}
-	}
-}
 
 .modal.popup.tokenlist {
 	.wrapper {
@@ -632,35 +666,5 @@ aside.shrink ~ main .modal.popup {
 
 // $spritesheet-width: 1216px;
 // $spritesheet-height: 1179px;
-
-
-// for payment (ruby)
-body > .modal.popup.virtual_account_check {
-	left:0 !important;
-	> .wrapper {
-		top:50%;
-	}
-}
-
-
-.modal.popup.rental_account.cancel {
-	.wrapper {
-		padding-top:0;
-		background-color:$xx-dark-gray;
-	}
-
-	.token.status + h3 {
-		font-size:$small;
-		margin-left:32px;
-		margin-top:24px;
-	}
-
-	form {
-		margin-top:16px;
-		margin-bottom:16px;
-		background-color:$x-dark-gray;
-	}
-}
-// type case
 
 

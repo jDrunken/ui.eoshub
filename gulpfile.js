@@ -123,7 +123,10 @@ gulp.task('connect', function() {
 // 파일 변경 감지 :: local
 gulp.task('watch', function(callback) {
     livereload.listen();
-    gulp.watch(path.source.style+'/*.{scss,sass,css}',['convert:sass:sourcemap'],callback);
+    gulp.watch([path.source.style+'/*.{scss,sass,css}','!**/payment.popup.scss'],['convert:sass:sourcemap'],callback);
+
+    // 팝업용 스타일시트 생성
+    gulp.watch([path.source.style+'/payment.popup.scss'],['make:popupForRuby'],callback);
 
     // index 재생성
     gulp.watch(path.source.html+'/**/*.html', ['make:index.html'],callback);
@@ -134,7 +137,7 @@ gulp.task('watch', function(callback) {
         path.source.html+'/**/*.html',
     ], ['html'],callback);
 
-    // 이미지 수정처3
+    // 이미지 수정처리
     gulp.watch(path.source.image+'/*.{png,jpg,gif,svg}', ['copy:image'],callback);
 });
 
@@ -162,17 +165,40 @@ gulp.task('convert:sass:sourcemap', function () {
 
 
 // sass concat to ruby production site
-gulp.task('make:popupStyleForRuby',function () {
-	gulp.src([
+gulp.task('make:popupForRuby',function () {
+    gulp.src(path.source.image+'/icon-close-popup.svg').pipe(gulp.dest(path.deploy + '/css'))
+
+	return gulp.src([
 			path.source.style+'/env.scss',
 			path.source.style+'/base.scss',
 			path.source.style+'/button.scss',
 			path.source.style+'/layout.scss',
-			path.source.style+'/common.popup.scss'
+			path.source.style+'/payment.popup.scss'
 		])
-		// gulp.src(path.source.style+'/**/*.scss')
-		.pipe(concat('popup.scss'))
-		.pipe(gulp.dest(path.deploy + '/css'))
+		.pipe(concat('popup_payment.scss'))
+        .pipe(sourcemaps.init())
+        .pipe(sass({
+            outputStyle: 'expanded'
+        }))
+        .on('error', function (err) {
+            console.log(err.toString());
+            this.emit('end');
+        })
+        .pipe(sourcemaps.write('./'))
+        .pipe(gulp.dest(path.deploy + '/css'))
+        .pipe(livereload());
+});
+
+gulp.task('build:popupForRuby',function () {
+	return gulp.src([
+			path.source.style+'/env.scss',
+			path.source.style+'/base.scss',
+			path.source.style+'/button.scss',
+			path.source.style+'/layout.scss',
+			path.source.style+'/payment.popup.scss'
+		])
+		.pipe(concat('popup_payment.scss'))
+        .pipe(gulp.dest(path.deploy + '/css'))
 });
 
 // html 처리
@@ -300,6 +326,15 @@ gulp.task('makeSprite',function () {
 
 
 
+gulp.task('readyToCommit',function () {
+	return gulp.src('src/token-list-image/*.png')
+		.pipe(gulp.dest('src/token-list-image/resized'))
+		.pipe(shell([
+          'cp -rf ~/workspace/ui.eoshub/src/stylesheets   ~/workspace/eoshub.io/app/frontend/src/',
+          'cp -rf ~/workspace/ui.eoshub/src/image ~/workspace/eoshub.io/app/frontend/src',
+          'cp  ~/workspace/ui.eoshub/deploy/css/popup_payment.scss ~/workspace/eoshub.io/app/assets/stylesheets',
+        ]))
+});
 // --------------------------------------------------------------------------------
 // pipe running
 // --------------------------------------------------------------------------------
@@ -313,7 +348,5 @@ gulp.task('local', function () {
 });
 
 gulp.task('deploy', function () {
-    runSequence('clean','make:index.html',['copy:image','copy:conf'],'convert:sass:sourcemap', 'html','release','make:popupStyleForRuby');
+    runSequence('clean','make:index.html',['copy:image','copy:conf'],'convert:sass:sourcemap', 'html','release','build:popupForRuby');
 });
-
-
