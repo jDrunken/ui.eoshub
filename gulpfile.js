@@ -348,5 +348,5 @@ gulp.task('local', function () {
 });
 
 gulp.task('deploy', function () {
-    runSequence('clean','make:index.html',['copy:image','copy:conf'],'convert:sass:sourcemap', 'html','release','build:popupForRuby');
+    runSequence('clean','make:index.html',['copy:image','copy:conf'],'convert:sass:sourcemap', 'html','release','build:popupForRuby','readyToCommit');
 });
