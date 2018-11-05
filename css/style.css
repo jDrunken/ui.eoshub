@@ -5013,9 +5013,11 @@ main.vote section.bp.list input[type="checkbox"] + label:before {
 
 main.vote section.bp.list td strong {
   font-size: 1rem;
+  font-weight: 400;
   color: #fff;
   display: block;
   letter-spacing: -0.03em;
+  margin-bottom: 0.2em;
 }
 
 main.vote section.bp.list tr > *:nth-child(1) {
@@ -5111,6 +5113,7 @@ main.vote section.bp.list tbody td:last-child *::selection {
 
 main.vote section.bp.list tbody tr td:nth-of-type(3) {
   overflow: hidden;
+  color: #999;
 }
 
 main.vote section.bp.list tbody tr td:nth-of-type(2) span {
