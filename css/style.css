@@ -4928,7 +4928,8 @@ main.vote section.summary.vote dl dt:nth-of-type(2n) {
 }
 
 main.vote section.summary.vote dl dt:after {
-  content: ':';
+  content: ' :';
+  margin-right: 0.3em;
 }
 
 main.vote section.summary.vote p:last-child {
@@ -5013,8 +5014,8 @@ main.vote section.bp.list input[type="checkbox"] + label:before {
 main.vote section.bp.list td strong {
   font-size: 1rem;
   color: #fff;
-  font-weight: 100;
   display: block;
+  letter-spacing: -0.03em;
 }
 
 main.vote section.bp.list tr > *:nth-child(1) {
