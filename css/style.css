@@ -4156,11 +4156,11 @@ main.ram_market > .container {
 
 main.ram_market h3 {
   font-size: 1rem;
+  font-weight: 400;
   color: #ffffff;
 }
 
 main.ram_market h3 + p {
-  margin: 8px 0 0 0;
   font-size: 0.875rem;
 }
 
@@ -4182,10 +4182,26 @@ main.ram_market .dashboard .ram.status .wrapper {
   margin-left: 8px;
   padding: 24px;
   background-color: #282828;
+  display: flex;
+  flex-flow: column;
 }
 
 main.ram_market .dashboard .ram.status .wrapper:first-child {
   margin: 0;
+}
+
+main.ram_market .dashboard .ram.status .wrapper p {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #ffffff;
+}
+
+main.ram_market .dashboard .ram.status .wrapper h3 {
+  font-size: 0.875rem;
+  margin: 8px 0 0 0;
+  color: #999;
+  order: 2;
 }
 
 main.ram_market .dashboard .ram.status .graph {
@@ -4212,10 +4228,16 @@ main.ram_market .dashboard .my.status .summary {
   position: relative;
 }
 
-main.ram_market .dashboard .my.status .summary h3 span {
-  display: block;
-  margin-top: 8px;
+main.ram_market .dashboard .my.status .summary h3 {
   font-size: 0.875rem;
+  color: #999;
+}
+
+main.ram_market .dashboard .my.status .summary h3 span {
+  color: #ffffff;
+  display: block;
+  margin-bottom: 8px;
+  font-size: 1rem;
 }
 
 main.ram_market .dashboard .my.status .summary .status {
@@ -4280,6 +4302,7 @@ main.ram_market .dashboard .my.status .sell_buy:before {
 
 main.ram_market .dashboard .my.status .sell_buy .tab,
 main.ram_market .dashboard .my.status .sell_buy .unit {
+  border-radius: 0;
   order: 1;
 }
 
