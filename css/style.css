@@ -430,13 +430,49 @@ a.button.action {
   padding: 0 40px;
   height: 52px;
   border-radius: 2px;
-  background-color: #161616;
+  background-color: #0e0e0e;
   min-width: 152px;
+}
+
+button[type="button"].button.view_more,
+a.button.view_more {
+  transition: color 0.5s;
 }
 
 button[type="button"].button.view_more:before,
 a.button.view_more:before {
   content: '+ ';
+}
+
+button[type="button"].button.view_more.loading,
+a.button.view_more.loading {
+  position: relative;
+  color: #0e0e0e;
+}
+
+button[type="button"].button.view_more.loading:after,
+a.button.view_more.loading:after {
+  content: '';
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  top: 50%;
+  left: 50%;
+  margin: -12px 0 0 -12px;
+  border: 3px solid #999;
+  border-right-color: transparent;
+  border-radius: 100%;
+  animation: rotation 1s linear infinite;
+  box-sizing: border-box;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 html, body {
