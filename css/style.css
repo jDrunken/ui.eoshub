@@ -436,7 +436,7 @@ a.button.action {
 
 button[type="button"].button.view_more,
 a.button.view_more {
-  transition: color 0.5s;
+  transition: color 0.2s;
 }
 
 button[type="button"].button.view_more:before,
