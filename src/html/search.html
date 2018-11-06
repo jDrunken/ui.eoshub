@@ -371,33 +371,42 @@
 
 
 			<script>
-				(function () {
-					var handler = document.querySelectorAll('span.memo.popup button.view');
-					var opened_handler = '';
-					for(var i=0; i < handler.length; i++) {
-						handler[i].addEventListener('click',function () {
+			(function () {
+				var handler = document.querySelectorAll('span.memo.popup button.view');
+				var opened_handler = '';
+				for(var i=0; i < handler.length; i++) {
+					handler[i].addEventListener('click',function () {
 
 
-							if (!!opened_handler) {
-								opened_handler.parentNode.parentNode.classList.remove('viewing');
-							}
+						if (!!opened_handler) {
+							opened_handler.parentNode.parentNode.classList.remove('viewing');
+						}
 
-							if (opened_handler !== this) {
-								this.parentNode.parentNode.classList.add('viewing');
-								opened_handler = this;
-							} else {
-								this.parentNode.parentNode.classList.remove('viewing');
-								opened_handler = '';
-							}
+						if (opened_handler !== this) {
+							this.parentNode.parentNode.classList.add('viewing');
+							opened_handler = this;
+						} else {
+							this.parentNode.parentNode.classList.remove('viewing');
+							opened_handler = '';
+						}
 
-						});
-					}
-				})();
+					});
+				}
+			})();
 			</script>
 
 			<div class="btn_area">
-				<button type="button" class="view_more button">더 보기</button>
+				<button type="button" class="view_more button">더 보기 (1/200)</button>
 			</div>
+
+			<script>
+			(function () {
+				var button = document.querySelector('.button.view_more');
+				button.addEventListener('click',function () {
+					this.classList.toggle('loading');
+				});
+			})();
+			</script>
 		</section>
 	</div>
 </main>
