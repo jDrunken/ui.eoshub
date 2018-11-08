@@ -3734,9 +3734,8 @@ main.search .summary dl dt {
 
 main.search .summary dl dd {
   margin-top: 6px;
-  font-weight: 100;
   color: #ffffff;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
 }
 
 main.search .summary dl dt.id {
@@ -3779,10 +3778,11 @@ main.search .summary li span.remaining.time {
 
 main.search .summary li strong {
   color: #fff;
-  font-weight: 100;
+  font-weight: 400;
   display: block;
   margin-top: 6px;
-  font-size: 1.25rem;
+  font-size: 1.125rem;
+  letter-spacing: -0.03em;
 }
 
 main.search .summary li i {
