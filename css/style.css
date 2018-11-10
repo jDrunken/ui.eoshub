@@ -2084,7 +2084,7 @@ body > .modal.popup.virtual_account_check > .wrapper {
 }
 
 .modal.popup.notice .wrapper {
-  width: 550px;
+  width: 600px;
   max-width: none;
   background-color: #282828;
 }
