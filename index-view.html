@@ -263,6 +263,17 @@
 			<button id="closePopup" type="button" class="close">닫기</button>
 		</div>
 	</section>
+	<script>
+// 닫기 버튼 클릭해도 팝업 닫음
+(function () {
+	var button = document.querySelector('#popup button.close');
+	var popup = document.getElementById('popup');
+
+	button.addEventListener('click',function () {
+		popup.classList.remove('viewing');
+	});
+})();
+	</script>
 </main>
 
 
