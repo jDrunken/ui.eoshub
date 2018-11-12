@@ -153,10 +153,10 @@
 	<section class="menu_area">
 		<h2>Menu</h2>
 		<div class="container">
-			<div class="greeting">
-				<h3>안녕하세요.<br />
-					이오스허브입니다.</h3>
-				<p><a href="#">이오스허브 사용법 보기</a></p>
+			<div class="greeting event_free">
+				<h3>이오스허브 X 이오스닥<br />
+					무료계정 생성 이벤트</h3>
+				<p><a href="#">무료 신규계정 만들러 가기</a></p>
 			</div>
 			<a href="resource-rental.html" class="card resource">
 				<h3>리소스 관리</h3>
@@ -209,12 +209,17 @@
 			
 			
 			
+			<a href="https://eosdaq.com" target="_blank" class="eosdaq">EOSDAQ</a>
 			<a href="https://medium.com/eosys/%EC%A0%9C1%ED%9A%8C-dapp-contest-3d0a9d1338a8" target="_blank" class="dapp">Dapp contest</a>
+			
 			<a href="http://eosnova.io/" target="_blank" class="nova">Yout first EOS wallet,NOVA Wallet</a>
 		</div>
 		<div class="banner handler">
-			<button type="button" class="rotate banner circle button">Dapp contest banner</button>
-			<button type="button" class="rotate banner circle button">Nova wallet</button>
+			
+			
+			<button type="button" class="rotate banner circle button">EOSDAQ</button>
+			<button type="button" class="rotate banner circle button">dapp contest</button>
+			<button type="button" class="rotate banner circle button">NOVA</button>
 		</div>
 	</section>
 	<script>
@@ -289,40 +294,8 @@
 	
 	
 
-	<section id="popup" class="notice modal popup viewing" aria-live="true" role="alert">
-		<div class="wrapper">
-			<h2>무료 계정 이벤트 관련 안내</h2>
-
-			<p>안녕하세요, EOSYS입니다.
-
-			11월 9일 금요일 저녁 5시에 예정 되어있던 무료 계정 생성 이벤트와 관련해 불편함을 드려 정말 죄송합니다.
-
-			이메일 발송이 되지 않았던 원인은 저희가 사용중인 SendGrid에서 일시적으로 신청자가 몰려 전송이 지연된 것으로 확인되었습니다. 따라서 일시적으로 이벤트를 중지하였으며, 운영이 미숙했던 저희의 잘못이 큽니다.
-
-			무료 계정 발급 이벤트는 내부적으로 신중히 검토한 후, 다음주 월요일에 추후 일정에 대해서 다시 말씀 드리겠습니다.
-
-			또한 이미 소모된 EOS의 경우 저희 EOSYS 팀에서 전적으로 부담하며 이벤트 재 진행 시 500 EOS부터 다시 시작하도록 하겠습니다.
-			다시 한번 죄송하다는 말씀을 드리며, 더 좋은 모습으로 다시 찾아뵙도록 하겠습니다.
-
-			감사합니다.
-
-			EOSYS 팀 드림</p>
-			<button id="closePopup" type="button" class="close">닫기</button>
-		</div>
-
-	</section>
-	<script>
-// 닫기 버튼 클릭해도 팝업 닫음
-(function () {
-	var button = document.querySelector('#popup button.close');
-	var popup = document.getElementById('popup');
-
-	button.addEventListener('click',function () {
-		popup.classList.remove('viewing');
-	});
-})();
-	</script>
 </main>
+
 
 
 		</section>
