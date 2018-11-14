@@ -3373,10 +3373,6 @@ main.join section.email.verification button[disabled] {
   border-color: transparent;
 }
 
-main.join section.email.verification button.action.button[disabled]:nth-of-type(1) {
-  color: #ffffff;
-}
-
 main.join dl {
   display: grid;
   grid-template-columns: 30% auto;
