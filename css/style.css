@@ -3639,6 +3639,16 @@ main.join article[data-step="done"] .event.disposable.banner p {
   color: #999;
   text-shadow: 0 0 3px rgba(255, 255, 255, 0.2);
   text-align: center;
+  white-space: pre-line;
+}
+
+main.join article[data-step="done"] .event.disposable.banner p a {
+  transition: color 0.4s;
+  text-decoration: underline;
+}
+
+main.join article[data-step="done"] .event.disposable.banner p a:hover {
+  color: #ffffff;
 }
 
 main.transfer .container {
@@ -4142,6 +4152,10 @@ main.search .transaction.history table td.info {
   position: relative;
   padding-right: 60px;
   word-break: break-all;
+}
+
+main.search .transaction.history table td.info span.asset {
+  color: #fff;
 }
 
 main.search .transaction.history table td.info span.memo.popup {
@@ -8087,6 +8101,7 @@ main.proxy.vote .voted.bp li a {
 main.create.account .container,
 main.change.account.key .container {
   margin-top: 32px;
+  padding-bottom: 32px;
   background-color: #282828;
 }
 
@@ -8220,7 +8235,7 @@ main.change.account.key .btn_area button {
 main.create.account .account.list,
 main.change.account.key .account.list {
   margin-top: 32px;
-  padding: 32px;
+  padding: 32px 32px 0 32px;
 }
 
 main.create.account .account.list h3,
