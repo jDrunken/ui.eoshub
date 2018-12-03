@@ -2080,6 +2080,57 @@ body > .modal.popup.virtual_account_check > .wrapper {
   background-color: #0e0e0e;
 }
 
+.modal.popup.notice {
+  z-index: 10;
+}
+
+.modal.popup.notice .wrapper {
+  width: 550px;
+  max-width: none;
+  background-color: #282828;
+}
+
+.modal.popup.notice h2 {
+  margin-top: -5px;
+  margin-bottom: 30px;
+}
+
+.modal.popup.notice p {
+  font-size: 0.875rem;
+  margin-left: 32px;
+  margin-right: 32px;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  white-space: pre-line;
+}
+
+.modal.popup.notice p.sign {
+  margin-top: 30px;
+  text-align: right;
+}
+
+.modal.popup.notice .action.container {
+  overflow: hidden;
+  margin-left: 32px;
+  margin-right: 32px;
+}
+
+.modal.popup.notice .action.container .confirm.area {
+  margin-top: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal.popup.notice .action.container .confirm.area label {
+  font-size: 0.8125rem;
+}
+
+.modal.popup.notice .action.container .confirm.area button.button {
+  flex: 1;
+  max-width: 136px;
+}
+
 .notification.panel {
   position: fixed;
   right: 42px;
@@ -5263,15 +5314,11 @@ main.vote section.bp.list thead th.search form {
 main.vote section.bp.list thead th.search form input {
   outline: 0;
   flex: 1;
-}
-
-main.vote section.bp.list thead th.search form button[type='submit'] {
-  text-indent: -999em;
-  overflow: hidden;
   width: 16px;
   height: 16px;
-  background: url("../image/icon-search.svg") center center no-repeat;
+  background: url("../image/icon-search.svg") left center no-repeat;
   background-size: 16px;
+  padding-left: 28px;
 }
 
 main.vote section.bp.list thead th.search form:focus-within {
