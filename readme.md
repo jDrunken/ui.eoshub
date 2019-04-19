@@ -57,3 +57,15 @@ cp -rf ~/workspace/ui.eoshub/src/image ~/workspace/eoshub.io/app/frontend/src
 # 팝업용 스타일시트를 루비로 추가함
 cp  ~/workspace/ui.eoshub/deploy/css/popup.scss ~/workspace/eoshub.io/app/assets/stylesheets
 ```
+
+------------------------------------------------------------
+
+## trouble shotting
+
+`ReferenceError: internalBinding is not defined` 이란 에러가 발생할 경우 natives 모듈을 수동으로 업그레이드 해줍니다.
+
+```
+❯ npm install natives@1.1.6
+```
+
+
